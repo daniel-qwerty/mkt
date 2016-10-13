@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="clearfix"></div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive" src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->mainArticle->NewImage; ?>"/>
+            </div>
+            <div class="col-md-6">
+                <div class="container-fluid autoridades">
+                    <div class="container-fluid autoridades-label text-center cocogose">
+                        <span><?PHP echo $this->mainArticle->NewTitle; ?></span>
+                    </div>
+                    <br> 
+                    <p class="intro"> <?PHP echo $this->mainArticle->NewContent; ?></p>
+                    <div class="col-md-12 text-pink cocogose">
+                        <h5 style="float:left;font-style: oblique;">Autor: <?PHP echo $this->mainArticle->NewAuthor; ?></h5>
+                        <h5 style="float:right;font-style: oblique;">Fecha: <?PHP echo $this->mainArticle->NewDate; ?></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="noticias">
+        <h3 class="text-pink cocogose"><?PHP echo $this->translator->news; ?></h3>
+        <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(3)->render();?>
+    </div>
+</div>
+

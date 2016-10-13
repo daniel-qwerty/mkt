@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title> Hotel</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel='stylesheet' id='open-sans-css' href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin" rel="stylesheet" type="text/css">
+
+    
+    <!-- Fav and Touch Icons -->
+        <meta name="msapplication-TileColor" content="#d9534f">
+        <meta name="msapplication-TileImage"
+              content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/ms-icon-144x144.png">
+        <meta name="msapplication-config"
+              content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public//favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="apple-touch-icon" sizes="57x57"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png"
+              sizes="32x32">
+        <link rel="icon" type="image/png"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/android-192x192.png"
+              sizes="192x192">
+        <link rel="icon" type="image/png"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-96x96.png"
+              sizes="96x96">
+        <link rel="icon" type="image/png"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png"
+              sizes="16x16">
+        <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+        <link rel="shortcut icon"
+              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+              type="image/x-icon"/>
+          
+    <?PHP
+        Com_Helper_Style::getInstance()
+                ->addFile("Public/extras.min.css")
+                ->addFile("Public/bootstrap.css")  
+                ->addFile("Public/font-awesome.min.css")
+                ->addFile("Public/fonts.css") 
+                ->addFile("Public/theme.css")
+                ->addFile("Public/hotel.css")
+                ;
+        echo Com_Helper_Style::getInstance();
+        ?>
+</head>
+
+<body class="transparent-header pace-on pace-dot">
+<?php /** FORMULARIO FLOTANTE DE RESERVAS **/ Pages_Widget_Reservation::getInstance()->setLan($this->lan)->render();?>
+    <div class="pace-overlay"></div>
+    <div class="menu navbar navbar-static-top header-logo-left-menu-right oxy-mega-menu navbar-sticky text-none" id="masthead">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-target=".main-navbar" data-toggle="collapse" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="<?= Com_Helper_Url::getInstance()->urlBase?>"> <img alt="Lambda Theme - Hotel" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/hotel/logohotel1.png"> </a>
+            </div>
+            <div class="nav-container">
+                <nav class="collapse navbar-collapse main-navbar logo-navbar navbar-right">
+                    <div class="menu-container">
+                        <ul class="nav navbar-nav" id="menu-main">
+                            <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                        </ul>
+                    </div>
+                    <div class="menu-sidebar">
+                        <div class="sidebar-widget widget_social">
+                            <?PHP Pages_Widget_SocialIcons::getInstance()->render(); ?>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="content" role="main">
+        <article>
+            <section class="section portada">
+                <div class="background-media" style="background-image: url(<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo Images_Helper_Image::getInstance()->get($this->lan, 'bannerContacto')->ImgFile; ?>); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 70%;"> </div>
+                <div class="background-overlay" style="background-color: rgba(0,0,0,0.3);"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="divider-wrapper">
+                                <div class="visible-xs element-height-50"></div>
+                                <div class="visible-sm element-height-100"></div>
+                                <div class="visible-md element-height-200"></div>
+                                <div class="visible-lg element-height-200"></div>
+                            </div>
+                            <h1 class="text-center element-bottom-20 text-light os-animation hyper" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleContactenos')->TxtDescription; ?>
+                    </h1>
+                            <div class="figure os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.3s"> <span class="figure-image">
+                            <!-- <img alt="decor-big-white.png" src="<?PHP //echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/hotel/decor-big-white.png"> -->
+                        </span> </div>
+                            <div class="divider-wrapper">
+                                <div class="visible-xs element-height-50"></div>
+                                <div class="visible-sm element-height-100"></div>
+                                <div class="visible-md element-height-100"></div>
+                                <div class="visible-lg element-height-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="background-overlay" style="background-color: rgba(86,154,167,0);"></div>
+                <div class="container-fullwidth container-vertical-middle">
+                    <div class="row vertical-middle">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8 text-center">
+                                    <h2 class="element-top-100 os-animation big" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                                <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleEscribanos')->TxtDescription; ?>
+                            </h2>
+                                    <div class="figure element-bottom-40 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s"> <span class="figure-image">
+                                    <img alt="decor-small-gold.png" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/hotel/decor-small-gold.png">
+                                </span> </div>
+                                    <form action="contact_mailer.php" class="contact-form">
+                                        <div class="form-group form-icon-group"> <i class="fa fa-user"></i>
+                                            <input class="form-control" id="name" name="name" placeholder="<?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'placeholderNombre')->TxtDescription; ?>" type="text" required=""> </div>
+                                        <div class="form-group form-icon-group"> <i class="fa fa-envelope"></i>
+                                            <input class="form-control" id="email" name="email" placeholder="<?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'placeholderEmail')->TxtDescription; ?>" type="email" required=""> </div>
+                                        <div class="form-group form-icon-group"> <i class="fa fa-pencil"></i>
+                                            <textarea class="form-control" id="message" name="message" placeholder="<?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'placeholderMensaje')->TxtDescription; ?>" rows="5" required=""></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <input type="submit" value="Send email" class="btn btn-primary"> </div>
+                                        <div class="messages text-center"></div>
+                                    </form>
+
+                                </div>
+                                <div class="col-md-2 "></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center" style="background:rgba(255, 255, 255, 0.95);">
+                            <div class="google-map" data-os-animation="none" data-os-animation-delay="0s" id="map" style="height:500px"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="background-media" data-0-top-bottom="background-position: 50% -80px" data-start="background-position: 50% 0px" style="background-image: url(<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo Images_Helper_Image::getInstance()->get($this->lan, 'imgContacto')->ImgFile; ?>); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;">
+                </div>
+                <div class="background-overlay grid-overlay-0" style="background-color: rgba(0, 0, 0, 0.50);"></div>
+                <div class="container container-vertical-middle">
+                    <div class="row vertical-middle">
+                        <div class="col-md-2 text-center"></div>
+                        <div class="col-md-8 text-center">
+                            <h2 class="element-top-100 text-light os-animation big" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                                <?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleReviews')->TxtDescription; ?>
+                    </h2>
+                            <div class="figure os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.2s"> <span class="figure-image">
+                            <img alt="decor-sma -white.png" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/hotel/decor-small-white.png">
+                        </span> </div>
+                            <div class="element-top-20 element-bottom-100 text-center text-light os-animation flexslider feature-slider" data-flex-animation="slide" data-flex-controls="show" data-flex-controls-position="outside" data-flex-controlsalign="center"
+                            data-flex-directions="hide" data-flex-slideshow="true" data-flex-speed="7000" data-os-animation="fadeIn" data-os-animation-delay="0.3s" id="flexslider-985">
+                                <ul class="slides">
+                                    <?PHP Reviews_Widget_Reviews::getInstance()->setLimit(5)->render(); ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer id="footer">
+            <?PHP Pages_Widget_Contacto::getInstance()->setLan($this->lan)->render(); ?>
+        </footer>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&amp;sensor=false"></script>
+    </div>
+    <a class="go-top go-top-square" href="javascript:void(0)"> <i class="fa fa-angle-up"></i> </a>
+    <script type="text/javascript">
+        var oxyThemeData = {
+            navbarHeight: 90,
+            navbarScrolled: 80,
+            navbarScrolledPoint: 100,
+            menuClose: 'off',
+            scrollFinishedMessage: 'No more items to load.',
+            hoverMenu:
+            {
+                hoverActive: false,
+                hoverDelay: 200,
+                hoverFadeDelay: 200
+            },
+            siteLoader: 'on'
+        };
+    </script>
+   
+    
+    <?php
+        Com_Helper_Script::getInstance()
+                ->addFile("Public/theme.js")
+                ->addFile("Public/contact.js")
+                ->addFile("Public/map.js");
+        echo Com_Helper_Script::getInstance();
+        ?>
+    
+    <script>
+        window.map = {
+            map_type: 'ROADMAP',
+            map_zoom: 17,
+            map_style: 'blackwhite',
+            map_scrollable: 'off',
+            scrollwheel: false,
+            draggable: false,
+            marker: 'show',
+            label: ['Hotel Cortez'],
+            address: '',
+            latlng:['-17.771060, -63.184124'],
+            center_latlng: '',
+            markerURL: '<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marker.png',
+            auto_center: true
+        };
+    </script>
+    <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '7297473a650eaeeecd1c8851f4eee1f1def96bb7';
+window.smartsupp||(function(d) {
+	var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+	s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+	c.type='text/javascript';c.charset='utf-8';c.async=true;
+	c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+    <script>
+        $(window).scroll(function () {
+            $('#aux').css('transform', 'translate(0,100%)');
+        });
+    </script>
+</body>
+
+</html>
+

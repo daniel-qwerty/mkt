@@ -1,0 +1,22 @@
+<?PHP
+
+$db = new Entities_Advertising();
+$grid = new Com_Wizard_Grid();
+$grid->title = "Listado de publicidad";
+$grid->setIdField("AdId");
+$grid->setQuery($db->getList());
+$grid->setAlias(array("AdName" => "Nombre","AdSize" => "Tamaño", "AdStatus" => "Estado"));
+$grid->setFilters(array("AdName" => get('AdName')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/Advertising/Add');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Advertising/Edit/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Advertising/Delete/id/_ID_' . "':'';");
+
+$grid->customField("AdStatus", array("value" => array('1' => 'Leido', '0' => 'No Leido')));
+
+$grid->render();

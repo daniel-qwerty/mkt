@@ -1,0 +1,86 @@
+<div class="background">
+    <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/blog_background.jpg"/>
+</div>
+<div class="container">
+    <div class="title">
+        <?PHP
+        echo $this->translator->press;
+        ?>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content articles">
+        <?PHP
+        foreach ($this->list as $obj) {
+            ?>
+            <div class="item">
+                <div class="image">
+                    <img src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $obj->NewImage; ?>"/>
+                </div>
+                <div class="data">
+                    <div class="date">
+                        <?PHP
+                        $date = strtotime($obj->NewDate);
+                        $date = date("d/m/Y", $date);
+                        echo $date;
+                        ?>
+                    </div>
+                    <div class="title">
+                        <?PHP echo $obj->NewTitle; ?>
+                    </div>
+                    <div class="resume">
+                        <?PHP echo $obj->NewDescription; ?>
+                    </div>
+                    <div class="seeMore">
+                        <?PHP
+                        $url = "article/" . $obj->NewUrl;
+                        ?>
+                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, $url) ?>"><?PHP echo $this->translator->readMore; ?></a>
+                    </div>
+                </div>
+            </div>
+            <?PHP
+        }
+        ?>
+    </div>
+
+
+    <div class="archive">
+        <div class="years">
+            <ul >
+                <li>
+                    <?PHP echo $this->translator->archive; ?>
+                </li>
+                <?PHP
+                foreach ($this->archives['years'] as $year) {
+                    ?>
+                    <li>
+                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "Index/News/Archive/year/" . $year->year); ?>">
+                            <?PHP echo $year->year; ?>
+                        </a>
+                    </li>
+                    <?PHP
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="months">
+            <ul >
+                <?PHP
+                foreach ($this->archives['months'] as $month) {
+                    ?>
+                    <li>
+                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "Index/News/Archive/month/" . $month->month); ?>">
+                            <?PHP
+                            $month = 'm' . $month->month;
+                            echo $this->translator->$month;
+                            ?>
+                        </a>
+                    </li>
+                    <?PHP
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+    
+</div>

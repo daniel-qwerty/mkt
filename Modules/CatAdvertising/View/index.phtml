@@ -1,0 +1,22 @@
+<?PHP
+
+$db = new Entities_CatAdvertising();
+$grid = new Com_Wizard_Grid();
+$grid->title = "Listado de Categorias publicidad";
+$grid->setIdField("CatId");
+$grid->setQuery($db->getList());
+$grid->setAlias(array("CatName" => "Nombre", "CatStatus" => "Estado"));
+$grid->setFilters(array("CatName" => get('CatName')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/CatAdvertising/Add');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/CatAdvertising/Edit/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/CatAdvertising/Delete/id/_ID_' . "':'';");
+
+$grid->customField("CatStatus", array("value" => array('1' => 'Leido', '0' => 'No Leido')));
+
+$grid->render();

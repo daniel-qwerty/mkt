@@ -1,0 +1,72 @@
+            <div class="cuerpo">
+                <table>
+    <tr class="cabecera">
+        <td>Nro.</td>
+        <td>Idioma</td>
+        <td>Nombre</td>
+        <td>Correo Electronico</td>
+        <td>Mensaje</td>
+        <td>Fecha de Registro</td>
+    </tr>
+            <tr class="blanco">
+            <td>1</td>
+            <td>Español</td>
+            <td>Ariel</td>
+            <td>arielg.os@gmail.com</td>
+            <td>safasfasf</td>
+            <td>2015-04-06 00:00:00</td>
+        </tr>
+                <tr class="gris">
+            <td>2</td>
+            <td>Ingles</td>
+            <td>Ariel</td>
+            <td>arielg.os@gmail.com</td>
+            <td>safasfasf</td>
+            <td>2015-04-06 00:00:00</td>
+        </tr>
+                <tr class="blanco">
+            <td>3</td>
+            <td>Español</td>
+            <td>Form1</td>
+            <td>Form1</td>
+            <td>Form1</td>
+            <td>2015-04-06 10:45:30</td>
+        </tr>
+                <tr class="gris">
+            <td>4</td>
+            <td>Ingles</td>
+            <td>Form1</td>
+            <td>Form1</td>
+            <td>Form1wdwqdsadasd</td>
+            <td>2015-04-06 10:45:30</td>
+        </tr>
+                <tr class="blanco">
+            <td>5</td>
+            <td>Español</td>
+            <td>test</td>
+            <td>test@test.com</td>
+            <td>testing</td>
+            <td>2015-04-08 09:56:06</td>
+        </tr>
+                <tr class="gris">
+            <td>6</td>
+            <td>Ingles</td>
+            <td>test</td>
+            <td>test@test.com</td>
+            <td>testing</td>
+            <td>2015-04-08 09:56:06</td>
+        </tr>
+                <tr class="blanco">
+            <td>7</td>
+            <td>Español</td>
+            <td>test 3</td>
+            <td>test@test.com</td>
+            <td>sfasfsafsafas sdasdad</td>
+            <td>2015-04-08 09:57:27</td>
+        </tr>
+        </table>
+            </div>
+            <div class="pieReporte">
+                Sinapsis Digital
+            </div>
+            

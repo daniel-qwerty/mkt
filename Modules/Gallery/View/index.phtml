@@ -1,0 +1,24 @@
+<?PHP
+
+$db = new Entities_Gallery();
+$grid = new Com_Wizard_Grid();
+
+$grid->title = "Galeria";
+$grid->setIdField("GalId");
+$grid->setLanField("GalLanId");
+$grid->setQuery($db->getListWithLanguages());
+$grid->setAlias(array("LanName" => "Idioma", "GalName" => "Titulo", "GalStatus" => "Estado"));
+$grid->setFilters(array("GalTitle" => get('GalTitle')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/Gallery/Add/');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Gallery/Edit/lan/_LANGUAGE_/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Gallery/Delete/id/_ID_' . "':'';");
+
+$grid->customField("GalStatus", array("value" => array('1' => 'Habilitado', '0' => 'Bloqueado')));
+
+$grid->render();

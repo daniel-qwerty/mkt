@@ -1,0 +1,90 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Categorias";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/CatAdvertising");
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Category";
+$control->label = "Categoria";
+$control->default = $this->Category;
+$control->required = true;
+foreach ($this->Category as $type) {
+    $control->addItem($type->CatId, $type->CatName);
+}
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Size";
+$control->label = "Tamaño";
+$control->default = $this->Size;
+$control->required = true;
+$control->addItem('A', 'A - 800x600 px');
+$control->addItem('B', 'B - 570X400 px');
+$control->addItem('C', 'C - 290X600 px');
+$control->addItem('D', 'D - 200X450 px');
+$control->addItem('E', 'E - 290X300 px');
+$control->addItem('F', 'F - 570X200 px');
+$control->addItem('G', 'G - 570X570 px');
+$control->addItem('H', 'H - 860X260 px');
+
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Name";
+$control->label = "Nombre";
+$control->default = $this->Name;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Link";
+$control->label = "Link";
+$control->default = $this->Link;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "DateStart";
+$control->label = "Fecha Inicio ";
+$control->default = $this->DateStart;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "DateEnd";
+$control->label = "Fecha Fin ";
+$control->default = $this->DateEnd;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Views";
+$control->label = "Vistas";
+$control->default = $this->Views;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Leido');
+$control->addItem('0', 'No Leido');
+$form->add($control);
+
+$form->render();

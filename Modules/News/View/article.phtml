@@ -1,0 +1,46 @@
+<section id="news" class="container-fluid content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 container">
+            <div class="row item-noticias active bg-white" rel="1">
+                <div class="col-lg-12">
+                    <h2> <?= strtoupper($this->article->NewTitle); ?></h2>
+                </div>
+                <div class="col-lg-12 p-image">
+                    <img class="img-responsive"
+                         src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->article->NewImage; ?>"/>
+                </div>
+                <div class="col-lg-12 p-content-2">
+                    <div class="">
+
+                        <div class="container-fluid autoridades-label text-center cocogose">
+                            <span><?PHP echo $this->article->NewTitle; ?></span>
+                        </div>
+                        <br>
+
+                        <div> <?PHP echo $this->article->NewContent; ?></div>
+
+                        <div class="col-md-12 text-pink cocogose">
+                            <h5>Autor: <?PHP echo $this->article->NewAuthor; ?></h5>
+                            <h5>Fecha: <?PHP echo $this->article->NewDate; ?></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12"><h2 class="text-pink cocogose"
+                                           style="margin-top: 15px"><?PHP echo $this->translator->news; ?></h2></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="container-fluid content-section bg-color-2">
+    <div class="row">
+        <h2 class="bg-color-7 color-5 text-center"><?PHP echo Texts_Helper_Text::getInstance()->get($this->lan, 'titleNews')->TxtDescription; ?></h2>
+        <div class="container">
+            <div class="news-items">
+                <?PHP News_Widget_News::getInstance()->setLan($this->lan)->setLimit(6)->setCategory($this->article->NewCatId)->render(); ?>
+            </div>
+        </div>
+    </div>
+</section>

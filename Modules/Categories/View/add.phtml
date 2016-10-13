@@ -1,0 +1,88 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Categorias";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Categories");
+
+$form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
+
+$control = new Com_Wizard_Form_Control_Hidden();
+$control->name = "Language";
+$control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_HSelect();
+$control->name = "Parent";
+$control->label = "Padre";
+$control->default = $this->Parent;
+$control->length = 50;
+foreach ($this->Parents as $objItem) {
+    $control->addItem($objItem->CatId, $objItem->CatAlias, $objItem->CatParentId);
+}
+$form->add($control);
+
+
+
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Alias";
+$control->label = "Alias";
+$control->default = $this->Alias;
+$control->length = 50;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Text();
+$control->name = "Description";
+$control->label = "Descripcion";
+$control->default = $this->Description;
+$control->rows = 3;
+$control->addParameter("style ", "height:120px;");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Color";
+$control->label = "Color";
+$control->default = $this->Color;
+$control->length = 50;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Type";
+$control->label = "Tipo";
+$control->default = $this->Type;
+$control->addItem('0', 'Padre');
+$control->addItem('1', 'Hijo');
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
+
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Important";
+$control->label = "Importante";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Si');
+$control->addItem('0', 'No');
+
+$form->add($control);
+
+$form->render();

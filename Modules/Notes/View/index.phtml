@@ -1,0 +1,25 @@
+<?PHP
+
+$db = new Entities_Note();
+$grid = new Com_Wizard_Grid();
+
+$grid->title = "Listado de Notas";
+$grid->setIdField("NotId");
+$grid->setLanField("NotLanId");
+$grid->setQuery($db->getListWithLanguages());
+$grid->setAlias(array("LanName" => "Idioma", "NotDate" => "Fecha", "NotTitle" => "Titulo", "NotUrl" => "Url", "NotStatus" => "Estado"));
+$grid->setFilters(array("NotTitle" => get('NotTitle')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/Notes/Add/');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Notes/Edit/lan/_LANGUAGE_/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Notes/Delete/id/_ID_' . "':'';");
+
+$grid->customField("NotStatus", array("value" => array('1' => 'Habilitado', '0' => 'Bloqueado')));
+$grid->customField("NotDate", array("dateFormat" => "d/m/Y"));
+
+$grid->render();

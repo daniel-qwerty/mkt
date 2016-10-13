@@ -1,0 +1,803 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>MARKETING NEWS</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel='stylesheet' id='open-sans-css'
+          href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1'
+          type='text/css' media='all'/>
+    <link
+        href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
+        rel="stylesheet" type="text/css">
+
+
+    <!-- Fav and Touch Icons -->
+    <meta name="msapplication-TileColor" content="#d9534f">
+    <meta name="msapplication-TileImage"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-config"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public//favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png"
+          sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/android-192x192.png"
+          sizes="192x192">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-96x96.png"
+          sizes="96x96">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png"
+          sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="shortcut icon"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+          type="image/x-icon"/>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0
+        }
+
+        #preload {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            z-index: 9000;
+            background: white;
+        }
+
+        #preloader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .preloader-item {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            background: #CCCCCC;
+            border-radius: 10px;
+            float: left;
+            display: block;
+        }
+
+        .preloader-item1 {
+            animation-name: pulse;
+            animation-duration: 1.5s;
+            animation-delay: 0.3s;
+            animation-iteration-count: infinite;
+        }
+
+        .preloader-item2 {
+            animation-name: pulse;
+            animation-duration: 1.5s;
+            animation-delay: 0.6s;
+            animation-iteration-count: infinite;
+        }
+
+        .preloader-item3 {
+            animation-name: pulse;
+            animation-duration: 1.5s;
+            animation-delay: 0.9s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                background-color: #941b80;
+            }
+            33% {
+                background-color: #e5007e;
+            }
+            66% {
+                background-color: #e20613;
+            }
+            100% {
+                background-color: #941b80;
+            }
+        }
+    </style>
+
+    <?PHP
+    Com_Helper_Style::getInstance()
+        ->addFile("Public/bootstrap.css")
+        ->addFile("Public/font-awesome.css")
+        ->addFile("Public/slick.css")
+        ->addFile("Public/slick-theme.css")
+        ->addFile("Public/swiper.css")
+        ->addFile("Public/animate.css")
+        ->addFile("Public/owl.carousel.css")
+        ->addFile("Public/materialicon.css")
+        ->addFile("Public/marketing-intro.css")
+        ;
+    echo Com_Helper_Style::getInstance();
+
+    ?>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <?php
+    Com_Helper_Script::getInstance()
+        ->addFile("Public/bootstrap.js")
+        ->addFile("Public/slick.min.js")
+        ->addFile("Public/pathformer.js")
+        ->addFile("Public/vivus.js")
+        ->addFile("Public/owl.carousel.min.js")
+        ->addFile("Public/marketing.js")
+        ->addFile("Public/rdcalendar.js")
+        ->addFile("Public/swiper.jquery.js");
+
+    echo Com_Helper_Script::getInstance();
+    ?>
+</head>
+
+<body class="desktop">
+<section id="preload">
+    <div id="preloader">
+        <div class="preloader-item preloader-item1"></div>
+        <div class="preloader-item preloader-item2"></div>
+        <div class="preloader-item preloader-item3"></div>
+    </div>
+</section>
+
+<section class="main-menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="menu-content col-md-6">
+                <div class="menu-container" style="display: none">
+                    <img class="logo" alt="logo"
+                         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                    <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars"
+                                                                            aria-hidden="true"></i></a>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="menu-cerrar">
+                                <a href="javascript:void(0)" onclick="toogleMenu();"> <i class="fa fa-close"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class=" menu-nav">
+                                <ul>
+                                    <li><a href="#" class="menu-padre active">mkt</a>
+                                        <ul class="menu-items active">
+                                            <li class="active"><a href="#" class="menu-item">Brand</a></li>
+                                            <li><a href="#" class="menu-item">Publicidad</a></li>
+                                            <li><a href="#" class="menu-item">Social Business</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">Trending</a>
+                                        <ul class="menu-items">
+                                            <li><a href="#" class="menu-item">Inovacion</a></li>
+                                            <li><a href="#" class="menu-item">Tecnologia</a></li>
+                                            <li><a href="#" class="menu-item">Creatividad</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">Eventos</a>
+                                        <ul class="menu-items">
+                                            <li><a href="#" class="menu-item">Social Media S</a></li>
+                                            <li><a href="#" class="menu-item">EXMA</a></li>
+                                            <li><a href="#" class="menu-item">Trendshoper</a></li>
+                                            <li><a href="#" class="menu-item">Festival el Locoto</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">Tools</a>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">Subscripcion</a>
+                                        <ul class="menu-items">
+                                            <li><a href="#" class="menu-item">Impresa</a></li>
+                                            <li><a href="#" class="menu-item">Newsletter</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">Pauta</a>
+                                    </li>
+                                    <li><a href="#" class="menu-padre">BookMall</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class=" menu-nav">
+                                fb tw g+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="menu-container" style="display: none">
+    <img class="logo" alt="logo"
+         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+    <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a>
+</div>
+
+<section>
+    <!-- Swiper-->
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <?php SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+    </div>
+</section>
+<section class="text-sm-left">
+    <!-- Owl Carousel-->
+    <div data-items="1" data-sm-items="2" data-lg-items="4" data-stage-padding="0" data-loop="true" data-margin="0"
+         data-nav="true" class="owl-carousel owl-carousel-mod-1">
+        <?php Notes_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(12)->render(); ?>
+    </div>
+</section>
+
+<section class="section-sm-60">
+    <div class="container container-mod-1">
+        <div class="row row-no-gutter">
+            <div class="col-xs-12 col-md-8">
+                <!--Section 1-->
+                <div class="row row-no-gutter text-left row-mod-1">
+                    <div class="col-xs-12 col-md-8">
+                       <div class="post-news height-520 bg-item-5 post-news-mod-1 bg-primary"
+                            
+                             style="background: url(<?php echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
+                            <div class="post-body">
+                                <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a></h4>
+
+                                <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatDescription; ?></p>
+                            </div>
+                            <div class="post-footer">
+                                <span class="post-count">27 posts</span>
+                                <a href="blog_post.html" class="btn btn-transparent">
+                                    <i class="fa fa-arrow-right"
+                                       style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="row row-no-gutter">
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="post-news height-260 bg-pink post-news-mod-1">
+                                    <div class="post-body">
+                                        <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatAlias; ?></a></h4>
+
+                                        <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatDescription; ?></p>
+                                    </div>
+                                    <div class="post-footer">
+                                        <span class="post-count">2 posts</span>
+                                        <a href="blog_post.html" class="btn btn-transparent">
+                                            <i class="fa fa-arrow-right"
+                                               style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="post-news height-260 bg-shamrock post-news-mod-1">
+                                    <div class="post-body">
+                                        <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatAlias; ?></a></h4>
+
+                                        <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatDescription; ?></p>
+                                    </div>
+                                    <div class="post-footer"><span class="post-count">8 posts</span>
+                                        <a href="blog_post.html" class="btn btn-transparent">
+                                            <i class="fa fa-arrow-right"
+                                               style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row row-no-gutter text-left row-mod-1">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="post-news height-260 bg-razzmatazz post-news-mod-1">
+                            <div class="post-body">
+                                <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatAlias; ?></a></h4>
+
+                                <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatDescription; ?></p>
+                            </div>
+                            <div class="post-footer"><span class="post-count">2 posts</span>
+                                <a href="blog_post.html" class="btn btn-transparent">
+                                    <i class="fa fa-arrow-right"
+                                       style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="post-news height-260 bg-blue post-news-mod-1">
+                            <div class="post-body">
+                                <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatAlias; ?></a></h4>
+
+                                <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatDescription; ?></p>
+                            </div>
+                            <div class="post-footer"><span class="post-count">17 posts</span>
+                                <a href="blog_post.html" class="btn btn-transparent">
+                                    <i class="fa fa-arrow-right"
+                                       style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="post-news height-260 bg-item-6 post-news-mod-1 bg-turquoise">
+                            <div class="post-body">
+                                <h4><a href="blog_post.html"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatAlias; ?></a></h4>
+
+                                <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatDescription; ?></p>
+                            </div>
+                            <div class="post-footer"><span class="post-count">11 posts</span>
+                                <a href="blog_post.html" class="btn btn-transparent">
+                                    <i class="fa fa-arrow-right"
+                                       style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row row row-no-gutter text-center text-sm-left">
+                    <div class="col-xs-12">
+                      <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderF(); ?>
+                    </div>
+                </div>
+                <div class="row row row-no-gutter text-center text-sm-left">
+                    
+                   <?php Notes_Widget_MostViewed::getInstance()->setLan($this->lan)->setLimit(2)->render(); ?>
+                </div>
+                <div class="row row row-no-gutter text-center text-sm-left">
+                    <div class="col-xs-12">
+                        <?php Notes_Widget_Important::getInstance()->setLan($this->lan)->setLimit(1)->render(); ?>
+                    </div>
+                </div>
+                <div class="row row row-no-gutter text-center text-sm-left">
+                    <div class="col-xs-12">
+                        <?php Advertising_Widget_Ad::getInstance()->setType('B')->setLimit(1)->renderB(); ?>
+                    </div>
+                </div>
+
+
+                <nav class="text-left">
+                    <ul class="pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" class="nav-next">
+                                <i class="fa fa-arrow-right"
+                                   style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="side-right col-xs-12 col-md-4">
+                <!--Sidebar-->
+                <div class="sidebar offset-top-40 offset-md-top-0">
+                    <div class="sidebar-module  module-search bg-darker text-left">
+                        <h5>Busqueda</h5>
+                        <!-- RD Navbar Search-->
+                        <div class="rd-navbar-search-mod-1">
+                            <form class="form-inline-flex-xs">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="exampleInputAmount"
+                                               placeholder="buscar">
+
+                                        <div class="input-group-addon">
+                                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                    
+                    <div class="sidebar-module module-social bg-primary text-left">
+                        <h5>Social</h5>
+                        <ul class="list-inline">
+                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
+                            </li>
+                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
+                            </li>
+                            <li><a href="#"
+                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-google-plus"></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-module module-newsletter bg-darker text-left">
+                        <h5>Newsletter</h5>
+
+                        <p>Enter your email below and be the first to get makeup news!</p>
+                        <!-- Rd Mailform result field-->
+                        <div class="rd-mailform-validate"></div>
+                        <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post"
+                              action="bat/rd-mailform.php" class="rd-mailform subscribe text-left offset-top-30">
+                            <input type="text" name="email" data-constraints="@NotEmpty @Email"
+                                   placeholder="Your e-mail">
+                            <button class="btn btn-transparent btn-sm">subscribe</button>
+                        </form>
+                    </div>
+                    <div class="sidebar-module">
+                        <?php Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
+                        
+                    </div>
+
+                    <div class="sidebar-module bg-gray text-left">
+                        <h5>Calendar</h5>
+                        <!-- RD Calendar-->
+                        <div class="rd-calendar">
+                            <div class="rdc-panel">
+                                <div class="rdc-month"></div>
+                                <div class="rdc-fullyear"></div>
+                                <a class="rdc-next">
+                                    <i class="fa fa-arrow-right"
+                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
+                                </a>
+                                <a class="rdc-prev">
+                                    <i class="fa fa-arrow-left"
+                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
+                                </a>
+                            </div>
+                            <div class="rdc-table"></div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-module  bg-gray module-suscribe-magazine text-left">
+                        <h5>Suscribete</h5>
+
+                        <div class="magazine-container">
+                            <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/magazine01.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="magazine-container-decoration"></div>
+
+                        <form class="form-inline-flex-xs">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="apellido" placeholder="epallido">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email" placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-block">Suscribete!</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sidebar-module module-pauta text-left">
+                        <h3>Pauta</h3>
+                        <div class="pauta-container">
+                            <div class="pauta-item">
+                                <a href="#" class="tag bg-pink">Revista</a>
+                                <h4>Titulo lorem ipsum</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
+                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
+                                </p>
+                            </div>
+                            <div class="pauta-item">
+                                <a href="#" class="tag bg-punch">WEB</a>
+                                <h4>Titulo lorem ipsum</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
+                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
+                                </p>
+                            </div>
+                            <div class="pauta-item">
+                                <a href="#" class="tag bg-info">Revista</a>
+                                <h4>Titulo lorem ipsum</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
+                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="insta-wrap">
+    <div class="insta-btn-wrap bg-chambray"><a href="#">Follow on <br class="visible-lg">Instagram</a></div>
+    <!-- RD Instafeed-->
+    <div data-instafeed-clientid="44f19408f04040bd85214315861a84a1" data-instafeed-get="user"
+         data-instafeed-user="499522078" data-items="2" data-sm-items="5" data-lg-items="9" data-loop="false"
+         data-nav="true" class="owl-carousel instafeed element-groups-xs-custom">
+        <?php Gallery_Widget_Home::getInstance()->setLan($this->lan)->setLimit(20)->render(); ?>
+    </div>
+</section>
+<section>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="go-up">
+                <i class="fa fa-angle-up icon-white"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 col-footer color-gray-1">
+                <h2>Navegar</h2>
+                <ul>
+                    <li><a href="#"> Contacto</a></li>
+                    <li><a href="#"> Escribe para nos.</a></li>
+                    <li><a href="#"> Kit de ventas</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-footer color-gray-2">
+                <h2>Social</h2>
+                <ul>
+                    <li><a href="#"> Facebook</a></li>
+                    <li><a href="#"> Twitter</a></li>
+                    <li><a href="#"> Google +</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 text-center col-footer color-gray-1">
+                <img class="logo img-responsive"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo_black.png" alt=""/>
+
+                <p class="copy">    &copy; 2016</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        autoplay: 8000,
+        mousewheelControl: false,
+        onTransitionStart: function (swiper) {
+            toggleSwiperInnerVideos(swiper);
+        },
+        onTransitionEnd: function (swiper) {
+            toggleSwiperCaptionAnimation(swiper);
+        },
+        onInit: function (swiper) {
+            toggleSwiperInnerVideos(swiper);
+            toggleSwiperCaptionAnimation(swiper);
+//            var swiperParalax = s.find(".swiper-parallax");
+
+//            for (var k = 0; k < swiperParalax.length; k++) {
+//                var $this = $(swiperParalax[k]),
+//                        speed;
+//
+//                if (parallax && !isIEBrows && !isMobile) {
+//                    if (speed = $this.attr("data-speed")) {
+//                        makeParallax($this, speed, s, false);
+//                    }
+//                }
+//            }
+            $(window).on('resize', function () {
+                swiper.update(true);
+            })
+        }
+    });
+    function toggleSwiperInnerVideos(swiper) {
+        var prevSlide = $(swiper.slides[swiper.previousIndex]),
+            nextSlide = $(swiper.slides[swiper.activeIndex]),
+            videos;
+
+        prevSlide.find("video").each(function () {
+            this.pause();
+        });
+
+        videos = nextSlide.find("video");
+        if (videos.length) {
+            videos.get(0).play();
+        }
+    }
+
+    function toggleSwiperCaptionAnimation(swiper) {
+        var prevSlide = $(swiper.container),
+            nextSlide = $(swiper.slides[swiper.activeIndex]);
+
+        prevSlide
+            .find("[data-caption-animate]")
+            .each(function () {
+                var $this = $(this);
+                $this
+                    .removeClass("animated")
+                    .removeClass($this.attr("data-caption-animate"))
+                    .addClass("not-animated");
+            });
+
+        nextSlide
+            .find("[data-caption-animate]")
+            .each(function () {
+                var $this = $(this),
+                    delay = $this.attr("data-caption-delay");
+
+                setTimeout(function () {
+                    $this
+                        .removeClass("not-animated")
+                        .addClass($this.attr("data-caption-animate"))
+                        .addClass("animated");
+                }, delay ? parseInt(delay) : 0);
+            });
+    }
+
+    var owls = $('.owl-carousel');
+    if (owls.length) {
+        for (i = 0; i < owls.length; i++) {
+
+            var c = $(owls[i]),
+                responsive = {};
+
+            var aliaces = ["-", "-xs-", "-sm-", "-md-", "-lg-"],
+                values = [0, 480, 768, 992, 1200],
+                j, k;
+
+            for (j = 0; j < values.length; j++) {
+                responsive[values[j]] = {};
+                for (k = j; k >= -1; k--) {
+                    if (!responsive[values[j]]["items"] && c.attr("data" + aliaces[k] + "items")) {
+                        responsive[values[j]]["items"] = k < 0 ? 1 : parseInt(c.attr("data" + aliaces[k] + "items"));
+                    }
+                    if (!responsive[values[j]]["stagePadding"] && responsive[values[j]]["stagePadding"] !== 0 && c.attr("data" + aliaces[k] + "stage-padding")) {
+                        responsive[values[j]]["stagePadding"] = k < 0 ? 0 : parseInt(c.attr("data" + aliaces[k] + "stage-padding"));
+                    }
+                    if (!responsive[values[j]]["margin"] && responsive[values[j]]["margin"] !== 0 && c.attr("data" + aliaces[k] + "margin")) {
+                        responsive[values[j]]["margin"] = k < 0 ? 30 : parseInt(c.attr("data" + aliaces[k] + "margin"));
+                    }
+                }
+            }
+
+            c.owlCarousel({
+                autoplay: c.attr("data-autoplay") === "true",
+                loop: c.attr("data-loop") !== "false",
+                items: 1,
+                dotsContainer: c.attr("data-pagination-class") || false,
+                navContainer: c.attr("data-navigation-class") || false,
+                mouseDrag: c.attr("data-mouse-drag") !== "false",
+//                nav: c.attr("data-nav") === "true",
+                nav: "true",
+//                dots: c.attr("data-dots") === "true",
+//                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
+                responsive: responsive,
+                navText: [],
+                onInitialized: function () {
+                    if ($.fn.magnificPopup) {
+                        var o = this.$element.attr('data-lightbox') !== undefined && this.$element.attr("data-lightbox") !== "gallery",
+                            g = this.$element.attr('data-lightbox') === "gallery";
+                        if (o) {
+                            for (var m = 0; m < (this.$element).length; m++) {
+                                var $this = $(this.$element[m]);
+                                $this.magnificPopup({
+                                    type: $this.attr("data-lightbox"),
+                                    callbacks: {
+                                        open: function () {
+                                            if (isTouch) {
+                                                $document.on("touchmove", preventScroll);
+                                                $document.swipe({
+                                                    swipeDown: function () {
+                                                        $.magnificPopup.close();
+                                                    }
+                                                });
+                                            }
+                                        },
+                                        close: function () {
+                                            if (isTouch) {
+                                                $document.off("touchmove", preventScroll);
+                                                $document.swipe("destroy");
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                        if (g) {
+                            for (var k = 0; k < (this.$element).length; k++) {
+                                var $gallery = $(this.$element[k]).find('[data-lightbox]');
+                                for (var j = 0; j < $gallery.length; j++) {
+                                    var $item = $gallery[j];
+                                    $item.addClass("mfp-" + $item.attr("data-lightbox"));
+                                }
+                                $gallery.end()
+                                    .magnificPopup({
+                                        delegate: '.owl-item [data-lightbox]',
+                                        type: "image",
+                                        gallery: {
+                                            enabled: true
+                                        },
+                                        callbacks: {
+                                            open: function () {
+                                                if (isTouch) {
+                                                    $document.on("touchmove", preventScroll);
+                                                    $document.swipe({
+                                                        swipeDown: function () {
+                                                            $.magnificPopup.close();
+                                                        }
+                                                    });
+                                                }
+                                            },
+                                            close: function () {
+                                                if (isTouch) {
+                                                    $document.off("touchmove", preventScroll);
+                                                    $document.swipe("destroy");
+                                                }
+                                            }
+                                        }
+                                    });
+                            }
+                        }
+                    }
+                    if (c.attr("data-active")) {
+                        c.trigger("to.owl.carousel", c.attr("data-active") - 1);
+                    }
+                }
+            });
+        }
+    }
+
+    $('.rd-calendar').rdCalendar({
+        days: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+        months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+    });
+
+    $('.pauta-container').slick({
+        dots: false,
+        infinite: true,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 3000
+    });
+
+
+</script>
+</body>
+
+
+</html>

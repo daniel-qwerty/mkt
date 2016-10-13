@@ -1,0 +1,93 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Noticias";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/News/Index/lan/".$this->Language."/idCat/".get('idCat'));
+
+
+$form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
+
+$control = new Com_Wizard_Form_Control_Hidden();
+$control->name = "Language";
+$control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Category";
+$control->label = "Categoria";
+$control->default = $this->Category;
+$control->required = true;
+foreach ($this->Category as $type) {
+    $control->addItem($type->CatId, $type->CatName);
+}
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Title";
+$control->label = "Titulo";
+$control->default = $this->Title;
+$control->length = 50;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Text();
+$control->name = "Description";
+$control->label = "Resumen";
+$control->default = $this->Description;
+$control->length = 50;
+$control->rows = 3;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Editor();
+$control->name = "Content";
+$control->label = "Contenido";
+$control->default = $this->Content;
+$control->required = true;
+$control->rows = 3;
+$control->addParameter("style ", "height:120px;");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "Date";
+$control->label = "Fecha";
+$control->default = $this->Date;
+$control->required = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Author";
+$control->label = "Autor";
+$control->default = $this->Author;
+$control->length = 50;
+$control->required = FALSE;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Important";
+$control->label = "Destacado";
+$control->default = $this->Important;
+$control->required = true;
+$control->addItem('1', 'Si');
+$control->addItem('0', 'No');
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
+$form->add($control);
+
+$form->render();
