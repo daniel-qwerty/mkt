@@ -150,5 +150,12 @@ class Categories_Model_Category extends Com_Module_Model {
         $db->get();
         return $db;
     }
+    
+    public function getByParentId($lanId, $category) {
+        $text = new Entities_Category();
+        $result = Com_Database_Query::getInstance()->select()->from("Category")->where("CatParentId={$category} and CatStatus = 1 and CatLanId='{$lanId}'");
+        
+        return $text->getAll($result);
+    }
 
 }

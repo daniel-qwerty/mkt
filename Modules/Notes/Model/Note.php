@@ -88,7 +88,7 @@ class Notes_Model_Note extends Com_Module_Model {
         return $db;
     }
 
-    public function getList($lanId, $limit = 1000, $category) {
+    public function getList($lanId, $category,$limit = 1000 ) {
         $text = new Entities_Note();
         return $text->getAll($text->getList()->where("NotLanId={$lanId} and NotStatus = 1 and NotCatId='{$category}'")->orderBy("NotDate desc")->limit(0, $limit));
     }
@@ -125,6 +125,20 @@ class Notes_Model_Note extends Com_Module_Model {
         $list['years'] = $text->getAll($years);
         $list['months'] = $text->getAll($months);
         return $list;
+    }
+    
+    public function getListByParent($lanId, $category,$limit = 1000 ) {
+        $text = new Entities_Note();
+        $result = Com_Database_Query::getInstance()->select()->from("Category")->innerJoin("Notes", "Notes.NotCatId=Category.CatId")->where("Category.CatParentId={$category} and NotStatus = 1 and NotLanId='{$lanId}'and CatLanId='{$lanId}'")->orderBy("NotDate desc")->limit(0, $limit);
+        
+        return $text->getAll($result);
+    }
+    
+    public function getCategories($lanId, $category,$limit = 1000 ) {
+        $text = new Entities_Note();
+        $result = Com_Database_Query::getInstance()->select()->from("Category")->where("Category.CatParentId={$category} and CatStatus = 1 and CatLanId='{$lanId}'")->limit(0, $limit);
+        
+        return $text->getAll($result);
     }
 
 }

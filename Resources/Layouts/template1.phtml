@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>MARKETING NEWS- notas</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>MARKETING NEWS</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel='stylesheet' id='open-sans-css'
+          href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1'
+          type='text/css' media='all'/>
+    <link
+        href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
+        rel="stylesheet" type="text/css">
+
+
+    <!-- Fav and Touch Icons -->
+    <meta name="msapplication-TileColor" content="#d9534f">
+    <meta name="msapplication-TileImage"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-config"
+          content="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public//favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png"
+          sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/android-192x192.png"
+          sizes="192x192">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-96x96.png"
+          sizes="96x96">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png"
+          sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="shortcut icon"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+          type="image/x-icon"/>
+
     <style>
         body {
             padding: 0;
@@ -70,35 +123,37 @@
             }
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="resources/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/font-awesome.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/swiper.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/animate.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/owl.carousel.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/materialicon.css"/>
-    <!--<link rel="stylesheet" type="text/css" href="resources/owl.theme.css"/>-->
-    <!--<link rel="stylesheet" type="text/css" href="resources/owl.transitions.css"/>-->
-    <link rel="stylesheet" type="text/css" href="resources/font-awesome-4.6.3/css/font-awesome.min.css"/>
 
+    <?PHP
+    Com_Helper_Style::getInstance()
+        ->addFile("Public/bootstrap.css")
+        ->addFile("Public/font-awesome.css")
+        ->addFile("Public/slick.css")
+        ->addFile("Public/slick-theme.css")
+        ->addFile("Public/swiper.css")
+        ->addFile("Public/animate.css")
+        ->addFile("Public/owl.carousel.css")
+        ->addFile("Public/materialicon.css")
+        ->addFile("Public/marketing-intro.css")
+        ;
+    echo Com_Helper_Style::getInstance();
 
-    <link rel="stylesheet" type="text/css" href="resources/marketing-intro.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/marketing-header.css"/>
-
+    ?>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="resources/bootstrap.js"></script>
-    <script type="text/javascript" src="resources/slick.min.js"></script>
-    <script type="text/javascript" src="resources/pathformer.js"></script>
-    <script type="text/javascript" src="resources/vivus.js"></script>
-    <script type="text/javascript" src="resources/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="resources/marketing.js"></script>
+    <?php
+    Com_Helper_Script::getInstance()
+        ->addFile("Public/bootstrap.js")
+        ->addFile("Public/slick.min.js")
+        ->addFile("Public/pathformer.js")
+        ->addFile("Public/vivus.js")
+        ->addFile("Public/owl.carousel.min.js")
+        ->addFile("Public/marketing.js")
+        ->addFile("Public/rdcalendar.js")
+        ->addFile("Public/swiper.jquery.js");
 
-    <script type="text/javascript" src="resources/rdcalendar.js"></script>
-    <script type="text/javascript" src="resources/swiper.jquery.js"></script>
+    echo Com_Helper_Script::getInstance();
+    ?>
 </head>
 <body class="desktop">
 <section id="preload">
@@ -114,7 +169,8 @@
         <div class="row">
             <div class="menu-content col-md-6">
                 <div class="menu-container" style="display: none">
-                    <img class="logo" alt="logo" src="imagenes/marketing-logo-small.png">
+                    <img class="logo" alt="logo"
+                         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
                     <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars"
                                                                             aria-hidden="true"></i></a>
                 </div>
@@ -180,7 +236,8 @@
 </section>
 
 <div class="menu-container" style="display: none">
-    <img class="logo" alt="logo" src="imagenes/marketing-logo-small.png">
+     <img class="logo" alt="logo"
+         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
     <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a>
 </div>
 
@@ -194,260 +251,35 @@
             <div class="side-right col-xs-12 col-md-4">
                 <!--Sidebar-->
                 <div class="sidebar offset-top-40 offset-md-top-0">
-                    <div class="sidebar-module  module-search bg-darker text-left">
-                        <h5>Busqueda</h5>
-                        <!-- RD Navbar Search-->
-                        <div class="rd-navbar-search-mod-1">
-                            <form class="form-inline-flex-xs">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="exampleInputAmount"
-                                               placeholder="buscar">
-
-                                        <div class="input-group-addon">
-                                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="sidebar-module sidebar-module-mod-1 text-center height-615"
-                         style="background-image: url(imagenes/picture01.jpg);background-size: cover;">
-                    </div>
-                    <div class="sidebar-module module-social bg-primary text-left">
-                        <h5>Social</h5>
-                        <ul class="list-inline">
-                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
-                            </li>
-                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
-                            </li>
-                            <li><a href="#"
-                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-google-plus"></a></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-module module-newsletter bg-darker text-left">
-                        <h5>Newsletter</h5>
-
-                        <p>Enter your email below and be the first to get makeup news!</p>
-                        <!-- Rd Mailform result field-->
-                        <div class="rd-mailform-validate"></div>
-                        <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post"
-                              action="bat/rd-mailform.php" class="rd-mailform subscribe text-left offset-top-30">
-                            <input type="text" name="email" data-constraints="@NotEmpty @Email"
-                                   placeholder="Your e-mail">
-                            <button class="btn btn-transparent btn-sm">subscribe</button>
-                        </form>
-                    </div>
+                    <!--SECCION BUSQUEDA -->
+                    <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION PUBLICIDAD -->
+                    <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                    <!--SECCION SOCIAL MEDIA -->
+                    <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION NEWSLETTER -->
+                    <?php Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
+                    
                     <div class="sidebar-module">
-                        <div class="banner-block"><img src="imagenes/publicidad01.png" alt=""></div>
+                        <!--SECCION PUBLICIDAD -->
+                        <?php Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
                     </div>
 
-                    <div class="sidebar-module bg-gray text-left">
-                        <h5>Calendar</h5>
-                        <!-- RD Calendar-->
-                        <div class="rd-calendar">
-                            <div class="rdc-panel">
-                                <div class="rdc-month"></div>
-                                <div class="rdc-fullyear"></div>
-                                <a class="rdc-next">
-                                    <i class="fa fa-arrow-right"
-                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
-                                </a>
-                                <a class="rdc-prev">
-                                    <i class="fa fa-arrow-left"
-                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
-                                </a>
-                            </div>
-                            <div class="rdc-table"></div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-module  bg-gray module-suscribe-magazine text-left">
-                        <h5>Suscribete</h5>
-
-                        <div class="magazine-container">
-                            <img src="imagenes/magazine01.jpg" alt=""/>
-                        </div>
-                        <div class="magazine-container-decoration"></div>
-
-                        <form class="form-inline-flex-xs">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" placeholder="nombre">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="apellido" placeholder="epallido">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-block">Suscribete!</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="sidebar-module module-pauta text-left">
-                        <h3>Pauta</h3>
-                        <div class="pauta-container">
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-pink">Revista</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-punch">WEB</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-info">Revista</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--SECCION CALENDARIO -->
+                    <?php Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION SUSCRIBITE -->
+                    <?php Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION PAUTA -->
+                    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <section class="insta-wrap">
-    <div class="insta-btn-wrap bg-chambray"><a href="#">Follow on <br class="visible-lg">Instagram</a></div>
-    <!-- RD Instafeed-->
-    <div data-instafeed-clientid="44f19408f04040bd85214315861a84a1" data-instafeed-get="user"
-         data-instafeed-user="499522078" data-items="2" data-sm-items="5" data-lg-items="9" data-loop="false"
-         data-nav="true" class="owl-carousel instafeed element-groups-xs-custom">
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed03.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank"
-               class="img-thumbnail-variant-3"><img
-                    src="imagenes/feed01.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed02.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed03.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank"
-               class="img-thumbnail-variant-3"><img
-                    src="imagenes/feed01.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed02.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed03.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank"
-               class="img-thumbnail-variant-3"><img
-                    src="imagenes/feed01.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed02.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed03.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank"
-               class="img-thumbnail-variant-3"><img
-                    src="imagenes/feed01.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed02.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed03.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank"
-               class="img-thumbnail-variant-3"><img
-                    src="imagenes/feed01.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-        <div data-instafeed-item="" class="owl-item insta-item">
-            <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="imagenes/feed02.jpg" alt="" data-images-thumbnail-url="src" width="192" height="192">
-            </a>
-        </div>
-    </div>
+    <?php Public_Widget_FollowInstagram::getInstance()->setLan($this->lan)->render(); ?>
 </section>
-<section>
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="go-up">
-                <i class="fa fa-angle-up icon-white"></i>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4 col-footer color-gray-1">
-                <h2>Navegar</h2>
-                <ul>
-                    <li><a href="#"> Contacto</a></li>
-                    <li><a href="#"> Escribe para nos.</a></li>
-                    <li><a href="#"> Kit de ventas</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 col-footer color-gray-2">
-                <h2>Social</h2>
-                <ul>
-                    <li><a href="#"> Facebook</a></li>
-                    <li><a href="#"> Twitter</a></li>
-                    <li><a href="#"> Google +</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 text-center col-footer color-gray-1">
-                <img class="logo img-responsive" src="imagenes/logo_black.png" alt=""/>
-
-                <p class="copy">    &copy; 2016</p>
-            </div>
-        </div>
-    </div>
-</section>
+<?php Public_Widget_Footer::getInstance()->render(); ?>
 <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
