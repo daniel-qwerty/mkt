@@ -3883,6 +3883,9 @@ html .page .offset-top-60 {
 /*
  * Owl Navigation
  */
+.owl-stage .owl-item .owl-item{
+    width: 100%;
+}
 .owl-prev, .owl-next {
     position: absolute;
     width: 50px;

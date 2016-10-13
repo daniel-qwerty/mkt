@@ -32,8 +32,9 @@ class Gallery_Widget_Home extends Com_Object {
         ?>
         <div data-instafeed-item="" class="owl-item insta-item">
             <a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3">
-                <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->GalFile; ?>" alt=""
-                     data-images-thumbnail-url="src" width="192" height="192">
+                <div class="square" style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->GalFile; ?>); background-size: cover" >
+
+                </div>
             </a>
         </div>
         <?php }?>

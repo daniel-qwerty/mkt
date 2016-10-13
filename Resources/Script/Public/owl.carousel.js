@@ -2764,6 +2764,7 @@
 			.addClass(options.navClass[0])
 			.html(options.navText[0])
 			.hide()
+			.hide()
 			.prependTo($container)
 			.on('click', $.proxy(function(e) {
 				this.prev(options.navSpeed);
@@ -2781,6 +2782,8 @@
 		for (override in this._overrides) {
 			this._core[override] = $.proxy(this[override], this);
 		}
+		this._controls.$previous.toggle(options.nav);
+		this._controls.$next.toggle(options.nav);
 	}
 
 	/**
@@ -2852,8 +2855,8 @@
 			this._controls.$next.toggleClass('disabled', index >= this._core.maximum());
 		}
 
-		this._controls.$previous.toggle(options.nav);
-		this._controls.$next.toggle(options.nav);
+		//this._controls.$previous.toggle(options.nav);
+		//this._controls.$next.toggle(options.nav);
 
 		if (options.dots) {
 			difference = this._pages.length - this._controls.$indicators.children().length;
