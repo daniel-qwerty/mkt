@@ -3,11 +3,12 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <div class="col-sm-4 content-header-1-title bg-pink-notas">
-                <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan,$this->categoryId)->CatAlias;?></h3>
+                <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatAlias; ?></h3>
             </div>
             <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) { ?>
-                    <a class="header-link" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>             
+                    <a class="header-link"
+                       href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>
                 <?php } ?>
             </div>
         </div>
@@ -25,26 +26,27 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                
-                <div data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>" class="swiper-slide" data-swiper-slide-index="1"
-                     style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>); background-size: cover;">
-                    
+
+                <div
+                    data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>"
+                    class="swiper-slide" data-swiper-slide-index="1"
+                    style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>); background-size: cover;">
+
                 </div>
-                
-                
-                
+
+
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
         </div>
     </section>
-    <div class="container-fluid content-tool bg-white"> 
+    <div class="container-fluid content-tool bg-white">
         <div class="row">
         </div>
         <div class="row text-left">
             <div class="col-sm-12">
                 <!--aqui contenido-->
-                <p><?= $this->note->NotDescription; ?></p>                
+                <p><?= $this->note->NotDescription; ?></p>
                 <!--hasta aqui el contenido-->
             </div>
         </div>
@@ -53,12 +55,12 @@
         </form>
         <div class="row">
             <div class="col-sm-3 notas-back-button" style="">
-                <?php  $notIda =$this->note->NotId - 1; ?>
-                <a onclick="changePage(<?= $notIda;?>);"><i class="fa fa-arrow-left"></i> Anterior</a>
+                <?php $notIda = $this->note->NotId - 1; ?>
+                <a onclick="changePage(<?= $notIda; ?>);"><i class="fa fa-arrow-left"></i> Anterior</a>
             </div>
             <div class="col-sm-3 notas-next-button" style="">
-                <?php  $notIdb =$this->note->NotId + 1; ?>
-                <a onclick="changePage(<?= $notIdb;?>);"> Siguiente <i class="fa fa-arrow-right"></i></a>
+                <?php $notIdb = $this->note->NotId + 1; ?>
+                <a onclick="changePage(<?= $notIdb; ?>);"> Siguiente <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
                 <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
@@ -69,12 +71,17 @@
         </div>
 
     </div>
+    <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
+        <div class="row">
+            <div class="fb-comments" data-href="http://neblux.com" data-numposts="5"></div>
+        </div>
+    </div>
 </div>
 <script>
-    
-function changePage(page) {
-    $('#page').val(page);
-    $('#searchForm').submit();
-}
+
+    function changePage(page) {
+        $('#page').val(page);
+        $('#searchForm').submit();
+    }
 
 </script>
