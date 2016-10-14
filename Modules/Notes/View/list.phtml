@@ -3,14 +3,14 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
-            <div class="col-sm-4 content-header-1-title bg-note-blue">
+            <div class="col-sm-4 content-header-1-title bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>">
                 <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatAlias; ?></h3>
             </div>
             <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) { ?>
                     <a class="header-link"
                        href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>
-                <?php } ?>
+                   <?php } ?>
             </div>
         </div>
     </div>
@@ -20,19 +20,25 @@
             <?php foreach ($this->notes as $new) { ?>
                 <div class="col-md-6 notas-item">
                     <div class="square"
-                         style="background-image: linear-gradient(to bottom, rgba(6, 5, 244, 0.50) 0%,rgba(6, 5, 244,0.5) 100%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size:cover ">
+                         style="background-image: linear-gradient(to bottom, rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, $this->categoryId); ?>, 0.50) 0%,rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, $this->categoryId); ?>,0.5) 100%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size:cover ">
                         <div class="square square-hover bg-white">
+
                             <div class="content">
-                                <a href="blog_post.html"
-                                   class="tag bg-note-blue"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
-                                <h3><?= $new->NotTitle; ?></h3>
+                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $this->categoryId); ?>"
+                                   class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
+                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                                    <h3><?= $new->NotTitle; ?></h3>
+                                </a>
                                 <p>
                                     <?= $new->NotResume; ?>
                                 </p>
                             </div>
+
                         </div>
                     </div>
-                    <h3><?= $new->NotTitle; ?></h3>
+                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                        <h3><?= $new->NotTitle; ?></h3>
+                    </a>
                     <span><i class="fa fa-calendar" style="margin-right: 5px"></i><?= $new->NotDate; ?></span>
                 </div>
             <?php } ?>

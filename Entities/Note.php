@@ -19,5 +19,6 @@ class Entities_Note extends Com_Database_Entity_Language {
     public $NotUser;
     public $NotStatus;
     public $NotImportant;
+    public $NotClass;
 
 }
