@@ -77,14 +77,6 @@ class Menu_Widget_Menu extends Com_Object {
 
         <?PHP
     }
-    
-    public function render() {
 
-        $list = Menu_Model_Menu::getInstance()->getMenuList($this->lan->LanId, $this->parent);
-        $actualUrl = Com_Helper_Url::getInstance()->urlBase . '/' . get("QUERY_STRING");
-        ?>
-
-        <?PHP
-    }
 }
 ?>

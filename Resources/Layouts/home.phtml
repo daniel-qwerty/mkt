@@ -260,9 +260,8 @@
 
 <section class="section-sm-60">
     <div class="container container-mod-1" style="margin-bottom: 15px">
-        <a href="#">
-            <img src="http://localhost/mkt/Resources/Uploads/Image/57ffdc8330ac5.png" alt="" style="width: 100%">
-        </a>
+        <?php Advertising_Widget_Ad::getInstance()->setType('I')->setLimit(1)->renderI(); ?>
+        
     </div>
     <div class="container container-mod-1">
         <div class="row row-no-gutter">
@@ -423,133 +422,26 @@
             <div class="side-right col-xs-12 col-md-4">
                 <!--Sidebar-->
                 <div class="sidebar offset-top-40 offset-md-top-0">
-                    <div class="sidebar-module  module-search bg-darker text-left">
-                        <h5>Busqueda</h5>
-                        <!-- RD Navbar Search-->
-                        <div class="rd-navbar-search-mod-1">
-                            <form class="form-inline-flex-xs">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="exampleInputAmount"
-                                               placeholder="buscar">
-
-                                        <div class="input-group-addon">
-                                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
+                    <!--SECCION BUSQUEDA -->
+                    <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION PUBLICIDAD -->
+                    <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                    <!--SECCION SOCIAL MEDIA -->
+                    <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION NEWSLETTER -->
+                    <?php Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
+                    
                     <div class="sidebar-module">
-                        <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
-                    </div>
-                    <div class="sidebar-module module-social bg-primary text-left">
-                        <h5>Social</h5>
-                        <ul class="list-inline">
-                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
-                            </li>
-                            <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
-                            </li>
-                            <li><a href="#"
-                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-google-plus"></a></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-module module-newsletter bg-darker text-left">
-                        <h5>Newsletter</h5>
-
-                        <p>Enter your email below and be the first to get makeup news!</p>
-                        <!-- Rd Mailform result field-->
-                        <div class="rd-mailform-validate"></div>
-                        <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post"
-                              action="bat/rd-mailform.php" class="rd-mailform subscribe text-left offset-top-30">
-                            <input type="text" name="email" data-constraints="@NotEmpty @Email"
-                                   placeholder="Your e-mail">
-                            <button class="btn btn-transparent btn-sm">subscribe</button>
-                        </form>
-                    </div>
-                    <div class="sidebar-module">
+                        <!--SECCION PUBLICIDAD -->
                         <?php Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
-
                     </div>
 
-                    <div class="sidebar-module bg-gray text-left">
-                        <h5>Calendar</h5>
-                        <!-- RD Calendar-->
-                        <div class="rd-calendar">
-                            <div class="rdc-panel">
-                                <div class="rdc-month"></div>
-                                <div class="rdc-fullyear"></div>
-                                <a class="rdc-next">
-                                    <i class="fa fa-arrow-right"
-                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
-                                </a>
-                                <a class="rdc-prev">
-                                    <i class="fa fa-arrow-left"
-                                       style="font-size: 16px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;"></i>
-                                </a>
-                            </div>
-                            <div class="rdc-table"></div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-module  bg-gray module-suscribe-magazine text-left">
-                        <h5>Suscribete</h5>
-
-                        <div class="magazine-container">
-                            <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/magazine01.jpg"
-                                 alt=""/>
-                        </div>
-                        <div class="magazine-container-decoration"></div>
-
-                        <form class="form-inline-flex-xs">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" placeholder="nombre">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="apellido" placeholder="epallido">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-block">Suscribete!</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="sidebar-module module-pauta text-left">
-                        <h3>Pauta</h3>
-                        <div class="pauta-container">
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-pink">Revista</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-punch">WEB</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                            <div class="pauta-item">
-                                <a href="#" class="tag bg-info">Revista</a>
-                                <h4>Titulo lorem ipsum</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
-                                    Pellee habitant morbi trisque Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--SECCION CALENDARIO -->
+                    <?php Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION SUSCRIBITE -->
+                    <?php Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION PAUTA -->
+                    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
                 </div>
             </div>
         </div>

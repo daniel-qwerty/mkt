@@ -43,6 +43,23 @@ class Advertising_Widget_Ad extends Com_Object
             <?php
         }
     }
+    
+    public function renderI()
+    {
+
+        $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
+        //print_r($list);
+        foreach ($list as $new) {
+            ?>
+
+            <a href="<?= $new->AdLink; ?>" target="_blanck">
+                <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
+                     style="width: 100%">
+            </a>
+
+            <?php
+        }
+    }
 
     public function renderC()
     {
