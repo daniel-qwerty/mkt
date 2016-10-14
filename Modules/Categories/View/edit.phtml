@@ -29,6 +29,21 @@ foreach ($this->Parents as $objItem) {
 }
 $form->add($control);
 
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Class";
+$control->label = "Clase";
+$control->default = $this->Class;
+$control->required = true;
+$control->addItem('red', 'Red');
+$control->addItem('pink', 'Pink');
+$control->addItem('orange', 'Orange');
+$control->addItem('yellow', 'Yellow');
+$control->addItem('green', 'Green');
+$control->addItem('blue', 'Blue');
+$control->addItem('aqua', 'Aqua');
+$control->addItem('purple', 'Purple');
+$form->add($control);
+
 
 $control = new Com_Wizard_Form_Control();
 $control->name = "Alias";

@@ -33,6 +33,7 @@ class Categories_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image');
         $this->assign('Description');
         $this->assign('Important');
+        $this->assign('Class');
         
 
         $this->assign('Parents', Categories_Model_Category::getInstance()->getParents((get('lan') != "" ? get('lan') : $languages[0]->LanId)));
@@ -70,6 +71,7 @@ class Categories_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image', $entity->CatImage);
         $this->assign('Description', $entity->CatDescription);
         $this->assign('Important', $entity->CatImportant);
+        $this->assign('Class', $entity->CatClass);
        
 
         $this->assign('Parents', Categories_Model_Category::getInstance()->getParents($entity->CatLanId, $entity->CatId));

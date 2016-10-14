@@ -30,6 +30,7 @@ class Notes_Model_Note extends Com_Module_Model {
             $db->NotTitle = $obj->Title;
             $db->NotUrl = generateUrl($obj->Title);
             $db->NotUser = $obj->Author;
+            $db->NotClass = $obj->Class;
             //$db->NotViews = $obj->Views;
             $db->action = ACTION_INSERT;
             $db->save();
@@ -58,7 +59,7 @@ class Notes_Model_Note extends Com_Module_Model {
         if ($imageFile != "") {
             $db->NotImage = $imageFile;
         }
-       
+        $db->NotClass = $obj->Class;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");

@@ -40,6 +40,7 @@ class Notes_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Tags');
         $this->assign('Status');
         $this->assign('Important');
+        $this->assign('Class');
         $this->assign("languages", $languages);
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
         
@@ -80,6 +81,7 @@ class Notes_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Tags', $entity->NotTags);
         $this->assign('Status', $entity->NotStatus);
         $this->assign('Important', $entity->NotImportant);
+        $this->assign('Class', $entity->NotClass);
         $this->assign("languages", $languages);
         
         $this->assign('Category', Categories_Model_Category::getInstance()->getList($languages[0]->LanId));
