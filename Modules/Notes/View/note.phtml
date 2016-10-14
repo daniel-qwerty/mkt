@@ -25,106 +25,14 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div data-slide-bg="imagenes/photo01.jpg" class="swiper-slide" data-swiper-slide-index="2"
-                     style="height: 550px; background-image: url(imagenes/photo01.jpg); background-size: cover;">
-                    <div class="swiper-slide-caption">
-                        <div class="jubotron-variant-1">
-                            <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                                <p>
-                                    <time datetime="2016"><a href="blog_post.html"> april 05, 2016</a>
-                                    </time>
-                                </p>
-                            </div>
-                            <h1 data-caption-animate="fadeInUp" data-caption-delay="400"
-                                class="not-animated"><a
-                                    href="blog_post.html">Best makeup secrets &amp; looks for a date
-                                    night</a></h1><a
-                                href="blog_post.html" data-caption-animate="fadeInUp"
-                                data-caption-delay="800"
-                                class="btn btn-transparent btn-lg not-animated">Read more</a>
-                        </div>
-                    </div>
+                
+                <div data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>" class="swiper-slide" data-swiper-slide-index="1"
+                     style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>); background-size: cover;">
+                    
                 </div>
-                <div data-slide-bg="imagenes/photo02.jpg" class="swiper-slide" data-swiper-slide-index="2"
-                     style="height: 550px; background-image: url(imagenes/photo02.jpg); background-size: cover;">
-                    <div class="swiper-slide-caption">
-                        <div class="jubotron-variant-1">
-                            <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                                <p>
-                                    <time datetime="2016"><a href="blog_post.html"> april 05, 2016</a>
-                                    </time>
-                                </p>
-                            </div>
-                            <h1 data-caption-animate="fadeInUp" data-caption-delay="400"
-                                class="not-animated"><a
-                                    href="blog_post.html">Best makeup secrets &amp; looks for a date
-                                    night</a></h1><a
-                                href="blog_post.html" data-caption-animate="fadeInUp"
-                                data-caption-delay="800"
-                                class="btn btn-transparent btn-lg not-animated">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div data-slide-bg="imagenes/photo03.jpg" class="swiper-slide" data-swiper-slide-index="2"
-                     style="height: 550px; background-image: url(imagenes/photo03.jpg); background-size: cover;">
-                    <div class="swiper-slide-caption">
-                        <div class="jubotron-variant-1">
-                            <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                                <p>
-                                    <time datetime="2016"><a href="blog_post.html"> april 05, 2016</a>
-                                    </time>
-                                </p>
-                            </div>
-                            <h1 data-caption-animate="fadeInUp" data-caption-delay="400"
-                                class="not-animated"><a
-                                    href="blog_post.html">Best makeup secrets &amp; looks for a date
-                                    night</a></h1><a
-                                href="blog_post.html" data-caption-animate="fadeInUp"
-                                data-caption-delay="800"
-                                class="btn btn-transparent btn-lg not-animated">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div data-slide-bg="imagenes/photo04.jpg" class="swiper-slide" data-swiper-slide-index="2"
-                     style="height: 550px; background-image: url(imagenes/photo04.jpg); background-size: cover;">
-                    <div class="swiper-slide-caption">
-                        <div class="jubotron-variant-1">
-                            <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                                <p>
-                                    <time datetime="2016"><a href="blog_post.html"> april 05, 2016</a>
-                                    </time>
-                                </p>
-                            </div>
-                            <h1 data-caption-animate="fadeInUp" data-caption-delay="400"
-                                class="not-animated"><a
-                                    href="blog_post.html">Best makeup secrets &amp; looks for a date
-                                    night</a></h1><a
-                                href="blog_post.html" data-caption-animate="fadeInUp"
-                                data-caption-delay="800"
-                                class="btn btn-transparent btn-lg not-animated">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div data-slide-bg="imagenes/photo05.jpg" class="swiper-slide" data-swiper-slide-index="2"
-                     style="height: 550px; background-image: url(imagenes/photo05.jpg); background-size: cover;">
-                    <div class="swiper-slide-caption">
-                        <div class="jubotron-variant-1">
-                            <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                                <p>
-                                    <time datetime="2016"><a href="blog_post.html"> april 05, 2016</a>
-                                    </time>
-                                </p>
-                            </div>
-                            <h1 data-caption-animate="fadeInUp" data-caption-delay="400"
-                                class="not-animated"><a
-                                    href="blog_post.html">Best makeup secrets &amp; looks for a date
-                                    night</a></h1><a
-                                href="blog_post.html" data-caption-animate="fadeInUp"
-                                data-caption-delay="800"
-                                class="btn btn-transparent btn-lg not-animated">Read more</a>
-                        </div>
-                    </div>
-                </div>
+                
+                
+                
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
