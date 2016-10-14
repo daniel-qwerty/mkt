@@ -2986,6 +2986,62 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     background: #f41069;
     fill: #f41069;
 }
+.bg-note-red{
+    background: #f50807;
+    fill: #f50807;
+}
+.tag.bg-note-red:hover{
+    background: #0af8f9;
+}
+.bg-note-pink{
+    background: #f7389c;
+    fill: #f7389c;
+}
+.tag.bg-note-pink:hover{
+    background: #07ca63;
+}
+.bg-note-orange{
+    background: #f76209;
+    fill: #f76209;
+}
+.tag.bg-note-orange:hover{
+    background: #079df6;
+}
+.bg-note-yellow{
+    background: #f4f400;
+    fill: #f4f400;
+}
+.tag.bg-note-yellow:hover{
+    background: #0404f5;
+}
+.bg-note-green{
+    background: #09f808;
+    fill: #09f808;
+}
+.tag.bg-note-green:hover{
+    background: #f606f6;
+}
+.bg-note-blue{
+    background: #0605f4;
+    fill: #0605f4;
+}
+.tag.bg-note-blue:hover{
+    background: #fbfb0b;
+}
+.bg-note-aqua{
+    background: #09f9f9;
+    fill: #09f9f9;
+}
+.tag.bg-note-aqua:hover{
+    background: #f60506;
+}
+.bg-note-purple{
+    background: #cc36f7;
+    fill: #cc36f7;
+}
+.tag.bg-note-purple:hover{
+    background: #32ca07;
+}
 
 .row.row-no-gutter {
     margin-left: 0;
@@ -3946,7 +4002,7 @@ html .page .offset-top-60 {
     font-family: Gilroy, sans-serif;
     color: #FFFFFF;
     font-weight: bold !important;
-
+    overflow: hidden;
 }
 
 .content-header-1 .content-header-1-title h3 {
