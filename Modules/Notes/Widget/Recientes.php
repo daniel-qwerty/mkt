@@ -49,15 +49,15 @@ class Notes_Widget_Recientes extends Com_Object
                     <div class="owl-item">
                         <div class="post-news height-480"
                              style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size: cover; ">
-                            <div class="post-header"><a href="blog_post.html" class="tag bg-razzmatazz"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
+                            <div class="post-header"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>" class="tag bg-razzmatazz"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
                             <div class="post-body">
-                                <h4><a href="blog_post.html"><?PHP echo $new->NotTitle; ?></a></h4>
+                                <h4><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>"><?PHP echo $new->NotTitle; ?></a></h4>
 
                                 <p></p>
                             </div>
-                            <div class="post-footer post-meta"><a href="blog_post.html">
+                            <div class="post-footer post-meta"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
                                     <time datetime="2015">dec 21, 2015</time>
-                                </a><a href="blog_post.html" class="btn btn-transparent">read more</a></div>
+                                </a><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>" class="btn btn-transparent">read more</a></div>
                         </div>
                     </div>
 

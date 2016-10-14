@@ -38,10 +38,10 @@ class Notes_Widget_Important extends Com_Object {
                     <p><?= $new->NotResume;?></p>
                 </div>
                 <div class="post-footer">
-                    <div class="post-meta"><a href="blog_post.html">
+                    <div class="post-meta"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
                             <time datetime="2015"><?= $new->NotDate;?></time>
-                        </a><a href="blog_post.html" class="post-comment">13</a></div>
-                    <a href="blog_post.html" class="btn btn-transparent">
+                        </a></div>
+                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>" class="btn btn-transparent">
                         <i class="fa fa-arrow-right"
                            style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                         <span>read more</span>
