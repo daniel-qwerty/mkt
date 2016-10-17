@@ -1,0 +1,76 @@
+<div class="col-xs-12 col-md-8">
+
+    <div class="container-fluid content-header-1">
+        <div class="row">
+            <div class="col-sm-3 content-header-1-title bg-blue-tool">
+                <h3>Tools</h3>
+            </div>
+            <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
+                <?php foreach ($this->category as $new) { ?>
+                    <a class="header-link" onclick="changeTool(<?= $new->CatId; ?>);" >
+                        <?= $new->CatName; ?></a>
+                <?php } ?>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <form id="searchForm" method="POST" action="http://localhost/mkt/mkt/es/tools/" onsubmit="">
+        <input type="hidden" name="page" id="page" value="1">
+    </form>
+    <section>
+        <!-- Swiper-->
+        <!-- Slider main container -->
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                 <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+        </div>
+    </section>
+    <div class="container-fluid content-post-header-1">
+        <div class="row">
+            <div class="col-sm-12 bg-blue-dark-tool">
+                <a class="header-link" href="#">Brand Kit</a>
+                <a class="header-link" href="#">Artes editables</a>
+                <a class="header-link" href="#">Libros</a>
+                <a class="header-link" href="#">PressKit</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid content-tool bg-white">
+        <h3>Descargas de interés</h3>
+        <div class="row">
+            <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
+            <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
+            <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
+            <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
+        </div>
+        <div class="row descarga-items">
+            <?php foreach ($this->tools as $new) { ?>
+                <div class="col-xs-12 col-sm-6 descarga-item">
+                    <h3><?= $new->TooName; ?></h3>
+                    <p><?= $new->TooDescription; ?></p>
+                    <a href="<?= $new->TooLink; ?>" class="btn btn-block">Descargar</a>
+                </div>
+            <?php } ?>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+
+    function changeTool(page) {
+        $('#page').val(page);
+        $('#searchForm').submit();
+    }
+
+</script>

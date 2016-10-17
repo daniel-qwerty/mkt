@@ -1,0 +1,23 @@
+<?PHP
+
+$db = new Entities_CatTool();
+$grid = new Com_Wizard_Grid();
+$grid->title = "Listado Categorias ";
+$grid->setIdField("CatId");
+$grid->setLanField("CatLanId");
+$grid->setQuery($db->getListWithLanguages());
+$grid->setAlias(array("LanName" => "Idioma", "CatName" => "Nombre", "CatStatus" => "Estado"));
+$grid->setFilters(array("CatName" => get('CatName')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/CatTools/Add');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/CatTools/Edit/lan/_LANGUAGE_/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/CatTools/Delete/id/_ID_' . "':'';");
+
+$grid->customField("CatStatus", array("value" => array('1' => 'Habilitado', '0' => 'Bloqueado')));
+
+$grid->render();
