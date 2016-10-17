@@ -3919,6 +3919,7 @@ html .page .offset-top-60 {
     font-size: 24px;
     color: #fff;
     transition: .3s;
+    z-index: 10;
 }
 
 .img-thumbnail-variant-3:hover:before {

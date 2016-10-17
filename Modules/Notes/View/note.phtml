@@ -17,8 +17,8 @@
         <h3>
             <?= $this->note->NotTitle; ?>
         </h3>
-        <span><i class="fa fa-user"></i><?= $this->note->NotUser; ?></span>
-        <span><i class="fa fa-calendar"></i><?= $this->note->NotDate; ?></span>
+        <span><i style="margin-right: 5px" class="fa fa-user"></i><?= $this->note->NotUser; ?></span>
+        <span><i style="margin-right: 5px" class="fa fa-calendar"></i><?= $this->note->NotDate; ?></span>
     </div>
     <section>
         <!-- Swiper-->
@@ -76,7 +76,10 @@
             <div class="fb-comments" data-href="http://neblux.com" data-numposts="5"></div>
         </div>
     </div>
+
+    <?php Notes_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(12)->renderSmall(); ?>
 </div>
+
 <script>
 
     function changePage(page) {

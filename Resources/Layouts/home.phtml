@@ -135,7 +135,8 @@
         ->addFile("Public/animate.css")
         ->addFile("Public/owl.carousel.css")
         ->addFile("Public/materialicon.css")
-        ->addFile("Public/marketing-intro.css");
+        ->addFile("Public/marketing-intro.css")
+        ->addFile("Public/jquery.fancybox.css");
     echo Com_Helper_Style::getInstance();
 
     ?>
@@ -151,7 +152,8 @@
         ->addFile("Public/owl.carousel.js")
         ->addFile("Public/marketing.js")
         ->addFile("Public/rdcalendar.js")
-        ->addFile("Public/swiper.jquery.js");
+        ->addFile("Public/swiper.jquery.js")
+        ->addFile("Public/jquery.fancybox.js");
 
     echo Com_Helper_Script::getInstance();
     ?>
@@ -270,10 +272,10 @@
                 <div class="row row-no-gutter text-left row-mod-1">
                     <div class="col-xs-12 col-md-8">
                         <div class="post-news height-520 bg-item-5 post-news-mod-1 bg-primary"
-
-                             style="background: url(<?php echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
+                             style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
                             <div class="post-body">
                                 <h4>
+                                    <?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId; ?>
                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
                                 </h4>
 
@@ -291,7 +293,8 @@
                     <div class="col-xs-12 col-md-4">
                         <div class="row row-no-gutter">
                             <div class="col-xs-12 col-sm-6 col-md-12">
-                                <div class="post-news height-260 bg-pink post-news-mod-1">
+                                <div class="post-news height-260 post-news-mod-1 "
+                                style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
                                             <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatAlias; ?></a>
@@ -309,7 +312,8 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-12">
-                                <div class="post-news height-260 bg-shamrock post-news-mod-1">
+                                <div class="post-news height-260 post-news-mod-1"
+                                     style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
                                             <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatAlias; ?></a>
@@ -330,7 +334,8 @@
                 </div>
                 <div class="row row row-no-gutter text-left row-mod-1">
                     <div class="col-xs-12 col-md-4">
-                        <div class="post-news height-260 bg-razzmatazz post-news-mod-1">
+                        <div class="post-news height-260 post-news-mod-1"
+                             style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatImage; ?>); background-size: cover">
                             <div class="post-body">
                                 <h4>
                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatAlias; ?></a>
@@ -347,7 +352,8 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="post-news height-260 bg-blue post-news-mod-1">
+                        <div class="post-news height-260 post-news-mod-1"
+                             style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatImage; ?>); background-size: cover">
                             <div class="post-body">
                                 <h4>
                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatAlias; ?></a>
@@ -364,7 +370,8 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="post-news height-260 bg-item-6 post-news-mod-1 bg-turquoise">
+                        <div class="post-news height-260 bg-item-6 post-news-mod-1"
+                             style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId)?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId)?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatImage; ?>); background-size: cover">
                             <div class="post-body">
                                 <h4>
                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatAlias; ?></a>
@@ -609,11 +616,16 @@
 //                dots: c.attr("data-dots") === "true",
 //                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
                 responsive: responsive,
-                navText: []
-//                onInitialized: function () {
+                navText: [],
+                onInitialized: function () {
+//                    console.log("items");
+//                    console.log(this);
 //                    if ($.fn.magnificPopup) {
 //                        var o = this.$element.attr('data-lightbox') !== undefined && this.$element.attr("data-lightbox") !== "gallery",
 //                            g = this.$element.attr('data-lightbox') === "gallery";
+//
+//                        console.log("log o");
+//                        console.log(o);
 //                        if (o) {
 //                            for (var m = 0; m < (this.$element).length; m++) {
 //                                var $this = $(this.$element[m]);
@@ -640,6 +652,9 @@
 //                                });
 //                            }
 //                        }
+//
+//                        console.log("log g");
+//                        console.log(g);
 //                        if (g) {
 //                            for (var k = 0; k < (this.$element).length; k++) {
 //                                var $gallery = $(this.$element[k]).find('[data-lightbox]');
@@ -679,7 +694,7 @@
 //                    if (c.attr("data-active")) {
 //                        c.trigger("to.owl.carousel", c.attr("data-active") - 1);
 //                    }
-//                }
+                }
             });
         }
     }
@@ -699,7 +714,9 @@
         autoplaySpeed: 3000
     });
 
-
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
 </script>
 </body>
 

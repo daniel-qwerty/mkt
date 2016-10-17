@@ -35,7 +35,9 @@ class Categories_Helper_Category extends Com_Object {
             case 'aqua':
                 return '9,249,249';     
             case 'purple':
-                return '204,54,247';   
+                return '204,54,247';
+            default:
+                return '0,0,0';
         }
         
     }
