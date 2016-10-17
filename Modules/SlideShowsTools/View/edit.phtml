@@ -4,14 +4,14 @@ $form = new Com_Wizard_Form();
 $form->title = "Formulario Slideshows";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/SlideShows");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/SlideShowsTools");
 
 foreach ($this->languages as $language) {
     $active = false;
     if ($this->Language == $language->LanId) {
         $active = true;
     }
-    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/SlideShows/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
+    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/SlideShowsTools/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
 }
 
 $control = new Com_Wizard_Form_Control_Hidden();
