@@ -73,7 +73,7 @@
     </div>
     <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
         <div class="row">
-            <div class="fb-comments" data-href="http://neblux.com" data-numposts="5"></div>
+            <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $this->note->NotId); ?>" data-numposts="15"></div>
         </div>
     </div>
 

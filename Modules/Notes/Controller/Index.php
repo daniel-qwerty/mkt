@@ -56,6 +56,8 @@ class Notes_Controller_Index extends Public_Controller_Index {
             $note = Notes_Model_Note::getInstance()->get($this->getPostObject()->page, $this->lan->LanId);
             $this->assign("note", $note);
             $this->assign("categoryId", $note->NotCatId);
+            $this->assign("noteId", $note->NotId);
+            
         }
     }
 
