@@ -2986,61 +2986,104 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     background: #f41069;
     fill: #f41069;
 }
-.bg-note-red{
+
+.bg-note-red {
     background: #f50807;
     fill: #f50807;
 }
-.tag.bg-note-red:hover{
+
+.tag.bg-note-red:hover {
     background: #0af8f9;
 }
-.bg-note-pink{
+
+.bg-note-pink {
     background: #f7389c;
     fill: #f7389c;
 }
-.tag.bg-note-pink:hover{
+
+.tag.bg-note-pink:hover {
     background: #07ca63;
 }
-.bg-note-orange{
+
+.bg-note-orange {
     background: #f76209;
     fill: #f76209;
 }
-.tag.bg-note-orange:hover{
+
+.tag.bg-note-orange:hover {
     background: #079df6;
 }
-.bg-note-yellow{
+
+.bg-note-yellow {
     background: #f4f400;
     fill: #f4f400;
 }
-.tag.bg-note-yellow:hover{
+
+.tag.bg-note-yellow:hover {
     background: #0404f5;
 }
-.bg-note-green{
+
+.bg-note-green {
     background: #09f808;
     fill: #09f808;
 }
-.tag.bg-note-green:hover{
+
+.tag.bg-note-green:hover {
     background: #f606f6;
 }
-.bg-note-blue{
+
+.bg-note-blue {
     background: #0605f4;
     fill: #0605f4;
 }
-.tag.bg-note-blue:hover{
+
+.tag.bg-note-blue:hover {
     background: #fbfb0b;
 }
-.bg-note-aqua{
+
+.bg-note-aqua {
     background: #09f9f9;
     fill: #09f9f9;
 }
-.tag.bg-note-aqua:hover{
+
+.tag.bg-note-aqua:hover {
     background: #f60506;
 }
-.bg-note-purple{
+
+.bg-note-purple {
     background: #cc36f7;
     fill: #cc36f7;
 }
-.tag.bg-note-purple:hover{
+
+.tag.bg-note-purple:hover {
     background: #32ca07;
+}
+
+.bg-note-event {
+    background: #27dd80;
+    fill: #27dd80;
+}
+
+.tag.bg-note-purple:hover {
+    background: #32ca07;
+}
+
+.pull-bottom {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    color: #FFF;
+}
+
+/*events*/
+.events-container > .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.events-container .notas-item {
+    padding: 0;
+    margin: 0;
 }
 
 .row.row-no-gutter {
@@ -3795,8 +3838,7 @@ html .page .offset-top-60 {
     margin: 15px auto;
 }
 
-.go-down
-{
+.go-down {
     transition: 0.5s;
     background: #1d1e22;
     font-size: x-large;
@@ -3940,9 +3982,10 @@ html .page .offset-top-60 {
 /*
  * Owl Navigation
  */
-.owl-stage .owl-item .owl-item{
+.owl-stage .owl-item .owl-item {
     width: 100%;
 }
+
 .owl-prev, .owl-next {
     position: absolute;
     width: 50px;
