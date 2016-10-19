@@ -1,15 +1,23 @@
 <?php
 
 class Public_Widget_Footer extends Com_Object {
-
+public $lan;
     /**
      *
      * @static
      * @access public
      * @return Public_Widget_Footer
      */
+    
+    
+    
     public static function getInstance() {
         return self::_getInstance(__CLASS__);
+    }
+    
+    public function setLan($lan) {
+        $this->lan = $lan;
+        return $this;
     }
 
     public function render() {
@@ -27,7 +35,7 @@ class Public_Widget_Footer extends Com_Object {
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-4 col-footer color-gray-1">
-                        <h2>Navegar</h2>
+                        <h2><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtNavegacion")->TxtDescription ?></h2>
                         <ul>
                             <li><a href="#"> Contacto</a></li>
                             <li><a href="#"> Escribe para nos.</a></li>
@@ -35,18 +43,18 @@ class Public_Widget_Footer extends Com_Object {
                         </ul>
                     </div>
                     <div class="col-sm-4 col-footer color-gray-2">
-                        <h2>Social</h2>
+                        <h2><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtRedesSociales")->TxtDescription ?></h2>
                         <ul>
-                            <li><a href="#"> Facebook</a></li>
-                            <li><a href="#"> Twitter</a></li>
-                            <li><a href="#"> Google +</a></li>
+                            <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>"> Facebook</a></li>
+                            <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkTwitter')->LinUrl; ?>"> Twitter</a></li>
+                            <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkInstagram')->LinUrl; ?>"> Instagram</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 text-center col-footer color-gray-1">
                         <img class="logo img-responsive"
                              src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo_black.png" alt=""/>
 
-                        <p class="copy">    &copy; 2016</p>
+                        <p class="copy"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtCopy")->TxtDescription ?> </p>
                     </div>
                 </div>
             </div>

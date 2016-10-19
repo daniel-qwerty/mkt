@@ -86,3 +86,5 @@ updateHeight = function () {
     else
         $(".insta-btn-wrap").height($($("a.img-thumbnail-variant-3")[0]).height());
 }
+
+

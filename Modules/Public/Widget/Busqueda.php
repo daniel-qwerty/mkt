@@ -22,7 +22,7 @@ class Public_Widget_Busqueda extends Com_Object {
     public function render() {
         ?>
         <div class="sidebar-module  module-search bg-darker text-left">
-            <h5>Busqueda</h5>
+            <h5><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtBusqueda")->TxtDescription ?></h5>
             <!-- RD Navbar Search-->
             <div class="rd-navbar-search-mod-1">
                 <form class="form-inline-flex-xs">

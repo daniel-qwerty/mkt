@@ -22,14 +22,14 @@ class Public_Widget_SocialMedia extends Com_Object {
     public function render() {
         ?>
         <div class="sidebar-module module-social bg-primary text-left">
-            <h5>Social</h5>
+            <h5><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtRedesSociales")->TxtDescription ?></h5>
             <ul class="list-inline">
-                <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
+                <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
                 </li>
-                <li><a href="#" class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
+                <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkTwitter')->LinUrl; ?>" class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
                 </li>
-                <li><a href="#"
-                       class="icon icon-sm icon-white icon-circle icon-border fa fa-google-plus"></a></li>
+                <li><a target="_blank" href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkIntagram')->LinUrl; ?>"
+                       class="icon icon-sm icon-white icon-circle icon-border fa fa-instagram"></a></li>
             </ul>
         </div>
         <?PHP
