@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/View/add.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/View/edit.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Entities/Category.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/View/edit.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/Model/CatEvent.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/Information.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/View/index.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Entities/Event.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Entities/CatEvents.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/View/index.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/View/add.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/CatEvents/Controller/Admin.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/Model/Event.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/Controller/Admin.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Events/Information.php</file>
+        </group>
     </open-files>
 </project-private>

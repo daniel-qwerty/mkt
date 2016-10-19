@@ -1,0 +1,25 @@
+<?PHP
+
+$db = new Entities_Event();
+$grid = new Com_Wizard_Grid();
+
+$grid->title = "Listado de Eventos";
+$grid->setIdField("EveId");
+$grid->setLanField("EveLanId");
+$grid->setQuery($db->getListWithLanguages());
+$grid->setAlias(array("LanName" => "Idioma", "EveDate" => "Fecha", "EveTitle" => "Titulo", "EveStatus" => "Estado"));
+$grid->setFilters(array("EveTitle" => get('EveTitle')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/Events/Add/');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Events/Edit/lan/_LANGUAGE_/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Events/Delete/id/_ID_' . "':'';");
+
+$grid->customField("EveStatus", array("value" => array('1' => 'Habilitado', '0' => 'Bloqueado')));
+$grid->customField("EveDate", array("dateFormat" => "d/m/Y"));
+
+$grid->render();
