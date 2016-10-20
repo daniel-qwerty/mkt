@@ -4306,17 +4306,30 @@ html .page .offset-top-60 {
     text-transform: uppercase;
     color: #1d1e22;
 }
-
 .footer .logo {
     width: 150px;
     margin: 20px 40px;
     display: inline;
 }
-
 .footer .copy {
     font-weight: bold;
 }
-
 .col-footer {
     height: 180px;
+}
+#datetimepicker{
+    width: 242px;
+    background: none;
+    border: none;
+    text-align: center;
+}
+.calendar-icon:before{
+    content: "\f073";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #FFFFFF;
 }

@@ -1,5 +1,4 @@
 <div class="col-xs-12 col-md-8">
-
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
@@ -15,22 +14,27 @@
         </div>
     </div>
     <section>
+<<<<<<< HEAD
 
         <div
             data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>"
             class="swiper-slide" data-swiper-slide-index="1"
             style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>); background-size: cover;">
+=======
+        <div data-slide-bg="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50824.jpg"
+             class="swiper-slide" data-swiper-slide-index="1"
+             style="height: 550px; background-image: url(http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50824.jpg); background-size: cover;">
+>>>>>>> ec97cc855553044ae0536249c5a66935fc42296a
             <div class="pull-bottom">
                 <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>" class="tag bg-note-red"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $this->events->EveCatId)->CatName; ?></a>
                 <h3><?= $this->events->EveTitle; ?></h3>
                 <span><i style="margin-right: 5px" class="fa fa-user"></i><?= $this->events->EveDate; ?></span>                
             </div>
         </div>
-
-
     </section>
     <div class="container-fluid  content-tool bg-white">
         <div class="row event-body text-left">
+<<<<<<< HEAD
             <?= $this->events->EveContent; ?>
             <?php if (!empty($this->events->EveVideo)) { ?>
                 <div class="col-ms-12">
@@ -39,6 +43,27 @@
                     </p>
                 </div>
             <?php } ?>
+=======
+            <p>
+                Lipsum is a free and useful Lorem Ipsum generator that you can make use of in your projects. As a
+                freelance designer, you might already be aware of the value of the Lorem Ipsum text. Even though it is
+                centuries old, Lorem Ipsum is still very popular as a placeholder text to help designers showcase their
+                designs to clients. Such placeholder text aids in visualization.
+            <ul class="list-unstyled">
+                <li><strong>Lugar:</strong> algun lugar</li>
+                <li><strong>Lugar:</strong> algun lugar</li>
+                <li><strong>Lugar:</strong> algun lugar</li>
+                <li><strong>Lugar:</strong> algun lugar</li>
+                <li><strong>Lugar:</strong> algun lugar</li>
+            </ul>
+            </p>
+            <div class="col-ms-12">
+                <p>
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/gbug3zTm3Ws" frameborder="0"
+                            allowfullscreen></iframe>
+                </p>
+            </div>
+>>>>>>> ec97cc855553044ae0536249c5a66935fc42296a
             <div class="col-sm-offset-3 col-sm-6">
                 <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
                 <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
@@ -49,7 +74,13 @@
     </div>
     <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
         <div class="row">
+<<<<<<< HEAD
             <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $this->events->EveId); ?>" data-numposts="15"></div>
+=======
+            <div class="fb-comments"
+                 data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $this->note->NotId); ?>"
+                 data-numposts="15"></div>
+>>>>>>> ec97cc855553044ae0536249c5a66935fc42296a
         </div>
     </div>
     <div class="container-fluid content-tool notas-items events-container">
@@ -62,4 +93,3 @@
         </div>
     </div>
 </div>
-
