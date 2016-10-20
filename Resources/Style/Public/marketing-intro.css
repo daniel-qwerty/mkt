@@ -2054,12 +2054,14 @@ html:not(.lt-ie10) .not-animated {
 */
 
 .module-social h5 {
-    float: left;
+    /*float: left;*/
     line-height: 2.5;
+    text-align: center;
     margin: 0 15px;
 }
 
 .module-social ul {
+    text-align: center;
     margin-bottom: 0;
 }
 
@@ -4332,4 +4334,7 @@ html .page .offset-top-60 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #FFFFFF;
+}
+#calendar_bar,#image_button{
+    cursor: pointer;
 }

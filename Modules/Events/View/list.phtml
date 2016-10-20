@@ -15,9 +15,9 @@
         </div>
         <div class="row">
 
-            <div class="col-sm-12 content-header-1-options bg-blue-dark-tool">
+            <div id="calendar_bar" class="col-sm-12 content-header-1-options" style="background: #7d16ee">
                 <input id="datetimepicker" class="calendar-icon" type="text" value="<?= date('Y-m-d'); ?>" >
-                <i id="image_button" class="fa fa-calendar"></i>
+                <i id="image_button" class="fa fa-calendar pull-right" style="margin: 16px 6px;"></i>
                 <script>
                     $.datetimepicker.setLocale('es');
                     $('#datetimepicker').datetimepicker({
@@ -33,6 +33,9 @@
                         }
                     });
                     $('#image_button').click(function(){
+                        $('#datetimepicker').datetimepicker('show'); //support hide,show and destroy command
+                    });
+                    $('#calendar_bar').click(function(){
                         $('#datetimepicker').datetimepicker('show'); //support hide,show and destroy command
                     });
                 </script>
