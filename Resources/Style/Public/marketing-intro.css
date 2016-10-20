@@ -1257,6 +1257,7 @@ fieldset[disabled] .btn-link:focus {
     background: #1d1e22;
 }
 
+
 .menu-cerrar, .menu-nav {
     border-top: solid 2px #FFFFFF;
     /*margin-top: 40px;*/
@@ -1349,6 +1350,25 @@ fieldset[disabled] .btn-link:focus {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
+
+/* patch new menu */
+.menu-nav > ul > li{
+    width: 100%;
+    text-align: center;
+}
+.menu-nav .menu-items.active {
+    border-left: solid #FFF 3px;
+    border-right: solid #FFF 3px;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-nav .menu-padre
+{
+    float: none;
+    height: 80px;
+}
+/* end patch*/
 
 #bienvenido {
     position: absolute;
