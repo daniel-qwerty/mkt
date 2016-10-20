@@ -85,22 +85,28 @@ $control->addItem('1', 'Hijo');
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control_Select();
-$control->name = "Status";
-$control->label = "Estado";
-$control->default = $this->Status;
-$control->required = true;
-$control->addItem('1', 'Habilitado');
-$control->addItem('0', 'Bloqueado');
-
-$form->add($control);
-
-$control = new Com_Wizard_Form_Control_Select();
 $control->name = "Important";
 $control->label = "Importante";
 $control->default = $this->Status;
 $control->required = true;
 $control->addItem('1', 'Si');
 $control->addItem('0', 'No');
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Link";
+$control->label = "Link Modulos";
+$control->default = $this->Link;
+$control->length = 50;
+$control->required = false;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
 
 $form->add($control);
 

@@ -271,18 +271,18 @@
                         <div class="row row-no-gutter text-left row-mod-1">
                             <div class="col-xs-12 col-md-8">
                                 <div class="post-news height-520 bg-item-5 post-news-mod-1 bg-primary"
-                                     style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
+                                     style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
 
-                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
+                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
                                         </h4>
 
                                         <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatDescription; ?></p>
                                     </div>
                                     <div class="post-footer">
                                         <span class="post-count">27 posts</span>
-                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId); ?>" class="btn btn-transparent">
+                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>" class="btn btn-transparent">
                                             <i class="fa fa-arrow-right"
                                                style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                         </a>
@@ -298,7 +298,6 @@
                                                 <h4>
                                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatAlias; ?></a>
                                                 </h4>
-
                                                 <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatDescription; ?></p>
                                             </div>
                                             <div class="post-footer">

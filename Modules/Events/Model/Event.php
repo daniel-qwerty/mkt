@@ -26,6 +26,7 @@ class Events_Model_Event extends Com_Module_Model {
             $db->EveImportant = $obj->Important;
             $db->EveStatus = $obj->Status;
             $db->EveTitle = $obj->Title;
+            $db->EveVideo = $obj->Video;
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -45,6 +46,7 @@ class Events_Model_Event extends Com_Module_Model {
         $db->EveImportant = $obj->Important;
         $db->EveStatus = $obj->Status;
         $db->EveTitle = $obj->Title;
+        $db->EveVideo = $obj->Video;
         if ($imageFile != "") {
             $db->EveImage = $imageFile;
         }

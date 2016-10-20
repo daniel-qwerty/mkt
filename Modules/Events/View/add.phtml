@@ -56,6 +56,14 @@ $control->required = true;
 $control->isImage = true;
 $form->add($control);
 
+$control = new Com_Wizard_Form_Control();
+$control->name = "Video";
+$control->label = "Link Video";
+$control->default = $this->Video;
+$control->length = 50;
+$control->required = FALSE;
+$form->add($control);
+
 $control = new Com_Wizard_Form_Control_Select();
 $control->name = "Important";
 $control->label = "Destacado";

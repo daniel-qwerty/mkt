@@ -37,6 +37,7 @@ class Events_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image');
         $this->assign('Important');
         $this->assign('Status');
+        $this->assign('Video');
         $this->assign("languages", $languages);
         $this->assign("Language", (get('lan') != "" ? get('lan') : $languages[0]->LanId));
         
@@ -74,6 +75,7 @@ class Events_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Image',$entity->EveImage);
         $this->assign('Important',$entity->EveImportant);
         $this->assign('Status',$entity->EveStatus);
+        $this->assign('Video',$entity->EveVideo);
         $this->assign("languages", $languages);
         
         $this->assign('Category', CatEvents_Model_CatEvent::getInstance()->getList($languages[0]->LanId));
