@@ -41,12 +41,12 @@ class Events_Controller_Index extends Public_Controller_Index {
 
         
 
-        $category = Categories_Model_Category::getInstance()->getMenuList($this->lan->LanId, $url);
+        $category = CatEvents_Model_CatEvent::getInstance()->getList2($this->lan->LanId, 5);
         $this->assign("category", $category);
 
-        $note = Notes_Model_Note::getInstance()->get($url, $this->lan->LanId);
-        $this->assign("note", $note);
-        $this->assign("categoryId", $note->NotCatId);
+        $events = Events_Model_Event::getInstance()->get($url, $this->lan->LanId);
+        $this->assign("events", $events);
+        
     }
 
     
