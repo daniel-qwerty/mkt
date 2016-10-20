@@ -29,6 +29,7 @@ class Categories_Model_Category extends Com_Module_Model {
             $db->CatType = $obj->Type; 
             $db->CatClass = $obj->Class; 
             $db->CatImportant = $obj->Important;
+            $db->CatLinkModule = $obj->Link;
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -55,6 +56,7 @@ class Categories_Model_Category extends Com_Module_Model {
         $db->CatType = $obj->Type;
         $db->CatImportant = $obj->Important;
         $db->CatClass = $obj->Class;
+        $db->CatLinkModule = $obj->Link;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");

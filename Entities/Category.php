@@ -17,6 +17,7 @@ class Entities_Category extends Com_Database_Entity_Language {
     public $CatType;
     public $CatImportant;
     public $CatClass;
+    public $CatLinkModule;
     
     
     public function getMenuList() {
