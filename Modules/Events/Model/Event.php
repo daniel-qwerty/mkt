@@ -69,19 +69,24 @@ class Events_Model_Event extends Com_Module_Model {
         return $db;
     }
 
-    public function getList($lanId, $category, $limit = 1000) {
+    public function getList($lanId, $limit = 1000) {
         $text = new Entities_Event();
-        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1 and EveCatId='{$category}'")->orderBy("EveDate desc")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1")->orderBy("EveDate desc")->limit(0, $limit));
     }
 
     public function getListRecientes($lanId, $limit = 1000) {
         $text = new Entities_Event();
-        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1")->orderBy("EveDate desc")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1 and EveImportant = 0")->orderBy("EveDate desc")->limit(0, $limit));
     }
 
     public function getImportant($lanId, $limit = 1000) {
         $text = new Entities_Event();
         return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1 and EveImportant = 1 ")->orderBy("EveDate desc")->limit(0, $limit));
+    }
+    
+    public function getByCategory($lanId,$category, $limit = 1000) {
+        $text = new Entities_Event();
+        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1 and EveCatId = '{$category}' ")->orderBy("EveDate desc")->limit(0, $limit));
     }
 
     public function getMostViewd($lanId, $limit = 1000) {
@@ -115,11 +120,6 @@ class Events_Model_Event extends Com_Module_Model {
         return $text->getAll($result);
     }
 
-    public function getCategories($lanId, $category, $limit = 1000) {
-        $text = new Entities_Event();
-        $result = Com_Database_Query::getInstance()->select()->from("Category")->where("Category.CatParentId={$category} and CatStatus = 1 and CatLanId='{$lanId}'")->limit(0, $limit);
-
-        return $text->getAll($result);
-    }
+    
 
 }

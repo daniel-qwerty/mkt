@@ -64,6 +64,14 @@ class CatEvents_Model_CatEvent extends Com_Module_Model {
         $db->get();
         return $db;
     }
+    
+    public function getById($lanId, $strAlias) {
+        $db = new Entities_CatEvents();
+        $db->CatLanId = $lanId;
+        $db->CatId = $strAlias;
+        $db->get();
+        return $db;
+    }
 
     public function getList() {
         $text = new Entities_CatEvents();

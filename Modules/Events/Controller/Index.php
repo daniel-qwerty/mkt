@@ -9,10 +9,19 @@ class Events_Controller_Index extends Public_Controller_Index {
         $url = explode("/", $url);
         $url = $url[count($url) - 1];
 
-//        $this->assign("categoryId", $url);
-//
-//        $category = Categories_Model_Category::getInstance()->getMenuList($this->lan->LanId, $url);
-//        $this->assign("category", $category);
+        $this->assign("categoryId", $url);
+        
+        $category = CatEvents_Model_CatEvent::getInstance()->getList2($this->lan->LanId, 5);
+        $this->assign("category", $category);
+       
+        if(empty($url)){
+             $events = Events_Model_Event::getInstance()->getList($this->lan->LanId,20);
+             $this->assign("events", $events);
+        }  else {
+             $events = Events_Model_Event::getInstance()->getByCategory($this->lan->LanId,$url,20);
+             $this->assign("events", $events);
+        }
+        
 //
 //        $notes = Notes_Model_Note::getInstance()->getListByParent($this->lan->LanId, $url, 20);
 //        if ($notes == NULL) {
