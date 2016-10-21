@@ -17,7 +17,7 @@
         </div>
 
     </div>
-    <form id="searchForm" method="POST" action="http://localhost/mkt/mkt/es/tools/" onsubmit="">
+    <form id="searchForm" method="POST" action="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" onsubmit="">
         <input type="hidden" name="page" id="page" value="1">
     </form>
     <section>

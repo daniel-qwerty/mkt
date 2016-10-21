@@ -197,45 +197,51 @@
                                 <div class="col-md-10">
                                     <div class=" menu-nav">
                                         <ul>
-                                            <li><a href="#" class="menu-padre active">mkt</a>
-                                                <ul class="menu-items active">
+                                            <li>
+                                                <a class="menu-padre">mkt</a>
+                                                <ul class="menu-items">
                                                     <li class="active"><a href="#" class="menu-item">Brand</a></li>
                                                     <li><a href="#" class="menu-item">Publicidad</a></li>
                                                     <li><a href="#" class="menu-item">Social Business</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#" class="menu-padre">Trending</a>
+                                            <li>
+                                                <a class="menu-padre">Trending</a>
                                                 <ul class="menu-items">
                                                     <li><a href="#" class="menu-item">Inovacion</a></li>
                                                     <li><a href="#" class="menu-item">Tecnologia</a></li>
                                                     <li><a href="#" class="menu-item">Creatividad</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#" class="menu-padre">Eventos</a>
+                                            <li>
+                                                <a class="menu-padre">Eventos</a>
                                                 <ul class="menu-items">
                                                     <li><a href="#" class="menu-item">Social Media S</a></li>
                                                     <li><a href="#" class="menu-item">EXMA</a></li>
                                                     <li><a href="#" class="menu-item">Trendshoper</a></li>
-                                                    <li><a href="#" class="menu-item">Festival el Locoto</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#" class="menu-padre">Tools</a>
+                                            <li>
+                                                <a class="menu-padre">Tools</a>
                                             </li>
-                                            <li><a href="#" class="menu-padre">Subscripcion</a>
+                                            <li>
+                                                <a class="menu-padre">Subscripcion</a>
                                                 <ul class="menu-items">
                                                     <li><a href="#" class="menu-item">Impresa</a></li>
                                                     <li><a href="#" class="menu-item">Newsletter</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#" class="menu-padre">Pauta</a>
+                                            <li>
+                                                <a href="#" class="menu-padre">Pauta</a>
                                             </li>
-                                            <li><a href="#" class="menu-padre">BookMall</a>
+                                            <li>
+                                                <a href="#" class="menu-padre">BookMall</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row hidden">
                                 <div class="col-md-offset-2 col-md-10">
                                     <div class=" menu-nav">
                                         fb tw g+
@@ -311,18 +317,18 @@
                 onInit: function (swiper) {
                     toggleSwiperInnerVideos(swiper);
                     toggleSwiperCaptionAnimation(swiper);
-        //            var swiperParalax = s.find(".swiper-parallax");
+                    //            var swiperParalax = s.find(".swiper-parallax");
 
-        //            for (var k = 0; k < swiperParalax.length; k++) {
-        //                var $this = $(swiperParalax[k]),
-        //                        speed;
-        //
-        //                if (parallax && !isIEBrows && !isMobile) {
-        //                    if (speed = $this.attr("data-speed")) {
-        //                        makeParallax($this, speed, s, false);
-        //                    }
-        //                }
-        //            }
+                    //            for (var k = 0; k < swiperParalax.length; k++) {
+                    //                var $this = $(swiperParalax[k]),
+                    //                        speed;
+                    //
+                    //                if (parallax && !isIEBrows && !isMobile) {
+                    //                    if (speed = $this.attr("data-speed")) {
+                    //                        makeParallax($this, speed, s, false);
+                    //                    }
+                    //                }
+                    //            }
                     $(window).on('resize', function () {
                         swiper.update(true);
                     })
@@ -405,10 +411,10 @@
                         dotsContainer: c.attr("data-pagination-class") || false,
                         navContainer: c.attr("data-navigation-class") || false,
                         mouseDrag: c.attr("data-mouse-drag") !== "false",
-        //                nav: c.attr("data-nav") === "true",
+                        //                nav: c.attr("data-nav") === "true",
                         nav: "true",
-        //                dots: c.attr("data-dots") === "true",
-        //                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
+                        //                dots: c.attr("data-dots") === "true",
+                        //                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
                         responsive: responsive,
                         navText: [],
                         onInitialized: function () {

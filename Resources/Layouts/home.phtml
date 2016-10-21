@@ -172,6 +172,7 @@
                 <div class="row">
                     <div class="menu-content col-md-6">
                         <div class="menu-container" style="display: none">
+                            
                             <img class="logo" alt="logo"
                                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
                             <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars"
@@ -187,45 +188,12 @@
                                 <div class="col-md-10">
                                     <div class=" menu-nav">
                                         <ul>
-                                            <li><a href="#" class="menu-padre active">mkt</a>
-                                                <ul class="menu-items active">
-                                                    <li class="active"><a href="#" class="menu-item">Brand</a></li>
-                                                    <li><a href="#" class="menu-item">Publicidad</a></li>
-                                                    <li><a href="#" class="menu-item">Social Business</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">Trending</a>
-                                                <ul class="menu-items">
-                                                    <li><a href="#" class="menu-item">Inovacion</a></li>
-                                                    <li><a href="#" class="menu-item">Tecnologia</a></li>
-                                                    <li><a href="#" class="menu-item">Creatividad</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">Eventos</a>
-                                                <ul class="menu-items">
-                                                    <li><a href="#" class="menu-item">Social Media S</a></li>
-                                                    <li><a href="#" class="menu-item">EXMA</a></li>
-                                                    <li><a href="#" class="menu-item">Trendshoper</a></li>
-                                                    <li><a href="#" class="menu-item">Festival el Locoto</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">Tools</a>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">Subscripcion</a>
-                                                <ul class="menu-items">
-                                                    <li><a href="#" class="menu-item">Impresa</a></li>
-                                                    <li><a href="#" class="menu-item">Newsletter</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">Pauta</a>
-                                            </li>
-                                            <li><a href="#" class="menu-padre">BookMall</a>
-                                            </li>
+                                            <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row hidden">
                                 <div class="col-md-offset-2 col-md-10">
                                     <div class=" menu-nav">
                                         fb tw g+
@@ -241,6 +209,7 @@
         <div class="menu-container" style="display: none">
             <img class="logo" alt="logo"
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+            
             <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a>
         </div>
 
@@ -271,18 +240,18 @@
                         <div class="row row-no-gutter text-left row-mod-1">
                             <div class="col-xs-12 col-md-8">
                                 <div class="post-news height-520 bg-item-5 post-news-mod-1 bg-primary"
-                                     style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
+                                     style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
 
-                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
+                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
                                         </h4>
 
                                         <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatDescription; ?></p>
                                     </div>
                                     <div class="post-footer">
                                         <span class="post-count">27 posts</span>
-                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode,Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>" class="btn btn-transparent">
+                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>" class="btn btn-transparent">
                                             <i class="fa fa-arrow-right"
                                                style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                         </a>
@@ -296,13 +265,13 @@
                                              style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatImage; ?>); background-size: cover">
                                             <div class="post-body">
                                                 <h4>
-                                                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatAlias; ?></a>
+                                                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatAlias; ?></a>
                                                 </h4>
                                                 <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatDescription; ?></p>
                                             </div>
                                             <div class="post-footer">
                                                 <span class="post-count">2 posts</span>
-                                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatId); ?>" class="btn btn-transparent">
+                                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_1'))->CatLinkModule); ?>" class="btn btn-transparent">
                                                     <i class="fa fa-arrow-right"
                                                        style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                                 </a>
@@ -314,13 +283,13 @@
                                              style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatImage; ?>); background-size: cover">
                                             <div class="post-body">
                                                 <h4>
-                                                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatAlias; ?></a>
+                                                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatAlias; ?></a>
                                                 </h4>
 
                                                 <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatDescription; ?></p>
                                             </div>
                                             <div class="post-footer"><span class="post-count">8 posts</span>
-                                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatId); ?>" class="btn btn-transparent">
+                                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_2'))->CatLinkModule); ?>" class="btn btn-transparent">
                                                     <i class="fa fa-arrow-right"
                                                        style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                                 </a>
@@ -336,13 +305,13 @@
                                      style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
-                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatAlias; ?></a>
+                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatAlias; ?></a>
                                         </h4>
 
                                         <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatDescription; ?></p>
                                     </div>
                                     <div class="post-footer"><span class="post-count">2 posts</span>
-                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatId); ?>" class="btn btn-transparent">
+                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_3'))->CatLinkModule); ?>" class="btn btn-transparent">
                                             <i class="fa fa-arrow-right"
                                                style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                         </a>
@@ -354,13 +323,13 @@
                                      style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
-                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatAlias; ?></a>
+                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatAlias; ?></a>
                                         </h4>
 
                                         <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatDescription; ?></p>
                                     </div>
                                     <div class="post-footer"><span class="post-count">17 posts</span>
-                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" class="btn btn-transparent">
+                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_4'))->CatLinkModule); ?>" class="btn btn-transparent">
                                             <i class="fa fa-arrow-right"
                                                style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i>
                                         </a>
@@ -372,13 +341,13 @@
                                      style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatImage; ?>); background-size: cover">
                                     <div class="post-body">
                                         <h4>
-                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatAlias; ?></a>
+                                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatAlias; ?></a>
                                         </h4>
 
                                         <p><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatDescription; ?></p>
                                     </div>
                                     <div class="post-footer"><span class="post-count">11 posts</span>
-                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/" . Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatId); ?>" class="btn btn-transparent">
+                                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_5'))->CatLinkModule); ?>" class="btn btn-transparent">
                                             <i class="fa fa-arrow-right"
                                                style="font-size: 24px;display: inline-block;text-align: center;vertical-align: middle;transition: .4s;padding-top: 5px;"></i></a>
                                     </div>
@@ -474,18 +443,18 @@
                 onInit: function (swiper) {
                     toggleSwiperInnerVideos(swiper);
                     toggleSwiperCaptionAnimation(swiper);
-        //            var swiperParalax = s.find(".swiper-parallax");
+                    //            var swiperParalax = s.find(".swiper-parallax");
 
-        //            for (var k = 0; k < swiperParalax.length; k++) {
-        //                var $this = $(swiperParalax[k]),
-        //                        speed;
-        //
-        //                if (parallax && !isIEBrows && !isMobile) {
-        //                    if (speed = $this.attr("data-speed")) {
-        //                        makeParallax($this, speed, s, false);
-        //                    }
-        //                }
-        //            }
+                    //            for (var k = 0; k < swiperParalax.length; k++) {
+                    //                var $this = $(swiperParalax[k]),
+                    //                        speed;
+                    //
+                    //                if (parallax && !isIEBrows && !isMobile) {
+                    //                    if (speed = $this.attr("data-speed")) {
+                    //                        makeParallax($this, speed, s, false);
+                    //                    }
+                    //                }
+                    //            }
                     $(window).on('resize', function () {
                         swiper.update(true);
                     })
@@ -568,89 +537,89 @@
                         dotsContainer: c.attr("data-pagination-class") || false,
                         navContainer: c.attr("data-navigation-class") || false,
                         mouseDrag: c.attr("data-mouse-drag") !== "false",
-        //                nav: c.attr("data-nav") === "true",
+                        //                nav: c.attr("data-nav") === "true",
                         nav: "true",
-        //                dots: c.attr("data-dots") === "true",
-        //                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
+                        //                dots: c.attr("data-dots") === "true",
+                        //                dotsEach: c.attr("data-dots-each") ? parseInt(c.attr("data-dots-each")) : false,
                         responsive: responsive,
                         navText: [],
                         onInitialized: function () {
-        //                    console.log("items");
-        //                    console.log(this);
-        //                    if ($.fn.magnificPopup) {
-        //                        var o = this.$element.attr('data-lightbox') !== undefined && this.$element.attr("data-lightbox") !== "gallery",
-        //                            g = this.$element.attr('data-lightbox') === "gallery";
-        //
-        //                        console.log("log o");
-        //                        console.log(o);
-        //                        if (o) {
-        //                            for (var m = 0; m < (this.$element).length; m++) {
-        //                                var $this = $(this.$element[m]);
-        //                                $this.magnificPopup({
-        //                                    type: $this.attr("data-lightbox"),
-        //                                    callbacks: {
-        //                                        open: function () {
-        //                                            if (isTouch) {
-        //                                                $document.on("touchmove", preventScroll);
-        //                                                $document.swipe({
-        //                                                    swipeDown: function () {
-        //                                                        $.magnificPopup.close();
-        //                                                    }
-        //                                                });
-        //                                            }
-        //                                        },
-        //                                        close: function () {
-        //                                            if (isTouch) {
-        //                                                $document.off("touchmove", preventScroll);
-        //                                                $document.swipe("destroy");
-        //                                            }
-        //                                        }
-        //                                    }
-        //                                });
-        //                            }
-        //                        }
-        //
-        //                        console.log("log g");
-        //                        console.log(g);
-        //                        if (g) {
-        //                            for (var k = 0; k < (this.$element).length; k++) {
-        //                                var $gallery = $(this.$element[k]).find('[data-lightbox]');
-        //                                for (var j = 0; j < $gallery.length; j++) {
-        //                                    var $item = $gallery[j];
-        //                                    $item.addClass("mfp-" + $item.attr("data-lightbox"));
-        //                                }
-        //                                $gallery.end()
-        //                                    .magnificPopup({
-        //                                        delegate: '.owl-item [data-lightbox]',
-        //                                        type: "image",
-        //                                        gallery: {
-        //                                            enabled: true
-        //                                        },
-        //                                        callbacks: {
-        //                                            open: function () {
-        //                                                if (isTouch) {
-        //                                                    $document.on("touchmove", preventScroll);
-        //                                                    $document.swipe({
-        //                                                        swipeDown: function () {
-        //                                                            $.magnificPopup.close();
-        //                                                        }
-        //                                                    });
-        //                                                }
-        //                                            },
-        //                                            close: function () {
-        //                                                if (isTouch) {
-        //                                                    $document.off("touchmove", preventScroll);
-        //                                                    $document.swipe("destroy");
-        //                                                }
-        //                                            }
-        //                                        }
-        //                                    });
-        //                            }
-        //                        }
-        //                    }
-        //                    if (c.attr("data-active")) {
-        //                        c.trigger("to.owl.carousel", c.attr("data-active") - 1);
-        //                    }
+                            //                    console.log("items");
+                            //                    console.log(this);
+                            //                    if ($.fn.magnificPopup) {
+                            //                        var o = this.$element.attr('data-lightbox') !== undefined && this.$element.attr("data-lightbox") !== "gallery",
+                            //                            g = this.$element.attr('data-lightbox') === "gallery";
+                            //
+                            //                        console.log("log o");
+                            //                        console.log(o);
+                            //                        if (o) {
+                            //                            for (var m = 0; m < (this.$element).length; m++) {
+                            //                                var $this = $(this.$element[m]);
+                            //                                $this.magnificPopup({
+                            //                                    type: $this.attr("data-lightbox"),
+                            //                                    callbacks: {
+                            //                                        open: function () {
+                            //                                            if (isTouch) {
+                            //                                                $document.on("touchmove", preventScroll);
+                            //                                                $document.swipe({
+                            //                                                    swipeDown: function () {
+                            //                                                        $.magnificPopup.close();
+                            //                                                    }
+                            //                                                });
+                            //                                            }
+                            //                                        },
+                            //                                        close: function () {
+                            //                                            if (isTouch) {
+                            //                                                $document.off("touchmove", preventScroll);
+                            //                                                $document.swipe("destroy");
+                            //                                            }
+                            //                                        }
+                            //                                    }
+                            //                                });
+                            //                            }
+                            //                        }
+                            //
+                            //                        console.log("log g");
+                            //                        console.log(g);
+                            //                        if (g) {
+                            //                            for (var k = 0; k < (this.$element).length; k++) {
+                            //                                var $gallery = $(this.$element[k]).find('[data-lightbox]');
+                            //                                for (var j = 0; j < $gallery.length; j++) {
+                            //                                    var $item = $gallery[j];
+                            //                                    $item.addClass("mfp-" + $item.attr("data-lightbox"));
+                            //                                }
+                            //                                $gallery.end()
+                            //                                    .magnificPopup({
+                            //                                        delegate: '.owl-item [data-lightbox]',
+                            //                                        type: "image",
+                            //                                        gallery: {
+                            //                                            enabled: true
+                            //                                        },
+                            //                                        callbacks: {
+                            //                                            open: function () {
+                            //                                                if (isTouch) {
+                            //                                                    $document.on("touchmove", preventScroll);
+                            //                                                    $document.swipe({
+                            //                                                        swipeDown: function () {
+                            //                                                            $.magnificPopup.close();
+                            //                                                        }
+                            //                                                    });
+                            //                                                }
+                            //                                            },
+                            //                                            close: function () {
+                            //                                                if (isTouch) {
+                            //                                                    $document.off("touchmove", preventScroll);
+                            //                                                    $document.swipe("destroy");
+                            //                                                }
+                            //                                            }
+                            //                                        }
+                            //                                    });
+                            //                            }
+                            //                        }
+                            //                    }
+                            //                    if (c.attr("data-active")) {
+                            //                        c.trigger("to.owl.carousel", c.attr("data-active") - 1);
+                            //                    }
                         }
                     });
                 }
