@@ -1250,23 +1250,28 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .main-menu .menu-content > .container-fluid {
-    padding: 40px 20px;
+    padding: 20px 20px;
 }
 
 .main-menu .menu-header {
     background: #1d1e22;
 }
 
-.menu-cerrar, .menu-nav {
+ .menu-nav ,.menu-redes{
     border-top: solid 2px #FFFFFF;
     /*margin-top: 40px;*/
 }
-
+.menu-redes ul{
+    text-align: center;
+    padding: 15px;
+}
 .menu-cerrar {
     font-size: xx-large;
-    color: #DDDDDD;
-    text-align: center;
+    text-align: right;
     cursor: pointer;
+}
+.menu-cerrar a {
+    color: #888888;
 }
 
 .menu-nav ul li {
