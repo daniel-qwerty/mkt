@@ -233,6 +233,7 @@
                                 $('#book-image').css('background-image', 'url(' + url + ')');
                             }
                         </script>
+                        <!--                        incluir este script en el widget-->
                     </div>
                 </section>
             </div>
@@ -283,15 +284,105 @@
             </div>
         </div>
     </div>
+    <!--    aqui deberia empezar el widget de carrito-->
+    <div class="container-fluid carrito bg-white">
+        <div class="row">
+            <form action="#" method="post">
+                <div class="col-md-6">
+                    <h3>Detalle de compra</h3>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="apellido">Apellido completo</label>
+                                <input type="text" class="form-control" id="apellido" placeholder="apellido">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cedula">Cedula</label>
+                        <input type="text" class="form-control" id="cedula" placeholder="cedula">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Direccion de email</label>
+                                <input type="text" class="form-control" id="email" placeholder="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="celular">Celular</label>
+                                <input type="text" class="form-control" id="celular" placeholder="celular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">Pais</label>
+                        <input type="text" class="form-control" id="pais" placeholder="pais">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
+                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
+                    </div>
+                    <div class="form-group">
+                        <label for="localidad">Localidad/Ciudad</label>
+                        <input type="text" class="form-control" id="localidad" placeholder="localidad">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Estado / Pais</label>
+                                <input type="text" class="form-control" id="email" placeholder="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="celular">Codigo postal / Zip</label>
+                                <input type="text" class="form-control" id="celular" placeholder="celular">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Detalle de compra</h3>
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
+                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
+                    </div>
+                    <div class="form-group">
+                        <label for="localidad">Localidad/Ciudad</label>
+                        <input type="text" class="form-control" id="localidad" placeholder="localidad">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Estado / Pais</label>
+                                <input type="text" class="form-control" id="email" placeholder="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="celular">Codigo postal / Zip</label>
+                                <input type="text" class="form-control" id="celular" placeholder="celular">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="descripcion" placeholder="descripcion">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
-<script>
-    function windowpop(url, width, height) {
-        var leftPosition, topPosition;
-        //Allow for borders.
-        leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-        //Allow for title and status bars.
-        topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-        //Open the window.
-        window.open(url, "Window2", "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
-    }
-</script>
