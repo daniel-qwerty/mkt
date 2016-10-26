@@ -259,7 +259,6 @@
                              style="background: linear-gradient(rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6),rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatId) ?>,0.6)), url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatImage; ?>); background-size: cover">
                             <div class="post-body">
                                 <h4>
-
                                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatLinkModule); ?>"><?= Categories_Helper_Category::getInstance()->get($this->lan, Configurations_Helper_Configuration::getInstance()->getKey('CAT_IMPORTANT'))->CatAlias; ?></a>
                                 </h4>
 

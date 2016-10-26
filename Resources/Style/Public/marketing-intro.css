@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", "Helvetica Neue", sans-serif;
     font-size: 16px;
     line-height: 1.3125;
     color: #8e8f96;
@@ -739,6 +739,13 @@ fieldset[disabled] a.btn {
     color: #fff;
 }
 
+.icon-gray {
+    color: #acacac;
+}
+.icon-gray:hover {
+    color: #7d16e9;
+}
+
 .icon-circle {
     border-radius: 50%;
 }
@@ -1022,6 +1029,18 @@ fieldset[disabled] .btn-warning.focus {
     background-color: #fff;
 }
 
+.btn-yellow {
+    color: #fff;
+    background-color: #ffcf00;
+    border-color: #ffcf00;
+}
+
+.btn-yellow:focus, .btn-yellow.focus ,.btn-yellow:hover{
+    color: #fff;
+    background-color: #efaf01;
+    border-color: #efaf01;
+}
+
 .btn-danger {
     color: #fff;
     background-color: #d9534f;
@@ -1257,19 +1276,22 @@ fieldset[disabled] .btn-link:focus {
     background: #1d1e22;
 }
 
- .menu-nav ,.menu-redes{
+.menu-nav, .menu-redes {
     border-top: solid 2px #FFFFFF;
     /*margin-top: 40px;*/
 }
-.menu-redes ul{
+
+.menu-redes ul {
     text-align: center;
     padding: 15px;
 }
+
 .menu-cerrar {
     font-size: xx-large;
     text-align: right;
     cursor: pointer;
 }
+
 .menu-cerrar a {
     color: #888888;
 }
@@ -1374,10 +1396,11 @@ fieldset[disabled] .btn-link:focus {
     position: absolute;
     background: #454545;
     transition: 0.6s;
-    left:-100%;
+    left: -100%;
 }
-.menu-nav > ul > li:hover .menu-items{
-    left:0;
+
+.menu-nav > ul > li:hover .menu-items {
+    left: 0;
 }
 
 .menu-nav .menu-padre {
@@ -3101,6 +3124,10 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     background: #f60506;
 }
 
+.color-purple {
+    color: #cc36f7;
+}
+
 .bg-note-purple {
     background: #cc36f7;
     fill: #cc36f7;
@@ -3119,11 +3146,49 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     background: #32ca07;
 }
 
+.bg-bookmall, .bg-tag-bookmall {
+    background: #ffcf00;
+}
+
+.bg-tag-bookmall:hover {
+    background: #0030ff;
+    fill: #0030ff;
+}
+
 .pull-bottom {
     position: absolute;
     bottom: 0;
     padding: 30px;
     color: #FFF;
+}
+
+/*bookmall*/
+.bookmall-detail {
+    color: #000000;
+    text-align: justify;
+}
+
+.bookmall-detail > div:first-child {
+    padding: 0;
+}
+
+.bookmall-detail > div:last-child {
+    padding: 30px;
+}
+
+.bookmall-detail h4 {
+    font-family: Gilroy, sans-serif;
+    font-weight: bold;
+}
+
+.bookmall-detail .bookmall-autor {
+    font-family: Gilroy, sans-serif;
+    margin: 15px 0 30px;
+}
+
+.bookmall-detail ul {
+    padding: 0;
+    list-style: none;
 }
 
 /*events*/
