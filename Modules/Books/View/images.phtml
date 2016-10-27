@@ -1,0 +1,60 @@
+<?php
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Media";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall");
+
+foreach ($this->languages as $language) {
+    $active = false;
+    if ($this->Language == $language->LanId) {
+        $active = true;
+    }
+    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Edit/lan/" . $language->LanId . "/id/" . $this->Id, false);
+    $form->addTab("Imagenes (" . $language->LanName . ")", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Images/lan/" . $language->LanId . "/id/" . get('id'), $active);
+}
+
+$objControl = new Books_Control_ImageViewer();
+$objControl->name = "ImageList";
+$objControl->label = "Listado de Imagenes";
+$objControl->default = $this->Images;
+$objControl->hasFooter = true;
+$form->add($objControl);
+
+$objControl = new Com_Wizard_Form_Control_Hidden();
+$objControl->name = "BookId";
+$objControl->default = $this->Id;
+$form->add($objControl);
+
+$objControl = new Com_Wizard_Form_Control_Hidden();
+$objControl->name = "Language";
+$objControl->default = $this->Language;
+$form->add($objControl);
+
+$objControl = new Com_Wizard_Form_Control_File();
+$objControl->name = "Image";
+$objControl->label = "Agregar Imagen";
+$objControl->default = $this->Image;
+$objControl->isImage = true;
+$objControl->length = 50;
+$form->add($objControl);
+
+$objControl = new Com_Wizard_Form_Control();
+$objControl->name = "Youtube";
+$objControl->label = "Url Video Youtube";
+$objControl->placeHolder = "Video de Youtube o Vimeo";
+$objControl->default = $this->Youtube;
+$form->add($objControl);
+
+$objControl = new Com_Wizard_Form_Control();
+$objControl->name = "Footer";
+$objControl->label = "Descripcion";
+$objControl->default = $this->Footer;
+$form->add($objControl);
+
+
+$form->render();
+
+
+

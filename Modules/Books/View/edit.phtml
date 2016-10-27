@@ -1,0 +1,75 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Book Mall";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall");
+
+foreach ($this->languages as $language) {
+    $active = false;
+    if ($this->Language == $language->LanId) {
+        $active = true;
+    }
+    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
+    $form->addTab("Imagenes (" . $language->LanName . ")", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Images/lan/" . $language->LanId . "/id/" . get('id'), false);
+}
+
+$control = new Com_Wizard_Form_Control_Hidden();
+$control->name = "Language";
+$control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Title";
+$control->label = "Titulo";
+$control->default = $this->Title;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Editor();
+$control->name = "Content";
+$control->label = "Contenido";
+$control->default = $this->Content;
+$control->required = true;
+$control->rows = 3;
+$control->addParameter("style ", "height:120px;
+            ");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Author";
+$control->label = "Autor";
+$control->default = $this->Author;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Price";
+$control->label = "Precio";
+$control->default = $this->Price;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
+
+$form->add($control);
+
+$form->render();

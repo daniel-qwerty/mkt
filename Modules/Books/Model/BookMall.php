@@ -1,30 +1,30 @@
 <?php
 
-class Tools_Model_Tool extends Com_Module_Model {
+class Books_Model_BookMall extends Com_Module_Model {
 
     /**
      *
-     * @return Tools_Model_Tool 
+     * @return Books_Model_BookMall 
      */
     public static function getInstance() {
         return self::_getInstance(__CLASS__);
     }
 
-    public function doInsert(Com_Object $obj, $languages) {
+    public function doInsert(Com_Object $obj, $languages, $image) {
 
-        $db = new Entities_Tool();
+        $db = new Entities_BookMall();
 
         $id = $db->getNextId();
 
         foreach ($languages as $language) {
-            $db->TooId = $id;
-            $db->TooLanId = $language->LanId;
-            $db->TooName = $obj->Name;
-            $db->TooDescription = $obj->Description;
-            $db->TooType = $obj->Type;
-            $db->TooLink = $obj->Link;
-            $db->TooCatId = $obj->Category;
-            $db->TooStatus = $obj->Status;
+            $db->BooId = $id;
+            $db->BooLanId = $language->LanId;
+            $db->BooTitle = $obj->Title;
+            $db->BooAuthor = $obj->Author;
+            $db->BooContent = $obj->Content;
+            $db->BooImage = $image;
+            $db->BooPrice = $obj->Price;
+            $db->BooStatus = $obj->Status;
             $db->action = ACTION_INSERT;
             $db->save();
         }
@@ -34,59 +34,62 @@ class Tools_Model_Tool extends Com_Module_Model {
         return $id;
     }
 
-    public function doUpdate($intId, Com_Object $obj) {
-        $db = new Entities_Tool();
-        $db->TooId = $intId;
-        $db->TooLanId = $obj->Language;
-        $db->TooName = $obj->Name;
-        $db->TooDescription = $obj->Description;
-        $db->TooType = $obj->Type;
-        $db->TooLink = $obj->Link;
-        $db->TooStatus = $obj->Status;
-        $db->TooCatId = $obj->Category;
+    public function doUpdate($intId, Com_Object $obj, $image) {
+        $db = new Entities_BookMall();
+        $db->BooId = $intId;
+        $db->BooLanId = $obj->Language;
+        $db->BooTitle = $obj->Title;
+        $db->BooAuthor = $obj->Author;
+        $db->BooContent = $obj->Content;
+        if ($imageFile != "") {
+            $db->BooImage = $image;
+        }
+        
+        $db->BooPrice = $obj->Price;
+        $db->BooStatus = $obj->Status;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
 
     public function doDelete($intId) {
-        $db = new Entities_Tool();
-        $db->TooId = $intId;
+        $db = new Entities_BookMall();
+        $db->BooId = $intId;
         $db->action = ACTION_DELETE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Eliminado");
     }
 
     public function get($intId, $lanId) {
-        $db = new Entities_Tool();
-        $db->TooId = $intId;
-        $db->TooLanId = $lanId;
+        $db = new Entities_BookMall();
+        $db->BooId = $intId;
+        $db->BooLanId = $lanId;
         $db->get();
         return $db;
     }
 
     public function getByAlias($lanId, $strAlias) {
-        $db = new Entities_Tool();
-        $db->TooLanId = $lanId;
-        $db->TooName = $strAlias;
+        $db = new Entities_BookMall();
+        $db->BooLanId = $lanId;
+        $db->BooTitle = $strAlias;
         $db->get();
         return $db;
     }
 
     public function getList() {
-        $text = new Entities_Tool();
+        $text = new Entities_BookMall();
         return $text->getAll($text->getList());
     }
     
-    public function getListByParent($lanId, $category,$limit = 1000 ) {
-        $text = new Entities_Tool();
+    public function getListByParent($lanId,$limit = 1000 ) {
+        $text = new Entities_BookMall();
         //$result = Com_Database_Query::getInstance()->select()->from("Category")->innerJoin("Notes", "Notes.NotCatId=Category.CatId")->where("Category.CatParentId={$category} and NotStatus = 1 and NotLanId='{$lanId}'and CatLanId='{$lanId}'")->orderBy("NotDate desc")->limit(0, $limit);
-        return $text->getAll($text->getList()->where("TooLanId={$lanId} and TooCatId={$category} and TooStatus = 1 ")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("TooLanId={$lanId} and TooStatus = 1 ")->limit(0, $limit));
         //return $text->getAll($result);
     }
     
     public function getList2($lanId,$limit = 1000 ) {
-        $text = new Entities_Tool();
+        $text = new Entities_BookMall();
         return $text->getAll($text->getList()->where("TooLanId={$lanId} and TooStatus = 1 ")->limit(0, $limit));
     }
 

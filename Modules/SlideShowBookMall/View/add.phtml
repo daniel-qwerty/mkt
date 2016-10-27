@@ -1,10 +1,10 @@
 <?PHP
 
 $form = new Com_Wizard_Form();
-$form->title = "Formulario Textos de pagina";
+$form->title = "Formulario SlideShows Book Mall";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/CatTools");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/SlideShowBookMall");
 
 $form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
 
@@ -13,52 +13,37 @@ $control->name = "Language";
 $control->default = $this->Language;
 $form->add($control);
 
-$control = new Com_Wizard_Form_Control_Select();
-$control->name = "Category";
-$control->label = "Categoria";
-$control->default = $this->Category;
-$control->required = true;
-foreach ($this->Category as $type) {
-    $control->addItem($type->CatId, $type->CatName);
-}
-$form->add($control);
-
 $control = new Com_Wizard_Form_Control();
-$control->name = "Name";
-$control->label = "Nombre";
-$control->default = $this->Name;
-$control->required = true;
+$control->name = "Title";
+$control->label = "Titulo";
+$control->default = $this->Title;
 $control->length = 50;
+$control->required = true;
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control_Text();
 $control->name = "Description";
 $control->label = "Descripcion";
 $control->default = $this->Description;
-$control->required = true;
+$control->required = false;
 $control->rows = 3;
-$control->addParameter("style ", "height:120px;
-            ");
+$control->addParameter("style ", "height:120px;");
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control();
 $control->name = "Link";
-$control->label = "Link";
+$control->label = "Link Imagen";
 $control->default = $this->Link;
-$control->required = true;
 $control->length = 50;
-$form->add($control);
-
-$control = new Com_Wizard_Form_Control_Select();
-$control->name = "Type";
-$control->label = "Tipo";
-$control->default = $this->Status;
-$control->required = true;
-$control->addItem('Brand Kit', 'Brand Kit');
-$control->addItem('Artes Editables', 'Artes Editables');
-$control->addItem('Libros', 'Libros');
-$control->addItem('Press Kit', 'Press Kit');
-
+$control->required = false;
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control_Select();
@@ -68,7 +53,6 @@ $control->default = $this->Status;
 $control->required = true;
 $control->addItem('1', 'Habilitado');
 $control->addItem('0', 'Bloqueado');
-
 $form->add($control);
 
 $form->render();
