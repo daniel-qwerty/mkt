@@ -2350,8 +2350,7 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     margin-top: 15px;
     color: #575756;
 }
-
-.carrito label {
+.carrito label{
     color: #575756;
 }
 
@@ -2361,119 +2360,19 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     margin: 30px 0;
 }
 
-.carrito form input {
+.carrito form > div:first-child {
+    padding-left: 60px;
+}
+
+.carrito form > div:last-child {
+    padding-right: 60px;
+}
+
+.carrito form input{
     border-radius: 0;
     border: #575756 solid 1px;
     margin-bottom: 5px;
 }
-
-.carrito .input-hidden {
-    position: absolute;
-    left: -9999px;
-}
-
-.carrito input[type=radio]:checked + label > img {
-    border: 2px solid #fff;
-    /*box-shadow: 0 0 3px 3px #7d16e9;*/
-}
-
-/* Stuff after this is only to make things more pretty */
-.carrito input[type=radio] + label > img {
-    border: 1px dashed #444;
-    width: 80px;
-    height: 80px;
-    margin: 0 15px;
-    transition: 500ms all;
-}
-
-.carrito input[type=radio]:checked + label > img {
-    transform: scale(1.1, 1.1);
-}
-
-.carrito table {
-    width: 100%;
-
-}
-
-.carrito table > tbody {
-    border: solid 1px #7d16e9;
-}
-
-.carrito table > tbody > tr {
-    border-bottom: solid 1px #7d16e9;
-}
-
-.carrito table > tbody > tr:last-child {
-    border-bottom: none;
-}
-
-.carrito table > tbody > tr > td, .carrito table > thead > tr > th {
-    padding: 10px;
-}
-
-.carrito table > tbody > tr > td:first-child {
-    border-right: solid 1px #7d16e9;
-}
-
-.carrito table > tbody > tr > td:last-child {
-    border-left: solid 1px #7d16e9;
-    text-align: center;
-}
-
-.carrito table input {
-    width: 65px;
-}
-
-.carrito table a {
-    margin: 10px;
-    display: block;
-    text-align: center;
-    color: #7d16e9;
-}
-
-.carrito table a:hover {
-    color: #444444;
-}
-
-.carrito table a i {
-    font-size: 24px;
-}
-
-.carrito table img {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-}
-
-.carrito table tfoot {
-    font-size: 24px;
-    color: #7d16e9;
-}
-
-.carrito table > tfoot:before {
-
-    content: '';
-    display: block;
-    height: 15px;
-
-}
-
-.carrito table tfoot > tr > td:last-child {
-    text-align: center;
-    border-top: solid 1px #7d16e9;
-    border-right: solid 1px #7d16e9;
-    border-bottom: solid 1px #7d16e9;
-
-}
-
-.carrito table tfoot > tr > td:nth-child(5) {
-    text-align: center;
-    border-top: solid 1px #7d16e9;
-    border-left: solid 1px #7d16e9;
-    border-bottom: solid 1px #7d16e9;
-
-}
-
 /*
 * post-news
 */
@@ -3113,15 +3012,6 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     fill: #8e8f96;
 }
 
-.bg-gray-ligth {
-    background: #e4e4e4;
-    fill: #e4e4e4;
-}
-
-.bg-gray-dark {
-    background: #c2c2c2;
-    fill: #c2c2c2;
-}
 .bg-gray {
     background: #27272c;
     fill: #27272c;

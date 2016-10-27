@@ -8,8 +8,7 @@
             </div>
         </div>
     </div>
-    
-    
+
 </section>
 
 <section class="col-xs-12">
@@ -135,8 +134,76 @@
     <!--    aqui deberia empezar el widget de carrito-->
     <div class="container-fluid carrito bg-white">
         <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <h3 style="margin-bottom: 0px">Tu pedido</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
+
+                    </tr>
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td>$180</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
             <form action="#" method="post">
-                <div class="col-md-6">
+                <div class="col-md-offset-1 col-md-5">
                     <h3>Detalle de compra</h3>
 
                     <div class="row">
@@ -200,7 +267,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <h3>Detalle de compra</h3>
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
@@ -231,6 +298,50 @@
                     </div>
                 </div>
             </form>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row bg-gray-ligth" style="padding: 15px;">
+                    <div class="col-md-4">
+                        Seleccione el metodo de pago
+                    </div>
+                    <div class="col-md-8">
+                        <input
+                            type="radio" name="emotion"
+                            id="tarjeta" class="input-hidden"/>
+                        <label for="tarjeta">
+                            <img class="pay-method"
+                                 src="//placekitten.com/150/150"
+                                 alt="tarjeta"/>
+                        </label>
+
+                        <input
+                            type="radio" name="emotion"
+                            id="cheque" class="input-hidden"/>
+                        <label for="cheque">
+                            <img class="pay-method"
+                                 src="//placekitten.com/151/151"
+                                 alt="cheque"/>
+                        </label>
+
+                        <input
+                            type="radio" name="emotion"
+                            id="deposito" class="input-hidden"/>
+                        <label for="deposito">
+                            <img class="pay-method"
+                                 src="//placekitten.com/152/153"
+                                 alt="deposito"/>
+                        </label>
+                    </div>
+                    <div class="col-md-12 bg-gray-dark">
+                        <p>Politicas de privacidad de pago</p>
+
+                    </div>
+                    <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
+                        <a href="#" class="btn btn-warning">Comprar</a>
+                    </div>
+
+                </div>
+                <br>
+            </div>
         </div>
     </div>
 </section>
