@@ -742,6 +742,7 @@ fieldset[disabled] a.btn {
 .icon-gray {
     color: #acacac;
 }
+
 .icon-gray:hover {
     color: #7d16e9;
 }
@@ -1035,7 +1036,7 @@ fieldset[disabled] .btn-warning.focus {
     border-color: #ffcf00;
 }
 
-.btn-yellow:focus, .btn-yellow.focus ,.btn-yellow:hover{
+.btn-yellow:focus, .btn-yellow.focus, .btn-yellow:hover {
     color: #fff;
     background-color: #efaf01;
     border-color: #efaf01;
@@ -2344,6 +2345,34 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     }
 }
 
+/*carrito*/
+.carrito {
+    margin-top: 15px;
+    color: #575756;
+}
+.carrito label{
+    color: #575756;
+}
+
+.carrito h3 {
+    color: #7d16e9;
+    font-size: 24px;
+    margin: 30px 0;
+}
+
+.carrito form > div:first-child {
+    padding-left: 60px;
+}
+
+.carrito form > div:last-child {
+    padding-right: 60px;
+}
+
+.carrito form input{
+    border-radius: 0;
+    border: #575756 solid 1px;
+    margin-bottom: 5px;
+}
 /*
 * post-news
 */
