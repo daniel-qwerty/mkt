@@ -1,6 +1,6 @@
 <?php
 
-class SlideShowBookMall_Widget_Slideshow extends Com_Object {
+class SlideShowsSuscription_Widget_Slideshow extends Com_Object {
 
     private $lan;
     
@@ -10,7 +10,7 @@ class SlideShowBookMall_Widget_Slideshow extends Com_Object {
      *
      * @static
      * @access public
-     * @return SlideShowBookMall_Widget_Slideshow 
+     * @return SlideShowsSuscription_Widget_Slideshow 
      */
     public static function getInstance() {
         return self::_getInstance(__CLASS__);
@@ -24,7 +24,7 @@ class SlideShowBookMall_Widget_Slideshow extends Com_Object {
 
     public function render() {
 
-        $list = SlideShowBookMall_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
+        $list = SlideShowsSuscription_Model_SlideShow::getInstance()->getListEnable($this->lan->LanId);
         
         foreach ($list as $slide) {
          
@@ -40,7 +40,7 @@ class SlideShowBookMall_Widget_Slideshow extends Com_Object {
                             </p>
                         </div>
                         <h1 data-caption-animate="fadeInUp" data-caption-delay="400" class="not-animated"><a
-                                target="_blank" href="<?PHP echo $slide->SliLink;?>"><?PHP echo $slide->SliDescription;?></a></h1><a
+                                target="_blank" href="<?PHP echo $slide->SliLink;?>"><?PHP echo $slide->SliTitle;?></a></h1><a
                             target="_blank" href="<?PHP echo $slide->SliLink;?>" data-caption-animate="fadeInUp" data-caption-delay="800"
                             class="btn btn-transparent btn-lg not-animated">Read more</a>
                     </div>

@@ -41,7 +41,7 @@ class Admin_Information extends Com_Module_Information {
          * Menu Book Mall
          */
         Com_Helper_Menu::getInstance()->add("Book", null, "Book Mall", "book");        
-        Com_Helper_Menu::getInstance()->add("Item", "/Admin/BookMAll", "Items", "Item", "Book");
+        Com_Helper_Menu::getInstance()->add("Item", "/Admin/Books", "Items", "Item", "Book");
         Com_Helper_Menu::getInstance()->add("Slide", "/Admin/SlideShowBookMall", "SlideShow", "SlideShow", "Book");
         
         /**

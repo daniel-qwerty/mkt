@@ -90,7 +90,7 @@ class Books_Model_BookMall extends Com_Module_Model {
     
     public function getList2($lanId,$limit = 1000 ) {
         $text = new Entities_BookMall();
-        return $text->getAll($text->getList()->where("TooLanId={$lanId} and TooStatus = 1 ")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("BooLanId={$lanId} and BooStatus = 1 ")->limit(0, $limit));
     }
 
 }
