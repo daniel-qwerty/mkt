@@ -18,29 +18,24 @@
                 <div id="book-image" class="square"
                      style="background-image:url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $this->list->BooImage; ?>);background-size:cover ">
                 </div>
-                <section class="insta-wrap">
 
-                    <div data-instafeed-clientid="44f19408f04040bd85214315861a84a1" data-instafeed-get="user"
-                         data-instafeed-user="499522078" data-items="2" data-sm-items="3" data-lg-items="4"
-                         data-loop="true"
-                         data-nav="true" class="owl-carousel element-groups-xs-custom">
-                             <?php foreach ($this->images as $new) { ?>
-                            <div data-instafeed-item="" class="owl-item insta-item">
-                                <a href="javascript:void(0)"
-                                   id="thumb-<?= $new->MedId; ?>"
-                                   rel="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $new->MedImage; ?>"
-                                   onclick="setImage(<?= $new->MedId; ?>)"
-                                   class="img-thumbnail-variant-3">
-                                    <div class="square"
-                                         style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $new->MedImage; ?>); background-size: cover">
-                                    </div>
-                                </a>
-                            </div>
-
-                        <?php } ?>              
-
-                    </div>
-                </section>
+                <div data-items="2" data-sm-items="3" data-lg-items="4"
+                     data-loop="true"
+                     data-nav="true" class="owl-carousel element-groups-xs-custom">
+                    <?php foreach ($this->images as $new) { ?>
+                        <div data-instafeed-item="" class="owl-item insta-item">
+                            <a href="javascript:void(0)"
+                               id="thumb-<?= $new->MedId; ?>"
+                               rel="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $new->MedImage; ?>"
+                               onclick="setImage(<?= $new->MedId; ?>)"
+                               class="img-thumbnail-variant-3">
+                                <div class="square"
+                                     style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $new->MedImage; ?>); background-size: cover">
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
             <div class="col-sm-6">
                 <h4><?= $this->list->BooTitle; ?></h4>
@@ -82,67 +77,67 @@
                 <h3 style="margin-bottom: 0px">Tu pedido</h3>
                 <table>
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>TOTAL</th>
-                        </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>TOTAL</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                            <td><img
-                                    src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                    alt=""></td>
-                            <td>Suscripcion 3 meses revista impresa</td>
-                            <td>$us 99.9</td>
-                            <td>
-                                <input type="hidden" name="id" value="1">
-                                <input type="number" name="value" value="1">
-                            </td>
-                            <td>$us 99.9</td>
-                        </tr>
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
+                    </tr>
 
-                        <tr>
-                            <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                            <td><img
-                                    src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                    alt=""></td>
-                            <td>Suscripcion 3 meses revista impresa</td>
-                            <td>$us 99.9</td>
-                            <td>
-                                <input type="hidden" name="id" value="1">
-                                <input type="number" name="value" value="1">
-                            </td>
-                            <td>$us 99.9</td>
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
 
-                        </tr>
-                        <tr>
-                            <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                            <td><img
-                                    src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                    alt=""></td>
-                            <td>Suscripcion 3 meses revista impresa</td>
-                            <td>$us 99.9</td>
-                            <td>
-                                <input type="hidden" name="id" value="1">
-                                <input type="number" name="value" value="1">
-                            </td>
-                            <td>$us 99.9</td>
-                        </tr>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                alt=""></td>
+                        <td>Suscripcion 3 meses revista impresa</td>
+                        <td>$us 99.9</td>
+                        <td>
+                            <input type="hidden" name="id" value="1">
+                            <input type="number" name="value" value="1">
+                        </td>
+                        <td>$us 99.9</td>
+                    </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total</td>
-                            <td>$180</td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td>$180</td>
+                    </tr>
                     </tfoot>
                 </table>
             </div>

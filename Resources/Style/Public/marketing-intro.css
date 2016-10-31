@@ -3122,6 +3122,7 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     background: #c2c2c2;
     fill: #c2c2c2;
 }
+
 .bg-gray {
     background: #27272c;
     fill: #27272c;
@@ -4597,4 +4598,51 @@ html .page .offset-top-60 {
 
 #calendar_bar, #image_button {
     cursor: pointer;
+}
+
+/* item suscripcion */
+.item-suscription {
+    padding: 15px;
+}
+
+.item-suscription .item-suscription-title {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background: #DDDDDD;
+    color: #FFFFFF;
+}
+
+.item-suscription .item-suscription-title a {
+    color: #FFFFFF;
+    width: 100%;
+    display: block;
+}
+
+.item-suscription .item-suscription-comprar {
+    margin-top: 15px;
+}
+
+.item-suscription .item-suscription-comprar a {
+    padding: 5px 10px;
+    background: #37373a;
+    border-radius: 0;
+}
+
+.item-suscription .item-suscription-comprar a:hover {
+    padding: 5px 10px;
+    background: #808087;
+    border-radius: 0;
+}
+
+.items-suscription {
+    padding: 0 45px;
+}
+
+.items-suscription .owl-prev {
+    left: -40px;
+}
+
+.items-suscription .owl-next {
+    right: -40px;
 }
