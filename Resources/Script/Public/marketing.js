@@ -46,10 +46,10 @@ $(window).load(function () {
     });
     updateHeight();
     $(window).resize(function () {
-        setTimeout(updateHeight,300)
+        setTimeout(updateHeight, 300)
     });
-    $(".go-up").click(function() {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+    $(".go-up").click(function () {
+        $("html, body").animate({scrollTop: 0}, "slow");
         return false;
     });
     setTimeout(showBienvenido, 10000);
@@ -84,7 +84,7 @@ updateHeight = function () {
     if (isMobile)
         $(".insta-btn-wrap").height(60);
     else
-        $(".insta-btn-wrap").height($($("a.img-thumbnail-variant-3")[0]).height());
+        $(".insta-btn-wrap").height($($("a.img-thumbnail-variant-3.fancybox")[0]).height());
 }
 
 
