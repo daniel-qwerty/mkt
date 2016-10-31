@@ -33,9 +33,9 @@ class Admin_Information extends Com_Module_Information {
          * Menu Tools
          */
         Com_Helper_Menu::getInstance()->add("Tools", null, "Tools", "briefcase");
-        Com_Helper_Menu::getInstance()->add("Tools Categorias", "/Admin/CatTools", "sCategorias", "Tools", "Tools");
-        Com_Helper_Menu::getInstance()->add("Item", "/Admin/Tools", "sItems", "Tools", "Tools");
-        Com_Helper_Menu::getInstance()->add("Slide", "/Admin/SlideShowsTools", "sSlideShow", "Tools", "Tools");
+        Com_Helper_Menu::getInstance()->add("Tools Categorias", "/Admin/CatTools", "Categorias", "Tools", "Tools");
+        Com_Helper_Menu::getInstance()->add("Item", "/Admin/Tools", "Items", "Tools", "Tools");
+        Com_Helper_Menu::getInstance()->add("Slide", "/Admin/SlideShowsTools", "SlideShow", "Tools", "Tools");
         
         /**
          * Menu Book Mall
