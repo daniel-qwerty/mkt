@@ -21,21 +21,37 @@
                 <script>
                     $.datetimepicker.setLocale('es');
                     $('#datetimepicker').datetimepicker({
-                        lang:'es',
-                        timepicker:false,
-                        format:'Y-m-d',
-                        formatDate:'Y-m-d',
-                        defaultDate:'<?= date('Y-m-d'); ?>',
-                        defaultSelect:true,
-                        onChangeDateTime:function(dp,$input){
+                        lang: 'es',
+                        timepicker: false,
+                        format: 'Y-m-d',
+                        formatDate: 'Y-m-d',
+                        defaultDate: '<?= date('Y-m-d'); ?>',
+                        defaultSelect: true,
+                        onChangeDateTime: function (dp, $input) {
 //                            aqui hacer algo para cambiar contenido deacuerdo a la fecha
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost/mkt/mkt/es/events/",
+                                data: {Date: $input.val()}
+
+                            }).success(function (data) {
+                                console.log("exito");
+                                $('#eventos').html(data);
+                                if (data != 0) {
+                                    console.log("data vacio");
+                                } else
+                                    console.log("fallo");
+
+                            }).fail(function () {
+
+                            });
                             console.log($input.val());
                         }
                     });
-                    $('#image_button').click(function(){
+                    $('#image_button').click(function () {
                         $('#datetimepicker').datetimepicker('show'); //support hide,show and destroy command
                     });
-                    $('#calendar_bar').click(function(){
+                    $('#calendar_bar').click(function () {
                         $('#datetimepicker').datetimepicker('show'); //support hide,show and destroy command
                     });
                 </script>
@@ -51,21 +67,22 @@
         </div>
     </section>
     <div class="container-fluid content-tool notas-items events-container">
-        <div class="row">
+        <div class="row" id="eventos">
             <?php foreach ($this->events as $new) { ?>
-            <div class="col-md-6 notas-item">
-                <div class="square"
-                     style="background-image: linear-gradient(to bottom, rgba(6,5,244,0.6) 0%,rgba(6,5,244,0.6) 100%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->EveImage; ?>);background-size:cover ">
-                    <div class="pull-bottom">
-                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>" class="tag bg-note-green"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $new->EveCatId)->CatName; ?></a>
-                        <h3><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $new->EveId); ?>"><?PHP echo $new->EveTitle; ?></a></h3>
-                        <span><i style="margin-right: 5px" class="fa fa-user"></i>usuario</span>
-                        <span><i style="margin-right: 5px" class="fa fa-calendar"></i>fecha</span>
+                <div class="col-md-6 notas-item">
+                    <div class="square"
+                         style="background-image: linear-gradient(to bottom, rgba(6,5,244,0.6) 0%,rgba(6,5,244,0.6) 100%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->EveImage; ?>);background-size:cover ">
+                        <div class="pull-bottom">
+                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>" class="tag bg-note-green"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $new->EveCatId)->CatName; ?></a>
+                            <h3><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $new->EveId); ?>"><?PHP echo $new->EveTitle; ?></a></h3>
+                            <span><i style="margin-right: 5px" class="fa fa-user"></i>usuario</span>
+                            <span><i style="margin-right: 5px" class="fa fa-calendar"></i>fecha</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php } ?>
-            
+            <?php } ?> 
+        </div>
+        <div class="row">
             <div class="col-xs-12" style="padding: 0">
                 <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderF(); ?>
             </div>
@@ -73,7 +90,7 @@
                 <?php Events_Widget_Important::getInstance()->setLan($this->lan)->setLimit(1)->render(); ?>
             </div>
             <?php Events_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(6)->render(); ?>
-            
+
         </div>
     </div>
 </div>

@@ -75,6 +75,10 @@ class Events_Model_Event extends Com_Module_Model {
         $text = new Entities_Event();
         return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveStatus = 1")->orderBy("EveDate desc")->limit(0, $limit));
     }
+    public function getListByDate($lanId,$date, $limit = 1000) {
+        $text = new Entities_Event();
+        return $text->getAll($text->getList()->where("EveLanId={$lanId} and EveDate='{$date}' and EveStatus = 1")->orderBy("EveDate desc")->limit(0, $limit));
+    }
 
     public function getListRecientes($lanId, $limit = 1000) {
         $text = new Entities_Event();

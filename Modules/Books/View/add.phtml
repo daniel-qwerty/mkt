@@ -1,10 +1,10 @@
 <?PHP
 
 $form = new Com_Wizard_Form();
-$form->title = "Formulario Textos de pagina";
+$form->title = "Formulario Books";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/CatTools");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Books");
 
 $form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
 

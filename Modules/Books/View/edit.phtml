@@ -4,15 +4,15 @@ $form = new Com_Wizard_Form();
 $form->title = "Formulario Book Mall";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Books");
 
 foreach ($this->languages as $language) {
     $active = false;
     if ($this->Language == $language->LanId) {
         $active = true;
     }
-    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
-    $form->addTab("Imagenes (" . $language->LanName . ")", Com_Helper_Url::getInstance()->urlBase . "/Admin/BookMall/Images/lan/" . $language->LanId . "/id/" . get('id'), false);
+    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/Books/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
+    $form->addTab("Imagenes (" . $language->LanName . ")", Com_Helper_Url::getInstance()->urlBase . "/Admin/Books/Images/lan/" . $language->LanId . "/id/" . get('id'), false);
 }
 
 $control = new Com_Wizard_Form_Control_Hidden();
