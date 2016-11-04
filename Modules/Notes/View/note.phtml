@@ -56,11 +56,11 @@
         <div class="row">
             <div class="col-sm-3 notas-back-button" style="">
                 <?php $notIda = $this->note->NotId - 1; ?>
-                <a onclick="changePage(<?= $notIda; ?>);"><i class="fa fa-arrow-left"></i> Anterior</a>
+                <a onclick="changePage(<?= $notIda; ?>);"><i class="fa fa-arrow-left"></i> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAnterior")->TxtDescription ?></a>
             </div>
             <div class="col-sm-3 notas-next-button" style="">
                 <?php $notIdb = $this->note->NotId + 1; ?>
-                <a onclick="changePage(<?= $notIdb; ?>);"> Siguiente <i class="fa fa-arrow-right"></i></a>
+                <a onclick="changePage(<?= $notIdb; ?>);"> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSiguiente")->TxtDescription ?> <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
                 <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>

@@ -387,7 +387,7 @@
                         <!--Sidebar-->
                         <div class="sidebar offset-top-40 offset-md-top-0">
                             <!--SECCION BUSQUEDA -->
-                            <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
+                            <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->setType("notas")->render(); ?>
                             <!--SECCION PUBLICIDAD -->
                             <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
                             <!--SECCION SOCIAL MEDIA -->

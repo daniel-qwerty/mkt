@@ -135,6 +135,13 @@ class Notes_Model_Note extends Com_Module_Model {
         return $text->getAll($result);
     }
     
+    public function getListBySearch($lanId, $search,$limit = 1000 ) {
+        $text = new Entities_Note();
+        return $text->getAll($text->getList()->where("NotLanId = {$lanId} and NotTitle like '%{$search}%' OR NotDescription LIKE '%{$search}%'"));
+        
+        
+    }
+    
     public function getCategories($lanId, $category,$limit = 1000 ) {
         $text = new Entities_Note();
         $result = Com_Database_Query::getInstance()->select()->from("Category")->where("Category.CatParentId={$category} and CatStatus = 1 and CatLanId='{$lanId}'")->limit(0, $limit);

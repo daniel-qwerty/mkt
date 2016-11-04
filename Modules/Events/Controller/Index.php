@@ -37,20 +37,20 @@ class Events_Controller_Index extends Public_Controller_Index {
     
     
 
-//    public function Item() {
-//        $this->setLayout("template2");
-//        $this->setView("event");
-//        $url = get('REQUEST_URI');
-//        $url = explode("/", $url);
-//        $url = $url[count($url) - 1];
-//
-//        
-//
-//        $category = CatEvents_Model_CatEvent::getInstance()->getList2($this->lan->LanId, 5);
-//        $this->assign("category", $category);
-//
-//        $events = Events_Model_Event::getInstance()->get($url, $this->lan->LanId);
-//        $this->assign("events", $events);
-//        
-//    }
+    public function Item() {
+        $this->setLayout("template2");
+        $this->setView("event");
+        $url = get('REQUEST_URI');
+        $url = explode("/", $url);
+        $url = $url[count($url) - 1];
+
+        
+
+        $category = CatEvents_Model_CatEvent::getInstance()->getList2($this->lan->LanId, 5);
+        $this->assign("category", $category);
+
+        $events = Events_Model_Event::getInstance()->get($url, $this->lan->LanId);
+        $this->assign("events", $events);
+        
+    }
 }

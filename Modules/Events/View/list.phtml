@@ -4,7 +4,7 @@
         <div class="row">
             <!--    poner clase bg-note-$color        -->
             <div class="col-sm-3 content-header-1-title bg-note-event">
-                <h3>Eventos</h3>
+                <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtEventos")->TxtDescription ?></h3>
             </div>
             <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) { ?>
