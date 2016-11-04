@@ -1,17 +1,17 @@
 <?PHP
 
 $form = new Com_Wizard_Form();
-$form->title = "Formulario Categorias";
+$form->title = "Formulario Suscripcion";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
-$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/CatTools");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Suscription");
 
 foreach ($this->languages as $language) {
     $active = false;
     if ($this->Language == $language->LanId) {
         $active = true;
     }
-    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/CatTools/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
+    $form->addTab($language->LanName, Com_Helper_Url::getInstance()->urlBase . "/Admin/Suscription/Edit/lan/" . $language->LanId . "/id/" . $this->Id, $active);
 }
 
 $control = new Com_Wizard_Form_Control_Hidden();
@@ -19,20 +19,11 @@ $control->name = "Language";
 $control->default = $this->Language;
 $form->add($control);
 
-$control = new Com_Wizard_Form_Control_Select();
-$control->name = "Category";
-$control->label = "Categoria";
-$control->default = $this->Category;
-$control->required = true;
-foreach ($this->Category as $type) {
-    $control->addItem($type->CatId, $type->CatName);
-}
-$form->add($control);
 
 $control = new Com_Wizard_Form_Control();
-$control->name = "Name";
+$control->name = "Title";
 $control->label = "Nombre";
-$control->default = $this->Name;
+$control->default = $this->Title;
 $control->required = true;
 $control->length = 50;
 $form->add($control);
@@ -48,24 +39,29 @@ $control->addParameter("style ", "height:120px;
 $form->add($control);
 
 $control = new Com_Wizard_Form_Control();
-$control->name = "Link";
-$control->label = "Link";
-$control->default = $this->Link;
+$control->name = "Price";
+$control->label = "Precio";
+$control->default = $this->Price;
 $control->required = true;
 $control->length = 50;
 $form->add($control);
 
-$control = new Com_Wizard_Form_Control_Select();
-$control->name = "Type";
-$control->label = "Tipo";
-$control->default = $this->Status;
+$control = new Com_Wizard_Form_Control();
+$control->name = "Color";
+$control->label = "Color";
+$control->default = $this->Color;
 $control->required = true;
-$control->addItem('Brand Kit', 'Brand Kit');
-$control->addItem('Artes Editables', 'Artes Editables');
-$control->addItem('Libros', 'Libros');
-$control->addItem('Press Kit', 'Press Kit');
-
+$control->length = 50;
 $form->add($control);
+
+$control = new Com_Wizard_Form_Control_File();
+$control->name = "Image";
+$control->label = "Imagen";
+$control->default = $this->Image;
+$control->required = true;
+$control->isImage = true;
+$form->add($control);
+
 
 $control = new Com_Wizard_Form_Control_Select();
 $control->name = "Status";

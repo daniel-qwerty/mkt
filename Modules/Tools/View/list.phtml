@@ -3,7 +3,7 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <div class="col-sm-3 content-header-1-title bg-blue-tool">
-                <h3>Tools</h3>
+                <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtTools")->TxtDescription ?></h3>
             </div>
             <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) : ?>
@@ -11,8 +11,11 @@
                         <?= $new->CatName; ?></a>
                 <?php endforeach; ?>
             </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1a40790fec04d53ed6496eeb6a55e6290f6bd409
         </div>
 
     </div>
@@ -43,7 +46,7 @@
         </div>
     </div>
     <div class="container-fluid content-tool bg-white">
-        <h3>Descargas de interés</h3>
+        <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtDescargas")->TxtDescription ?><</h3>
         <div class="row">
             <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
             <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
