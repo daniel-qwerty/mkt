@@ -6,18 +6,18 @@
                 <h3>Tools</h3>
             </div>
             <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
-                <?php foreach ($this->category as $new) { ?>
-                    <a class="header-link" onclick="changeTool(<?= $new->CatId; ?>);" >
+                <?php foreach ($this->category as $new) : ?>
+                    <a class="header-link" onclick="changeTool(<?= $new->CatId; ?>);">
                         <?= $new->CatName; ?></a>
-                <?php } ?>
+                <?php endforeach; ?>
             </div>
-
 
 
         </div>
 
     </div>
-    <form id="searchForm" method="POST" action="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" onsubmit="">
+    <form id="searchForm" method="POST"
+          action="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" onsubmit="">
         <input type="hidden" name="page" id="page" value="1">
     </form>
     <section>
@@ -26,7 +26,7 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                 <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+                <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
@@ -50,14 +50,23 @@
             <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
             <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
         </div>
+
+
+
         <div class="row descarga-items">
-            <?php foreach ($this->tools as $new) { ?>
-                <div class="col-xs-12 col-sm-6 descarga-item">
-                    <h3><?= $new->TooName; ?></h3>
-                    <p><?= $new->TooDescription; ?></p>
-                    <a href="<?= $new->TooLink; ?>" class="btn btn-block">Descargar</a>
-                </div>
-            <?php } ?>
+            <?php $i = 0;
+            foreach ($this->tools as $new) : $i++ ?>
+            <div class="col-xs-12 col-sm-6 descarga-item">
+                <h3><?= $new->TooName; ?></h3>
+                <p><?= $new->TooDescription; ?></p>
+                <a href="<?= $new->TooLink; ?>" class="btn btn-block">Descargar</a>
+            </div>
+                <?php if ($i % 2 == 0) : ?>
+                    </div>
+                    <div class="row descarga-items">
+                <?php endif; ?>
+
+            <?php endforeach; ?>
 
 
         </div>

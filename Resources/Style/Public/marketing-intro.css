@@ -3302,6 +3302,10 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     color: #FFF;
 }
 
+.text-gray {
+    color: #8e8f96;
+}
+
 /*bookmall*/
 .bookmall-detail {
     color: #000000;

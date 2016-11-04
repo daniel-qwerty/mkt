@@ -1,6 +1,6 @@
 <?PHP
 
-class Tools_Controller_Admin extends Admin_Controller_Admin {
+class Pauta_Controller_Admin extends Admin_Controller_Admin {
 
     public function init() {
         parent::init();

@@ -1,8 +1,8 @@
 <?php
 
-class Routes_Suscription extends Com_Application_Route {
+class Routes_Pauta extends Com_Application_Route {
 
-    public $pattern = "/^(\w+|-)+\/suscription/";
-    public $result = "_0_/Index/Suscription/";
+    public $pattern = "/^(\w+|-)+\/pauta/";
+    public $result = "_0_/Index/Pauta/";
 
 }

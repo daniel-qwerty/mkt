@@ -1,93 +1,81 @@
-<section class="col-xs-12">
+<div class="col-xs-12 col-md-8">
 
     <div class="container-fluid content-header-1">
         <div class="row">
-            <div class="col-sm-12 content-header-1-title bg-bookmall">
-                <h3>SUSCRIPTION</h3>
+            <div class="col-sm-3 content-header-1-title bg-note-green">
+                <h3>Pauta</h3>
+            </div>
+            <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
+                <span class="text-gray">Sé parte de nuestra revista</span>
             </div>
         </div>
     </div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div data-slide-bg="https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg" class="swiper-slide"
-                 data-swiper-slide-index="2"
-                 style="height: 550px; background-image: url(https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg); background-size: cover;">
-                <div class="swiper-slide-caption">
-                    <div class="jubotron-variant-1">
-                        <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                            <p>
-                                <time datetime="2016"><a target="_blank" href="#"> april 05, 2016</a></time>
-                            </p>
-                        </div>
-                        <h1 data-caption-animate="fadeInUp" data-caption-delay="400" class="not-animated"><a
-                                target="_blank" href="#">Descripcion</a></h1><a
-                            target="_blank" href="#" data-caption-animate="fadeInUp" data-caption-delay="800"
-                            class="btn btn-transparent btn-lg not-animated">Read more</a>
-                    </div>
-                </div>
+    <form id="searchForm" method="POST"
+          action="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" onsubmit="">
+        <input type="hidden" name="page" id="page" value="1">
+    </form>
+    <section>
+        <!-- Swiper-->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
             </div>
-            <div data-slide-bg="https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg" class="swiper-slide"
-                 data-swiper-slide-index="2"
-                 style="height: 550px; background-image: url(https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg); background-size: cover;">
-                <div class="swiper-slide-caption">
-                    <div class="jubotron-variant-1">
-                        <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                            <p>
-                                <time datetime="2016"><a target="_blank" href="#"> april 05, 2016</a></time>
-                            </p>
-                        </div>
-                        <h1 data-caption-animate="fadeInUp" data-caption-delay="400" class="not-animated"><a
-                                target="_blank" href="#">Descripcion</a></h1><a
-                            target="_blank" href="#" data-caption-animate="fadeInUp" data-caption-delay="800"
-                            class="btn btn-transparent btn-lg not-animated">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div data-slide-bg="https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg" class="swiper-slide"
-                 data-swiper-slide-index="2"
-                 style="height: 550px; background-image: url(https://k60.kn3.net/taringa/9/5/E/C/5/9/jokersegundo/F89.jpg); background-size: cover;">
-                <div class="swiper-slide-caption">
-                    <div class="jubotron-variant-1">
-                        <div data-caption-animate="fadeInUp" class="post-meta not-animated">
-                            <p>
-                                <time datetime="2016"><a target="_blank" href="#"> april 05, 2016</a></time>
-                            </p>
-                        </div>
-                        <h1 data-caption-animate="fadeInUp" data-caption-delay="400" class="not-animated"><a
-                                target="_blank" href="#">Descripcion</a></h1><a
-                            target="_blank" href="#" data-caption-animate="fadeInUp" data-caption-delay="800"
-                            class="btn btn-transparent btn-lg not-animated">Read more</a>
-                    </div>
-                </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+        </div>
+    </section>
+    <div class="container-fluid content-tool bg-white">
+        <h3>Descargas de interés</h3>
+
+        <div class="row descarga-items">
+            <div class="col-xs-12 descarga-item text-center">
+                <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
+                <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
+                <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
+                <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
             </div>
         </div>
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
-    </div>
 
-</section>
-<div class="container-fluid content-tool bg-white">
-    <h3>Suscribete a la revista impresa</h3>
-    <div class="row items-suscription">
-        <div data-items="2" data-sm-items="3" data-lg-items="4"
-             data-loop="true"
-             data-nav="true" class="owl-carousel element-groups-xs-custom">
+        <?php foreach ([1, 2, 3] as $var) { ?>
+            <div class="row descarga-items">
+                <div class="col-xs-12 descarga-item">
+                    <img class="img-responsive"
+                         src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg" alt="">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">Visibilidad</label>
+                                <input type="text" class="form-control" id="visibilidad"
+                                       aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">Descripcion</label>
+                                <input type="text" class="form-control" id="descripcion"
+                                       aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">Descripcion</label>
+                                <a href="#" class="form-control btn btn-block tag bg-note-purple">Generar orden de compra</a>
+                            </div>
+                        </div>
+                    </div>
 
-            <?php foreach ([1, 2, 3, 4, 1, 2, 3, 4] as $var): ?>
-                <div data-instafeed-item="" class="owl-item item-suscription">
-                    <div class="square"
-                         style="background: url(http://www.fotogramas.es/var/ezflow_site/storage/images/media/imagenes/reportajes/brujas-de-campeonato/brujas02/5427949-1-esl-ES/brujas02_ampliacion.jpg); background-size: cover ">
-                    </div>
-                    <div class="item-suscription-title" style="background: #FFAA33" >
-                        <a href="#">Titulo</a>
-                    </div>
-                    <div class="item-suscription-comprar">
-                        <a href="#" class="btn btn-default btn-sm pull-right ">comprar</a>
-                    </div>
                 </div>
-            <?php endforeach ?>
-
-        </div>
+            </div>
+        <?php } ?>
     </div>
 </div>
 
+<script>
 
+    function changeTool(page) {
+        $('#page').val(page);
+        $('#searchForm').submit();
+    }
+
+</script>

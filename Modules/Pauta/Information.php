@@ -1,7 +1,7 @@
 <?PHP
 
 
-class Suscription_Information extends Admin_Information {
+class Pauta_Information extends Admin_Information {
 
 
 }
