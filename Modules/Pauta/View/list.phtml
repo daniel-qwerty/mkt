@@ -10,18 +10,17 @@
             </div>
         </div>
     </div>
+
     <form id="searchForm" method="POST"
           action="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "tools/"); ?>" onsubmit="">
         <input type="hidden" name="page" id="page" value="1">
     </form>
+
     <section>
-        <!-- Swiper-->
-        <!-- Slider main container -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
         </div>
     </section>
@@ -37,12 +36,31 @@
             </div>
         </div>
 
-        <?php foreach ([1, 2, 3] as $var) { ?>
+        <div class="row descarga-items">
+            <div class="col-xs-12 descarga-item text-center">
+                <p>
+                    Marketing News lleva en el mercado 9 AÑOS, el perfil de nuestros lectores se desarrolla entre
+                    DIRECTORES, GERENTES, TOMADORES DE DECISIONES y EMPRESARIOS en las empresas más importantes de
+                    Colombia. Tenemos un tiraje de impresión de 10.000 EJEMPLARES cada dos meses y se distribuyen 9.300
+                    a nivel nacional, (el restante se encuentra en las tiendas de Panamericana y ventas Online como en
+                    nuestra página y en Linio.com).
+
+                    ​Adicional a esto, ​según estudio realizado por “Grupo Consultores” (Especializada en estudios de
+                    mercadeo) somos la ​TERCERA REVISTA MÁS LEÍDA​, ​después del periódico El Tiempo​.​
+
+                    Conoce nuestras opciones de pauta digital y por nuestros paquetes de publicación impresa.
+                </p>
+            </div>
+        </div>
+
+        <div class="row"><h3>Tarifario revista Digital</h3></div>
+
+        <?php foreach ([1, 2, 3] as $var) : ?>
             <div class="row descarga-items">
                 <div class="col-xs-12 descarga-item">
                     <img class="img-responsive"
                          src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg" alt="">
-                    <div class="row">
+                    <div class="row descarga-item-detail">
                         <div class="col-lg-3 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label class="control-label" for="inputSuccess1">Visibilidad</label>
@@ -59,15 +77,61 @@
                         </div>
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">Descripcion</label>
-                                <a href="#" class="form-control btn btn-block tag bg-note-purple">Generar orden de compra</a>
+                                <label class="control-label" for="inputSuccess1">&nbsp</label>
+                                <a href="#" class="form-control btn btn-block tag bg-note-purple  btn-pauta">Generar
+                                    orden de
+                                    compra</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        <?php } ?>
+        <?php endforeach; ?>
+
+        <div class="row"><h3>Tarifario revista impresa</h3></div>
+
+        <?php foreach ([1, 2, 3] as $var) : ?>
+            <div class="row descarga-items">
+                <div class="col-xs-12 descarga-item">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <img class="img-responsive"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg"
+                                 alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <img class="img-responsive"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg"
+                                 alt="">
+                        </div>
+                    </div>
+                    <div class="row descarga-item-detail">
+                        <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">Visibilidad</label>
+                                <input type="text" class="form-control" id="visibilidad"
+                                       aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">Descripcion</label>
+                                <input type="text" class="form-control" id="descripcion"
+                                       aria-describedby="helpBlock2">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess1">&nbsp</label>
+                                <a href="#" class="form-control btn btn-block tag bg-note-purple  btn-pauta">Generar
+                                    orden de
+                                    compra</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
 

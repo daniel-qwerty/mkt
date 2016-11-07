@@ -4416,6 +4416,32 @@ html .page .offset-top-60 {
 
 }
 
+.content-tool .descarga-item .descarga-item-detail {
+    margin-top: 15px;
+}
+
+.content-tool .descarga-item .descarga-item-detail input {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-color: #575756;
+}
+
+.content-tool .descarga-item .descarga-item-detail label {
+    color: #575756;
+}
+
+.content-tool .descarga-item .btn.btn-pauta {
+    color: #FFFFFF;
+    border: none;
+}
+
+.content-tool .descarga-item .btn.btn-pauta:hover {
+    border: none;
+    color: #FFFFFF;
+
+}
+
 .content-tool .content-divider {
     height: 1px;
     margin: 0 50px;
