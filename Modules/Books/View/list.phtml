@@ -43,10 +43,16 @@
                         </h3>
                     </a>
                 </div>
-            <?php } ?>     
+            <?php } ?>
 
         </div>
     </div>
 </section>
+<section class="col-xs-12">
+    <div class="container-fluid content-header-1">
+        <div class="row">
+            </div>
+    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
 
+</section>
 

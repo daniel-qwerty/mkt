@@ -28,6 +28,7 @@ body {
     line-height: 1.3125;
     color: #8e8f96;
     background-color: #313136;
+    padding-top: 52px;
 }
 
 body {
@@ -1192,6 +1193,16 @@ fieldset[disabled] .btn-link:focus {
     border-radius: 0;
     z-index: 1000;
     width: 100%;
+    position: fixed;
+    top:0;
+}
+
+.menu-container.alt {
+    background: #1d1e22;
+    border: 0;
+    border-radius: 0;
+    z-index: 1000;
+    width: 100%;
     position: relative;
 }
 
@@ -1199,16 +1210,42 @@ fieldset[disabled] .btn-link:focus {
     margin: 10px;
 }
 
-.menu-container a {
+.menu-container > ul, .menu-container > a {
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translate(0, -50%);
     color: #EEEEEE;
+    list-style: none;
+}
+
+.menu-container ul li {
+    display: inline-block;
+    margin: 2px 10px;
+}
+
+.menu-container ul li a {
+    color: #BBB;
 }
 
 .menu-container a:hover {
     color: #FFFFFF;
+}
+
+.menu-container a i.mkt-login:before {
+    content: "\f023";
+}
+
+.menu-container a:hover i.mkt-login:before {
+    content: "\f13e";
+}
+
+.menu-container a i.mkt-logout:before {
+    content: "\f13e";
+}
+
+.menu-container a:hover i.mkt-logout:before {
+    content: "\f023";
 }
 
 .slick-item {
@@ -1223,7 +1260,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .main-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100vh;
@@ -1384,7 +1421,7 @@ fieldset[disabled] .btn-link:focus {
     text-align: center;
     position: relative;
     height: 60px;
-    margin: 5px 0;
+    margin: 1px 0;
     overflow: hidden;
 }
 
@@ -2125,17 +2162,37 @@ html:not(.lt-ie10) .not-animated {
 /*
 * module social
 */
+.module-social{
+    height:120px;
+}
 
 .module-social h5 {
     /*float: left;*/
     line-height: 2.5;
     text-align: center;
-    margin: 0 15px;
+    opacity: 1;
+    position: absolute;
+    height: 59px;
+    width: calc(100% - 80px);
+    transition: all 0.6s;
 }
 
 .module-social ul {
     text-align: center;
     margin-bottom: 0;
+    width: calc(100% - 72px);
+    position: absolute;
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.module-social:hover h5 {
+    /*float: left;*/
+    opacity: 0;
+}
+
+.module-social:hover ul {
+    opacity: 1;
 }
 
 /*
@@ -4004,6 +4061,7 @@ html .page .offset-top-60 {
 .insta-btn-wrap {
     position: relative;
     transition: .3s;
+    background: #8e2bff;
 }
 
 .insta-btn-wrap a {
@@ -4031,8 +4089,9 @@ html .page .offset-top-60 {
     display: none;
     margin: 5px;
     font-family: "FontAwesome";
-    font-size: 30px;
+    font-size: 70px;
     font-weight: 400;
+    line-height: 1;
 }
 
 .insta-btn-wrap a:hover {
@@ -4047,6 +4106,7 @@ html .page .offset-top-60 {
         left: 0;
         right: 0;
         padding: 0;
+        font-size: 14px;
     }
 
     .insta-btn-wrap a:before {
@@ -4675,4 +4735,20 @@ html .page .offset-top-60 {
 
 .items-suscription .owl-next {
     right: -40px;
+}
+
+.btn-gray {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0);
+    border: solid 1px #FFFFFF;
+    color: #FFFFFF;
+    transition: all 0.6s;
+}
+
+.btn-gray:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.module-search .form-group {
+    margin: 0;
 }

@@ -1,4 +1,4 @@
-var urlBase = "http://localhost/mkt/mkt";
+var urlBase = "http://localhost:8080/mkt";
 
 $(document).ready(function () {
 
@@ -91,14 +91,14 @@ function loginEmail() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/Login",
+            url: "http://localhost:8080/mkt/Service/Clients/Login",
             data: {Email: email, Password: password}
         }).done(function (data) {
             loadingModal.close();
             if (data !== false) {
                 client = data;
                 if (client.CliStatus === "1") {
-                    location.href = "http://localhost/mkt/mkt/es/page/home.html";
+                    location.href = "http://localhost:8080/mkt/es/page/home.html";
                 } else {
                     var modal = new jBox('Modal', {
                         title: 'Inicio de Sesión',
@@ -132,7 +132,7 @@ function forgotEmailSend() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/FogotPassword",
+            url: "http://localhost:8080/mkt/Service/Clients/FogotPassword",
             data: {Email: email}
         }).done(function (data) {
             loadingModal.close();
@@ -191,7 +191,7 @@ function registry() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/Exist",
+            url: "http://localhost:8080/mkt/Service/Clients/Exist",
             data: {Email: email}
         }).done(function (data) {
             loadingModal.close();
@@ -210,7 +210,7 @@ function registry() {
                 var fecha = parseDate(birthday);
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/mkt/mkt/Service/Clients/CreateAccount",
+                    url: "http://localhost:8080/mkt/Service/Clients/CreateAccount",
                     data: {Type: "Email", Name: name, Email: email, Password: password, Phone: "", Gender: gender, Country: country, City: city, Status: "0", Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
                 }).done(function (data) {
                     loadingModal.close();
@@ -237,11 +237,11 @@ function closeSession() {
     //loadingModal.open();
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/Logout"
+        url: "http://localhost:8080/mkt/Service/Clients/Logout"
     }).done(function (data) {
         // loadingModal.close();
         if (data) {
-            location.href = "http://localhost/mkt/mkt/es/page/index.html";
+            location.href = "http://localhost:8080/mkt/es/page/index.html";
             ;
         }
     }).error(function () {
@@ -280,7 +280,7 @@ function saveClient() {
         var fecha = parseDate(birthday);
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/SaveAccount",
+            url: "http://localhost:8080/mkt/Service/Clients/SaveAccount",
             data: {Id: id, Name: name, Email: email, Password: password, Phone: phone, Gender: gender, Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
         }).done(function (data) {
             loadingModal.close();
@@ -323,7 +323,7 @@ function SaveVenta() {
             //loadingModal.open();
             $.ajax({
                 type: "POST",
-                url: "http://localhost/mkt/mkt/Service/Clients/ExistVenta",
+                url: "http://localhost:8080/mkt/Service/Clients/ExistVenta",
                 data: {VenCliId: cliId, VenDate: fecha}
             }).done(function (data) {
                 //loadingModal.close();
@@ -332,7 +332,7 @@ function SaveVenta() {
                     console.log("venta exitente");
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/mkt/mkt/Service/Clients/SaveVentaDetalle",
+                        url: "http://localhost:8080/mkt/Service/Clients/SaveVentaDetalle",
                         data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant}
                     }).done(function (data) {
                         //loadingModal.close();
@@ -351,7 +351,7 @@ function SaveVenta() {
 
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/mkt/mkt/Service/Clients/SaveVenta",
+                        url: "http://localhost:8080/mkt/Service/Clients/SaveVenta",
                         data: {VenCliId: cliId, VenStatus: "1"}
                     }).done(function (data) {
                         //loadingModal.close();
@@ -361,7 +361,7 @@ function SaveVenta() {
                         //DETALLE VENTA
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/mkt/mkt/Service/Clients/SaveVentaDetalle",
+                            url: "http://localhost:8080/mkt/Service/Clients/SaveVentaDetalle",
                             data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant}
                         }).done(function (data) {
                             //loadingModal.close();
@@ -397,7 +397,7 @@ function DeleteDetalle(ide) {
     alert(ide);
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/DeteleVentaDetalle",
+        url: "http://localhost:8080/mkt/Service/Clients/DeteleVentaDetalle",
         data: {DetId: ide}
     }).done(function (data) {
         if (data) {

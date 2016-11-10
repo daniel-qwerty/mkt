@@ -28,7 +28,8 @@ class Public_Widget_Loading extends Com_Object {
             }
 
             #preload {
-                position: absolute;
+                position: fixed;
+                top:0;
                 width: 100%;
                 height: 100vh;
                 z-index: 9000;

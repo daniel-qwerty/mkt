@@ -50,7 +50,7 @@
                 <!--hasta aqui el contenido-->
             </div>
         </div>
-        <form id="searchForm" method="POST" action="http://localhost/mkt/mkt/es/post/" onsubmit="">
+        <form id="searchForm" method="POST" action="http://localhost:8080/mkt/es/post/" onsubmit="">
             <input type="hidden" name="page" id="page" value="7">
         </form>
         <div class="row">
@@ -71,12 +71,15 @@
         </div>
 
     </div>
+
+
+
     <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
         <div class="row">
             <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $this->note->NotId); ?>" data-numposts="15"></div>
         </div>
     </div>
-
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Te puede interesar:</h4>
     <?php Notes_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(12)->renderSmall(); ?>
 </div>
 

@@ -22,7 +22,7 @@ class Public_Widget_FollowInstagram extends Com_Object {
     public function render() {
         
         ?>
-        <div class="insta-btn-wrap bg-chambray"><a href="#">Follow on <br class="visible-lg">Instagram</a></div>
+        <div class="insta-btn-wrap bg-chambray"><a href="#">Follow us!</a></div>
         <!-- RD Instafeed-->
         <div data-instafeed-clientid="44f19408f04040bd85214315861a84a1" data-instafeed-get="user"
              data-instafeed-user="499522078" data-items="2" data-sm-items="5" data-lg-items="9" data-loop="false"
