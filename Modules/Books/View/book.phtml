@@ -1,5 +1,4 @@
 <section class="col-xs-12">
-
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
@@ -8,9 +7,7 @@
             </div>
         </div>
     </div>
-
 </section>
-
 <section class="col-xs-12">
     <div class="container-fluid">
         <div class="row bg-white bookmall-detail">
@@ -18,11 +15,10 @@
                 <div id="book-image" class="square"
                      style="background-image:url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $this->list->BooImage; ?>);background-size:cover ">
                 </div>
-
                 <div data-items="2" data-sm-items="3" data-lg-items="4"
                      data-loop="true"
                      data-nav="true" class="owl-carousel element-groups-xs-custom">
-                    <?php foreach ($this->images as $new) { ?>
+                         <?php foreach ($this->images as $new) { ?>
                         <div data-instafeed-item="" class="owl-item insta-item">
                             <a href="javascript:void(0)"
                                id="thumb-<?= $new->MedId; ?>"
@@ -64,9 +60,8 @@
                 </div>
             </div>
             <div class="col-md-12" style="height: 2px; background: #999999"></div>
-            <div class="col-md-12">
-                <a href="#" class="btn btn-flat pull-right btn-yellow"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
-                <a href="#" class="btn btn-flat pull-right btn-primary" style="margin-right: 10px"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
+            <div class="col-md-12">                
+                <a onclick="SaveVenta();" class="btn btn-flat pull-right btn-primary" style="margin-right: 10px"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
             </div>
         </div>
     </div>
@@ -77,67 +72,44 @@
                 <h3 style="margin-bottom: 0px">Tu pedido</h3>
                 <table>
                     <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>TOTAL</th>
-                    </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>TOTAL</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                        <td><img
-                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                alt=""></td>
-                        <td>Suscripcion 3 meses revista impresa</td>
-                        <td>$us 99.9</td>
-                        <td>
-                            <input type="hidden" name="id" value="1">
-                            <input type="number" name="value" value="1">
-                        </td>
-                        <td>$us 99.9</td>
-                    </tr>
+                        <?php foreach ($this->carrito as $car) { ?>
+                            <tr>
+                        <form id="detalleForm">                                  
+                            <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i class="delete-item fa fa-close"></i></a></td>
+                            <td><img
+                                    src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                    alt=""></td>
+                            <td><?= $car->DetItem; ?></td>
+                            <td>Bs. <?= $car->DetPrecio; ?></td>
+                            <td>
+                                <input type="hidden" name="id" value="<?= $car->DetCant; ?>">
+                                <input type="number" name="value" value="1">
+                            </td>
+                            <td>Bs. <?= $car->DetPrecio; ?></td>
+                        </form>
+                        </tr>
+                    <?php } ?>                     
 
-                    <tr>
-                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                        <td><img
-                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                alt=""></td>
-                        <td>Suscripcion 3 meses revista impresa</td>
-                        <td>$us 99.9</td>
-                        <td>
-                            <input type="hidden" name="id" value="1">
-                            <input type="number" name="value" value="1">
-                        </td>
-                        <td>$us 99.9</td>
-
-                    </tr>
-                    <tr>
-                        <td><a href="#"><i class="delete-item fa fa-close"></i></a></td>
-                        <td><img
-                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                alt=""></td>
-                        <td>Suscripcion 3 meses revista impresa</td>
-                        <td>$us 99.9</td>
-                        <td>
-                            <input type="hidden" name="id" value="1">
-                            <input type="number" name="value" value="1">
-                        </td>
-                        <td>$us 99.9</td>
-                    </tr>
                     </tbody>
                     <tfoot>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Total</td>
-                        <td>$180</td>
-                    </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td>Bs. <?= $this->Sumcarrito; ?></td>
+                        </tr>
                     </tfoot>
                 </table>
             </div>
@@ -248,7 +220,7 @@
                             id="tarjeta" class="input-hidden"/>
                         <label for="tarjeta">
                             <img class="pay-method"
-                                 src="//placekitten.com/150/150"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarjeta.png"
                                  alt="tarjeta"/>
                         </label>
 
@@ -257,7 +229,7 @@
                             id="cheque" class="input-hidden"/>
                         <label for="cheque">
                             <img class="pay-method"
-                                 src="//placekitten.com/151/151"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cheque.png"
                                  alt="cheque"/>
                         </label>
 
@@ -266,7 +238,7 @@
                             id="deposito" class="input-hidden"/>
                         <label for="deposito">
                             <img class="pay-method"
-                                 src="//placekitten.com/152/153"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/banco.png"
                                  alt="deposito"/>
                         </label>
                     </div>
@@ -275,7 +247,7 @@
 
                     </div>
                     <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
-                        <a href="#" class="btn btn-warning">Comprar</a>
+                        <a href="#" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
                     </div>
 
                 </div>
@@ -285,6 +257,15 @@
     </div>
 </section>
 
+<form id="CarritoForm">    
+    <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    
+    <input id="item" name="item" type="text" autocomplete="off" value="<?= $this->list->BooTitle . ' - ' . $this->list->BooAuthor; ?>"/> 
+    <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
+    <input id="precio" name="precio" type="text" autocomplete="off" value="<?= $this->list->BooPrice; ?>"/> 
+    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>    
+    <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
+    <a onclick="SaveVenta();" type="button" >Registrar</a>
+</form>
 
 <script>
     setImage = function (id) {

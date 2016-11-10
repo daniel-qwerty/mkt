@@ -1,0 +1,172 @@
+form.forms label{
+    margin:0% !important;
+    clear: both;
+    color: #868686;
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 96%;
+}
+
+form.forms input,
+form.forms textarea{
+    margin:1% !important;
+    background-color: #FFF;
+    border: 1px solid #80c8f7;
+    clear: both;
+    color: #424242;
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 2%;
+    width: 85%;
+}
+
+form.forms span{
+    margin:5px 0% !important;
+    clear: both;
+    color: #868686;
+    display: block;
+    float: left;
+    width: 100%;
+    text-align:center;
+}
+
+
+form.forms .gender{
+    position:relative;
+    display:block;
+    float:left;
+    width:100%;
+}
+
+form.forms .gender div{
+    position:relative;
+    display:block;
+    float:left;
+    width:40%;
+    margin:1% 2%;
+    text-align: center;
+    cursor:pointer;
+    background-color: #FFF;
+    border: 1px solid #80c8f7;
+    color:#868686;
+    padding:1%;
+    font-size: 1.2em;
+}
+
+form.forms .gender div.selected{
+    background-color: #80c8f7;
+    color:#FFF;
+}
+
+form.forms .button{
+    background-color: #2371B8;
+    color:#FFF;
+    position:relative;
+    display:block;
+    float:right;
+    padding:7px  5%;
+    margin-right:10%;
+    cursor:pointer;
+    font-size:1.2em;
+    text-align: center;
+    margin-top: 15px;
+}
+
+form.forms .button:hover{
+    background-color: #A3A3A3;
+}
+
+
+.profile{
+
+}
+
+.profile .container{
+    max-width:1000px;
+    padding: 2% 0;
+}
+
+.profile .container .grid1{
+    position:relative;
+    display:block;
+    float:left;
+    width:66%;
+}
+
+.profile .container .grid2{
+    position:relative;
+    display:block;
+    float:left;
+    width:33%;
+}
+
+.profile .container .grid2 .publicity {
+    background-color: #ccc;
+    display: block;
+    float: left;
+    height: 350px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.profile .container .grid2 .title{
+    background-color: #ee334e;
+    display: block;
+    float: left;
+    font-family: "HelveticaCondensed";
+    font-size: 2em;
+    margin-top: 10%;
+    padding: 1% 2%;
+    position: relative;
+    width: 96%;
+}
+
+.profile .container .grid1 .header {
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 2%;
+    padding: 0 10% 1%;
+    width: 72%;
+}
+.profile .container .grid1 .header .title {
+    background-image: url("../../Image/Public/contact_separator.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    color: #161615;
+    display: block;
+    float: left;
+    font-family: "Open Sans";
+    font-size: 2.4em;
+    font-weight: 700 !important;
+    margin-bottom: 1%;
+    padding: 0 0 5px;
+    position: relative;
+}
+
+/* Tablets */
+
+@media screen and (max-width: 900px) {
+    form.forms *{
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .profile .container .grid1,
+    .profile .container .grid2{
+        width:100%;
+        margin:0%;
+    }
+
+    .profile .container .grid1 form.forms{
+        padding-left:7%;
+    }
+
+    .profile .container .grid1 .header {
+        width:80%;
+    }
+}

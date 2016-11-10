@@ -14,8 +14,7 @@
             href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
             rel="stylesheet" type="text/css">
 
-
-        <!-- Fav and Touch Icons -->       
+        <!-- Fav and Touch Icons -->      
 
         <link rel="apple-touch-icon" sizes="180x180" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png" sizes="32x32">
@@ -26,73 +25,8 @@
               href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
               type="image/x-icon"/>
 
-        <style>
-            body {
-                padding: 0;
-                margin: 0
-            }
-
-            #preload {
-                position: absolute;
-                width: 100%;
-                height: 100vh;
-                z-index: 9000;
-                background: white;
-            }
-
-            #preloader {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            .preloader-item {
-                width: 80px;
-                height: 80px;
-                margin: 10px;
-                background: #CCCCCC;
-                border-radius: 10px;
-                float: left;
-                display: block;
-            }
-
-            .preloader-item1 {
-                animation-name: pulse;
-                animation-duration: 1.5s;
-                animation-delay: 0.3s;
-                animation-iteration-count: infinite;
-            }
-
-            .preloader-item2 {
-                animation-name: pulse;
-                animation-duration: 1.5s;
-                animation-delay: 0.6s;
-                animation-iteration-count: infinite;
-            }
-
-            .preloader-item3 {
-                animation-name: pulse;
-                animation-duration: 1.5s;
-                animation-delay: 0.9s;
-                animation-iteration-count: infinite;
-            }
-
-            @keyframes pulse {
-                0% {
-                    background-color: #941b80;
-                }
-                33% {
-                    background-color: #e5007e;
-                }
-                66% {
-                    background-color: #e20613;
-                }
-                100% {
-                    background-color: #941b80;
-                }
-            }
-        </style>
+        <?php Public_Widget_Loading::getInstance()->render(); ?>
+        
 
         <?PHP
         Com_Helper_Style::getInstance()
@@ -105,7 +39,9 @@
                 ->addFile("Public/owl.carousel.css")
                 ->addFile("Public/materialicon.css")
                 ->addFile("Public/marketing-intro.css")
-                ->addFile("Public/jquery.fancybox.css");
+                ->addFile("Public/jquery.fancybox.css")
+                ->addFile("Public/ModalBorder.css")
+                ->addFile("Public/jBox.css");
         echo Com_Helper_Style::getInstance();
         ?>
     <!--    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
@@ -121,9 +57,12 @@
                 ->addFile("Public/marketing.js")
                 ->addFile("Public/rdcalendar.js")
                 ->addFile("Public/swiper.jquery.js")
-                ->addFile("Public/jquery.fancybox.js");
+                ->addFile("Public/login.js")
+                ->addFile("Public/jquery.fancybox.js")
+                ->addFile("Public/jquery.jbox.min.js");
 
         echo Com_Helper_Script::getInstance();
+        $client = get('sessionCliente');
         ?>
     </head>
 
@@ -140,6 +79,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="menu-content col-md-6">
+                        <?php if($client != '0'){ ?>
+                            <a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil" alt="Editar Perfil"><?PHP echo $client->CliName; ?></a>                        
+                        <?php } ?>
+                        <a onclick="closeSession();">Salir</a>
+                        <a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/login" title="Login" alt="Login">ENTRAR</a>
+                        
                         <div class="menu-container" style="display: none">
 
                             <img class="logo" alt="logo"
@@ -147,6 +92,7 @@
                             <a href="javascript:void(0)" onclick="toogleMenu();">
                                 <i class="fa fa-close" aria-hidden="true"></i>
                             </a>
+                            
                         </div>
                         <div class="container-fluid">
                             <div class="row">
@@ -190,7 +136,7 @@
                 </div>
             </div>
         </section>
-
+        
         <div class="menu-container" style="display: none">
             <img class="logo" alt="logo"
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
@@ -203,7 +149,6 @@
             <!-- Slider main container -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-
                     <?php SlideShows_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
                 </div>
                 <!-- Add Pagination -->

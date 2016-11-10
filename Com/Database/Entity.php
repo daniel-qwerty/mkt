@@ -125,7 +125,7 @@ class Com_Database_Entity extends Com_Object {
         $lstFields = (strlen($lstFields) > 0 ? " WHERE " . $lstFields : "");
         $sqlQuery = "SELECT * FROM {$this->tableName} {$lstFields}";
         
-         
+      
         if (Com_Database_Connection::getInstance()->execute($sqlQuery)) {
             $this->load(Com_Database_Connection::getInstance()->getObject());
             return true;

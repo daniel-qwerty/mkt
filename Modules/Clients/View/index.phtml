@@ -1,0 +1,24 @@
+<?PHP
+$db=new Entities_Client();
+$grid=new Com_Wizard_Grid();
+$grid->title="Listado de Personas Registradas";
+$grid->setIdField("CliId");
+$grid->setQuery($db->getList());
+$grid->setAlias(array("CliName"=>"Nombre","CliCountry"=>"Pais","CliCity"=>"Cuidad","CliFecha"=>"Fecha","CliStatus"=>"Estado"));
+$grid->setFilters(array("CliName"=>get('CliName')));
+
+$toolBar=new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo",  Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Add');
+$toolBar->add("list-alt", "Exportar",  Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Export');
+$toolBar->add("search", "Filtrar",null,"showHide('.filters')");
+$toolBar->add("log-out", "Volver",Com_Helper_Url::getInstance()->urlBase.'/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Edit/id/_ID_');
+$grid->addAction("trash", "Eliminar", null,"confirm('Esta seguro de eliminar el registro?')?location.href='".Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Delete/id/_ID_'."':'';");
+
+$grid->customField("CliHasVote", array("value"=>array('1'=>'Si','0'=>'No')));
+
+$grid->customField("CliStatus", array("value"=>array('1'=>'Publicado','0'=>'No Publicado')));
+
+$grid->render();

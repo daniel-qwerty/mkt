@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Perfil - <?PHP echo Configurations_Helper_Configuration::getInstance()->getKey("PAGE_TITLE"); ?></title>
+        <link href="http://www.douglasvillarroel.com" hreflang="es" rel="alternate" title="CNN Mexico" type="text/html"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="all">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"> 
+        <link type="image/x-icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" rel="shortcut icon">
+        <link type="image/x-icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" rel="icon">
+
+        <!--Metatags-->
+        <meta name="title" content="<?PHP echo $this->new->NewTitle; ?> - <?PHP echo Configurations_Helper_Configuration::getInstance()->getKey("PAGE_TITLE"); ?>">
+        <meta name="keywords" content="<?PHP echo $this->new->NewTags; ?>">
+        <meta name="description" content="<?PHP echo $this->new->NewTitle; ?> , <?PHP echo $this->new->NewTags; ?>">
+
+        <!--Facebook Tags-->
+        <meta property="fb:app_id" contents="131569326876024"/>
+        <meta property="og:title" content="<?PHP echo $this->new->NewTitle; ?> - <?PHP echo Configurations_Helper_Configuration::getInstance()->getKey("PAGE_TITLE"); ?>"/>
+        <meta property="og:description" content="<?PHP echo $this->new->NewTitle; ?> , <?PHP echo $this->new->NewTags; ?>">
+        <meta property="og:site_name" content="<?PHP echo Configurations_Helper_Configuration::getInstance()->getKey("PAGE_TITLE"); ?>"/>
+        <meta property="og:url" content="<?PHP echo Com_Helper_Url::getInstance()->urlBase . '/article/' . $this->new->NewUrl; ?>"/>
+        <meta property="og:image" content="<?PHP echo Com_Helper_Url::getInstance()->getResources(); ?>/Uploads/Image/<?PHP echo $this->new->NewImage; ?>"/>
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+        <?PHP
+        //Adding Css
+        Com_Helper_Style::getInstance()->addFile("Public/font-awesome.min.css")
+                ->addFile("Public/style.css")
+                ->addFile("Public/ModalBorder.css")
+                ->addFile("Public/jBox.css")
+                ->addFile("Public/account.css")
+                ->addFile("Public/news.css")
+                ->addFile("Public/datepicker.css");
+
+        echo Com_Helper_Style::getInstance();
+        ?>
+    </head>
+    <body>
+
+        
+        <div class="clear"></div>
+        <?PHP
+        $this->getContent();
+        ?>
+        
+
+        <div class="modal" id="loading">
+            <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/loading.gif" width="48px"/>
+        </div>
+
+        <!--[if lt IE 10]>
+            <div class="browserWarning">
+                <div>
+                    Este sitio web esta optimizado para versiones actuales de navegadores, por favor actualize su navegador.<br/>
+                    Seleccione para descargar uno de los navegadores soportados: 
+                    <div class="clear"></div>
+                    <ul>
+                        <li><a target="_blank" href="https://www.google.es/chrome/browser/desktop/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/chrome.png"></a></li>
+                        <li><a target="_blank" href="http://www.apple.com/safari/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/safari.png"></a></li>
+                        <li><a target="_blank" href="https://www.mozilla.org/es-ES/firefox/new/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/firefox.png"></a></li>
+                        <li><a target="_blank" href="http://windows.microsoft.com/es-es/internet-explorer/download-ie"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ie.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        <![endif]-->
+
+        <?PHP
+        //Adding Javascript
+        Com_Helper_Script::getInstance()->addFile("Public/jquery.1.11.1.min.js")
+                ->addFile("Public/jquery.jbox.min.js")
+                ->addFile("Public/jquery.slidejs.min.js")
+                ->addFile("Public/jquery.imageloading.js")
+                ->addFile("Public/jquery.datepicker.js")
+                ->addFile("Public/js.js")
+                ->addFile("Public/login.js")
+                ->addFile("Public/news.js");
+
+        echo Com_Helper_Script::getInstance();
+        ?>
+        <script type="text/javascript">
+            setUrlBase('<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>');
+        </script>
+    </body>
+</html>

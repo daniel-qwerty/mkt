@@ -3,10 +3,10 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <div class="col-sm-3 content-header-1-title bg-note-green">
-                <h3>Pauta</h3>
+                <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitlePauta')->TxtDescription; ?></h3>
             </div>
             <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
-                <span class="text-gray">Sé parte de nuestra revista</span>
+                <span class="text-gray"><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtSubTitlePauta')->TxtDescription; ?></span>
             </div>
         </div>
     </div>
@@ -19,13 +19,13 @@
     <section>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <?php SlideShowsTools_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
+                <?php SlideShowsPauta_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>
             </div>
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
         </div>
     </section>
     <div class="container-fluid content-tool bg-white">
-        <h3>Descargas de interés</h3>
+        <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitlePautaNosotros')->TxtDescription; ?></h3>
 
         <div class="row descarga-items">
             <div class="col-xs-12 descarga-item text-center">
@@ -39,21 +39,13 @@
         <div class="row descarga-items">
             <div class="col-xs-12 descarga-item text-center">
                 <p>
-                    Marketing News lleva en el mercado 9 AÑOS, el perfil de nuestros lectores se desarrolla entre
-                    DIRECTORES, GERENTES, TOMADORES DE DECISIONES y EMPRESARIOS en las empresas más importantes de
-                    Colombia. Tenemos un tiraje de impresión de 10.000 EJEMPLARES cada dos meses y se distribuyen 9.300
-                    a nivel nacional, (el restante se encuentra en las tiendas de Panamericana y ventas Online como en
-                    nuestra página y en Linio.com).
-
-                    ​Adicional a esto, ​según estudio realizado por “Grupo Consultores” (Especializada en estudios de
-                    mercadeo) somos la ​TERCERA REVISTA MÁS LEÍDA​, ​después del periódico El Tiempo​.​
-
-                    Conoce nuestras opciones de pauta digital y por nuestros paquetes de publicación impresa.
+                    <?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtContentPauta')->TxtDescription; ?>
+                    
                 </p>
             </div>
         </div>
 
-        <div class="row"><h3>Tarifario revista Digital</h3></div>
+        <div class="row"><h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioImpresa')->TxtDescription; ?></h3></div>
 
         <?php foreach ([1, 2, 3] as $var) : ?>
             <div class="row descarga-items">
@@ -88,7 +80,7 @@
             </div>
         <?php endforeach; ?>
 
-        <div class="row"><h3>Tarifario revista impresa</h3></div>
+        <div class="row"><h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioDigital')->TxtDescription; ?></h3></div>
 
         <?php foreach ([1, 2, 3] as $var) : ?>
             <div class="row descarga-items">

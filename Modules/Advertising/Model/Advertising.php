@@ -46,6 +46,15 @@ class Advertising_Model_Advertising extends Com_Module_Model {
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
+    
+    public function doUpdateService($intId, $view) {
+        $db = new Entities_Advertising();
+        $db->AdId = $intId;        
+        $db->AdViews = $this->get($intId)->AdViews + 1;        
+        $db->action = ACTION_UPDATE;
+        $db->save();
+        Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
+    }
 
     public function doDelete($intId) {
         $db = new Entities_Advertising();
@@ -61,6 +70,8 @@ class Advertising_Model_Advertising extends Com_Module_Model {
         $db->get();
         return $db;
     }
+    
+    
 
     public function getByName($strName) {
         $db = new Entities_Advertising();

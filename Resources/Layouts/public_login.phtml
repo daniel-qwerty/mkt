@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title><?PHP echo Configurations_Helper_Configuration::getInstance()->getKey("PAGE_TITLE"); ?></title>
+        <link href="http://www.douglasvillarroel.com" hreflang="es" rel="alternate" title="CNN Mexico" type="text/html"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="none">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"> 
+        <link type="image/x-icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" rel="shortcut icon">
+        <link type="image/x-icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicon.ico" rel="icon">
+        <?PHP
+        //Adding Css
+        Com_Helper_Style::getInstance()->addFile("Public/font-awesome.min.css")
+                ->addFile("Public/style.css")
+                ->addFile("Public/login.css")
+                ->addFile("Public/ModalBorder.css")
+                ->addFile("Public/jBox.css")
+                ->addFile("Public/datepicker.css");
+
+        echo Com_Helper_Style::getInstance();
+        ?>
+    </head>
+    <body class="login">
+        <img id="sup" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/sup.png">
+        <img id="inf" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/inferior.png">
+        
+
+
+        <div id="loginForm">
+            <div class="title">
+                <img id="log" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo.png">
+            </div>
+            <form id="form">
+                <label for="name">Correo Electrónico</label>
+                <input id="email" name="email" placeholder="jhon.doe@email.com" type="text" autocomplete="off">
+                <label for="name">Contrase&ntilde;a</label>
+                <input id="password" name="password" placeholder="m1_c0ntr4s3na" type="password" autocomplete="off">
+                <a onclick="forgotEmail()" type="button" class="link">¿Olvidaste tu contraseña?</a>
+                <a onclick="loginEmail()" type="button" class="button">Iniciar sesi&oacute;n</a>                
+                <a onclick="registryForm()" type="button" class="link linkBold">Reg&iacute;strate Ahora</a>
+            </form>
+            <div class="clear"></div>
+        </div>
+
+        <div class="modal" id="forgotEmail">
+            <form id="forgotForm">
+                <label for="name">Correo Electrónico</label>
+                <input id="email" name="email" placeholder="jhon.doe@email.com" type="text" autocomplete="off">
+                <a onclick="forgotEmailSend()" type="button" class="button">Enviar Recordatorio</a>
+            </form>
+        </div>
+
+        <div class="modal" id="loading">
+            <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/loading.gif" width="48px"/>
+        </div>
+
+        <div class="modal" id="registration">
+            <form id="registryForm">
+                <label for="name">Nombre Completo *</label>
+                <input id="name" name="name" placeholder="Jhon Doe" type="text" autocomplete="off"/>
+                <label for="email">Correo Electrónico *</label>
+                <input id="email" name="email" placeholder="jhon.doe@email.com" type="text" autocomplete="off"/>
+                <label for="password">Contrase&ntilde;a *</label>
+                <input id="password" name="password" placeholder="qwe.12345" type="password" autocomplete="off"/>
+                <label for="gender">G&eacute;nero *</label>
+                <input id="gender" name="gender" type="hidden" value="male"/>
+                <div class="gender"> 
+                    <div class="male selected" onclick="setGender('male');">
+                        Masculino
+                    </div>
+                    <div class="female" onclick="setGender('female');">
+                        Femenino
+                    </div>
+                </div>
+                <label for="birthday">Fecha de Nacimiento *</label>
+                <input id="birthday" name="birthday" class="inputDate"/>
+                <label for="country">Pais *</label>
+                <input id="country" name="country" placeholder="Bolivia"/>
+                <input type="hidden" id="countryCode" name="countryCode"/>
+                <label for="city" class="city">Ciudad *</label>
+                <input id="city" name="city" placeholder="Debe seleccionar un pais primero" />
+                <a onclick="registry()" type="button" class="button">Registrar</a>
+            </form>
+        </div>
+
+        <!--[if lt IE 10]>
+            <div class="browserWarning">
+                <div>
+                    Este sitio web esta optimizado para versiones actuales de navegadores, por favor actualize su navegador.<br/>
+                    Seleccione para descargar uno de los navegadores soportados: 
+                    <div class="clear"></div>
+                    <ul>
+                        <li><a target="_blank" href="https://www.google.es/chrome/browser/desktop/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/chrome.png"></a></li>
+                        <li><a target="_blank" href="http://www.apple.com/safari/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/safari.png"></a></li>
+                        <li><a target="_blank" href="https://www.mozilla.org/es-ES/firefox/new/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/firefox.png"></a></li>
+                        <li><a target="_blank" href="http://windows.microsoft.com/es-es/internet-explorer/download-ie"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ie.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        <![endif]-->
+        <div id="fb-root"></div>
+        <?PHP
+        //Adding Javascript
+        Com_Helper_Script::getInstance()->addFile("Public/jquery.1.11.1.min.js")
+                ->addFile("Public/jquery.autocomplete.min.js")
+                ->addFile("Public/jquery.jbox.min.js")
+                ->addFile("Public/jquery.slidejs.min.js")
+                ->addFile("Public/jquery.imageloading.js")
+                ->addFile("Public/jquery.datepicker.js")
+                ->addFile("Public/js.js")
+                ->addFile("Public/login.js");
+
+        echo Com_Helper_Script::getInstance();
+        ?>
+        <script type="text/javascript">
+            setUrlBase('<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>');
+        </script>
+
+    </body>
+</html>

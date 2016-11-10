@@ -7,6 +7,12 @@ class Public_Controller_Index extends Com_Module_Controller_Language {
     public $country;
 
     public function init() {
+
+        if (get('sessionCliente') == '0') {
+            set('cliente','0', "SESSION");
+        }  else {
+            set('cliente','1', "SESSION");
+        }        
         $this->setLayout("index");
         $this->lan = Language_Model_Language::getInstance()->getByCode($this->language);
         $fileDir = Com_Helper_Url::getInstance()->physicalDirectory . '/Languages/' . $this->lan->LanCode . ".language";
@@ -37,7 +43,7 @@ class Public_Controller_Index extends Com_Module_Controller_Language {
             $this->country = get("publicCountry");
         }
 
-        Tracking_Model_Tracking::getInstance()->doInsert($_SERVER['REMOTE_ADDR'],Com_Helper_Url::getInstance()->getUrl(),isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '',$_SERVER['PHP_SELF'],date("Y-m-d"),date("H:i:s"),$_SERVER['HTTP_USER_AGENT']);
+        Tracking_Model_Tracking::getInstance()->doInsert($_SERVER['REMOTE_ADDR'], Com_Helper_Url::getInstance()->getUrl(), isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '', $_SERVER['PHP_SELF'], date("Y-m-d"), date("H:i:s"), $_SERVER['HTTP_USER_AGENT']);
 
         //Statistics_Model_Visit::getInstance()->doInsert(get('REMOTE_ADDR'), date("Y-m-d"), date("H:i:s"), Com_Helper_Url::getInstance()->getUrl(), $this->lan->LanId, $this->country->co);
         //validate Search
@@ -60,60 +66,10 @@ class Public_Controller_Index extends Com_Module_Controller_Language {
             Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_WARNING, "No existen paginas registradas");
             $this->redirect(Com_Helper_Url::getInstance()->urlBase . '/Admin');
         }
-
-
     }
 
-    public function Search() {
-        $this->setLayout("blank");
-        $this->assign("list", Public_Model_Generic::getInstance()->getList($this->lan->LanId, get('pattern')));
-    }
-
-    public function Share() {
-
-        $this->setLayout("blank");
-
-        $this->assign("name");
-        $this->assign("email");
-        $this->assign("content");
-        $this->assign("image");
-        $this->assign("doc");
-        $this->assign("message");
-
-        if ($this->isPost()) {
-
-            $imageName = "";
-            if (Com_File_Handler::getInstance()->setFile(get("image"))->hasErrors()) {
-                Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "El Archivo Seleccionado no pudo ser guardado por favor Intente Nuevamente");
-            } else if (Com_File_Handler::getInstance()->saveFile("Resources/Uploads/Image/")) {
-                $imageName = Com_File_Handler::getInstance()->getFileName();
-            }
-            $docName = "";
-            if (Com_File_Handler::getInstance()->setFile(get("doc"))->hasErrors()) {
-                Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "El Archivo Seleccionado no pudo ser guardado por favor Intente Nuevamente");
-            } else if (Com_File_Handler::getInstance()->saveFile("Resources/Uploads/")) {
-                $docName = Com_File_Handler::getInstance()->getFileName();
-            }
-
-            $obj = $this->getPostObject();
-
-            if ($obj->name != "") {
-                if ($obj->email != "") {
-                    if ($obj->content != "") {
-                        $image = Com_Helper_Url::getInstance()->physicalDirectory . "/Resources/Uploads/Image/" . $imageName;
-                        $doc = Com_Helper_Url::getInstance()->physicalDirectory . "/Resources/Uploads/" . $docName;
-                        $this->sendEmail($obj->email, $obj->name, $obj->content, $doc, $docName, $image, $imageName);
-                        $this->assign("message", "Muchas gracias por enviarnos tu historia, esta sera publicada en breve");
-                    } else {
-                        $this->assign("message", "llena el contenido");
-                    }
-                } else {
-                    $this->assign("message", "llena el email");
-                }
-            } else {
-                $this->assign("message", "llena el nombre");
-            }
-        }
+    public function Login() {
+        $this->setLayout("public_login");
     }
 
     private function sendEmail($emailClient, $nameClient, $messageClient, $doc, $docName, $image, $imageName) {

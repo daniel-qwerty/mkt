@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <style type="text/css">
+            html,
+            body{
+                margin:0px;
+                padding:0px;
+            }
+            *{
+                font-family: Arial;
+            }
+            .header{
+                background-color: #81CFF4;
+                width:98%;
+                padding:1%;
+                float:left;
+                display:block;
+                position:relative;
+                clear:both;
+            }
+            .body{
+                width:98%;
+                padding:1%;
+                float:left;
+                display:block;
+                position:relative;
+                clear:both;
+                background-color: #FFF;
+            }
+            .footer{
+                background-color: #3D3D3B;
+                width:98%;
+                padding:1%;
+                float:left;
+                display:block;
+                position:relative;
+                clear:both;
+                color:#747474;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="{Logo}">
+        </div>
+        <div class="body">
+            <p>Fecha: {Register.Date}</p>
+            <p>Nombre: {Register.Name}</p>
+            <p>Correo Electr&oacute;nico: {Register.Email}</p>
+            <p>{Register.Content}</p>
+        </div>  
+        <div class="footer">
+            {Footer}
+        </div>    
+    </body>
+</html>

@@ -178,6 +178,26 @@ $.fn.goValidate = function() {
 };
 $('form').goValidate();
 
+function updateViewsAd(ide) {    
+   
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/mkt/mkt/Service/Clients/AdViews",
+        data: {AdId: ide}
+    }).done(function (data) {
+        if (data) {
+            console.log("view registrado");            
+        } else {
+            console.log("view error");
+        }
 
+        //modal.open();
+    }).error(function () {
+        //loadingModal.close();
+
+        console.log("error service ad");
+    }
+    );
+}
 
 

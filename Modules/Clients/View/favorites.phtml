@@ -1,0 +1,139 @@
+<?PHP
+$tag = $this->tag;
+?>
+<div class="search" style="background-image: none !important;">
+    <form id="searchForm" method="POST" action="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/tag/<?PHP echo $tag; ?>.html" onsubmit="return validateSearch();">
+        <input type="hidden" name="page" id="page" value="<?PHP echo $this->page; ?>">
+    </form>
+    <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+
+<?PHP
+$list = $this->newsList->items;
+?>
+
+<div class="news">
+    <div class="clear"></div>
+    <div class="container">
+        <div class="grid1 results">
+            <div class="header">
+                <div class="title">Favoritos</div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <?PHP
+            foreach ($list as $obj) {
+                $url = Com_Helper_Url::getInstance()->urlBase . '/article/' . $obj->NewUrl;
+                ?>
+                <div class="article">
+                    <?PHP
+                    if ($obj->NewVideo != '') {
+                        $url = Com_Helper_Url::getInstance()->urlBase . '/video/' . $obj->NewUrl;
+                        ?>
+                        <img class="image" src="<?PHP echo Com_Helper_Url::getInstance()->getResources() . '/Uploads/Image/' . $obj->NewImage; ?>" width="40%" onclick="openVideo($(this));" rel="<?PHP echo $obj->NewVideo; ?>"/>
+                        <img class="play" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/video_play.png" width="44px" onclick="openVideo($(this));" rel="<?PHP echo $obj->NewVideo; ?>"/>
+                        <?PHP
+                    } else {
+                        ?>
+                        <img class="image" src="<?PHP echo Com_Helper_Url::getInstance()->getResources() . '/Uploads/Image/' . $obj->NewImage; ?>" width="40%" />
+                        <?PHP
+                    }
+                    ?>
+                    <div class="content">                     
+                        <div class="title">
+                            <a href="<?php echo $url; ?>"><?php echo $obj->NewTitle ?></a>                            
+                        </div>
+                        <div class="author">
+                            <?php echo $obj->NewAuthor; ?>
+                        </div>
+                        <div class="resume">
+                            <?php echo truncate($obj->NewDescription, 150); ?>
+                        </div>
+                        <div class="date">
+                            <?php echo getLatinDate($obj->NewDate); ?>
+                        </div>
+                        <div class="views">
+                            Visto <?PHP echo ($obj->NewShared > 1000 ? '+' . intval($obj->NewShared / 1000) . 'K' : $obj->NewShared); ?> veces
+                        </div>
+                        <div class="clear"></div>
+                        <div class="socialMediaButtons">
+                            <ul>
+                                <li class="pinterest">
+                                    <a onclick="count('pinterest',<?PHP echo $obj->NewId; ?>, $(this));" target="_blank" href="http://www.pinterest.com/pin/create/button/?url=<?PHP echo $url; ?>&description=<?PHP echo $obj->NewTitle; ?>&media=<?PHP echo Com_Helper_Url::getInstance()->getResources() . "/Uploads/Image/" . $obj->NewImage; ?>"><span class="fa fa-pinterest"></span><span class="badge"><?PHP echo ($obj->NewPinterest > 1000 ? '+' . intval($obj->NewPinterest / 1000) . 'K' : $obj->NewPinterest); ?></span></a>
+                                </li>
+                                <li class="google_plus">
+                                    <a onclick="count('google',<?PHP echo $obj->NewId; ?>, $(this));" target="_blank" href="https://plus.google.com/share?url=<?PHP echo $url; ?>"><span class="fa fa-google-plus"></span><span class="badge"><?PHP echo ($obj->NewGoogle > 1000 ? '+' . intval($obj->NewGoogle / 1000) . 'K' : $obj->NewGoogle); ?></span></a>
+                                </li>
+                                <li class="twitter">
+                                    <a onclick="count('twitter',<?PHP echo $obj->NewId; ?>, $(this));" target="_blank" href="https://twitter.com/intent/tweet?status=<?PHP echo $obj->NewTitle; ?> <?PHP echo $url; ?> - @dougvillarroel"><span class="fa fa-twitter"></span><span class="badge"><?PHP echo ($obj->NewTwitter > 1000 ? '+' . intval($obj->NewTwitter / 1000) . 'K' : $obj->NewTwitter); ?></span></a>
+                                </li>
+                                <li class="facebook">
+                                    <a onclick="count('facebook',<?PHP echo $obj->NewId; ?>, $(this));" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?PHP echo $url; ?>"><span class="fa fa-facebook"></span><span class="badge"><?PHP echo ($obj->NewLike > 1000 ? '+' . intval($obj->NewLike / 1000) . 'K' : $obj->NewLike); ?></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div> 
+                <div class="clear"></div>
+                <?PHP
+            }
+            ?>
+            <div class="clear"></div>  
+            <div class="pages">
+                <?PHP
+                if ($this->page > 1) {
+                    ?>
+                    <a onclick="changePage(<?PHP echo ($this->page - 1); ?>);" class="fa fa-caret-left prev"> </a>
+                    <?PHP
+                }
+                $inicial = $this->page;
+                $final = $this->newsList->paginas;
+                if ($inicial + 4 < $final) {
+                    $final = $inicial + 4;
+                }
+                $inicial = $final - 4;
+                if ($inicial > $this->page || $inicial < 1) {
+                    $inicial = 1;
+                }
+                for ($i = $inicial; $i <= $final; $i++) {
+                    ?>
+                    <a onclick="changePage(<?PHP echo $i; ?>);" class="<?PHP echo ($i == $this->page ? 'selected' : ''); ?>"><?PHP echo $i; ?></a>
+                    <?PHP
+                }
+                if ($this->page < $this->newsList->paginas) {
+                    ?>
+                    <a onclick="changePage(<?PHP echo ($this->page + 1); ?>);" class="fa fa-caret-right next"> </a>
+                    <?PHP
+                }
+                ?>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="grid2">
+            <div class="publicity">
+
+            </div>
+            <div class="clear"></div>
+            <div class="title">
+                Especiales
+            </div>
+            <div class="clear"></div>
+            <?PHP
+            Special_Widget_List::getInstance()->render();
+            ?>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+
+<div id="modalPlayer">
+    <iframe id="ytplayer" type="text/html" width="640" height="480" src="" frameborder="0"></iframe>
+</div>

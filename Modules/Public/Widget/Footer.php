@@ -67,15 +67,15 @@ class Public_Widget_Footer extends Com_Object {
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal col-sm-12">
-                            <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
-                            <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.." data-placement="top" data-trigger="manual"></textarea></div>
-                            <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@you.com (so that we can contact you)" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
-                            <div class="form-group"><label>Phone</label><input class="form-control phone" placeholder="999-999-9999" data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (999-999-9999)" type="text"></div>
-                            <div class="form-group"><button type="submit" class="btn btn-success pull-right">Send It!</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactNombre")->TxtDescription ?></label><input class="form-control required" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactMensaje")->TxtDescription ?></label><textarea class="form-control"  data-placement="top" data-trigger="manual"></textarea></div>
+                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEmail")->TxtDescription ?></label><input class="form-control email"  data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactTelefono")->TxtDescription ?></label><input class="form-control phone"  data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (999-999-9999)" type="text"></div>
+                            <div class="form-group"><button type="submit" class="btn btn-success pull-right"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEnviar")->TxtDescription ?></button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactCancelar")->TxtDescription ?></button>
                     </div>
                 </div>
             </div>

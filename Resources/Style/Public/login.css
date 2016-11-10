@@ -1,0 +1,198 @@
+
+
+#loginForm{
+    padding:15px;
+    background-image: url(../../Image/Public/back_articulo.png);
+    background-color: transparent;
+    margin:0% auto !important;
+    margin-top:100px !important;
+    width:290px;
+
+}
+
+#loginForm .title{
+    font-size:2em !important;
+    text-align: center;
+    font-weight: normal;
+    color:#2371b8;
+}
+
+#loginForm label{
+    clear: both;
+    color: #868686;
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 96%;
+}
+
+
+#loginForm input, 
+#loginForm textarea {
+    background-color: #FFF;
+    border: 1px solid #80c8f7;
+    clear: both;
+    color: #424242;
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 2%;
+    width: 96%;
+    border-radius: 5px;
+}
+
+#loginForm .link{
+    color:#979797;
+    position:relative;
+    display:block;
+    text-decoration: none;
+    float:right;
+    padding:2%;
+    cursor:pointer;
+    font-size:1em;
+    border-radius: 5px;
+    width:96%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#loginForm .link:hover{
+    color:#2371B8;
+}
+
+#loginForm .linkBold{
+    color:#2371B8;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+
+#loginForm .linkBold:hover{
+    color:#3A5795 !important;
+}
+
+#loginForm .button{
+    background-color: #2371B8;
+    color:#FFF;
+    position:relative;
+    display:block;
+    float:right;
+    padding:7px  2%;
+    cursor:pointer;
+    font-size:1.2em;
+    width:96%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#loginForm .button:hover{
+    background-color: #A3A3A3;
+}
+
+#loginForm .buttonFacebook{
+    background-color: #3A5795 !important;
+}
+
+#loginForm .buttonFacebook:hover{
+    background-color: #A3A3A3  !important;
+}
+
+#registration label{
+    margin:0% !important;
+}
+
+#registration input,
+#registration textarea{
+    margin:1% !important;
+}
+
+#registration span{
+    margin:5px 0% !important;
+    clear: both;
+    color: #868686;
+    display: block;
+    float: left;
+    width: 100%;
+    text-align:center;
+}
+
+
+#registration .gender{
+    position:relative;
+    display:block;
+    float:left;
+    width:100%;
+}
+
+#registration .gender div{
+    position:relative;
+    display:block;
+    float:left;
+    width:45.5%;
+    margin:1% 2%;
+    text-align: center;
+    cursor:pointer;
+    background-color: #FFF;
+    border: 1px solid #80c8f7;
+    color:#868686;
+    padding:1%;
+    font-size: 1em;
+}
+
+#registration .gender div.selected{
+    background-color: #80c8f7;
+    color:#FFF;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+
+/* Tablets */
+
+@media screen and (max-width: 900px) {
+    #registration *{
+        font-size: 1em !important;
+    }
+}
+
+/* Smarthphones */
+@media screen and (max-width: 400px) {
+
+    #loginForm{
+        width:96% !important;
+        padding:2% !important;
+        border-radius: 0 !important;
+        margin-top:70px !important;
+        box-shadow: none;
+        height:480px;
+        position:relative;
+        display:block;
+        float:left;
+    }
+}
+
+#sup, #inf{
+    position: absolute;
+    
+}
+#sup{
+    top: 0;
+    left: 0;
+    width: 500px;
+}
+
+#inf{
+    bottom: 0;
+    right:0;
+    width: 500px;
+}
+
+#log{
+   
+   width: 200px;
+}
+

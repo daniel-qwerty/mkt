@@ -1,7 +1,6 @@
 <?php
 
-class Advertising_Widget_Ad extends Com_Object
-{
+class Advertising_Widget_Ad extends Com_Object {
 
     private $type;
     private $limit;
@@ -10,49 +9,28 @@ class Advertising_Widget_Ad extends Com_Object
      *
      * @return Advertising_Widget_Ad
      */
-    public static function getInstance()
-    {
+    public static function getInstance() {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
 
-    public function setLimit($limit)
-    {
+    public function setLimit($limit) {
         $this->limit = $limit;
         return $this;
     }
 
-    public function renderF()
-    {
+    public function renderF() {
 
         $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
         //print_r($list);
         foreach ($list as $new) {
             ?>
 
-            <a href="<?= $new->AdLink; ?>" target="_blanck">
-                <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
-                     style="width: 100%">
-            </a>
-
-            <?php
-        }
-    }
-    
-    public function renderI()
-    {
-
-        $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
-        //print_r($list);
-        foreach ($list as $new) {
-            ?>
-
-            <a href="<?= $new->AdLink; ?>" target="_blanck">
+            <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blank">
                 <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                      style="width: 100%">
             </a>
@@ -61,15 +39,30 @@ class Advertising_Widget_Ad extends Com_Object
         }
     }
 
-    public function renderC()
-    {
+    public function renderI() {
+
+        $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
+        //print_r($list);
+        foreach ($list as $new) {
+            ?>
+
+            <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
+                <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
+                     style="width: 100%">
+            </a>
+
+            <?php
+        }
+    }
+
+    public function renderC() {
 
         $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
         //print_r($list);
         foreach ($list as $new) {
             ?>
             <div class="banner-block">
-                <a href="<?= $new->AdLink; ?>" target="_blanck">
+                <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                     <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                          style="width: 100%">
                 </a>
@@ -78,15 +71,14 @@ class Advertising_Widget_Ad extends Com_Object
         }
     }
 
-    public function renderE()
-    {
+    public function renderE() {
 
         $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
         //print_r($list);
         foreach ($list as $new) {
             ?>
             <div class="banner-block">
-                <a href="<?= $new->AdLink; ?>" target="_blanck">
+                <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                     <img
                         src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                         alt="">
@@ -97,14 +89,13 @@ class Advertising_Widget_Ad extends Com_Object
         }
     }
 
-    public function renderB()
-    {
+    public function renderB() {
 
         $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
         //print_r($list);
         foreach ($list as $new) {
             ?>
-            <a href="<?= $new->AdLink; ?>" target="_blanck">
+            <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                 <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>" alt=""
                      style="width: 100%">
             </a>

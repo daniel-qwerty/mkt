@@ -1,0 +1,42 @@
+<?PHP
+$report = new Com_Wizard_Report();
+$report->title = "Listado de Usuarios Registrados";
+$report->open();
+?>
+<table>
+    <tr>
+        <td>Nro.</td>
+        <td>Nombre</td>
+        <td>Correo Electronico</td>
+        <td>Telefono</td>
+        <td>Fecha Nacimiento</td>
+        <td>Edad</td>
+        <td>Dispositivo</td>
+        <td>Sistema</td>
+        <td>Facebook</td>
+        <td>Fecha de Registro</td>
+        <td>A Votado</td>
+    </tr>
+    <?PHP
+    foreach ($this->list as $index => $obj) {
+        ?>
+        <tr>
+            <td><?PHP echo ($index + 1); ?></td>
+            <td><?PHP echo $obj->CliName; ?></td>
+            <td><?PHP echo $obj->CliEmail; ?></td>
+            <td><?PHP echo $obj->CliTelefono; ?></td>
+            <td><?PHP echo $obj->CliNacimiento; ?></td>
+            <td><?PHP echo date("Y") - substr($obj->CliNacimiento, 0, 4); ?></td>
+            <td><?PHP echo $obj->CliDispositivo; ?></td>
+            <td><?PHP echo $obj->CliSistema; ?></td>
+            <td><?PHP echo $obj->CliFacebook; ?></td>
+            <td><?PHP echo $obj->CliFecha; ?></td>
+            <td><?PHP echo ($obj->CliHasVote ? 'Si' : 'No'); ?></td>
+        </tr>
+        <?PHP
+    }
+    ?>
+</table>
+<?PHP
+$report->close();
+?>

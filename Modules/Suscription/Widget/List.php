@@ -25,7 +25,6 @@ class Suscription_Widget_List extends Com_Object {
 
         foreach ($list as $slide) {
             ?>
-
             <div data-instafeed-item="" class="owl-item item-suscription">
                 <div class="square"
                      style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SusImage; ?>); background-size: cover ">

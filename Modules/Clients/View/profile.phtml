@@ -1,0 +1,46 @@
+<div class="search" style="background-image: none !important;">
+    <form id="searchForm" method="POST" action="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/Index/News/Articles" onsubmit="return validateSearch();">
+        <input type="hidden" name="page" id="page" value="<?PHP echo $this->page; ?>">
+    </form>
+</div>
+
+<div class="profile">
+    <div class="container" >
+        <div class="grid1">
+            <div class="header">
+                <div class="title">Editar Perfil</div>
+                <div class="clear"></div>
+            </div>
+            <form id="registryForm" class="forms">
+                <input id="id" name="id" type="hidden" value="<?PHP echo $this->client->CliId; ?>"/>
+                <label for="name">Nombre Completo *</label>
+                <input id="name" name="name" placeholder="Jhon Doe" type="text" autocomplete="off" value="<?PHP echo $this->client->CliName; ?>"/>
+                <label for="email">Correo Electrónico *</label>
+                <input id="email" name="email" placeholder="jhon.doe@email.com" type="text" autocomplete="off" value="<?PHP echo $this->client->CliEmail; ?>"/>
+                <label for="password">Contrase&ntilde;a</label>
+                <input id="password" name="password" placeholder="qwe.12345" type="password" autocomplete="off"/>
+                <label for="gender">G&eacute;nero *</label>
+                <input id="gender" name="gender" type="hidden" value="<?PHP echo $this->client->CliGender; ?>"/>
+                <div class="gender"> 
+                    <div class="male selected" onclick="setGender('male');">
+                        Masculino
+                    </div>
+                    <div class="female" onclick="setGender('female');">
+                        Femenino
+                    </div>
+                </div>
+                <label for="birthday">Fecha de Nacimiento *</label>
+                <input id="birthday" name="birthday" class="inputDate" value="<?PHP echo $this->client->CliBirthDate; ?>"/>
+                <label for="phone">Tel&eacute;fono</label>
+                <input id="phone" name="phone" type="text" value="<?PHP echo $this->client->CliPhone; ?>"/>
+                <a onclick="saveClient()" type="button" class="button">Actualizar</a>
+            </form>
+            <div class="clear"></div>
+        </div>
+        <div class="grid2">
+            <div class="publicity"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

@@ -11,7 +11,7 @@
                 font-family: Arial;
             }
             .header{
-                background-color: #158680;
+                background-color: #81CFF4;
                 width:98%;
                 padding:1%;
                 float:left;
@@ -29,7 +29,7 @@
                 background-color: #FFF;
             }
             .footer{
-                background-color: #333333;
+                background-color: #3D3D3B;
                 width:98%;
                 padding:1%;
                 float:left;
@@ -45,10 +45,11 @@
             <img src="{Logo}">
         </div>
         <div class="body">
+            <p>Lugar: {Contact.Place}</p>
             <p>Fecha: {Contact.Date}</p>
             <p>Nombre: {Contact.Name}</p>
             <p>Correo Electr&oacute;nico: {Contact.Email}</p>
-            <p>Contenido: {Contact.Content}</p>
+            <p>{Contact.Content}</p>
         </div>  
         <div class="footer">
             {Footer}
