@@ -25,7 +25,7 @@
         <link rel="shortcut icon"
               href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
               type="image/x-icon"/>
-        
+
         <?php Public_Widget_Loading::getInstance()->render(); ?>
 
         <?PHP
@@ -36,6 +36,8 @@
                 ->addFile("Public/slick-theme.css")
                 ->addFile("Public/marketing-intro.css")
                 ->addFile("Public/marketing-header.css")
+                ->addFile("Public/jBox.css")
+            ->addFile("Public/sweetalert.css")
         ;
         echo Com_Helper_Style::getInstance();
 
@@ -46,7 +48,10 @@
                 ->addFile("Public/vivus.js")
                 ->addFile("Public/marketing.js")
                 ->addFile("Public/contact.js")
-                ->addFile("Public/map.js");
+                ->addFile("Public/map.js")
+                ->addFile("Public/jquery.jbox.min.js")
+            ->addFile("Public/sweetalert.min.js");
+        echo Com_Helper_Script::getInstance();
         ?>
     </head>
 
@@ -63,13 +68,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="menu-content col-md-6">
-                        <div class="menu-container" style="display: none">
+                        <div class="menu-container alt" style="display: none">
 
                             <img class="logo" alt="logo"
                                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
                             <a href="javascript:void(0)" onclick="toogleMenu();">
                                 <i class="fa fa-close" aria-hidden="true"></i>
                             </a>
+
                         </div>
                         <div class="container-fluid">
                             <div class="row">
@@ -85,6 +91,7 @@
                                 <div class="col-md-12">
                                     <div class="menu-redes">
                                         <ul class="list-inline">
+                                            <li>siguenos en</li>
                                             <li><a target="_blank"
                                                    href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>"
                                                    class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>

@@ -113,23 +113,17 @@
                     </tfoot>
                 </table>
             </div>
-            <form action="#" method="post">
+            <form id="formCompra" id="formcompra" action="#" method="post">
                 <div class="col-md-offset-1 col-md-5">
                     <h3>Detalle de compra</h3>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="nombre">Nombre completo</label>
                                 <input type="text" class="form-control" id="nombre" placeholder="nombre">
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="apellido">Apellido completo</label>
-                                <input type="text" class="form-control" id="apellido" placeholder="apellido">
-                            </div>
-                        </div>
+                        </div>                        
                     </div>
 
                     <div class="form-group">
@@ -154,61 +148,63 @@
                         <label for="pais">Pais</label>
                         <input type="text" class="form-control" id="pais" placeholder="pais">
                     </div>
-                    <div class="form-group">
-                        <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
-                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
-                    </div>
-                    <div class="form-group">
-                        <label for="localidad">Localidad/Ciudad</label>
-                        <input type="text" class="form-control" id="localidad" placeholder="localidad">
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="email">Estado / Pais</label>
-                                <input type="text" class="form-control" id="email" placeholder="email">
+                                <label for="localidad">Localidad/Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad" placeholder="localidad">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="celular">Codigo postal / Zip</label>
-                                <input type="text" class="form-control" id="celular" placeholder="celular">
+                                <input type="text" class="form-control" id="codpostal"  placeholder="celular">
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="direccion 1">
+                        <input type="text" class="form-control" id="direccion" placeholder="direccion 2">
+                    </div>
+
+
                 </div>
                 <div class="col-md-5">
                     <h3>Detalle de compra</h3>
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
-                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
+                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">
+                        <input type="text" class="form-control" id="direccion2b" placeholder="direccion 2">
                     </div>
                     <div class="form-group">
-                        <label for="localidad">Localidad/Ciudad</label>
-                        <input type="text" class="form-control" id="localidad" placeholder="localidad">
+                        <label for="pais">Pais</label>
+                        <input type="text" class="form-control" id="pais2" placeholder="pais">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="email">Estado / Pais</label>
-                                <input type="text" class="form-control" id="email" placeholder="email">
+                                <label for="localidad">Localidad/Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad2" placeholder="localidad">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="celular">Codigo postal / Zip</label>
-                                <input type="text" class="form-control" id="celular" placeholder="celular">
+                                <input type="text" class="form-control" id="codpostal2" placeholder="celular">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripcion</label>
                         <input type="text" class="form-control" id="descripcion" placeholder="descripcion">
+                        
+                        <input type="text" class="form-control" id="idVenta" value="<?= $this->VentId; ?>" placeholder="idventa">
+                        <input type="text" class="form-control" id="total" value="<?= $this->Sumcarrito; ?>" placeholder="total">
+                        
                     </div>
                 </div>
-            </form>
+           
             <div class="col-md-10 col-md-offset-1">
                 <div class="row bg-gray-ligth" style="padding: 15px;">
                     <div class="col-md-4">
@@ -216,8 +212,8 @@
                     </div>
                     <div class="col-md-8">
                         <input
-                            type="radio" name="emotion"
-                            id="tarjeta" class="input-hidden"/>
+                            type="radio" name="metodo"
+                            id="tarjeta" value="tarjeta" class="input-hidden"/>
                         <label for="tarjeta">
                             <img class="pay-method"
                                  src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarjeta.png"
@@ -225,8 +221,8 @@
                         </label>
 
                         <input
-                            type="radio" name="emotion"
-                            id="cheque" class="input-hidden"/>
+                            type="radio" name="metodo"
+                            id="cheque" value="cheque" class="input-hidden"/>
                         <label for="cheque">
                             <img class="pay-method"
                                  src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cheque.png"
@@ -234,8 +230,8 @@
                         </label>
 
                         <input
-                            type="radio" name="emotion"
-                            id="deposito" class="input-hidden"/>
+                            type="radio" name="metodo"
+                            id="deposito" value="deposito" class="input-hidden"/>
                         <label for="deposito">
                             <img class="pay-method"
                                  src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/banco.png"
@@ -247,12 +243,13 @@
 
                     </div>
                     <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
-                        <a href="#" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
+                        <a onclick="saveCompra();" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
                     </div>
 
                 </div>
                 <br>
             </div>
+                 </form>
         </div>
     </div>
 </section>

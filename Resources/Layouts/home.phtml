@@ -46,7 +46,9 @@
         ->addFile("Public/marketing-intro.css")
         ->addFile("Public/jquery.fancybox.css")
         ->addFile("Public/ModalBorder.css")
-        ->addFile("Public/jBox.css");
+        ->addFile("Public/jBox.css")
+            ->addFile("Public/sweetalert.css");
+    
     echo Com_Helper_Style::getInstance();
     ?>
     <!--    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
@@ -64,7 +66,8 @@
         ->addFile("Public/swiper.jquery.js")
         ->addFile("Public/login.js")
         ->addFile("Public/jquery.fancybox.js")
-        ->addFile("Public/jquery.jbox.min.js");
+        ->addFile("Public/jquery.jbox.min.js")
+            ->addFile("Public/sweetalert.min.js");
 
     echo Com_Helper_Script::getInstance();
 

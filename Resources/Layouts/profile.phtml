@@ -31,15 +31,16 @@
                 ->addFile("Public/ModalBorder.css")
                 ->addFile("Public/jBox.css")
                 ->addFile("Public/account.css")
-                ->addFile("Public/news.css")
+                ->addFile("Public/login.css")
                 ->addFile("Public/datepicker.css");
 
         echo Com_Helper_Style::getInstance();
         ?>
     </head>
-    <body>
+    <body class="login">
 
-        
+        <img id="sup" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/sup.png">
+        <img id="inf" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/inferior.png">
         <div class="clear"></div>
         <?PHP
         $this->getContent();
@@ -50,32 +51,15 @@
             <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/loading.gif" width="48px"/>
         </div>
 
-        <!--[if lt IE 10]>
-            <div class="browserWarning">
-                <div>
-                    Este sitio web esta optimizado para versiones actuales de navegadores, por favor actualize su navegador.<br/>
-                    Seleccione para descargar uno de los navegadores soportados: 
-                    <div class="clear"></div>
-                    <ul>
-                        <li><a target="_blank" href="https://www.google.es/chrome/browser/desktop/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/chrome.png"></a></li>
-                        <li><a target="_blank" href="http://www.apple.com/safari/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/safari.png"></a></li>
-                        <li><a target="_blank" href="https://www.mozilla.org/es-ES/firefox/new/"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/firefox.png"></a></li>
-                        <li><a target="_blank" href="http://windows.microsoft.com/es-es/internet-explorer/download-ie"><img border="0" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/ie.png"></a></li>
-                    </ul>
-                </div>
-            </div>
-        <![endif]-->
+        
 
         <?PHP
         //Adding Javascript
         Com_Helper_Script::getInstance()->addFile("Public/jquery.1.11.1.min.js")
-                ->addFile("Public/jquery.jbox.min.js")
-                ->addFile("Public/jquery.slidejs.min.js")
-                ->addFile("Public/jquery.imageloading.js")
-                ->addFile("Public/jquery.datepicker.js")
-                ->addFile("Public/js.js")
-                ->addFile("Public/login.js")
-                ->addFile("Public/news.js");
+                ->addFile("Public/jquery.jbox.min.js")                
+                ->addFile("Public/jquery.datepicker.js")                
+                ->addFile("Public/login.js");
+               
 
         echo Com_Helper_Script::getInstance();
         ?>

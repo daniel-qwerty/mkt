@@ -88,10 +88,10 @@ updateHeight = function () {
 }
 
 /* form validation plugin */
-$.fn.goValidate = function() {
+$.fn.goValidate = function () {
     var $form = this,
-        $inputs = $form.find('input:text');
-  
+            $inputs = $form.find('input:text');
+
     var validators = {
         name: {
             regex: /^[A-Za-z]{3,}$/
@@ -106,16 +106,16 @@ $.fn.goValidate = function() {
             regex: /^[2-9]\d{2}-\d{3}-\d{4}$/,
         }
     };
-    var validate = function(klass, value) {
+    var validate = function (klass, value) {
         var isValid = true,
-            error = '';
-            
+                error = '';
+
         if (!value && /required/.test(klass)) {
             error = 'This field is required';
             isValid = false;
         } else {
             klass = klass.split(/\s/);
-            $.each(klass, function(i, k){
+            $.each(klass, function (i, k) {
                 if (validators[k]) {
                     if (value && !validators[k].regex.test(value)) {
                         isValid = false;
@@ -129,48 +129,47 @@ $.fn.goValidate = function() {
             error: error
         }
     };
-    var showError = function($input) {
+    var showError = function ($input) {
         var klass = $input.attr('class'),
-            value = $input.val(),
-            test = validate(klass, value);
-      
+                value = $input.val(),
+                test = validate(klass, value);
+
         $input.removeClass('invalid');
         $('#form-error').addClass('hide');
-        
+
         if (!test.isValid) {
             $input.addClass('invalid');
-            
-            if(typeof $input.data("shown") == "undefined" || $input.data("shown") == false){
-               $input.popover('show');
+
+            if (typeof $input.data("shown") == "undefined" || $input.data("shown") == false) {
+                $input.popover('show');
             }
-            
+
+        } else {
+            $input.popover('hide');
         }
-      else {
-        $input.popover('hide');
-      }
     };
-   
-    $inputs.keyup(function() {
+
+    $inputs.keyup(function () {
         showError($(this));
     });
-  
+
     $inputs.on('shown.bs.popover', function () {
-  		$(this).data("shown",true);
-	});
-  
+        $(this).data("shown", true);
+    });
+
     $inputs.on('hidden.bs.popover', function () {
-  		$(this).data("shown",false);
-	});
-  
-    $form.submit(function(e) {
-      
-        $inputs.each(function() { /* test each input */
-        	if ($(this).is('.required') || $(this).hasClass('invalid')) {
-            	showError($(this));
-        	}
-    	});
+        $(this).data("shown", false);
+    });
+
+    $form.submit(function (e) {
+
+        $inputs.each(function () { /* test each input */
+            if ($(this).is('.required') || $(this).hasClass('invalid')) {
+                showError($(this));
+            }
+        });
         if ($form.find('input.invalid').length) { /* form is not valid */
-        	e.preventDefault();
+            e.preventDefault();
             $('#form-error').toggleClass('hide');
         }
     });
@@ -178,15 +177,15 @@ $.fn.goValidate = function() {
 };
 $('form').goValidate();
 
-function updateViewsAd(ide) {    
-   
+function updateViewsAd(ide) {
+
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/mkt/Service/Clients/AdViews",
+        url: "http://localhost/mkt/mkt/Service/Clients/AdViews",
         data: {AdId: ide}
     }).done(function (data) {
         if (data) {
-            console.log("view registrado");            
+            console.log("view registrado");
         } else {
             console.log("view error");
         }
@@ -198,6 +197,68 @@ function updateViewsAd(ide) {
         console.log("error service ad");
     }
     );
+}
+
+function saveCompra() {
+    var venId = $('#formCompra #idVenta').val();
+    var cedula = $('#formCompra #cedula').val();
+    var nombre = $('#formCompra #nombre').val();
+    var email = $('#formCompra #email').val();
+    var telefono = $('#formCompra #celular').val();
+    var pais = $('#formCompra #pais').val();
+    var ciudad = $('#formCompra #ciudad').val();
+    var codpostal = $('#formCompra #codpostal').val();
+    var direccion1 = $('#formCompra #direccion').val();
+    var direccion2 = $('#formCompra #direccion2').val();
+    var pais2 = $('#formCompra #pais2').val();
+    var ciudad2 = $('#formCompra #ciudad2').val();
+    var codpostal2 = $('#formCompra #codpostal2').val();
+    var descripcion = $('#formCompra #descripcion').val();
+    var total = $('#formCompra #total').val();
+    var metodo = $('input[name=metodo]:checked').val();
+
+
+
+    if (cedula === "" || email === "" || telefono === "" || pais === "" || ciudad === "" || direccion1 === "") {
+        swal("Info", "Por favor revise los datos del formulario !!!", "warning");
+    } else {
+        if (metodo) {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/mkt/mkt/Service/Clients/SaveCompra",
+                data: {
+                    VenId: venId,
+                    Nombre: nombre,
+                    Cedula: cedula,
+                    Email: email,
+                    Telefono: telefono,
+                    Pais: pais,
+                    Ciudad: ciudad,
+                    CodPostal: codpostal,
+                    Direccion: direccion1,
+                    Direccion2: direccion2,
+                    Pais2: pais2,
+                    Ciudad2: ciudad2,
+                    CodPostal2: codpostal2,
+                    Descripcion: descripcion,
+                    Total: total,
+                    Metodo: 'cheque'}
+            }).done(function (data) {
+
+                swal("Exito", "Su perfil ha sido actualizado!!!", "success");
+            }).error(function () {
+
+            });
+        } else {
+            swal("Info", "Seleccione un metedo de pago", "warning");
+        }
+
+    }
+
+
+
+
+
 }
 
 

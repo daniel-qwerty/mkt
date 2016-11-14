@@ -41,7 +41,8 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
     public function Login() {
         if ($this->isPost()) {
             $client = Clients_Model_Client::getInstance()->doLogin($this->getPostObject());
-            if ($client->CliId > 0) {
+            
+            if ($client != '') {
                 set('sessionCliente', $client, "SESSION");
                 echo json_encode($client);
                 return;
@@ -133,6 +134,16 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
             $adId = $this->getPostObject()->AdId;
             $adview = $this->getPostObject()->AdViews;            
             Advertising_Model_Advertising::getInstance()->doUpdateService($adId, $adview);
+            echo json_encode(true);
+            return;
+        }
+        echo json_encode(false);
+    }
+    
+    public function SaveCompra() {
+        if ($this->isPost()) {           
+            Clients_Model_Compra::getInstance()->doInsert($this->getPostObject());
+            
             echo json_encode(true);
             return;
         }

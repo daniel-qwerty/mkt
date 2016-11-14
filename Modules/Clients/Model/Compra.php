@@ -1,10 +1,10 @@
 <?php
 
-class Clients_Model_Venta extends Com_Module_Model {
+class Clients_Model_Compra extends Com_Module_Model {
 
     /**
      *
-     * @return Clients_Model_Venta 
+     * @return Clients_Model_Compra 
      */
     public static function getInstance() {
         return self::_getInstance(__CLASS__);
@@ -12,14 +12,30 @@ class Clients_Model_Venta extends Com_Module_Model {
 
     public function doInsert(Com_Object $obj) {
 
-        $db = new Entities_Venta();
-        $db->VenCliId = $obj->VenCliId;
-        $db->VenDate = date('Y-m-d');
-        $db->VenStatus = $obj->VenStatus;
+        $db = new Entities_Compra();
+        
+        $db->ComVenId =$obj->VenId;
+        $db->ComCedula = $obj->Cedula;
+        $db->ComEmail = $obj->Email;
+        $db->ComTelefono = $obj->Telefono;
+        $db->ComPais = $obj->Pais;
+        $db->ComCiudad = $obj->Ciudad;
+        $db->ComCodPostal = $obj->CodPostal;
+        $db->ComDireccion = $obj->Direccion;
+        $db->ComPais2 = $obj->Pais2;
+        $db->ComCiudad2 = $obj->Ciudad2;
+        $db->ComCodPostal2 = $obj->CodPostal2;
+        $db->ComDireccion2 = $obj->Direccion2;
+        $db->ComDescripcion = $obj->Descripcion;
+        $db->ComTotal = $obj->Total;
+        $db->ComFecha = date('Y-m-d');
+        $db->ComEstado = "1";
+        $db->ComMetodo = $obj->Metodo;
+        
         $db->action = ACTION_INSERT;
         $db->save();        
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Insertado");
-        return $db->VenId;
+        
     }
 
     public function doInsertFromWs($cliId, Com_Object $obj) {
@@ -35,11 +51,25 @@ class Clients_Model_Venta extends Com_Module_Model {
     }
 
     public function doUpdate($intId, Com_Object $obj) {
-        $db = new Entities_Venta();
-        $db->VenId = $intId;
-        $db->VenCliId = $obj->ClientId;
-        $db->VenDate = $obj->Date;
-        $db->VenStatus = $obj->Status;
+        $db = new Entities_Venta();       
+        $db->ComId = $intId;
+        $db->ComVenId =$obj->VenId;
+        $db->ComCedula = $obj->Cedula;
+        $db->ComEmail = $obj->Email;
+        $db->ComTelefono = $obj->Telefono;
+        $db->ComPais = $obj->Pais;
+        $db->ComCiudad = $obj->Ciudad;
+        $db->ComCodPostal = $obj->CodPostal;
+        $db->ComDireccion = $obj->Direccion;
+        $db->ComPais2 = $obj->Pais2;
+        $db->ComCiudad2 = $obj->Ciudad2;
+        $db->ComCodPostal2 = $obj->CodPostal2;
+        $db->ComDireccion2 = $obj->Direccion2;
+        $db->ComDescripcion = $obj->Descripcion;
+        $db->ComTotal = $obj->Total;
+        $db->ComFecha = date('Y-m-d');
+        $db->ComEstado = "1";
+        $db->ComMetodo = $obj->Metodo;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
@@ -54,16 +84,16 @@ class Clients_Model_Venta extends Com_Module_Model {
     }
 
     public function get($intId) {
-        $db = new Entities_Venta();
-        $db->VenId = $intId;
+        $db = new Entities_Compra();
+        $db->ComId = $intId;
         $db->get();
         return $db;
     }
 
-    public function getVenta($cliId, $date) {
-        $db = new Entities_Venta();
-        $db->VenCliId = $cliId;
-        $db->VenDate = $date;
+    public function getCompraByVenta($venId, $date) {
+        $db = new Entities_Compra();
+        $db->ComVenId = $cliId;
+        $db->ComFecha = $date;
         $db->get();
         return $db;
     }
