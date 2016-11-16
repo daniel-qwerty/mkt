@@ -47,8 +47,8 @@
         ->addFile("Public/jquery.fancybox.css")
         ->addFile("Public/ModalBorder.css")
         ->addFile("Public/jBox.css")
-            ->addFile("Public/sweetalert.css");
-    
+        ->addFile("Public/sweetalert.css");
+
     echo Com_Helper_Style::getInstance();
     ?>
     <!--    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
@@ -67,7 +67,7 @@
         ->addFile("Public/login.js")
         ->addFile("Public/jquery.fancybox.js")
         ->addFile("Public/jquery.jbox.min.js")
-            ->addFile("Public/sweetalert.min.js");
+        ->addFile("Public/sweetalert.min.js");
 
     echo Com_Helper_Script::getInstance();
 
@@ -92,8 +92,16 @@
             <div class="menu-content col-md-6">
                 <div class="menu-container alt" style="display: none">
 
-                    <img class="logo" alt="logo"
-                         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                    /////////////////////////copiar desde aqui///////////////////////////
+
+
+                    <a class="logo" href="<?= Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>">
+                        <img alt="logo"
+                             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                    </a>
+
+
+                    ////////////////////////////////hasta aqui////////////////////////////////
                     <a href="javascript:void(0)" onclick="toogleMenu();">
                         <i class="fa fa-close" aria-hidden="true"></i>
                     </a>
@@ -144,17 +152,20 @@
 </section>
 
 <div class="menu-container" style="display: none">
-    <img class="logo" alt="logo"
-         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
-
+    <a class="logo" href="<?= Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>">
+        <img alt="logo"
+             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+    </a>
 
     <ul>
         <?php if ($client != '0'): ?>
             <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
-                   alt="Editar Perfil <?= $client->CliName; ?>"> <i class="fa fa-user"></i> <?= $client->CliName; ?> </a></li>
+                   alt="Editar Perfil <?= $client->CliName; ?>"> <i class="fa fa-user"></i> <?= $client->CliName; ?>
+                </a></li>
             <li><a onclick="closeSession();" alt="Logout"><i class="fa mkt-logout"></i></a></li>
         <?php else : ?>
-            <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/login" title="Login" alt="Login"><i class="fa mkt-login"></i></a>
+            <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/login" title="Login" alt="Login"><i
+                        class="fa mkt-login"></i></a>
             </li>
         <?php endif; ?>
         <li><a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
