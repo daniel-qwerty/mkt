@@ -173,6 +173,8 @@ a {
 a:hover {
     color: #fff;
     text-decoration: line-through;
+    -moz-text-decoration-color: red; /* Code for Firefox */
+    text-decoration-color: red;
 }
 
 .sidebar-module img, .insta-wrap img {
@@ -2175,6 +2177,11 @@ html:not(.lt-ie10) .not-animated {
     content: "";
 }
 
+.pauta-desc{
+    text-align: left !important;
+    font-size: 24px;
+}
+
 /*
 * module social
 */
@@ -3368,6 +3375,15 @@ fieldset[disabled] .sidebar-module .btn-transparent {
     fill: #0030ff;
 }
 
+.bg-suscription, .bg-tag-suscription {
+    background: #0030ff;
+}
+
+.bg-tag-suscription:hover {
+    background: #ffcf00;
+    fill: #ffcf00;
+}
+
 .pull-bottom {
     position: absolute;
     bottom: 0;
@@ -3417,6 +3433,26 @@ fieldset[disabled] .sidebar-module .btn-transparent {
 .events-container .notas-item {
     padding: 0;
     margin: 0;
+}
+
+.notas-item-title.white {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.notas-item-title.white:hover {
+    color: #FFFFFF;
+    text-decoration: line-through;
+}
+
+.notas-item-title.black {
+    color: #000000;
+    text-decoration: none;
+}
+
+.notas-item-title.black:hover {
+    color: #000000;
+    text-decoration: line-through;
 }
 
 .event-body {
@@ -4382,7 +4418,7 @@ html .page .offset-top-60 {
 
 .content-header-1 .content-header-1-title, .content-header-1 .content-header-1-options {
     height: 50px;
-    line-height: 50px !important;
+    line-height: 50px;
     text-align: center;
     font-family: Gilroy, sans-serif;
     color: #FFFFFF;
@@ -4393,6 +4429,14 @@ html .page .offset-top-60 {
 .content-header-1 .content-header-1-title h3 {
     font-weight: bold !important;
     font-size: 40px;
+
+}
+
+.content-header-1.full-width .content-header-1-title{
+    height: 70px;
+}
+.content-header-1.full-width  .content-header-1-title h3{
+    line-height: 70px;
 }
 
 .content-header-1 .header-link {
@@ -4433,6 +4477,12 @@ html .page .offset-top-60 {
     color: #ffffff;
     text-decoration: none;
 }
+.pauta-widget{
+    padding: 0;
+}
+.pauta-widget .content-header-1{
+    padding: 0;
+}
 
 .content-tool {
     text-align: center;
@@ -4441,7 +4491,8 @@ html .page .offset-top-60 {
 .content-tool h3 {
     color: #058be0;
     font-family: Gilroy, sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-size: 40px;
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -4577,11 +4628,14 @@ html .page .offset-top-60 {
 
 .notas-item h3 {
     color: #ffffff;
-    font-size: x-large;
+    font-size: 22px;
     margin: 10px 0 0 0;
 
 }
-
+.notas-item h3 .tag{
+    color: #000;
+    font-size: 16px;
+}
 .notas-item > span {
 
 }
@@ -4672,7 +4726,7 @@ html .page .offset-top-60 {
 }
 
 .footer .logo {
-    width: 150px;
+    width: 170px;
     margin: 20px 40px;
     display: inline;
 }
@@ -4689,7 +4743,8 @@ html .page .offset-top-60 {
     width: 242px;
     background: none;
     border: none;
-    text-align: center;
+    text-align: right;
+    font-size: 20px;
 }
 
 .calendar-icon:before {

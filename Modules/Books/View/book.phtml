@@ -8,17 +8,30 @@
         </div>
     </div>
 </section>
-<section class="col-xs-12">
+<section class="col-xs-12" style="margin-bottom: 15px">
     <div class="container-fluid">
         <div class="row bg-white bookmall-detail">
             <div class="col-sm-6">
                 <div id="book-image" class="square"
                      style="background-image:url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $this->list->BooImage; ?>);background-size:cover ">
                 </div>
+            </div>
+            <div class="col-sm-6">
+                <h4><?= $this->list->BooTitle; ?></h4>
+                <p class="bookmall-autor">AUTOR: <strong><?= $this->list->BooAuthor; ?></strong></p>
+                <p><?= $this->list->BooContent; ?></p>
+
+                <div class="pull-right" style="clear: both;margin: 10px 0;font-size: 24px">PRECIO: <strong
+                        class="color-purple">Bs. <?= $this->list->BooPrice; ?></strong></div>
+
+
+            </div>
+            <div class="col-md-12" style="height: 2px; background: #FFFFFF"></div>
+            <div class="col-sm-6">
                 <div data-items="2" data-sm-items="3" data-lg-items="4"
                      data-loop="true"
                      data-nav="true" class="owl-carousel element-groups-xs-custom">
-                         <?php foreach ($this->images as $new) { ?>
+                    <?php foreach ($this->images as $new) { ?>
                         <div data-instafeed-item="" class="owl-item insta-item">
                             <a href="javascript:void(0)"
                                id="thumb-<?= $new->MedId; ?>"
@@ -34,14 +47,7 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <h4><?= $this->list->BooTitle; ?></h4>
-                <p class="bookmall-autor">AUTOR: <strong><?= $this->list->BooAuthor; ?></strong></p>
-                <?= $this->list->BooContent; ?>
-
-                <div class="pull-right" style="clear: both;margin: 10px 0">PRECIO: <strong
-                        class="color-purple">Bs. <?= $this->list->BooPrice; ?></strong></div>
-
-                <div class="pull-right" style="clear: both;margin: 10px 0">
+                <div style="font-size: 30px;text-align: center; padding-top: 15px">
                     <ul class="list-inline">
                         <li>
                             <a target="_blank" href="http://www.facebook.com/sharer.php?u=[post-url]"
@@ -251,6 +257,32 @@
         </div>
     </div>
 </section>
+
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-xs-12">
+        <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+    </div>
+</div>
+
+<div class="col-sm-12" style="padding: 0 15px">
+    <div class="row">
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+        </section>
+    </div>
+</div>
+
 
 <form id="CarritoForm" class="hidden">    
     <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    

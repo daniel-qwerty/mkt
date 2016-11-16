@@ -1,8 +1,8 @@
 <section class="col-xs-12">
 
-    <div class="container-fluid content-header-1">
+    <div class="container-fluid content-header-1 full-width">
         <div class="row">
-            <div class="col-sm-12 content-header-1-title bg-bookmall">
+            <div class="col-sm-12 content-header-1-title bg-suscription">
                 <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSuscripcion")->TxtDescription ?></h3>
             </div>
         </div>
@@ -18,7 +18,7 @@
 <div class="container-fluid content-tool bg-white">
     <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSuscribete")->TxtDescription ?></h3>
     <div class="row items-suscription">
-        <div data-items="2" data-sm-items="3" data-lg-items="4"
+        <div data-items="2" data-sm-items="2" data-lg-items="3"
              data-loop="true"
              data-nav="true" class="owl-carousel element-groups-xs-custom">
 
@@ -234,12 +234,37 @@
     </div>
 </div>
 
-<form id="CarritoForm" class="">    
+<div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+    <div class="col-xs-12">
+        <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+    </div>
+</div>
+
+<div class="col-sm-12" style="padding: 0 15px">
+    <div class="row">
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+        </section>
+    </div>
+</div>
+
+<form id="CarritoForm" class="hidden">
     <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    
     <input id="item" name="item" type="text" autocomplete="off" value=""/> 
     <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
     <input id="precio" name="precio" type="text" autocomplete="off" value=""/> 
-    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>    
+    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>
     <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
     <a onclick="SaveVenta();" id="save"  type="button" >Registrar</a>
 </form>

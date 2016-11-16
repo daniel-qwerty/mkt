@@ -10,14 +10,16 @@
                 <?php foreach ($this->category as $new) { ?>
                     <a class="header-link"
                        href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->CatId); ?>"><?= $new->CatName; ?></a>
-                   <?php } ?>
+                <?php } ?>
             </div>
         </div>
         <div class="row">
 
             <div id="calendar_bar" class="col-sm-12 content-header-1-options" style="background: #7d16ee">
-                <input id="datetimepicker" class="calendar-icon" type="text" value="<?= date('Y-m-d'); ?>" >
-                <i id="image_button" class="fa fa-calendar pull-right" style="margin: 16px 6px;"></i>
+                <i id="image_button" class="fa fa-calendar pull-right"
+                   style="margin: 10px 0 0 10px;font-size: 30px;"></i>
+                <input id="datetimepicker" class="calendar-icon pull-right" type="text" disabled
+                       value="<?= date('Y-m-d'); ?>">
                 <script>
                     $.datetimepicker.setLocale('es');
                     $('#datetimepicker').datetimepicker({
@@ -73,14 +75,17 @@
                     <div class="square"
                          style="background-image: linear-gradient(to bottom, rgba(6,5,244,0.6) 0%,rgba(6,5,244,0.6) 100%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->EveImage; ?>);background-size:cover ">
                         <div class="pull-bottom">
-                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>" class="tag bg-note-green"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $new->EveCatId)->CatName; ?></a>
-                            <h3><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $new->EveId); ?>"><?PHP echo $new->EveTitle; ?></a></h3>
+                            <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>"
+                               class="tag bg-note-green"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $new->EveCatId)->CatName; ?></a>
+                            <h3>
+                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $new->EveId); ?>"><?PHP echo $new->EveTitle; ?></a>
+                            </h3>
                             <span><i style="margin-right: 5px" class="fa fa-user"></i>usuario</span>
                             <span><i style="margin-right: 5px" class="fa fa-calendar"></i>fecha</span>
                         </div>
                     </div>
                 </div>
-            <?php } ?> 
+            <?php } ?>
         </div>
         <div class="row">
             <div class="col-xs-12" style="padding: 0">

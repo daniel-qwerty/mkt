@@ -3,18 +3,18 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
-            <div class="col-sm-4 content-header-1-title bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>">
+            <div
+                class="col-sm-4 content-header-1-title bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>">
                 <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatAlias; ?></h3>
             </div>
             <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) { ?>
                     <a class="header-link"
                        href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>
-                   <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
-
     <div class="container-fluid content-tool notas-items">
         <div class="row">
             <?php foreach ($this->notes as $new) { ?>
@@ -26,7 +26,7 @@
                             <div class="content">
                                 <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $this->categoryId); ?>"
                                    class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
-                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                                <a class="notas-item-title black" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
                                     <h3><?= $new->NotTitle; ?></h3>
                                 </a>
                                 <p>
@@ -36,15 +36,13 @@
 
                         </div>
                     </div>
-                    <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                    <a class="notas-item-title white" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
                         <h3><?= $new->NotTitle; ?></h3>
                     </a>
                     <span><i class="fa fa-calendar" style="margin-right: 5px"></i><?= $new->NotDate; ?></span>
                 </div>
             <?php } ?>
         </div>
-
-
         <div class="row hidden">
             <a href="#" style="color: white">
                 <span>Cargar mas</span>
@@ -53,8 +51,10 @@
                 </span>
             </a>
         </div>
-        <div class="col-xs-12">
-            <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+        <div class="row">
+            <div class="col-xs-12">
+                <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+            </div>
         </div>
     </div>
 </div>

@@ -48,9 +48,6 @@
             <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
             <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
         </div>
-
-
-
         <div class="row descarga-items">
             <?php $i = 0;
             foreach ($this->tools as $new) : $i++ ?>
@@ -65,12 +62,15 @@
                 <?php endif; ?>
 
             <?php endforeach; ?>
-
-
         </div>
-
-
     </div>
+
+    <div class="row" style="margin-bottom: 15px;margin-top: 15px">
+        <div class="col-xs-12">
+            <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+        </div>
+    </div>
+
 </div>
 
 <script>

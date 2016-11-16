@@ -39,6 +39,7 @@
                     </p>
                 </div>
             <?php } ?>
+            <div class="col-sm-12" style="background: #999999;height: 2px; margin: 15px 0 20px;"></div>
             <div class="col-sm-offset-3 col-sm-6">
                 <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
                 <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
@@ -47,11 +48,14 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
+
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Comentarios:</h4>
+    <div class="container-fluid content-tool bg-white" style="margin-top: 15px; margin-bottom: 15px">
         <div class="row">
             <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $this->events->EveId); ?>" data-numposts="15"></div>
         </div>
     </div>
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Tambien te puede interesar:</h4>
     <div class="container-fluid content-tool notas-items events-container">
         <div class="row">  
             <?php Events_Widget_ByCategory::getInstance()->setLan($this->lan)->setLimit(6)->setCategory($this->events->EveCatId)->render(); ?>

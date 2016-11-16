@@ -1,6 +1,6 @@
 <section class="col-xs-12">
 
-    <div class="container-fluid content-header-1">
+    <div class="container-fluid content-header-1 full-width">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
             <div class="col-sm-12 content-header-1-title bg-bookmall">
@@ -8,6 +8,7 @@
             </div>
         </div>
     </div>
+
     <section>
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -16,6 +17,8 @@
             <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
         </div>
     </section>
+
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Actualmente en stock:</h4>
     <div class="container-fluid content-tool notas-items">
         <div class="row">
             <?php foreach ($this->list as $new) { ?>
@@ -49,26 +52,30 @@
     </div>
 </section>
 
-<section class="col-xs-4">
-    <div class="container-fluid content-header-1">
-        <div class="row">
-            </div>
-    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+<div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+    <div class="col-xs-12">
+        <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+    </div>
+</div>
 
-</section>
-<section class="col-xs-4">
-    <div class="container-fluid content-header-1">
-        <div class="row">
-            </div>
-    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+<div class="col-sm-12" style="padding: 0 15px">
+    <div class="row">
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
 
-</section>
-<section class="col-xs-4">
-    <div class="container-fluid content-header-1">
-        <div class="row">
-            </div>
-    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
 
-</section>
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+        </section>
+    </div>
+</div>
+
 
 
