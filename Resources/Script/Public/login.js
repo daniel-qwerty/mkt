@@ -273,7 +273,7 @@ function SaveVenta() {
                 //loadingModal.close();
                 if (data !== 0) {
 
-                    console.log("venta exitente");
+                    console.log("venta exitente1");
                     $.ajax({
                         type: "POST",
                         url: "http://localhost/mkt/mkt/Service/Clients/SaveVentaDetalle",
@@ -281,7 +281,7 @@ function SaveVenta() {
                     }).done(function (data) {
                         //loadingModal.close();
                         //registrationModal.close();                    
-                        console.log("venta detalle registrada");
+                        console.log("venta detalle registrada1");
 
                         swal({title: "Exito",
                             text: "Se agrego el producto al carrito de compras",

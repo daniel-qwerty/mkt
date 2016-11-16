@@ -21,21 +21,21 @@ class Categories_Helper_Category extends Com_Object {
         $color = Categories_Model_Category::getInstance()->getById($lan->LanId, $id)->CatClass;
         switch ($color) {
             case 'red':
-                return '245,8,7';               
+                return '255,0,0';               
             case 'pink':
-                return '245,8,7';
+                return '255,0,255';
             case 'orange':
-                return '247,98,9';
+                return '255,128,9';
             case 'yellow':
-                return '244,244,0'; 
+                return '255,255,51'; 
             case 'green':
-                return '9,248,8';
+                return '128,255,0';
             case 'blue':
-                return '6,5,244'; 
+                return '0,128,255'; 
             case 'aqua':
-                return '9,249,249';     
+                return '102,255,255';     
             case 'purple':
-                return '204,54,247';
+                return '127,0,255';
             default:
                 return '0,0,0';
         }

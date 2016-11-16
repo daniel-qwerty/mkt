@@ -101,7 +101,7 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
     public function ExistVenta() {
         if ($this->isPost()) {
             $client = Clients_Model_Venta::getInstance()->getVenta($this->getPostObject()->VenCliId,$this->getPostObject()->VenDate);
-            if ($client->VenId > 0) {
+            if ($client->VenId > 0 && $client->VenStatus !== 0) {
                 echo json_encode($client->VenId);
                 return;
             }
@@ -143,7 +143,7 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
     public function SaveCompra() {
         if ($this->isPost()) {           
             Clients_Model_Compra::getInstance()->doInsert($this->getPostObject());
-            
+            Clients_Model_Venta::getInstance()->doUpdateVenta($this->getPostObject()->VenId);
             echo json_encode(true);
             return;
         }

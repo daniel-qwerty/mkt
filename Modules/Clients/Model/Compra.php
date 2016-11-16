@@ -74,6 +74,8 @@ class Clients_Model_Compra extends Com_Module_Model {
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
+    
+    
 
     public function doDelete($intId) {
         $db = new Entities_Venta();

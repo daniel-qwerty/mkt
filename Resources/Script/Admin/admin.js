@@ -20,6 +20,9 @@ $(document).ready(function () {
     $("input[rel=datepicker]").each(function () {
         $(this).datepick();
     });
+    
+    //colorpicker
+    $('#Color').colorpicker();
 
     //Editor
     $('.htmlEditor').each(function () {

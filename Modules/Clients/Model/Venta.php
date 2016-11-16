@@ -44,6 +44,15 @@ class Clients_Model_Venta extends Com_Module_Model {
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
+    
+    public function doUpdateVenta($intId) {
+        $db = new Entities_Venta();       
+        $db->VenId = $intId;      
+        $db->VenStatus = "0";        
+        $db->action = ACTION_UPDATE;
+        $db->save();
+        Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
+    }
 
     public function doDelete($intId) {
         $db = new Entities_Venta();
@@ -64,20 +73,33 @@ class Clients_Model_Venta extends Com_Module_Model {
         $db = new Entities_Venta();
         $db->VenCliId = $cliId;
         $db->VenDate = $date;
+        $db->VenStatus = '1';
         $db->get();
         return $db;
     }
     
     public function getListCarrito($date, $cliId ) {
         $text = new Entities_Venta();
-        $result = Com_Database_Query::getInstance()->select()->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenCliId={$cliId} and Venta.VenDate = '{$date}'");
-        
+        $result = Com_Database_Query::getInstance()->select()->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenCliId={$cliId} and Venta.VenDate = '{$date}' and Venta.VenStatus='1'");        
+        return $text->getAll($result);
+    }
+    
+    public function getListCarritoAll() {
+        $text = new Entities_Venta();
+        $result = Com_Database_Query::getInstance()->select()->from("Venta")->orderBy("Venta.VenDate");        
         return $text->getAll($result);
     }
     
     public function getSumCarrito($date, $cliId ) {
         $text = new Entities_Venta();
-        $result = Com_Database_Query::getInstance()->select("SUM(DetalleVenta.DetPrecio) as total")->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenCliId={$cliId} and Venta.VenDate = '{$date}'");
+        $result = Com_Database_Query::getInstance()->select("SUM(DetalleVenta.DetPrecio) as total")->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenCliId={$cliId} and Venta.VenDate = '{$date}'and Venta.VenStatus='1'");
+        
+        return $text->getAll($result);
+    }
+    
+    public function getSumCarritoByVenta($venId) {
+        $text = new Entities_Venta();
+        $result = Com_Database_Query::getInstance()->select("SUM(DetalleVenta.DetPrecio) as total")->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenId={$venId} and Venta.VenStatus='1'");
         
         return $text->getAll($result);
     }

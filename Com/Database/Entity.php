@@ -147,9 +147,8 @@ class Com_Database_Entity extends Com_Object {
             }
             $lstFields = implode(" AND ", $lstFields);
             $lstFields = (strlen($lstFields) > 0 ? " WHERE " . $lstFields : "");
-            $sqlQuery = "SELECT * FROM {$this->strTableName} {$lstFields}";
-            
-           
+            $sqlQuery = "SELECT * FROM {$this->strTableName} {$lstFields}";            
+         
         }
         $lstResult = array();
         if (Com_Database_Connection::getInstance()->execute($sqlQuery)) {
@@ -159,7 +158,7 @@ class Com_Database_Entity extends Com_Object {
             }
         }
         
-       
+      
         
         return $lstResult;
     }

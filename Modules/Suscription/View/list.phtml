@@ -22,7 +22,8 @@
              data-loop="true"
              data-nav="true" class="owl-carousel element-groups-xs-custom">
 
-            <?php foreach ($this->list as $slide) { ?>
+            <?php $sw =0; foreach ($this->list as $slide) { $sw++;?>
+                
                 <div data-instafeed-item="" class="owl-item item-suscription">
                     <div class="square"
                          style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SusImage; ?>); background-size: cover ">
@@ -31,14 +32,20 @@
                         <a href="#"><?php echo $slide->SusTitle; ?></a>
                     </div>
                     <div class="item-suscription-comprar">
-                        <a href="#" class="btn btn-default btn-sm pull-right "><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
+                         <script>
+                             function copy<?=$sw;?>(){
+                                 $('#item').val('<?php echo $slide->SusTitle; ?>');
+                                 $('#precio').val('<?php echo $slide->SusPrice; ?>');
+                                 $('#save').click();
+                                 save();
+                             }
+                             </script>
+                        <a onclick="copy<?=$sw;?>();" class="btn btn-default btn-sm pull-right "><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
                     </div>
+                   
                 </div>
-            
-            <?PHP }?>
 
-             
-
+            <?PHP } ?>
         </div>
     </div>
 </div>
@@ -89,23 +96,17 @@
                 </tfoot>
             </table>
         </div>
-        <form action="#" method="post">
+        <form id="formCompra" id="formcompra" action="#" method="post">
             <div class="col-md-offset-1 col-md-5">
                 <h3>Detalle de compra</h3>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="nombre">Nombre completo</label>
                             <input type="text" class="form-control" id="nombre" placeholder="nombre">
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="apellido">Apellido completo</label>
-                            <input type="text" class="form-control" id="apellido" placeholder="apellido">
-                        </div>
-                    </div>
+                    </div>                        
                 </div>
 
                 <div class="form-group">
@@ -115,13 +116,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Direccion de email</label>
+                            <label for="email">Correo Electronico</label>
                             <input type="text" class="form-control" id="email" placeholder="email">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="celular">Celular</label>
+                            <label for="celular">Telefono</label>
                             <input type="text" class="form-control" id="celular" placeholder="celular">
                         </div>
                     </div>
@@ -130,107 +131,118 @@
                     <label for="pais">Pais</label>
                     <input type="text" class="form-control" id="pais" placeholder="pais">
                 </div>
-                <div class="form-group">
-                    <label for="direccion">Direccion</label>
-                    <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
-                    <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
-                </div>
-                <div class="form-group">
-                    <label for="localidad">Localidad/Ciudad</label>
-                    <input type="text" class="form-control" id="localidad" placeholder="localidad">
-                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Estado / Pais</label>
-                            <input type="text" class="form-control" id="email" placeholder="email">
+                            <label for="localidad">Localidad/Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad" placeholder="localidad">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="celular">Codigo postal / Zip</label>
-                            <input type="text" class="form-control" id="celular" placeholder="celular">
+                            <input type="text" class="form-control" id="codpostal"  placeholder="celular">
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="direccion 1">                        
+                </div>
+
+
             </div>
             <div class="col-md-5">
-                <h3>Detalle de compra</h3>
+                <h3>Datos de envio</h3>
                 <div class="form-group">
                     <label for="direccion">Direccion</label>
-                    <input type="text" class="form-control" id="direccion1" placeholder="direccion 1">
-                    <input type="text" class="form-control" id="direccion2" placeholder="direccion 2">
+                    <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">                        
                 </div>
                 <div class="form-group">
-                    <label for="localidad">Localidad/Ciudad</label>
-                    <input type="text" class="form-control" id="localidad" placeholder="localidad">
+                    <label for="pais">Pais</label>
+                    <input type="text" class="form-control" id="pais2" placeholder="pais">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Estado / Pais</label>
-                            <input type="text" class="form-control" id="email" placeholder="email">
+                            <label for="localidad">Localidad/Ciudad</label>
+                            <input type="text" class="form-control" id="ciudad2" placeholder="localidad">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="celular">Codigo postal / Zip</label>
-                            <input type="text" class="form-control" id="celular" placeholder="celular">
+                            <input type="text" class="form-control" id="codpostal2" placeholder="celular">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
                     <input type="text" class="form-control" id="descripcion" placeholder="descripcion">
+
+                    <input type="text" class="form-control hidden" id="idVenta" value="<?= $this->VentId; ?>" placeholder="idventa">
+                    <input type="text" class="form-control hidden" id="total" value="<?= $this->Sumcarrito; ?>" placeholder="total">
+
                 </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row bg-gray-ligth" style="padding: 15px;">
+                    <div class="col-md-4">
+                        Seleccione el metodo de pago
+                    </div>
+                    <div class="col-md-8">
+                        <input
+                            type="radio" name="metodo"
+                            id="tarjeta" value="tarjeta" class="input-hidden"/>
+                        <label for="tarjeta">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarjeta.png"
+                                 alt="tarjeta"/>
+                        </label>
+
+                        <input
+                            type="radio" name="metodo"
+                            id="cheque" value="cheque" class="input-hidden"/>
+                        <label for="cheque">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cheque.png"
+                                 alt="cheque"/>
+                        </label>
+
+                        <input
+                            type="radio" name="metodo"
+                            id="deposito" value="deposito" class="input-hidden"/>
+                        <label for="deposito">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/banco.png"
+                                 alt="deposito"/>
+                        </label>
+                    </div>
+                    <div class="col-md-12 bg-gray-dark">
+                        <p>Politicas de privacidad de pago</p>
+
+                    </div>
+                    <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
+                        <a onclick="saveCompra();" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
+                    </div>
+
+                </div>
+                <br>
             </div>
         </form>
-        <div class="col-md-10 col-md-offset-1">
-            <div class="row bg-gray-ligth" style="padding: 15px;">
-                <div class="col-md-4">
-                    Seleccione el metodo de pago
-                </div>
-                <div class="col-md-8">
-                    <input
-                        type="radio" name="emotion"
-                        id="tarjeta" class="input-hidden"/>
-                    <label for="tarjeta">
-                        <img class="pay-method"
-                             src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarjeta.png"
-                             alt="tarjeta"/>
-                    </label>
-
-                    <input
-                        type="radio" name="emotion"
-                        id="cheque" class="input-hidden"/>
-                    <label for="cheque">
-                        <img class="pay-method"
-                             src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cheque.png"
-                             alt="cheque"/>
-                    </label>
-
-                    <input
-                        type="radio" name="emotion"
-                        id="deposito" class="input-hidden"/>
-                    <label for="deposito">
-                        <img class="pay-method"
-                             src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/banco.png"
-                             alt="deposito"/>
-                    </label>
-                </div>
-                <div class="col-md-12 bg-gray-dark">
-                    <p>Politicas de privacidad de pago</p>
-
-                </div>
-                <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
-                    <a href="#" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
-                </div>
-
-            </div>
-            <br>
-        </div>
     </div>
 </div>
+
+<form id="CarritoForm" class="">    
+    <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    
+    <input id="item" name="item" type="text" autocomplete="off" value=""/> 
+    <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
+    <input id="precio" name="precio" type="text" autocomplete="off" value=""/> 
+    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>    
+    <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
+    <a onclick="SaveVenta();" id="save"  type="button" >Registrar</a>
+</form>
 
 
 
