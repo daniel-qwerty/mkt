@@ -39,7 +39,7 @@
                 ->addFile("Public/marketing-intro.css")
                 ->addFile("Public/jquery.fancybox.css")
                 ->addFile("Public/jBox.css")
-            ->addFile("Public/sweetalert.css");
+                ->addFile("Public/sweetalert.css");
 
         echo Com_Helper_Style::getInstance();
         ?>
@@ -59,7 +59,7 @@
                 ->addFile("Public/jquery.fancybox.js")
                 ->addFile("Public/login.js")
                 ->addFile("Public/jquery.jbox.min.js")
-            ->addFile("Public/sweetalert.min.js");
+                ->addFile("Public/sweetalert.min.js");
 
         echo Com_Helper_Script::getInstance();
         $client = get('sessionCliente');
@@ -82,8 +82,10 @@
                     <div class="menu-content col-md-6">
                         <div class="menu-container alt" style="display: none">
 
-                            <img class="logo" alt="logo"
-                                 src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                            <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase. '/' . $this->lan->LanCode . '/page/home.html'; ?>">
+                                <img alt="logo"
+                                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                            </a>
                             <a href="javascript:void(0)" onclick="toogleMenu();">
                                 <i class="fa fa-close" aria-hidden="true"></i>
                             </a>
@@ -134,8 +136,10 @@
         </section>
 
         <div class="menu-container" style="display: none">
-            <img class="logo" alt="logo"
-                 src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+            <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase. '/' . $this->lan->LanCode . '/page/home.html'; ?>">
+                <img alt="logo"
+                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+            </a>
 
 
             <ul>

@@ -92,16 +92,16 @@
             <div class="menu-content col-md-6">
                 <div class="menu-container alt" style="display: none">
 
-                    /////////////////////////copiar desde aqui///////////////////////////
+                
 
 
-                    <a class="logo" href="<?= Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>">
+                    <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase; ?>">
                         <img alt="logo"
                              src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
                     </a>
 
 
-                    ////////////////////////////////hasta aqui////////////////////////////////
+                   
                     <a href="javascript:void(0)" onclick="toogleMenu();">
                         <i class="fa fa-close" aria-hidden="true"></i>
                     </a>
@@ -152,7 +152,7 @@
 </section>
 
 <div class="menu-container" style="display: none">
-    <a class="logo" href="<?= Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>">
+    <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase; ?>">
         <img alt="logo"
              src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
     </a>

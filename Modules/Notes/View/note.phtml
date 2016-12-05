@@ -50,7 +50,7 @@
                 <!--hasta aqui el contenido-->
             </div>
         </div>
-        <form id="searchForm" method="POST" action="http://localhost:8080/mkt/es/post/" onsubmit="">
+        <form id="searchForm" method="POST" action="http://digitalmindsbolivia.com/mkt/es/post/" onsubmit="">
             <input type="hidden" name="page" id="page" value="7">
         </form>
         <div class="row">
@@ -63,10 +63,8 @@
                 <a onclick="changePage(<?= $notIdb; ?>);"> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSiguiente")->TxtDescription ?> <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
-                <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
+                <div class="addthis_inline_share_toolbox"></div>
+               
             </div>
         </div>
 
@@ -91,3 +89,5 @@
     }
 
 </script>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582dd089d1d08717"></script> 
