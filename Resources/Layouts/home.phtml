@@ -92,8 +92,6 @@
             <div class="menu-content col-md-6">
                 <div class="menu-container alt" style="display: none">
 
-                
-
 
                     <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase; ?>">
                         <img alt="logo"
@@ -101,7 +99,6 @@
                     </a>
 
 
-                   
                     <a href="javascript:void(0)" onclick="toogleMenu();">
                         <i class="fa fa-close" aria-hidden="true"></i>
                     </a>
@@ -324,6 +321,8 @@
                         <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderF(); ?>
                     </div>
                 </div>
+
+
                 <div class="row row row-no-gutter text-center text-sm-left">
 
                     <?php Notes_Widget_MostViewed::getInstance()->setLan($this->lan)->setLimit(2)->render(); ?>
@@ -371,6 +370,11 @@
                     <div class="sidebar-module">
                         <!--SECCION PUBLICIDAD -->
                         <?php Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
+                    </div>
+
+                    <div class="sidebar-module module-social bg-primary text-left">
+                        <h5>Otro cool widget</h5>
+
                     </div>
 
                     <!--SECCION CALENDARIO -->
