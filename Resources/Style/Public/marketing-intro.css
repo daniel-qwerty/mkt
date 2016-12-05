@@ -2177,7 +2177,7 @@ html:not(.lt-ie10) .not-animated {
     content: "";
 }
 
-.pauta-desc{
+.pauta-desc {
     text-align: left !important;
     font-size: 24px;
 }
@@ -2281,6 +2281,48 @@ html:not(.lt-ie10) .not-animated {
     max-height: 230px;
     margin: auto;
     border: solid #FFF 15px;
+}
+
+/*
+* module posts
+*/
+.module-post h5 {
+    color: #FFFFFF;
+}
+
+.module-post {
+    background: #575756;
+    font-family: "Lato", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.3125;
+}
+
+.module-post a {
+    color: #DDDDDD;
+    transition: all 0.6s;
+}
+
+.module-post a:hover {
+    color: #FFFFFF;
+}
+
+.module-post ul {
+    list-style: none;
+    padding: 0;
+}
+
+.module-post li {
+    padding: 15px 0;
+    text-align: justify;
+    border-bottom: solid 1px #FFFFFF;
+}
+
+.module-post li p {
+    margin: 0
+}
+
+.module-post li:last-child {
+    border-bottom: 0px;
 }
 
 /*
@@ -4081,6 +4123,39 @@ html .page .offset-top-60 {
     border: 1px solid #7d16ee;
 }
 
+td.rdc-table_has-events {
+    background: rgba(125, 22, 238, 0.5);
+    border: 1px solid #27272c;
+}
+
+td.rdc-table_has-events .rdc-table_events-count {
+    display: none;
+}
+
+td.rdc-table_has-events ul.rdc-table_events {
+
+    background: #7d16ee;
+    padding: 5px 15px;
+    list-style: none;
+    position: absolute;
+    transition: all 0.5s;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+td.rdc-table_has-events:hover{
+    background: #7d16ee;
+}
+
+td.rdc-table_has-events:hover ul.rdc-table_events {
+    opacity: 1;
+    max-height: 500px;
+}
+
+td.rdc-table_has-events ul.rdc-table_events a {
+    color: #DDDDDD
+}
+
 /*
 * instagram
 */
@@ -4432,10 +4507,11 @@ html .page .offset-top-60 {
 
 }
 
-.content-header-1.full-width .content-header-1-title{
+.content-header-1.full-width .content-header-1-title {
     height: 70px;
 }
-.content-header-1.full-width  .content-header-1-title h3{
+
+.content-header-1.full-width .content-header-1-title h3 {
     line-height: 70px;
 }
 
@@ -4477,10 +4553,12 @@ html .page .offset-top-60 {
     color: #ffffff;
     text-decoration: none;
 }
-.pauta-widget{
+
+.pauta-widget {
     padding: 0;
 }
-.pauta-widget .content-header-1{
+
+.pauta-widget .content-header-1 {
     padding: 0;
 }
 
@@ -4632,10 +4710,12 @@ html .page .offset-top-60 {
     margin: 10px 0 0 0;
 
 }
-.notas-item h3 .tag{
+
+.notas-item h3 .tag {
     color: #000;
     font-size: 16px;
 }
+
 .notas-item > span {
 
 }
