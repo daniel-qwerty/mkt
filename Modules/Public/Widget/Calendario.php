@@ -44,11 +44,10 @@ class Public_Widget_Calendario extends Com_Object {
                         $list = Calendar_Model_Calendar::getInstance()->getListEnable($this->lan->LanId); 
                         print_r($list);
                         foreach ($list as $obj) {?>
-                        <li class="rdc-event" data-date="<?php echo date_format(date_create($obj->CalDate), 'd/m/Y'); ?>">
+                        <li class="rdc-event" data-date="<?php echo date_format(date_create($obj->CalDate), 'm/d/Y'); ?>">
                             <a href="<?= $obj->CalLink;?>"><?= $obj->CalEvent;?></a>
                         </li>
-                        <?php } ?>
-                        
+                        <?php } ?>                        
                         
                       
                     </ul>
