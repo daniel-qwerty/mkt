@@ -36,7 +36,7 @@ class Public_Widget_Footer extends Com_Object {
                     <div class="col-sm-4 col-footer color-gray-1">
                         <h2><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtNavegacion")->TxtDescription ?></h2>
                         <ul>
-                            <li><a href="#myModal" data-toggle="modal"> Contacto</a></li>
+                            <li><a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" > Contacto</a></li>
                             <li><a href="#"> Escribe para nos.</a></li>
                             <li><a href="#"> Kit de ventas</a></li>
                         </ul>
@@ -58,24 +58,46 @@ class Public_Widget_Footer extends Com_Object {
                 </div>
             </div>
         </section>
-        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <style>
+            .modal-backdrop {
+                z-index: -2000;
+            }
+            
+            .modal-dialog {
+               
+                margin: 50px auto;
+            }
+        </style>
+        <div class="modal " id="exampleModal" tabindex="-99999999999" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 id="myModalLabel">CONTACTO</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Contacto</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal col-sm-12">
-                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactNombre")->TxtDescription ?></label><input class="form-control required" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
-                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactMensaje")->TxtDescription ?></label><textarea class="form-control"  data-placement="top" data-trigger="manual"></textarea></div>
-                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEmail")->TxtDescription ?></label><input class="form-control email"  data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
-                            <div class="form-group"><label><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactTelefono")->TxtDescription ?></label><input class="form-control phone"  data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (999-999-9999)" type="text"></div>
-                            <div class="form-group"><button type="submit" class="btn btn-success pull-right"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEnviar")->TxtDescription ?></button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+                        <form id="formContact">
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactNombre")->TxtDescription ?></label>
+                                <input type="text" class="form-control" id="name">
+                            </div>                            
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactTelefono")->TxtDescription ?></label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEmail")->TxtDescription ?></label>
+                                <input type="text" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactMensaje")->TxtDescription ?></label>
+                                <textarea class="form-control" id="message"></textarea>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal" aria-hidden="true"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactCancelar")->TxtDescription ?></button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactCancelar")->TxtDescription ?></button>
+                        <button onclick="sendContact();" type="button" class="btn btn-primary"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtContactEnviar")->TxtDescription ?></button>
                     </div>
                 </div>
             </div>

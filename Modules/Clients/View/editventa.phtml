@@ -1,0 +1,55 @@
+<?PHP 
+$form=new Com_Wizard_Form();
+$form->title="Formulario Venta";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase."/Admin/Clients/Venta");
+
+$control=new Com_Wizard_Form_Control();
+$control->name="VenId";
+$control->label="#Venta";
+$control->default=$this->VenId;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="VenCliId";
+$control->label="Id Cliente";
+$control->default=$this->VenCliId;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="VenDate";
+$control->label="Fecha";
+$control->default=$this->VenDate;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="VenTotal";
+$control->label="Total";
+$control->default=$this->VenTotal;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+
+$control=new Com_Wizard_Form_Control_Select();
+$control->name="VenStatus";
+$control->label="Estado";
+$control->default=$this->VenStatus;
+$control->required=true;
+$control->addItem('1', 'Pendiente');
+$control->addItem('0', 'Finalizado');
+
+$form->add($control);
+
+$form->render();

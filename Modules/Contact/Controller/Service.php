@@ -6,7 +6,7 @@ class Contact_Controller_Service extends Com_Module_Controller_Json {
         if ($this->isPost()) {
             $obj = $this->getPostObject();
             Contact_Model_Contact::getInstance()->doInsert($obj, null);
-            $this->sendEmail($obj->Email, $obj->Name, $obj->Message);
+           // $this->sendEmail($obj->Email, $obj->Name, $obj->Message);
             echo json_encode(true);
         }
     }

@@ -62,6 +62,30 @@ class Clients_Controller_Admin extends Admin_Controller_Admin {
         $list = Clients_Model_Client::getInstance()->getList();
         $this->assign("list", $list);
     }
+    
+    public function Venta() {
+        Com_Helper_BreadCrumbs::getInstance()->add("Ventas", "/Admin/Clients/Venta");
+        
+    }
+    
+    public function EditVenta() {
+        Com_Helper_BreadCrumbs::getInstance()->add("Item", "/Admin/Clients/Venta/EditVenta");
+        $this->setView("editventa");
+        if ($this->isPost()) {
+            Clients_Model_Venta::getInstance()->doUpdate(get('id'), $this->getPostObject());
+            $this->redirect(Com_Helper_Url::getInstance()->urlBase . '/Admin/Clients/Venta/');
+        }
+        $entity = Clients_Model_Venta::getInstance()->get(get('id'));
+         $this->assign('VenId', $entity->VenId);
+         $this->assign('VenCliId', $entity->VenCliId);
+         $this->assign('VenDate', $entity->VenDate);
+         $this->assign('VenStatus', $entity->VenStatus);
+    }
+    
+     public function DetVenta() {
+        Com_Helper_BreadCrumbs::getInstance()->add("Venta", "/Admin/Clients/Venta");
+        
+    }
 
 }
 

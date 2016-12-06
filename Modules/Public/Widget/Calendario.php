@@ -1,7 +1,6 @@
 <?php
 
-class Public_Widget_Calendario extends Com_Object
-{
+class Public_Widget_Calendario extends Com_Object {
 
     public $lan;
 
@@ -11,19 +10,16 @@ class Public_Widget_Calendario extends Com_Object
      * @access public
      * @return Public_Widget_Calendario
      */
-    public static function getInstance()
-    {
+    public static function getInstance() {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan)
-    {
+    public function setLan($lan) {
         $this->lan = $lan;
         return $this;
     }
 
-    public function render()
-    {
+    public function render() {
         ?>
         <div class="sidebar-module bg-gray text-left">
             <h5>Calendar</h5>
@@ -44,23 +40,17 @@ class Public_Widget_Calendario extends Com_Object
                 <div class="rdc-events">
 
                     <ul>
-                        ////////////////////// iterar los ultimos eventos //////////////////////////////
-                        <li class="rdc-event" data-date="12/28/2016">
-                            <a href="http://neblux.com">Lorem ipsum dolor it asdasd sdfdsfjkhkj asd</a>
+                        <?php
+                        $list = Calendar_Model_Calendar::getInstance()->getListEnable($this->lan->LanId); 
+                        print_r($list);
+                        foreach ($list as $obj) {?>
+                        <li class="rdc-event" data-date="<?php echo date_format(date_create($obj->CalDate), 'd/m/Y'); ?>">
+                            <a href="<?= $obj->CalLink;?>"><?= $obj->CalEvent;?></a>
                         </li>
-                        <li class="rdc-event" data-date="12/22/2016">
-                            Event 2
-                        </li>
-                        <li class="rdc-event" data-date="12/29/2016">
-                            Event 2
-                        </li>
-                        <li class="rdc-event" data-date="12/15/2016">
-                            Event 2
-                        </li>
-                        <li class="rdc-event" data-date="12/29/2016">
-                            Event 2
-                        </li>
-                        ////////////////////// iterar los ultimos eventos //////////////////////////////
+                        <?php } ?>
+                        
+                        
+                      
                     </ul>
                 </div>
                 <div class="rdc-table"></div>

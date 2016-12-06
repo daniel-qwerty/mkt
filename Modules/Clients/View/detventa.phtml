@@ -1,0 +1,23 @@
+<?PHP
+$db=new Entities_VentaDetalle();
+$grid=new Com_Wizard_Grid();
+$grid->title="Detalle Venta";
+$grid->setIdField("DetId");
+
+$grid->setQuery($db->getList()->where("DetVenId={$_GET['id']}"));
+$grid->setAlias(array("DetId"=>"#","DetItem"=>"Item","DetPrecio"=>"Precio"));
+$grid->setFilters(array("DetItem"=>get('DetItem')));
+
+$toolBar=new Com_Wizard_ToolBar();
+$toolBar->add("search", "Filtrar",null,"showHide('.filters')");
+$toolBar->add("log-out", "Volver",Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Venta');
+$grid->setToolBar($toolBar);
+
+//$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/EditVenta/id/_ID_');
+//$grid->addAction("trash", "Eliminar", null,"confirm('Esta seguro de eliminar el registro?')?location.href='".Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Delete/id/_ID_'."':'';");
+
+//$grid->customField("CliHasVote", array("value"=>array('1'=>'Si','0'=>'No')));
+
+//$grid->customField("VenStatus", array("value"=>array('1'=>'Pendiente','0'=>'Finalizado')));
+
+$grid->render();

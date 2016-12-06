@@ -9,5 +9,6 @@ class Entities_Venta extends Com_Database_Entity{
     public $VenCliId;
     public $VenDate;
     public $VenStatus;
+    public $VenTotal;
    
 }

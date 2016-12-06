@@ -1,0 +1,49 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Contacto";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Contact");
+
+
+
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "From";
+$control->label = "De:";
+$control->default = $this->From;
+$control->length = 50;
+$control->required = true;
+
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "To";
+$control->label = "Para:";
+$control->default = $this->To;
+$control->length = 50;
+$control->required = true;
+
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Subject";
+$control->label = "Asunto:";
+$control->default = $this->Subject;
+$control->length = 50;
+$control->required = true;
+
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Editor();
+$control->name = "Message";
+$control->label = "Mensaje";
+$control->default = $this->Message;
+$control->required = true;
+$control->rows = 3;
+$control->addParameter("style ", "height:120px;");
+$form->add($control);
+
+
+$form->render();

@@ -181,7 +181,7 @@ function updateViewsAd(ide) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8080/mkt/Service/Clients/AdViews",
+        url: "http://localhost/mkt/mkt/Service/Clients/AdViews",
         data: {AdId: ide}
     }).done(function (data) {
         if (data) {
@@ -225,7 +225,7 @@ function saveCompra() {
         if (metodo) {
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/mkt/Service/Clients/SaveCompra",
+                url: "http://localhost/mkt/mkt/Service/Clients/SaveCompra",
                 data: {
                     VenId: venId,
                     Nombre: nombre,
@@ -254,11 +254,41 @@ function saveCompra() {
         }
 
     }
+}
+
+function sendContact() {
+    var name = $('#formContact #name').val();
+    var message = $('#formContact #message').val();
+    var email = $('#formContact #email').val();
+    var phone = $('#formContact #phone').val();
+
+    if (name === "" || email === "" || message === "" || phone === "") {
+        swal("", "Por favor revise los datos del formulario !!!", "warning");
+        console.log("Por favor revise los datos del formulario !!!");
+    } else {
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/mkt/mkt/Service/Contact/Save",
+            data: {
+                Name: name,
+                Email: email,
+                Phone: phone,
+                Message: message
+            }
+        }).done(function (data) {
+            console.log("Exito");
+            swal("", "Su mensaje fue enviado con exito", "success");
+            $('#formContact #name').val("");
+            $('#formContact #message').val("");
+            $('#formContact #email').val("");
+            $('#formContact #phone').val("");
+        }).error(function () {
+
+        });
 
 
-
-
-
+    }
 }
 
 

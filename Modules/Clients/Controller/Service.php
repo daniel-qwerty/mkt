@@ -143,7 +143,7 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
     public function SaveCompra() {
         if ($this->isPost()) {           
             Clients_Model_Compra::getInstance()->doInsert($this->getPostObject());
-            Clients_Model_Venta::getInstance()->doUpdateVenta($this->getPostObject()->VenId);
+            Clients_Model_Venta::getInstance()->doUpdateVenta($this->getPostObject()->VenId,$this->getPostObject()->Total);
             echo json_encode(true);
             return;
         }

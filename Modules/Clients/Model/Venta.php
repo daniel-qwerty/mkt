@@ -16,6 +16,7 @@ class Clients_Model_Venta extends Com_Module_Model {
         $db->VenCliId = $obj->VenCliId;
         $db->VenDate = date('Y-m-d');
         $db->VenStatus = $obj->VenStatus;
+        $db->VenTotal = "0";
         $db->action = ACTION_INSERT;
         $db->save();        
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Insertado");
@@ -37,18 +38,20 @@ class Clients_Model_Venta extends Com_Module_Model {
     public function doUpdate($intId, Com_Object $obj) {
         $db = new Entities_Venta();
         $db->VenId = $intId;
-        $db->VenCliId = $obj->ClientId;
-        $db->VenDate = $obj->Date;
-        $db->VenStatus = $obj->Status;
+        $db->VenCliId = $obj->VenCliId;
+        $db->VenDate = $obj->VenDate;
+        $db->VenStatus = $obj->VenStatus;
+        $db->VenTotal = $obj->VenTotal;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
     
-    public function doUpdateVenta($intId) {
+    public function doUpdateVenta($intId, $total) {
         $db = new Entities_Venta();       
         $db->VenId = $intId;      
-        $db->VenStatus = "0";        
+        $db->VenStatus = "0";    
+        $db->VenTotal = $total; 
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");

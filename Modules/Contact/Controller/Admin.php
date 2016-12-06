@@ -11,7 +11,7 @@ class Contact_Controller_Admin extends Admin_Controller_Admin {
     public function Add() {
         Com_Helper_BreadCrumbs::getInstance()->add("Item", "/Admin/Contact/Add");
         $languages = Language_Model_Language::getInstance()->getList();
-        
+
         if ($this->isPost()) {
             $id = Contact_Model_Contact::getInstance()->doInsert($this->getPostObject(), $languages);
             $this->redirect(Com_Helper_Url::getInstance()->urlBase . '/Admin/Contact/Edit/id/' . $id);
@@ -57,6 +57,33 @@ class Contact_Controller_Admin extends Admin_Controller_Admin {
         Com_Helper_Style::getInstance()->addFile("report.css");
         $list = Contact_Model_Contact::getInstance()->getList();
         $this->assign("list", $list);
+    }
+
+    public function Reply() {
+        Com_Helper_BreadCrumbs::getInstance()->add("Item", "/Admin/Contact/Reply");
+
+
+        if ($this->isPost()) {
+            $to = $_POST['To'];
+            $subject = $_POST['Subject'];
+            $headers = "From: " . strip_tags($_POST['From']) . "\r\n";
+            $headers .= "Reply-To: " . strip_tags($_POST['From']) . "\r\n";
+            $headers .= "CC: daniel@neblux.com\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+            $message = '<html><body>';
+            $message .= $_POST['Message'];
+            $message .= '</body></html>';
+            
+            mail($to, $subject, $message, $headers);
+            
+            Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Mensaje enviado con exito");
+        }
+        $this->assign('To');
+        $this->assign('From');
+        $this->assign('Message');
+        $this->assign('Subject');
     }
 
 }

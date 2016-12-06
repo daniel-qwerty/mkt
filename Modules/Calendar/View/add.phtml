@@ -1,0 +1,51 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Calendario";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Calendar");
+
+$form->addTab("Idioma por Defecto (" . $this->languages[0]->LanName . ")", "", true);
+
+$control = new Com_Wizard_Form_Control_Hidden();
+$control->name = "Language";
+$control->default = $this->Language;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Event";
+$control->label = "Evento";
+$control->default = $this->Event;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Link";
+$control->label = "Link";
+$control->default = $this->Link;
+$control->required = false;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control_Date();
+$control->name = "Date";
+$control->label = "Fecha";
+$control->default = $this->Date;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+
+$control = new Com_Wizard_Form_Control_Select();
+$control->name = "Status";
+$control->label = "Estado";
+$control->default = $this->Status;
+$control->required = true;
+$control->addItem('1', 'Habilitado');
+$control->addItem('0', 'Bloqueado');
+
+$form->add($control);
+
+$form->render();

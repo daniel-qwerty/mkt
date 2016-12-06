@@ -63,7 +63,7 @@
                 <a onclick="changePage(<?= $notIdb; ?>);"> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSiguiente")->TxtDescription ?> <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
-                <div class="addthis_inline_share_toolbox"></div>
+                <div class="addthis_inline_share_toolbox" data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/article/" . $this->note->NotId); ?>" data-title="<?=$this->note->NotTitle;?>" data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>"></div>
                
             </div>
         </div>
