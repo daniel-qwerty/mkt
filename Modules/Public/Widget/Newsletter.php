@@ -25,15 +25,18 @@ class Public_Widget_Newsletter extends Com_Object {
             <h5><?= Texts_Helper_Text::getInstance()->get($this->lan, "titleNewsletter")->TxtDescription ?></h5>
 
             <p><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtNewsletter")->TxtDescription ?></p>
-            <!-- Rd Mailform result field-->
-            <div class="rd-mailform-validate"></div>
-            <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post"
-                  action="bat/rd-mailform.php" class="rd-mailform subscribe text-left offset-top-30">
-                <input type="text" name="email" data-constraints="@NotEmpty @Email"
-                       placeholder="<?= Texts_Helper_Text::getInstance()->get($this->lan, "placeHolderNewsletter")->TxtDescription ?>">
-                <button class="btn btn-transparent btn-sm"><?= Texts_Helper_Text::getInstance()->get($this->lan, "btnNewsletter")->TxtDescription ?></button>
+
+            <form  action="https://lb.benchmarkemail.com//code/lbform" method=post name="frmLB764725" accept-charset="UTF-8" onsubmit="return _checkSubmit764725(this);" >
+                <input type=hidden name=successurl value="http://www.benchmarkemail.com/Code/ThankYouOptin?language=spanish" />
+                <input type=hidden name=errorurl value="http://lb.benchmarkemail.com//Code/Error" />
+                <input type=hidden name=token value="mFcQnoBFKMSSZV1BmPtxRuZXUawFafLCbQK3uXf2KumZ5kqONGyEzw%3D%3D" />
+                <input type=hidden name=doubleoptin value="" /><fieldset><div class="formbox-title-764725"></div></fieldset>
+                <input type=text placeholder="Nombre *" class="formbox-field-764725" name="fldfirstname" maxlength=100 />
+                <input type=text placeholder="Email *" class="formbox-field-764725" name="fldEmail" maxlength=100 />
+                <button type="submit" id="btnSubmit" krydebug="1751" class="btn btn-transparent btn-sm"><?= Texts_Helper_Text::getInstance()->get($this->lan, "btnNewsletter")->TxtDescription ?></button>
             </form>
         </div>
+
         <?PHP
     }
 

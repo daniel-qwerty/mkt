@@ -38,8 +38,10 @@
                 ->addFile("Public/materialicon.css")
                 ->addFile("Public/marketing-intro.css")
                 ->addFile("Public/jquery.fancybox.css")
+                ->addFile("Public/jquery.datetimepicker.css")
                 ->addFile("Public/jBox.css")
-                ->addFile("Public/sweetalert.css");
+                ->addFile("Public/sweetalert.css")
+        ;
 
         echo Com_Helper_Style::getInstance();
         ?>
@@ -57,17 +59,45 @@
                 ->addFile("Public/rdcalendar.js")
                 ->addFile("Public/swiper.jquery.js")
                 ->addFile("Public/jquery.fancybox.js")
+                ->addFile("Public/jquery.datetimepicker.full.js")
                 ->addFile("Public/login.js")
                 ->addFile("Public/jquery.jbox.min.js")
-                ->addFile("Public/sweetalert.min.js");
+                ->addFile("Public/sweetalert.min.js")
+        ;
+
+        echo Com_Helper_Script::getInstance();
+        ?>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <?php
+        Com_Helper_Script::getInstance()
+                ->addFile("Public/bootstrap.js")
+                ->addFile("Public/slick.min.js")
+                ->addFile("Public/pathformer.js")
+                ->addFile("Public/vivus.js")
+                ->addFile("Public/owl.carousel.js")
+                ->addFile("Public/marketing.js")
+                ->addFile("Public/rdcalendar.js")
+                ->addFile("Public/swiper.jquery.js");
 
         echo Com_Helper_Script::getInstance();
         $client = get('sessionCliente');
         ?>
         <?php //Public_Widget_Loading::getInstance()->render(); ?>
     </head>
-
     <body class="desktop">
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=815738648471180";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
         <section id="preload">
             <div id="preloader">
                 <div class="preloader-item preloader-item1"></div>
@@ -140,8 +170,6 @@
                 <img alt="logo"
                      src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
             </a>
-
-
             <ul>
                 <?php if ($client != '0'): ?>
                     <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
@@ -167,24 +195,23 @@
                         <div class="sidebar offset-top-40 offset-md-top-0">
                             <!--SECCION BUSQUEDA -->
                             <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
-                             <!--SECCION SOCIAL MEDIA -->
-                            <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
+                            <!--SECCION POST RECIENTES -->
+                            <?php Public_Widget_PostRecientes::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION PUBLICIDAD -->
-                            <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>                           
+                            <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                            <!--SECCION SOCIAL MEDIA -->
+                            <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION NEWSLETTER -->
-                            <?php //Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
+                           <?php //Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
 
-                            <!--<div class="sidebar-module">
-                                SECCION PUBLICIDAD 
-                                <?php //Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
-                            </div>-->
-
+                           
+                            
                             <!--SECCION CALENDARIO -->
-                            <?php //Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
+                            <?php Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION SUSCRIBITE -->
                             <?php //Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION PAUTA -->
-                            <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                            <?php //Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
                         </div>
                     </div>
                 </div>

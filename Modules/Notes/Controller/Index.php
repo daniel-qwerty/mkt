@@ -30,8 +30,6 @@ class Notes_Controller_Index extends Public_Controller_Index {
         $url = explode("/", $url);
         $url = $url[count($url) - 1];
 
-
-
         $category = Categories_Model_Category::getInstance()->getMenuList($this->lan->LanId, $url);
         $this->assign("category", $category);
 

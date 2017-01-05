@@ -17,6 +17,7 @@ class Clients_Model_Compra extends Com_Module_Model {
         $db->ComVenId =$obj->VenId;
         $db->ComCedula = $obj->Cedula;
         $db->ComEmail = $obj->Email;
+        $db->ComNombre = $obj->Nombre;
         $db->ComTelefono = $obj->Telefono;
         $db->ComPais = $obj->Pais;
         $db->ComCiudad = $obj->Ciudad;
@@ -56,6 +57,7 @@ class Clients_Model_Compra extends Com_Module_Model {
         $db->ComVenId =$obj->VenId;
         $db->ComCedula = $obj->Cedula;
         $db->ComEmail = $obj->Email;
+        $db->ComNombre = $obj->Nombre;
         $db->ComTelefono = $obj->Telefono;
         $db->ComPais = $obj->Pais;
         $db->ComCiudad = $obj->Ciudad;
@@ -91,10 +93,16 @@ class Clients_Model_Compra extends Com_Module_Model {
         $db->get();
         return $db;
     }
+    public function get2($intId) {
+        $db = new Entities_Compra();
+        $db->ComVenId = $intId;
+        $db->get();
+        return $db;
+    }
 
     public function getCompraByVenta($venId, $date) {
         $db = new Entities_Compra();
-        $db->ComVenId = $cliId;
+        $db->ComVenId = $venId;
         $db->ComFecha = $date;
         $db->get();
         return $db;

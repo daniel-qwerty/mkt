@@ -13,10 +13,10 @@ $toolBar->add("log-out", "Volver",Com_Helper_Url::getInstance()->urlBase.'/Admin
 $grid->setToolBar($toolBar);
 
 $grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/EditVenta/id/_ID_');
-$grid->addAction("trash", "Eliminar", null,"confirm('Esta seguro de eliminar el registro?')?location.href='".Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Delete/id/_ID_'."':'';");
-$grid->addAction("list-alt", "Detalle", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/DetVenta/id/_ID_');
+//$grid->addAction("trash", "Eliminar", null,"confirm('Esta seguro de eliminar el registro?')?location.href='".Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/Delete/id/_ID_'."':'';");
+$grid->addAction("list-alt", "Detalle Compra", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/DetVenta/id/_ID_');
+$grid->addAction("user", "Info Envio", Com_Helper_Url::getInstance()->urlBase.'/Admin/Clients/DetCompra/id/_ID_');
 
-$grid->customField("CliHasVote", array("value"=>array('1'=>'Si','0'=>'No')));
 
 $grid->customField("VenStatus", array("value"=>array('1'=>'Pendiente','0'=>'Finalizado')));
 

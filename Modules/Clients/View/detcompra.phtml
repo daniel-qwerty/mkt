@@ -1,0 +1,133 @@
+<?PHP 
+$form=new Com_Wizard_Form();
+$form->title="Detalle Compra";
+
+//$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase."/Admin/Clients/Venta");
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Nombre";
+$control->label="Nombre";
+$control->default=$this->Nombre;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Cedula";
+$control->label="Cedula";
+$control->default=$this->Cedula;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Email";
+$control->label="Email";
+$control->default=$this->Email;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Telefono";
+$control->label="Telefono";
+$control->default=$this->Telefono;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Pais";
+$control->label="Pais";
+$control->default=$this->Pais;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Ciudad";
+$control->label="Ciudad";
+$control->default=$this->Ciudad;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Direccion";
+$control->label="Direccion";
+$control->default=$this->Direccion;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Metodo";
+$control->label="Metodo";
+$control->default=$this->Metodo;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form->add($control);
+
+$form->render();
+
+$form2=new Com_Wizard_Form();
+$form2->title="Datos de envio";
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Direccion2";
+$control->label="Direccion";
+$control->default=$this->Direccion2;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form2->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Pais2";
+$control->label="Pais";
+$control->default=$this->Pais2;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form2->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Ciudad2";
+$control->label="Ciudad";
+$control->default=$this->Ciudad2;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form2->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Postal2";
+$control->label="Postal";
+$control->default=$this->Postal2;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form2->add($control);
+
+$control=new Com_Wizard_Form_Control();
+$control->name="Descripcion";
+$control->label="Descripcion";
+$control->default=$this->Descripcion;
+$control->required=true;
+$control->readOnly=true;
+$control->length=50;
+$form2->add($control);
+
+$form2->render();

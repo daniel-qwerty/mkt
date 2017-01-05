@@ -5,7 +5,7 @@ $form->title = "Formulario Contacto";
 
 $form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
 $form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Contact");
-$form->addAction("log-out", "Responder", Com_Helper_Url::getInstance()->urlBase . "/Admin/Contact/Reply");
+$form->addAction("retweet", "Responder", Com_Helper_Url::getInstance()->urlBase . "/Admin/Contact/Reply");
 
 foreach ($this->languages as $language) {
     $active = false;
@@ -62,9 +62,8 @@ $control->name = "Status";
 $control->label = "Estado";
 $control->default = $this->Status;
 $control->required = true;
-$control->addItem('1', 'Habilitado');
-$control->addItem('0', 'Bloqueado');
-
+$control->addItem('1', 'No leido');
+$control->addItem('0', 'Leido');
 $form->add($control);
 
 $form->render();

@@ -2,10 +2,10 @@
     font-family: 'Gilroy';
     src: url('fonts/Gilroy-Light.eot');
     src: url('fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
-    url('fonts/Gilroy-Light.woff2') format('woff2'),
-    url('fonts/Gilroy-Light.woff') format('woff'),
-    url('fonts/Gilroy-Light.ttf') format('truetype'),
-    url('fonts/Gilroy-Light.svg#Gilroy-Light') format('svg');
+        url('fonts/Gilroy-Light.woff2') format('woff2'),
+        url('fonts/Gilroy-Light.woff') format('woff'),
+        url('fonts/Gilroy-Light.ttf') format('truetype'),
+        url('fonts/Gilroy-Light.svg#Gilroy-Light') format('svg');
     font-weight: 300;
     font-style: normal;
 }
@@ -14,10 +14,10 @@
     font-family: 'Gilroy';
     src: url('fonts/GillSansMT-Bold.eot');
     src: url('fonts/GillSansMT-Bold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/GillSansMT-Bold.woff2') format('woff2'),
-    url('fonts/GillSansMT-Bold.woff') format('woff'),
-    url('fonts/GillSansMT-Bold.ttf') format('truetype'),
-    url('fonts/GillSansMT-Bold.svg#GillSansMT-Bold') format('svg');
+        url('fonts/GillSansMT-Bold.woff2') format('woff2'),
+        url('fonts/GillSansMT-Bold.woff') format('woff'),
+        url('fonts/GillSansMT-Bold.ttf') format('truetype'),
+        url('fonts/GillSansMT-Bold.svg#GillSansMT-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -4903,4 +4903,46 @@ td.rdc-table_has-events ul.rdc-table_events a {
 
 .module-search .form-group {
     margin: 0;
+}
+
+.formContacto .form-group .form-control {
+    border: 0;
+    border-radius: 15px;
+    height: 45px;
+    background: #21201f;
+    width: 70%;
+    margin: auto;
+    font-size: 12px;
+    
+}
+
+.formContacto .form-group  .mensaje {
+    border: 0;
+    border-bottom: 2px;
+    background: transparent;
+    border-bottom-color: #21201f;
+    border-bottom-style: solid;
+    display: block;
+    width: 70%;
+    margin: auto;
+    font-size: 12px;
+
+}
+
+.formContacto .form-group  .boton {
+    border: 0;
+    border-bottom: 2px;
+    background: transparent;
+    border-bottom-color: #21201f;
+    border-bottom-style: solid;
+    display: block;
+    width: 70%;
+    margin: auto;
+    color: #fff;
+        background-color: #28282b;
+    border-color: #1e1e21;
+    border-radius: 15px;
+    height: 45px;
+    
+
 }

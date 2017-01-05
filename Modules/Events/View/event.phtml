@@ -41,10 +41,7 @@
             <?php } ?>
             <div class="col-sm-12" style="background: #999999;height: 2px; margin: 15px 0 20px;"></div>
             <div class="col-sm-offset-3 col-sm-6">
-                <a href="#" class="content-social-link"> <i class="fa fa-twitter"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-facebook"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-instagram"></i></a>
-                <a href="#" class="content-social-link"> <i class="fa fa-youtube"></i></a>
+                <div class="addthis_inline_share_toolbox" data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/item/" . $this->events->EveId); ?>" data-title="<?=$this->events->EveTitle;?>" data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>"></div>
             </div>
         </div>
     </div>
@@ -66,4 +63,6 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582dd089d1d08717"></script> 
 

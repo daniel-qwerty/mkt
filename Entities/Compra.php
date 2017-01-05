@@ -23,5 +23,6 @@ class Entities_Compra extends Com_Database_Entity{
     public $ComFecha;
     public $ComEstado;
     public $ComMetodo;
+    public $ComNombre;
    
 }

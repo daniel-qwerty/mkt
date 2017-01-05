@@ -79,7 +79,14 @@
     </div>
     <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Te puede interesar:</h4>
     <?php Notes_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(12)->renderSmall(); ?>
+    <div class="row" style="margin-top:40px;">
+            <div class="col-xs-12">
+                <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+            </div>
+        </div>
+    
 </div>
+
 
 <script>
 

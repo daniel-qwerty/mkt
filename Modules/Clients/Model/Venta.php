@@ -93,6 +93,13 @@ class Clients_Model_Venta extends Com_Module_Model {
         return $text->getAll($result);
     }
     
+    public function getListCarritoFinalizados() {
+        $text = new Entities_Venta();
+//        $result = Com_Database_Query::getInstance()->select("Count(*) as number")->from("Venta")->andWhere("VenStatus=0")->orderBy("Venta.VenDate");        
+//        return $text->getAll($result);
+        return $text->getAll("select count(*) as number from {$text} where VenStatus=0");
+    }
+    
     public function getSumCarrito($date, $cliId ) {
         $text = new Entities_Venta();
         $result = Com_Database_Query::getInstance()->select("SUM(DetalleVenta.DetPrecio) as total")->from("Venta")->innerJoin("DetalleVenta", "DetalleVenta.DetVenId=Venta.VenId")->where("Venta.VenCliId={$cliId} and Venta.VenDate = '{$date}'and Venta.VenStatus='1'");

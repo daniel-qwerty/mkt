@@ -19,7 +19,7 @@ $grid->setToolBar($toolBar);
 $grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Contact/Edit/lan/_LANGUAGE_/id/_ID_');
 $grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Contact/Delete/id/_ID_' . "':'';");
 
-$grid->customField("ConStatus", array("value" => array('1' => 'Habilitado', '0' => 'Bloqueado')));
+$grid->customField("ConStatus", array("value" => array('1' => 'No leido', '0' => 'Leido')));
 
 $grid->customField("ConDate", array("dateFormat" => "d/m/Y H:i:s"));
 

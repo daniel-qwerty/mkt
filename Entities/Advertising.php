@@ -14,5 +14,7 @@ class Entities_Advertising extends Com_Database_Entity {
     public $AdViews;
     public $AdStatus;
     public $AdSize;
+    public $AdDatePrint;
+    public $AdPrint;
 
 }

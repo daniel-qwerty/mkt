@@ -13,7 +13,7 @@ class Events_Controller_Index extends Public_Controller_Index {
               $this->assign("events", $events);
             
         }else{
-            $this->setLayout("template2");
+            $this->setLayout("templateEvents");
             $this->setView("list");
             $url = get('REQUEST_URI');
             $url = explode("/", $url);
@@ -38,7 +38,7 @@ class Events_Controller_Index extends Public_Controller_Index {
     
 
     public function Item() {
-        $this->setLayout("template2");
+        $this->setLayout("templateEventsItem");
         $this->setView("event");
         $url = get('REQUEST_URI');
         $url = explode("/", $url);

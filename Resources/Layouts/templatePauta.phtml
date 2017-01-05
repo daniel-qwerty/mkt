@@ -13,7 +13,6 @@
             href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
             rel="stylesheet" type="text/css">
 
-
         <!-- Fav and Touch Icons -->       
 
         <link rel="apple-touch-icon" sizes="180x180" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
@@ -39,8 +38,8 @@
                 ->addFile("Public/marketing-intro.css")
                 ->addFile("Public/jquery.fancybox.css")
                 ->addFile("Public/jBox.css")
-                ->addFile("Public/sweetalert.css");
-
+                ->addFile("Public/sweetalert.css")
+        ;
         echo Com_Helper_Style::getInstance();
         ?>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -62,12 +61,23 @@
                 ->addFile("Public/sweetalert.min.js");
 
         echo Com_Helper_Script::getInstance();
+
         $client = get('sessionCliente');
         ?>
         <?php //Public_Widget_Loading::getInstance()->render(); ?>
     </head>
-
     <body class="desktop">
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=815738648471180";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
         <section id="preload">
             <div id="preloader">
                 <div class="preloader-item preloader-item1"></div>
@@ -140,8 +150,6 @@
                 <img alt="logo"
                      src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
             </a>
-
-
             <ul>
                 <?php if ($client != '0'): ?>
                     <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
@@ -165,26 +173,25 @@
                     <div class="side-right col-xs-12 col-md-4">
                         <!--Sidebar-->
                         <div class="sidebar offset-top-40 offset-md-top-0">
-                            <!--SECCION BUSQUEDA -->
-                            <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
-                             <!--SECCION SOCIAL MEDIA -->
-                            <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
+                           
                             <!--SECCION PUBLICIDAD -->
-                            <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>                           
+                            <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                            <!--SECCION SOCIAL MEDIA -->
+                            <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION NEWSLETTER -->
                             <?php //Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
 
-                            <!--<div class="sidebar-module">
-                                SECCION PUBLICIDAD 
-                                <?php //Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
-                            </div>-->
+                            <div class="sidebar-module">
+                                <!--SECCION PUBLICIDAD -->
+                                <?php Advertising_Widget_Ad::getInstance()->setType('E')->setLimit(1)->renderE(); ?>
+                            </div>
 
                             <!--SECCION CALENDARIO -->
                             <?php //Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION SUSCRIBITE -->
-                            <?php //Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
+                            <?php Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION PAUTA -->
-                            <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                            <?php //Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
                         </div>
                     </div>
                 </div>

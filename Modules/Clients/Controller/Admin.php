@@ -75,16 +75,38 @@ class Clients_Controller_Admin extends Admin_Controller_Admin {
             Clients_Model_Venta::getInstance()->doUpdate(get('id'), $this->getPostObject());
             $this->redirect(Com_Helper_Url::getInstance()->urlBase . '/Admin/Clients/Venta/');
         }
-        $entity = Clients_Model_Venta::getInstance()->get(get('id'));
+         $entity = Clients_Model_Venta::getInstance()->get(get('id'));
          $this->assign('VenId', $entity->VenId);
          $this->assign('VenCliId', $entity->VenCliId);
          $this->assign('VenDate', $entity->VenDate);
          $this->assign('VenStatus', $entity->VenStatus);
+         $this->assign('VenTotal', $entity->VenTotal);
     }
     
      public function DetVenta() {
         Com_Helper_BreadCrumbs::getInstance()->add("Venta", "/Admin/Clients/Venta");
         
+    }
+    
+    public function DetCompra() {
+        Com_Helper_BreadCrumbs::getInstance()->add("Item", "/Admin/Clients/Venta/EditVenta");
+        $this->setView("detcompra");
+        
+         $entity = Clients_Model_Compra::getInstance()->get2(get('id'));
+         $this->assign('Nombre', $entity->ComNombre);
+         $this->assign('Cedula', $entity->ComCedula);
+         $this->assign('Email', $entity->ComEmail);
+         $this->assign('Telefono', $entity->ComTelefono);
+         $this->assign('Pais', $entity->ComPais);
+         $this->assign('Ciudad', $entity->ComCiudad);
+         $this->assign('Direccion', $entity->ComDireccion);
+         $this->assign('Metodo', $entity->ComMetodo);
+         
+         $this->assign('Direccion2', $entity->ComDireccion2);
+         $this->assign('Pais2', $entity->ComPais2);
+         $this->assign('Ciudad2', $entity->ComCiudad2);
+         $this->assign('Postal2', $entity->ComCodPostal2);
+         $this->assign('Descripcion', $entity->ComDescripcion);
     }
 
 }

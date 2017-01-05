@@ -55,6 +55,16 @@ class Advertising_Model_Advertising extends Com_Module_Model {
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
     }
+    
+    public function doUpdatePrint($intId) {
+        $db = new Entities_Advertising();
+        $db->AdId = $intId;        
+        $db->AdDatePrint = date("Y-m-d H:i:s");  
+        $db->AdPrint = $this->get($intId)->AdPrint + 1;
+        $db->action = ACTION_UPDATE;
+        $db->save();
+        //Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");
+    }
 
     public function doDelete($intId) {
         $db = new Entities_Advertising();
@@ -88,7 +98,7 @@ class Advertising_Model_Advertising extends Com_Module_Model {
     public function getAd($type,$limit = 1000) {
         $text = new Entities_Advertising();
         $date = date("Y-m-d");
-        return $text->getAll($text->getList()->where("AdStatus = 1")->andWhere("AdDateStart <='{$date}'")->andWhere("AdDateEnd >='{$date}'")->andWhere("AdSize = '{$type}'")->orderBy("RAND()")->limit(0, $limit));
+        return $text->getAll($text->getList()->where("AdStatus = 1")->andWhere("AdDateStart <='{$date}'")->andWhere("AdDateEnd >='{$date}'")->andWhere("AdSize = '{$type}'")->orderBy("AdDatePrint asc")->limit(0, $limit));
     }
     
 

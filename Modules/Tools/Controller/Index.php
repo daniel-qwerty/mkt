@@ -3,7 +3,7 @@
 class Tools_Controller_Index extends Public_Controller_Index {
 
     public function Index() {
-        $this->setLayout("template3");
+        $this->setLayout("templateTools");
         $this->setView("list");
         $url = get('REQUEST_URI');
         $url = explode("/", $url);

@@ -1,7 +1,6 @@
 <?php
 
-class Notes_Widget_Recientes extends Com_Object
-{
+class Notes_Widget_Recientes extends Com_Object {
 
     private $lan;
     private $limit;
@@ -11,39 +10,33 @@ class Notes_Widget_Recientes extends Com_Object
      *
      * @return Notes_Widget_Recientes
      */
-    public static function getInstance()
-    {
+    public static function getInstance() {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan)
-    {
+    public function setLan($lan) {
         $this->lan = $lan;
         return $this;
     }
 
-    public function setLimit($limit)
-    {
+    public function setLimit($limit) {
         $this->limit = $limit;
         return $this;
     }
 
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
 
-    public function render()
-    {
+    public function render() {
         $list = Notes_Model_Note::getInstance()->getListRecientes($this->lan->LanId, $this->limit);
-
         ?>
         <section class="text-sm-left">
             <!-- Owl Carousel-->
             <div data-items="1" data-sm-items="2" data-lg-items="4" data-stage-padding="0" data-loop="false"
                  data-margin="0" data-nav="true" class="owl-carousel owl-carousel-mod-1">
-                <?php foreach ($list as $new): ?>
+        <?php foreach ($list as $new): ?>
 
                     <div class="owl-item">
                         <div class="post-news height-480"
@@ -68,7 +61,7 @@ class Notes_Widget_Recientes extends Com_Object
                         </div>
                     </div>
 
-                <?php endforeach; ?>
+        <?php endforeach; ?>
 
 
             </div>
@@ -76,16 +69,14 @@ class Notes_Widget_Recientes extends Com_Object
         <?php
     }
 
-    public function renderSmall()
-    {
+    public function renderSmall() {
         $list = Notes_Model_Note::getInstance()->getListRecientes($this->lan->LanId, $this->limit);
-
         ?>
         <section class="text-sm-left" style="margin-top: 15px">
             <!-- Owl Carousel-->
             <div data-items="1" data-sm-items="2" data-lg-items="4" data-stage-padding="0" data-loop="false"
                  data-margin="0" data-nav="true" class="owl-carousel owl-carousel-mod-1">
-                <?php foreach ($list as $new): ?>
+        <?php foreach ($list as $new): ?>
 
                     <div class="owl-item">
                         <div class="post-news height-260"
@@ -104,11 +95,43 @@ class Notes_Widget_Recientes extends Com_Object
                         </div>
                     </div>
 
-                <?php endforeach; ?>
+        <?php endforeach; ?>
 
 
             </div>
         </section>
+        <?php
+    }
+
+    public function renderColum() {
+
+        $url = get('REQUEST_URI');
+        $url = explode("/", $url);
+        $url = $url[count($url) - 1];
+        $list = Notes_Model_Note::getInstance()->getListRecientesByCategory($this->lan->LanId, 5, $url);        
+        
+        ?>
+        <div class="sidebar-module module-post text-left">
+            <h5>Post recientes</h5>
+            <ul>
+        <?php
+        foreach ($list as $new) {
+            ?>
+                    <li>
+                        <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                            <p>
+            <?= $new->NotResume; ?>
+                            </p>
+                        </a>
+                        <span><i class="fa fa-calendar"></i> <?= $new->NotDate; ?></span>
+                    </li>
+
+        <?php } ?>
+            </ul>
+        </div>
+
+
+
         <?php
     }
 

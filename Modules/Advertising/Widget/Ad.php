@@ -29,7 +29,9 @@ class Advertising_Widget_Ad extends Com_Object {
         //print_r($list);
         foreach ($list as $new) {
             ?>
-
+<script>
+               updatePrintsAd(<?= $new->AdId; ?>); 
+            </script>
             <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blank">
                 <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                      style="width: 100%">
@@ -45,7 +47,9 @@ class Advertising_Widget_Ad extends Com_Object {
         //print_r($list);
         foreach ($list as $new) {
             ?>
-
+<script>
+               updatePrintsAd(<?= $new->AdId; ?>); 
+            </script>
             <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                 <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                      style="width: 100%">
@@ -59,8 +63,13 @@ class Advertising_Widget_Ad extends Com_Object {
 
         $list = Advertising_Model_Advertising::getInstance()->getAd($this->type, $this->limit);
         //print_r($list);
+        
         foreach ($list as $new) {
+            
             ?>
+            <script>
+               updatePrintsAd(<?= $new->AdId; ?>); 
+            </script>
             <div class="banner-block">
                 <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                     <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
@@ -77,6 +86,9 @@ class Advertising_Widget_Ad extends Com_Object {
         //print_r($list);
         foreach ($list as $new) {
             ?>
+            <script>
+               updatePrintsAd(<?= $new->AdId; ?>); 
+            </script>
             <div class="banner-block">
                 <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                     <img
@@ -95,6 +107,9 @@ class Advertising_Widget_Ad extends Com_Object {
         //print_r($list);
         foreach ($list as $new) {
             ?>
+            <script>
+               updatePrintsAd(<?= $new->AdId; ?>); 
+            </script>
             <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                 <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>" alt=""
                      style="width: 100%">

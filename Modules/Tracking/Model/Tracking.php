@@ -32,18 +32,17 @@ class Tracking_Model_Tracking extends Com_Module_Model {
 
     public function getList($dtaStart, $dtaEnd) {
         $db = new Entities_Visit();
-
         return $db->getAll($db->getList($dtaStart, $dtaEnd)->limit(0, 10000));
     }
 
     public function count() {
         $db = new Entities_Visit();
-        return $db->getAll("select count(*) as cantidad from {$db}");
+        return $db->getAll("select count(*) as number from {$db}");
     }
 
     public function countUnique() {
         $db = new Entities_Visit();
-        return $db->getAll("select count(*) as cantidad from (select distinct VisIP from Visit where VisUrl like '%Salvando%' or VisUrl like '%testimonio%' or VisUrl like '%articlesv%' or VisUrl like '%pregunta%') as ips");
+        return $db->getAll("select count(*) as number from (select distinct TraRemoteIp from Tracking) as number");
     }
 
 }

@@ -99,6 +99,11 @@ class Notes_Model_Note extends Com_Module_Model {
         return $text->getAll($text->getList()->where("NotLanId={$lanId} and NotStatus = 1")->orderBy("NotDate desc")->limit(0, $limit));
     }
     
+    public function getListRecientesByCategory($lanId, $cat, $limit = 1000) {
+        $text = new Entities_Note();
+        return $text->getAll($text->getList()->where("NotLanId={$lanId} and NotCatId={$cat} and NotStatus = 1")->orderBy("NotDate desc")->limit(0, $limit));
+    }
+    
     public function getImportant($lanId, $limit = 1000) {
         $text = new Entities_Note();
         return $text->getAll($text->getList()->where("NotLanId={$lanId} and NotStatus = 1 and NotImportant = 1 ")->orderBy("NotDate desc")->limit(0, $limit));

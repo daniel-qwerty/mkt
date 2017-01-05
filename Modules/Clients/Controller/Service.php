@@ -134,6 +134,18 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
             $adId = $this->getPostObject()->AdId;
             $adview = $this->getPostObject()->AdViews;            
             Advertising_Model_Advertising::getInstance()->doUpdateService($adId, $adview);
+            
+            echo json_encode(true);
+            return;
+        }
+        echo json_encode(false);
+    }
+    
+    public function AdPrints() {
+        if ($this->isPost()) {
+            $adId = $this->getPostObject()->AdId;                       
+            Advertising_Model_Advertising::getInstance()->doUpdatePrint($adId);
+            
             echo json_encode(true);
             return;
         }

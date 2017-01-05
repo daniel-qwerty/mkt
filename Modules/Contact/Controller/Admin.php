@@ -5,7 +5,7 @@ class Contact_Controller_Admin extends Admin_Controller_Admin {
     public function init() {
         parent::init();
         Com_Helper_Title::getInstance()->title = "M&oacute;dulo Contacto";
-        Com_Helper_BreadCrumbs::getInstance()->add("Textos", "/Admin/Contact");
+        Com_Helper_BreadCrumbs::getInstance()->add("Contacto", "/Admin/Contact");
     }
 
     public function Add() {
@@ -42,9 +42,11 @@ class Contact_Controller_Admin extends Admin_Controller_Admin {
         $this->assign('Email', $entity->ConEmail);
         $this->assign('Name', $entity->ConName);
         $this->assign('Message', $entity->ConMessage);
-        $this->assign('Status', $entity->ConStatus);
+        $this->assign('Status', "1");
 
         $this->assign("languages", $languages);
+        
+        
     }
 
     public function Delete() {

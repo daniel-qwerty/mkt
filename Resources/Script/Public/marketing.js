@@ -198,6 +198,27 @@ function updateViewsAd(ide) {
     }
     );
 }
+function updatePrintsAd(ide) {
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/mkt/mkt/Service/Clients/AdPrints",
+        data: {AdId: ide}
+    }).done(function (data) {
+        if (data) {
+            console.log("print registrado");
+        } else {
+            console.log("print error");
+        }
+
+        //modal.open();
+    }).error(function () {
+        //loadingModal.close();
+
+        console.log("error service ad");
+    }
+    );
+}
 
 function saveCompra() {
     var venId = $('#formCompra #idVenta').val();
@@ -219,7 +240,7 @@ function saveCompra() {
 
 
 
-    if (cedula === "" || email === "" || telefono === "" || pais === "" || ciudad === "" || direccion1 === "") {
+    if (cedula === "" || cedula === "" || email === "" || telefono === "" || pais === "" || ciudad === "" || direccion1 === "") {
         swal("Info", "Por favor revise los datos del formulario !!!", "warning");
     } else {
         if (metodo) {
@@ -290,5 +311,11 @@ function sendContact() {
 
     }
 }
+
+
+      
+
+
+
 
 
