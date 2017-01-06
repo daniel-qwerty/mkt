@@ -1,167 +1,192 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-        <title>MARKETING NEWS</title>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel='stylesheet' id='open-sans-css'
-              href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1'
-              type='text/css' media='all'/>
-        <link
-            href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
-            rel="stylesheet" type="text/css">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>MARKETING NEWS</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel='stylesheet' id='open-sans-css'
+          href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1'
+          type='text/css' media='all'/>
+    <link
+        href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700,800%7CPlayfair+Display:400,400italic,700,900&amp;subset=greek,latin,latin"
+        rel="stylesheet" type="text/css">
+
+    <!-- Fav and Touch Icons -->
+
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png"
+          sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png"
+          sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="mask-icon"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/safari-pinned-tab.svg"
+          color="#5bbad5">
+    <link rel="shortcut icon"
+          href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+          type="image/x-icon"/>
+
+    <?PHP
+    Com_Helper_Style::getInstance()
+        ->addFile("Public/bootstrap.css")
+        ->addFile("Public/font-awesome.css")
+        ->addFile("Public/slick.css")
+        ->addFile("Public/slick-theme.css")
+        ->addFile("Public/swiper.css")
+        ->addFile("Public/animate.css")
+        ->addFile("Public/owl.carousel.css")
+        ->addFile("Public/materialicon.css")
+        ->addFile("Public/marketing-intro.css")
+        ->addFile("Public/jquery.fancybox.css")
+        ->addFile("Public/ModalBorder.css")
+        ->addFile("Public/jBox.css")
+        ->addFile("Public/sweetalert.css");
+
+    echo Com_Helper_Style::getInstance();
+
+    Com_Helper_Script::getInstance()
+        ->addFile("Public/jquery.js")
+        ->addFile("Public/bootstrap.js")
+        ->addFile("Public/slick.min.js")
+        ->addFile("Public/pathformer.js")
+        ->addFile("Public/vivus.js")
+        ->addFile("Public/owl.carousel.js")
+        ->addFile("Public/marketing.js")
+        ->addFile("Public/rdcalendar.js")
+        ->addFile("Public/swiper.jquery.js")
+        ->addFile("Public/login.js")
+        ->addFile("Public/jquery.fancybox.js")
+        ->addFile("Public/jquery.jbox.min.js")
+        ->addFile("Public/sweetalert.min.js");
+    echo Com_Helper_Script::getInstance();
+    ?>
 
 
-        <!-- Fav and Touch Icons -->       
+    <?php Public_Widget_Loading::getInstance()->render(); ?>
+</head>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
-        <link rel="mask-icon" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon"
-              href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
-              type="image/x-icon"/>
+<body>
+<section id="preload">
+    <div id="preloader">
+        <div class="preloader-item preloader-item1"></div>
+        <div class="preloader-item preloader-item2"></div>
+        <div class="preloader-item preloader-item3"></div>
+    </div>
+</section>
 
-        <?php Public_Widget_Loading::getInstance()->render(); ?>
+<section class="main-menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="menu-content col-md-6">
+                <div class="menu-container alt" style="display: none">
 
-        <?PHP
-        Com_Helper_Style::getInstance()
-                ->addFile("Public/bootstrap.css")
-                ->addFile("Public/font-awesome.css")
-                ->addFile("Public/slick.css")
-                ->addFile("Public/slick-theme.css")
-                ->addFile("Public/marketing-intro.css")
-                ->addFile("Public/marketing-header.css")
-                ->addFile("Public/jBox.css")
-                ->addFile("Public/sweetalert.css")
-        ;
-        echo Com_Helper_Style::getInstance();
+                    <a class="logo"
+                       href="<?= Com_Helper_Url::getInstance()->urlBase . '/' . $this->lan->LanCode . '/page/home.html'; ?>">
+                        <img alt="logo"
+                             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+                    </a>
+                    <a href="javascript:void(0)" onclick="toogleMenu();">
+                        <i class="fa fa-close" aria-hidden="true"></i>
+                    </a>
 
-        Com_Helper_Script::getInstance()
-                ->addFile("Public/bootstrap.js")
-                ->addFile("Public/slick.min.js")
-                ->addFile("Public/pathformer.js")
-                ->addFile("Public/vivus.js")
-                ->addFile("Public/marketing.js")
-                ->addFile("Public/contact.js")
-                ->addFile("Public/map.js")
-                ->addFile("Public/jquery.jbox.min.js")
-                ->addFile("Public/sweetalert.min.js");
-        echo Com_Helper_Script::getInstance();
-        ?>
-    </head>
-
-    <body class="index-page">
-        <section id="preload">
-            <div id="preloader">
-                <div class="preloader-item preloader-item1"></div>
-                <div class="preloader-item preloader-item2"></div>
-                <div class="preloader-item preloader-item3"></div>
-            </div>
-        </section>
-
-        <section class="main-menu">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="menu-content col-md-6">
-                        <div class="menu-container alt" style="display: none">
-
-                            <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase. '/' . $this->lan->LanCode . '/page/home.html'; ?>">
-                                <img alt="logo"
-                                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
-                            </a>
-                            <a href="javascript:void(0)" onclick="toogleMenu();">
-                                <i class="fa fa-close" aria-hidden="true"></i>
-                            </a>
-
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="menu-nav">
+                                <ul>
+                                    <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="menu-nav">
-                                        <ul>
-                                            <?PHP Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
-                                        </ul>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="rowgit ">
+                        <div class="col-md-12">
+                            <div class="menu-redes">
+                                <ul class="list-inline">
+                                    <li>siguenos en</li>
+                                    <li><a target="_blank"
+                                           href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>"
+                                           class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
+                                    </li>
+                                    <li><a target="_blank"
+                                           href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkTwitter')->LinUrl; ?>"
+                                           class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
+                                    </li>
+                                    <li><a target="_blank"
+                                           href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkInstagram')->LinUrl; ?>"
+                                           class="icon icon-sm icon-white icon-circle icon-border fa fa-instagram"></a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="rowgit ">
-                                <div class="col-md-12">
-                                    <div class="menu-redes">
-                                        <ul class="list-inline">
-                                            <li>siguenos en</li>
-                                            <li><a target="_blank"
-                                                   href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>"
-                                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-facebook"></a>
-                                            </li>
-                                            <li><a target="_blank"
-                                                   href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkTwitter')->LinUrl; ?>"
-                                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-twitter"></a>
-                                            </li>
-                                            <li><a target="_blank"
-                                                   href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkInstagram')->LinUrl; ?>"
-                                                   class="icon icon-sm icon-white icon-circle icon-border fa fa-instagram"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row hidden">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <div class=" menu-nav">
+                        </div>
+                    </div>
+                    <div class="row hidden">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class=" menu-nav">
 
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <div class="menu-container" style="display: none">
-            <a class="logo" href="<?= Com_Helper_Url::getInstance()->urlBase. '/' . $this->lan->LanCode . '/page/home.html'; ?>">
-                <img alt="logo"
-                     src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
-            </a>
-            <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a>
         </div>
-        <section id="intro">
-            <div class="intro-slicks">
-                <div class="slick-item">
-                    <object id="svg-0" class="svg-object" type="image/svg+xml" data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_m.svg"></object>
-                    <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo01.jpg" alt="imagen"/>
-                </div>
-                <div class="slick-item">
-                    <object id="svg-1" class="svg-object" type="image/svg+xml" data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_k.svg"></object>
-                    <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo03.jpg" alt="imagen"/>
-                </div>
-                <div class="slick-item">
-                    <object id="svg-2" class="svg-object" type="image/svg+xml" data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_t.svg"></object>
-                    <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo05.jpg" alt="imagen"/>
-                </div>
-            </div>
-            <img class="intro-logo" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo.png" alt="logo"/>
-        </section>
+    </div>
+</section>
 
-        <section id="bienvenido">
-            <img class="logo" alt="logo" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
-            <h2>Bienvenido!</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-            </p>
-            <a class="btn-gray" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "page/home.html"); ?>">ENTRAR</a>
-        </section>
-    </body>
+<div class="menu-container" style="display: none">
+    <a class="logo"
+       href="<?= Com_Helper_Url::getInstance()->urlBase . '/' . $this->lan->LanCode . '/page/home.html'; ?>">
+        <img alt="logo"
+             src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+    </a>
+    <a href="javascript:void(0)" onclick="toogleMenu();"><i class="fa fa-bars" aria-hidden="true"></i></a>
+</div>
+<section id="intro">
+    <div class="intro-slicks">
+        <div class="slick-item">
+            <object id="svg-0" class="svg-object" type="image/svg+xml"
+                    data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_m.svg"></object>
+            <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo01.jpg"
+                 alt="imagen"/>
+        </div>
+        <div class="slick-item">
+            <object id="svg-1" class="svg-object" type="image/svg+xml"
+                    data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_k.svg"></object>
+            <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo03.jpg"
+                 alt="imagen"/>
+        </div>
+        <div class="slick-item">
+            <object id="svg-2" class="svg-object" type="image/svg+xml"
+                    data="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/icon_t.svg"></object>
+            <img class="intro-bg" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/photo05.jpg"
+                 alt="imagen"/>
+        </div>
+    </div>
+    <img class="intro-logo" src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo.png"
+         alt="logo"/>
+</section>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <?php
-    echo Com_Helper_Script::getInstance();
-    ?>
+<section id="bienvenido">
+    <img class="logo" alt="logo"
+         src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
+    <h2>Bienvenido!</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+    </p>
+    <a class="btn-gray"
+       href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "page/home.html"); ?>">ENTRAR</a>
+</section>
+
+
+</body>
 
 </html>

@@ -1473,6 +1473,7 @@ fieldset[disabled] .btn-link:focus {
     text-align: center;
     top: 50%;
     left: 100%;
+    transition: all 3s;
     -webkit-transform: translate(0, -50%);
     -moz-transform: translate(0, -50%);
     -o-transform: translate(0, -50%);

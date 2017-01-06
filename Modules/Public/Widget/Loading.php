@@ -1,6 +1,7 @@
 <?php
 
-class Public_Widget_Loading extends Com_Object {
+class Public_Widget_Loading extends Com_Object
+{
 
     public $lan;
 
@@ -10,16 +11,19 @@ class Public_Widget_Loading extends Com_Object {
      * @access public
      * @return Public_Widget_Loading
      */
-    public static function getInstance() {
+    public static function getInstance()
+    {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan) {
+    public function setLan($lan)
+    {
         $this->lan = $lan;
         return $this;
     }
 
-    public function render() {
+    public function render()
+    {
         ?>
         <style>
             body {
@@ -28,8 +32,8 @@ class Public_Widget_Loading extends Com_Object {
             }
 
             #preload {
-                position: fixed;
-                top:0;
+                position: absolute;
+                top: 0;
                 width: 100%;
                 height: 100vh;
                 z-index: 9000;
@@ -40,6 +44,7 @@ class Public_Widget_Loading extends Com_Object {
                 position: absolute;
                 left: 50%;
                 top: 50%;
+                width: 300px;
                 transform: translate(-50%, -50%);
             }
 
@@ -51,6 +56,25 @@ class Public_Widget_Loading extends Com_Object {
                 border-radius: 10px;
                 float: left;
                 display: block;
+            }
+            @media (max-width: 600px) {
+                #preloader {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 150px;
+                    transform: translate(-50%, -50%);
+                }
+
+                .preloader-item {
+                    width: 40px;
+                    height: 40px;
+                    margin: 5px;
+                    background: #CCCCCC;
+                    border-radius: 5px;
+                    float: left;
+                    display: block;
+                }
             }
 
             .preloader-item1 {
