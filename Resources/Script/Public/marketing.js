@@ -10,8 +10,8 @@ $(document).ready(function () {
 $(window).load(function () {
     "use strict";
     $('html, body').animate({scrollTop: 0}, 1);
-    //$("#preloader").fadeOut(); // will first fade out the loading animation
-    //$("#preload").delay(150).fadeOut("slow");
+    $("#preloader").fadeOut(); // will first fade out the loading animation
+    $("#preload").delay(150).fadeOut("slow");
     $(".menu-container").delay(800).slideDown();
     $(".menu-content").delay(1000).fadeIn("slow");
     updateAnimations("svg-" + 0);

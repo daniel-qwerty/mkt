@@ -2,10 +2,10 @@
     font-family: 'Gilroy';
     src: url('fonts/Gilroy-Light.eot');
     src: url('fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Gilroy-Light.woff2') format('woff2'),
-        url('fonts/Gilroy-Light.woff') format('woff'),
-        url('fonts/Gilroy-Light.ttf') format('truetype'),
-        url('fonts/Gilroy-Light.svg#Gilroy-Light') format('svg');
+    url('fonts/Gilroy-Light.woff2') format('woff2'),
+    url('fonts/Gilroy-Light.woff') format('woff'),
+    url('fonts/Gilroy-Light.ttf') format('truetype'),
+    url('fonts/Gilroy-Light.svg#Gilroy-Light') format('svg');
     font-weight: 300;
     font-style: normal;
 }
@@ -14,10 +14,10 @@
     font-family: 'Gilroy';
     src: url('fonts/GillSansMT-Bold.eot');
     src: url('fonts/GillSansMT-Bold.eot?#iefix') format('embedded-opentype'),
-        url('fonts/GillSansMT-Bold.woff2') format('woff2'),
-        url('fonts/GillSansMT-Bold.woff') format('woff'),
-        url('fonts/GillSansMT-Bold.ttf') format('truetype'),
-        url('fonts/GillSansMT-Bold.svg#GillSansMT-Bold') format('svg');
+    url('fonts/GillSansMT-Bold.woff2') format('woff2'),
+    url('fonts/GillSansMT-Bold.woff') format('woff'),
+    url('fonts/GillSansMT-Bold.ttf') format('truetype'),
+    url('fonts/GillSansMT-Bold.svg#GillSansMT-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -33,6 +33,7 @@ body {
 
 body {
     margin: 0;
+
 }
 
 .color-gray-1 {
@@ -1190,13 +1191,14 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .menu-container {
-    background: #7d16ee;
+    background: #fdcf01;
     border: 0;
     border-radius: 0;
     z-index: 1000;
     width: 100%;
     position: fixed;
     top: 0;
+    padding: 15px;
 }
 
 .menu-container.alt {
@@ -1208,13 +1210,43 @@ fieldset[disabled] .btn-link:focus {
     position: relative;
 }
 
-.menu-container > ul, .menu-container > a {
+.menu-container > .item {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 30px;
     transform: translate(0, -50%);
-    color: #EEEEEE;
+    color: #FFFFFF;
     list-style: none;
+}
+
+.menu-container > .item > a {
+    margin: 0 10px;
+    color: #FFFFFF;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.menu-container > .item > a.ic-facebook:hover {
+    color: #3b5998;
+}
+
+.menu-container > .item > a.ic-twitter:hover {
+    color: #1da1f2;
+}
+
+.menu-container > .item > a.ic-google:hover {
+    color: #db4437;
+}
+
+.menu-container > .item > a.ic-linkedin:hover {
+    color: #23649c;
+}
+
+.menu-container > .item > a.ic-pinterest:hover {
+    color: #c10021;
 }
 
 .menu-container .logo {
@@ -1235,7 +1267,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .menu-container a:hover {
-    color: #FFFFFF;
+    color: #EEEEEE;
 }
 
 .menu-container a i.mkt-login:before {
@@ -1481,6 +1513,12 @@ fieldset[disabled] .btn-link:focus {
     transform: translate(0, -50%);
     padding: 70px 140px;
     color: white;
+}
+
+@media (max-width: 600px) {
+    #bienvenido {
+        padding: 70px 20px;
+    }
 }
 
 #bienvenido h2 {
@@ -4144,7 +4182,8 @@ td.rdc-table_has-events ul.rdc-table_events {
     overflow: hidden;
     opacity: 0;
 }
-td.rdc-table_has-events:hover{
+
+td.rdc-table_has-events:hover {
     background: #7d16ee;
 }
 
@@ -4914,10 +4953,10 @@ td.rdc-table_has-events ul.rdc-table_events a {
     width: 70%;
     margin: auto;
     font-size: 12px;
-    
+
 }
 
-.formContacto .form-group  .mensaje {
+.formContacto .form-group .mensaje {
     border: 0;
     border-bottom: 2px;
     background: transparent;
@@ -4930,7 +4969,7 @@ td.rdc-table_has-events ul.rdc-table_events a {
 
 }
 
-.formContacto .form-group  .boton {
+.formContacto .form-group .boton {
     border: 0;
     border-bottom: 2px;
     background: transparent;
@@ -4940,10 +4979,9 @@ td.rdc-table_has-events ul.rdc-table_events a {
     width: 70%;
     margin: auto;
     color: #fff;
-        background-color: #28282b;
+    background-color: #28282b;
     border-color: #1e1e21;
     border-radius: 15px;
     height: 45px;
-    
 
 }
