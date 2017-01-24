@@ -4,24 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/template2.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templateEventsItem.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Admin/View/index.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Notes/Widget/Recientes.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Notes/Model/Note.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Menu/Widget/Menu.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templateEvents.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/admin/admin2.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templateTools.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/home.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/template4_nosidebar.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/template3.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Books/View/book.phtml</file>
             <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templatePauta.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/index.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Notes/Controller/Index.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Notes/View/note.phtml</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Clients/Model/Venta.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Contact/Model/Contact.php</file>
-            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Public/Widget/Newsletter.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/template4_nosidebar.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templateEvents.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Suscription/Controller/Index.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/template1.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Resources/Layouts/templateEventsItem.phtml</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Books/Controller/Index.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Public/Controller/Index.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/mkt/mkt/Modules/Menu/Widget/Menu.php</file>
         </group>
     </open-files>
 </project-private>

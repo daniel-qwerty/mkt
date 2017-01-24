@@ -73,6 +73,8 @@
 
 
     $client = get('sessionCliente');
+    $res = (!empty($client)) ? $client : "0";
+    
     ?>
     <?php Public_Widget_Loading::getInstance()->render(); ?>
 </head>
@@ -155,7 +157,7 @@
     </a>
 
     <ul>
-        <?php if ($client != '0'): ?>
+        <?php if (!empty($client)): ?>
             <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
                    alt="Editar Perfil <?= $client->CliName; ?>"> <i class="fa fa-user"></i> <?= $client->CliName; ?>
                 </a></li>

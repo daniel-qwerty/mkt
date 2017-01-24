@@ -151,7 +151,7 @@
                      src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
             </a>
             <ul>
-                <?php if ($client != '0'): ?>
+                <?php if (!empty($client)): ?>
                     <li><a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
                            alt="Editar Perfil <?= $client->CliName; ?>"> <i class="fa fa-user"></i> <?= $client->CliName; ?> </a></li>
                     <li><a onclick="closeSession();" alt="Logout"><i class="fa mkt-logout"></i></a></li>
