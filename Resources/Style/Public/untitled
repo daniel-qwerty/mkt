@@ -1,0 +1,301 @@
+
+
+    Array
+(
+    [__flash] =&gt; Array
+        (
+        )
+
+    [new] =&gt; 1
+    [desde] =&gt; 2017-01-10
+    [hasta] =&gt; 2017-01-11
+    [habs] =&gt; Array
+        (
+            [6] =&gt; common\models\HotReservaHabitacion Object
+                (
+                    [precios] =&gt; Array
+                        (
+                        )
+
+                    [_attributes:yii\db\BaseActiveRecord:private] =&gt; Array
+                        (
+                            [habId] =&gt; 6
+                            [rhabCantidad] =&gt; 2
+                            [rhabCantidadAdultos] =&gt; 2
+                            [rhabCantidadNinios] =&gt; 0
+                            [rhabFecha] =&gt; 2017-01-10
+                        )
+
+                    [_oldAttributes:yii\db\BaseActiveRecord:private] =&gt; 
+                    [_related:yii\db\BaseActiveRecord:private] =&gt; Array
+                        (
+                            [hab] =&gt; common\models\HotTipoHabitacion Object
+                                (
+                                    [precioBase] =&gt; 
+                                    [habCantidadDisponible] =&gt; 
+                                    [_attributes:yii\db\BaseActiveRecord:private] =&gt; Array
+                                        (
+                                            [habId] =&gt; 6
+                                            [habDescripcion] =&gt; Simple o Ejecutiva
+                                            [habCaracteristicas] =&gt; 
+                                            [habImagen] =&gt; 
+                                            [habCapacidad] =&gt; 2
+                                            [habCantidad] =&gt; 0
+                                            [habCantidadCamas] =&gt; 1
+                                            [habTipoCamas] =&gt; 1 Queen
+                                            [habEstado] =&gt; 1
+                                            [habRemoteId] =&gt; 1
+                                        )
+
+                                    [_oldAttributes:yii\db\BaseActiveRecord:private] =&gt; Array
+                                        (
+                                            [habId] =&gt; 6
+                                            [habDescripcion] =&gt; Simple o Ejecutiva
+                                            [habCaracteristicas] =&gt; 
+                                            [habImagen] =&gt; 
+                                            [habCapacidad] =&gt; 2
+                                            [habCantidad] =&gt; 0
+                                            [habCantidadCamas] =&gt; 1
+                                            [habTipoCamas] =&gt; 1 Queen
+                                            [habEstado] =&gt; 1
+                                            [habRemoteId] =&gt; 1
+                                        )
+
+                                    [_related:yii\db\BaseActiveRecord:private] =&gt; Array
+                                        (
+                                        )
+
+                                    [_errors:yii\base\Model:private] =&gt; 
+                                    [_validators:yii\base\Model:private] =&gt; 
+                                    [_scenario:yii\base\Model:private] =&gt; default
+                                    [_events:yii\base\Component:private] =&gt; Array
+                                        (
+                                        )
+
+                                    [_behaviors:yii\base\Component:private] =&gt; Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [_errors:yii\base\Model:private] =&gt; 
+                    [_validators:yii\base\Model:private] =&gt; ArrayObject Object
+                        (
+                            [storage:ArrayObject:private] =&gt; Array
+                                (
+                                    [0] =&gt; yii\validators\RequiredValidator Object
+                                        (
+                                            [skipOnEmpty] =&gt; 
+                                            [requiredValue] =&gt; 
+                                            [strict] =&gt; 
+                                            [message] =&gt; {attribute} cannot be blank.
+                                            [attributes] =&gt; Array
+                                                (
+                                                    [0] =&gt; rhabCantidad
+                                                )
+
+                                            [on] =&gt; Array
+                                                (
+                                                )
+
+                                            [except] =&gt; Array
+                                                (
+                                                )
+
+                                            [skipOnError] =&gt; 1
+                                            [enableClientValidation] =&gt; 1
+                                            [isEmpty] =&gt; 
+                                            [when] =&gt; 
+                                            [whenClient] =&gt; 
+                                            [_events:yii\base\Component:private] =&gt; Array
+                                                (
+                                                )
+
+                                            [_behaviors:yii\base\Component:private] =&gt; 
+                                        )
+
+                                    [1] =&gt; yii\validators\NumberValidator Object
+                                        (
+                                            [integerOnly] =&gt; 1
+                                            [max] =&gt; 
+                                            [min] =&gt; 
+                                            [tooBig] =&gt; 
+                                            [tooSmall] =&gt; 
+                                            [integerPattern] =&gt; /^\s*[+-]?\d+\s*$/
+                                            [numberPattern] =&gt; /^\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*$/
+                                            [attributes] =&gt; Array
+                                                (
+                                                    [0] =&gt; resId
+                                                    [1] =&gt; habId
+                                                    [2] =&gt; rhabCantidad
+                                                    [3] =&gt; rhabCantidadAdultos
+                                                    [4] =&gt; rhabCantidadNinios
+                                                )
+
+                                            [message] =&gt; {attribute} must be an integer.
+                                            [on] =&gt; Array
+                                                (
+                                                )
+
+                                            [except] =&gt; Array
+                                                (
+                                                )
+
+                                            [skipOnError] =&gt; 1
+                                            [skipOnEmpty] =&gt; 1
+                                            [enableClientValidation] =&gt; 1
+                                            [isEmpty] =&gt; 
+                                            [when] =&gt; 
+                                            [whenClient] =&gt; 
+                                            [_events:yii\base\Component:private] =&gt; Array
+                                                (
+                                                )
+
+                                            [_behaviors:yii\base\Component:private] =&gt; 
+                                        )
+
+                                    [2] =&gt; yii\validators\InlineValidator Object
+                                        (
+                                            [method] =&gt; validateGuestQuantity
+                                            [params] =&gt; 
+                                            [clientValidate] =&gt; 
+                                            [attributes] =&gt; Array
+                                                (
+                                                    [0] =&gt; rhabCantidad
+                                                )
+
+                                            [message] =&gt; 
+                                            [on] =&gt; Array
+                                                (
+                                                )
+
+                                            [except] =&gt; Array
+                                                (
+                                                )
+
+                                            [skipOnError] =&gt; 1
+                                            [skipOnEmpty] =&gt; 1
+                                            [enableClientValidation] =&gt; 1
+                                            [isEmpty] =&gt; 
+                                            [when] =&gt; 
+                                            [whenClient] =&gt; 
+                                            [_events:yii\base\Component:private] =&gt; Array
+                                                (
+                                                )
+
+                                            [_behaviors:yii\base\Component:private] =&gt; 
+                                        )
+
+                                    [3] =&gt; yii\validators\SafeValidator Object
+                                        (
+                                            [attributes] =&gt; Array
+                                                (
+                                                    [0] =&gt; rhabFecha
+                                                )
+
+                                            [message] =&gt; 
+                                            [on] =&gt; Array
+                                                (
+                                                )
+
+                                            [except] =&gt; Array
+                                                (
+                                                )
+
+                                            [skipOnError] =&gt; 1
+                                            [skipOnEmpty] =&gt; 1
+                                            [enableClientValidation] =&gt; 1
+                                            [isEmpty] =&gt; 
+                                            [when] =&gt; 
+                                            [whenClient] =&gt; 
+                                            [_events:yii\base\Component:private] =&gt; Array
+                                                (
+                                                )
+
+                                            [_behaviors:yii\base\Component:private] =&gt; 
+                                        )
+
+                                    [4] =&gt; yii\validators\ExistValidator Object
+                                        (
+                                            [targetClass] =&gt; common\models\HotTipoHabitacion
+                                            [targetAttribute] =&gt; Array
+                                                (
+                                                    [habId] =&gt; habId
+                                                )
+
+                                            [filter] =&gt; 
+                                            [allowArray] =&gt; 
+                                            [attributes] =&gt; Array
+                                                (
+                                                    [0] =&gt; habId
+                                                )
+
+                                            [message] =&gt; {attribute} is invalid.
+                                            [on] =&gt; Array
+                                                (
+                                                )
+
+                                            [except] =&gt; Array
+                                                (
+                                                )
+
+                                            [skipOnError] =&gt; 1
+                                            [skipOnEmpty] =&gt; 1
+                                            [enableClientValidation] =&gt; 1
+                                            [isEmpty] =&gt; 
+                                            [when] =&gt; 
+                                            [whenClient] =&gt; 
+                                            [_events:yii\base\Component:private] =&gt; Array
+                                                (
+                                                )
+
+                                            [_behaviors:yii\base\Component:private] =&gt; 
+                                        )
+
+                                )
+
+                        )
+
+                    [_scenario:yii\base\Model:private] =&gt; default
+                    [_events:yii\base\Component:private] =&gt; Array
+                        (
+                        )
+
+                    [_behaviors:yii\base\Component:private] =&gt; Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [resPeticion] =&gt; 
+    [payme] =&gt; Array
+        (
+            [acquirerId] =&gt; 35
+            [idCommerce] =&gt; 6928
+            [purchaseOperationNumber] =&gt; 13
+            [purchaseAmount] =&gt; 174000
+            [purchaseCurrencyCode] =&gt; 068
+            [language] =&gt; SP
+            [shippingFirstName] =&gt; miguel
+            [shippingLastName] =&gt; angel
+            [shippingEmail] =&gt; carlos@qwerty.com.bo
+            [shippingAddress] =&gt; 
+            [shippingZIP] =&gt; 
+            [shippingCity] =&gt; sac
+            [shippingState] =&gt; 30
+            [shippingCountry] =&gt; BO
+            [userCommerce] =&gt; 62
+            [userCodePayme] =&gt; 5--183--474068
+            [descriptionProducts] =&gt; 2xSimple o Ejecutiva, 
+            [programmingLanguage] =&gt; PHP
+            [reserved1] =&gt; test
+            [purchaseVerification] =&gt; 4ecb4533d894ab1363e52090c31bf7b4a439c61bd7578e12e41da60fc06d9599ce830fbe10c4b0be870fa3cfce5c223dbad3d13b13a930f6ea2d1d0faa65f1c4
+        )
+
+    [cliId] =&gt; 62
+)
+1
