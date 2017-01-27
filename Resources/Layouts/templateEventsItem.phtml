@@ -187,6 +187,7 @@
             <div class="container container-mod-1">
                 <div class="row row-no-gutter">
                     <!--CONTENIODO PAGINA-->
+
                     <?PHP
                     $this->getContent();
                     ?>
@@ -194,6 +195,7 @@
                         <!--Sidebar-->
                         <div class="sidebar offset-top-40 offset-md-top-0">
                             <!--SECCION BUSQUEDA -->
+
                             <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
                             <!--SECCION POST RECIENTES -->
                             <?php Public_Widget_PostRecientes::getInstance()->setLan($this->lan)->render(); ?>

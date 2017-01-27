@@ -2,7 +2,7 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
-            <div class="col-sm-12 content-header-1-title bg-bookmall">
+            <div class="col-sm-12 content-header-1-title m_amarillo">
                 <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtBookMall")->TxtDescription ?></h3>
             </div>
         </div>
@@ -66,8 +66,9 @@
                 </div>
             </div>
             <div class="col-md-12" style="height: 2px; background: #999999"></div>
-            <div class="col-md-12">                
-                <a onclick="SaveVenta();" class="btn btn-flat pull-right btn-primary" style="margin-right: 10px"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
+            <div class="col-md-12">
+                <a onclick="SaveVenta();" class="btn btn-flat pull-right btn-primary"
+                   style="margin-right: 10px"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
             </div>
         </div>
     </div>
@@ -78,44 +79,45 @@
                 <h3 style="margin-bottom: 0px">Tu pedido</h3>
                 <table>
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>TOTAL</th>
-                        </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>TOTAL</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($this->carrito as $car) { ?>
-                            <tr>
-                        <form id="detalleForm">                                  
-                            <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i class="delete-item fa fa-close"></i></a></td>
-                            <td><img
-                                    src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
-                                    alt=""></td>
-                            <td><?= $car->DetItem; ?></td>
-                            <td>Bs. <?= $car->DetPrecio; ?></td>
-                            <td>
-                                <input type="hidden" name="id" value="<?= $car->DetCant; ?>">
-                                <input type="number" name="value" value="1">
-                            </td>
-                            <td>Bs. <?= $car->DetPrecio; ?></td>
-                        </form>
+                    <?php foreach ($this->carrito as $car) { ?>
+                        <tr>
+                            <form id="detalleForm">
+                                <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i
+                                            class="delete-item fa fa-close"></i></a></td>
+                                <td><img
+                                        src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                        alt=""></td>
+                                <td><?= $car->DetItem; ?></td>
+                                <td>Bs. <?= $car->DetPrecio; ?></td>
+                                <td>
+                                    <input type="hidden" name="id" value="<?= $car->DetCant; ?>">
+                                    <input type="number" name="value" value="1">
+                                </td>
+                                <td>Bs. <?= $car->DetPrecio; ?></td>
+                            </form>
                         </tr>
-                    <?php } ?>                     
+                    <?php } ?>
 
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total</td>
-                            <td>Bs. <?= $this->Sumcarrito; ?></td>
-                        </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
+                        <td>Bs. <?= $this->Sumcarrito; ?></td>
+                    </tr>
                     </tfoot>
                 </table>
             </div>
@@ -129,7 +131,7 @@
                                 <label for="nombre">Nombre completo</label>
                                 <input type="text" class="form-control" id="nombre" placeholder="nombre">
                             </div>
-                        </div>                        
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -164,13 +166,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="celular">Codigo postal / Zip</label>
-                                <input type="text" class="form-control" id="codpostal"  placeholder="celular">
+                                <input type="text" class="form-control" id="codpostal" placeholder="celular">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion" placeholder="direccion 1">                        
+                        <input type="text" class="form-control" id="direccion" placeholder="direccion 1">
                     </div>
 
 
@@ -179,7 +181,7 @@
                     <h3>Datos de envio</h3>
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">                        
+                        <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">
                     </div>
                     <div class="form-group">
                         <label for="pais">Pais</label>
@@ -203,8 +205,10 @@
                         <label for="descripcion">Descripcion</label>
                         <input type="text" class="form-control" id="descripcion" placeholder="descripcion">
 
-                        <input type="text" class="form-control hidden" id="idVenta" value="<?= $this->VentId; ?>" placeholder="idventa">
-                        <input type="text" class="form-control hidden" id="total" value="<?= $this->Sumcarrito; ?>" placeholder="total">
+                        <input type="text" class="form-control hidden" id="idVenta" value="<?= $this->VentId; ?>"
+                               placeholder="idventa">
+                        <input type="text" class="form-control hidden" id="total" value="<?= $this->Sumcarrito; ?>"
+                               placeholder="total">
 
                     </div>
                 </div>
@@ -247,7 +251,8 @@
 
                         </div>
                         <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
-                            <a onclick="saveCompra();" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
+                            <a onclick="saveCompra();"
+                               class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
                         </div>
 
                     </div>
@@ -284,14 +289,15 @@
 </div>
 
 
-<form id="CarritoForm" class="hidden">    
-    <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    
-    <input id="item" name="item" type="text" autocomplete="off" value="<?= $this->list->BooTitle . ' - ' . $this->list->BooAuthor; ?>"/> 
-    <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
-    <input id="precio" name="precio" type="text" autocomplete="off" value="<?= $this->list->BooPrice; ?>"/> 
-    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>    
-    <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
-    <a onclick="SaveVenta();" type="button" >Registrar</a>
+<form id="CarritoForm" class="hidden">
+    <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>
+    <input id="item" name="item" type="text" autocomplete="off"
+           value="<?= $this->list->BooTitle . ' - ' . $this->list->BooAuthor; ?>"/>
+    <input id="cant" name="cant" type="text" autocomplete="off" value="1"/>
+    <input id="precio" name="precio" type="text" autocomplete="off" value="<?= $this->list->BooPrice; ?>"/>
+    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>
+    <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/>
+    <a onclick="SaveVenta();" type="button">Registrar</a>
 </form>
 
 <script>

@@ -2,7 +2,7 @@
 
     <div class="container-fluid content-header-1">
         <div class="row">
-            <div class="col-sm-4 content-header-1-title bg-pink-notas">
+            <div class="col-sm-4 content-header-1-title <?= $this->color; ?>">
                 <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatAlias; ?></h3>
             </div>
             <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
@@ -41,10 +41,8 @@
         </div>
     </section>
     <div class="container-fluid content-tool bg-white">
-        <div class="row">
-        </div>
-        <div class="row text-left">
-            <div class="col-sm-12">
+        <div class="row text-left content-note">
+            <div class="col-sm-12 ">
                 <!--aqui contenido-->
                 <p><?= $this->note->NotDescription; ?></p>
                 <!--hasta aqui el contenido-->
@@ -56,15 +54,32 @@
         <div class="row">
             <div class="col-sm-3 notas-back-button" style="">
                 <?php $notIda = $this->note->NotId - 1; ?>
-                <a onclick="changePage(<?= $notIda; ?>);"><i class="fa fa-arrow-left"></i> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAnterior")->TxtDescription ?></a>
+                <a onclick="changePage(<?= $notIda; ?>);"><i
+                        class="fa fa-arrow-left"></i> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAnterior")->TxtDescription ?>
+                </a>
             </div>
             <div class="col-sm-3 notas-next-button" style="">
                 <?php $notIdb = $this->note->NotId + 1; ?>
-                <a onclick="changePage(<?= $notIdb; ?>);"> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSiguiente")->TxtDescription ?> <i class="fa fa-arrow-right"></i></a>
+                <a onclick="changePage(<?= $notIdb; ?>);"> <?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSiguiente")->TxtDescription ?>
+                    <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
-                <div class="addthis_inline_share_toolbox" data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/article/" . $this->note->NotId); ?>" data-title="<?=$this->note->NotTitle;?>" data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>"></div>
-               
+                <div class="social-container">
+                    <div class="addthis_inline_share_toolbox hidden"
+                         data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/article/" . $this->note->NotId); ?>"
+                         data-title="<?= $this->note->NotTitle; ?>"
+                         data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>"></div>
+                    <a href="#" onclick="toogleMenu();" class="ic-facebook"><i class="fa fa-facebook"
+                                                                               aria-hidden="true"></i></a>
+                    <a href="#" onclick="toogleMenu();" class="ic-twitter"><i class="fa fa-twitter"
+                                                                              aria-hidden="true"></i></a>
+                    <a href="#" onclick="toogleMenu();" class="ic-google"><i class="fa fa-google-plus"
+                                                                             aria-hidden="true"></i></a>
+                    <a href="#" onclick="toogleMenu();" class="ic-linkedin"><i class="fa fa-linkedin"
+                                                                               aria-hidden="true"></i></a>
+                    <a href="#" onclick="toogleMenu();" class="ic-pinterest"><i class="fa fa-pinterest"
+                                                                                aria-hidden="true"></i></a>
+                </div>
             </div>
         </div>
 
@@ -74,17 +89,11 @@
     <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Comentarios:</h4>
     <div class="container-fluid content-tool bg-white" style="margin-top: 20px">
         <div class="row">
-            <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $this->note->NotId); ?>" data-numposts="15"></div>
+            <div class="fb-comments"
+                 data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $this->note->NotId); ?>"
+                 data-numposts="15"></div>
         </div>
     </div>
-    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Te puede interesar:</h4>
-    <?php Notes_Widget_Recientes::getInstance()->setLan($this->lan)->setLimit(12)->renderSmall(); ?>
-    <div class="row" style="margin-top:40px;">
-            <div class="col-xs-12">
-                <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
-            </div>
-        </div>
-    
 </div>
 
 

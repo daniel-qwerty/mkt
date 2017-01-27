@@ -73,7 +73,7 @@ toogleMenu = function () {
 }
 
 showBienvenido = function () {
-    $("#bienvenido").css('left', 0);
+    $("#bienvenido-container").css('left', 0);
 }
 
 updateHeight = function () {
@@ -198,7 +198,7 @@ function updatePrintsAd(ide) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/AdPrints",
+        url: "http://localhost:8080/mkt/mkt/Service/Clients/AdPrints",
         data: {AdId: ide}
     }).done(function (data) {
         if (data) {

@@ -30,9 +30,9 @@ class Notes_Widget_Important extends Com_Object {
       
             ?>
 
-            <div class="post-news height-780 post-news-mod-3"
+            <div class="post-news height-780 post-news-mod-3 post-important"
                  style="background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size: cover;">
-                <div class="post-header"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>" class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
+                <div class="post-header"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>" class="tag <?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
                 <div class="post-body"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>" class="h4"><?= $new->NotTitle;?></a>
 
                     <p><?= $new->NotResume;?></p>

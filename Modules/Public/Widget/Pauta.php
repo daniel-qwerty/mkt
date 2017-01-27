@@ -1,6 +1,7 @@
 <?php
 
-class Public_Widget_Pauta extends Com_Object {
+class Public_Widget_Pauta extends Com_Object
+{
 
     public $lan;
 
@@ -10,22 +11,26 @@ class Public_Widget_Pauta extends Com_Object {
      * @access public
      * @return Public_Widget_Pauta
      */
-    public static function getInstance() {
+    public static function getInstance()
+    {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan) {
+    public function setLan($lan)
+    {
         $this->lan = $lan;
         return $this;
     }
 
-    public function render() {
+    public function render()
+    {
         ?>
         <div class="sidebar-module module-pauta text-left">
-            <h3>Pauta</h3>
+
             <div class="pauta-container">
-                <div class="pauta-item">
-                    <a href="#" class="tag bg-pink">Revista</a>
+                <div class="pauta-item m_amarillo">
+                    <h3>Bookmall</h3>
+                    <a href="#" class="tag m_naranja">Revista</a>
                     <h4>Titulo lorem ipsum</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
@@ -33,8 +38,9 @@ class Public_Widget_Pauta extends Com_Object {
                         elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
                     </p>
                 </div>
-                <div class="pauta-item">
-                    <a href="#" class="tag bg-punch">WEB</a>
+                <div class="pauta-item m_verde">
+                    <h3>Pauta</h3>
+                    <a href="#" class="tag m_naranja">Revista</a>
                     <h4>Titulo lorem ipsum</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.
@@ -42,8 +48,9 @@ class Public_Widget_Pauta extends Com_Object {
                         elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
                     </p>
                 </div>
-                <div class="pauta-item">
-                    <a href="#" class="tag bg-info">Revista</a>
+                <div class="pauta-item m_azul">
+                    <h3>Evento</h3>
+                    <a href="#" class="tag m_naranja">Revista</a>
                     <h4>Titulo lorem ipsum</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit din dignissim.

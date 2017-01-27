@@ -30,9 +30,9 @@ class Notes_Widget_MostViewed extends Com_Object {
             ?>
 
             <div class="col-xs-12 col-sm-6">
-                <div class="post-news height-390 post-news-mod-2"
+                <div class="post-news height-390 post-news-mod-2 text-left most-viewed"
                      style="background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size: cover;">
-                    <div class="post-header"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>" class="tag  bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
+                    <div class="post-header"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>" class="tag  <?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a></div>
                     <div class="post-body"><a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>" class="h5"><?= $new->NotTitle;?></a>
 
                         <p><?= $new->NotResume;?></p>

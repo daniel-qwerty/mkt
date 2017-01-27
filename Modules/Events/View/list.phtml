@@ -3,10 +3,10 @@
     <div class="container-fluid content-header-1">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
-            <div class="col-sm-3 content-header-1-title bg-note-event">
+            <div class="col-sm-4 content-header-1-title m_azul">
                 <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtEventos")->TxtDescription ?></h3>
             </div>
-            <div class="col-sm-9 content-header-1-options bg-blue-dark-tool">
+            <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
                 <?php foreach ($this->category as $new) { ?>
                     <a class="header-link"
                        href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->CatId); ?>"><?= $new->CatName; ?></a>
@@ -15,10 +15,16 @@
         </div>
         <div class="row">
 
-            <div id="calendar_bar" class="col-sm-12 content-header-1-options" style="background: #7d16ee">
-                <i id="image_button" class="fa fa-calendar pull-right"
-                   style="margin: 10px 0 0 10px;font-size: 30px;"></i>
-                <input id="datetimepicker" class="calendar-icon pull-right" type="text" disabled
+            <div id="calendar_bar" class="col-sm-12 content-header-1-options"
+                 style="background: #27272C;text-align: center;">
+                <div class="col-sm-8 content-header-1-options" style="width:100%;">
+                    <a class="header-link" href="http://localhost:8080/mkt/es/events/1">hoy</a>
+                    <a class="header-link" href="http://localhost:8080/mkt/es/events/2">mañana</a>
+                    <a id="datetimepicker" class="header-link" href="http://localhost:8080/mkt/es/events/3">fecha</a>
+                </div>
+
+
+                <input id="datetimepicker" class="calendar-icon pull-right" type="hidden" disabled
                        value="<?= date('Y-m-d'); ?>">
                 <script>
                     $.datetimepicker.setLocale('es');

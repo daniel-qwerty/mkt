@@ -39,11 +39,11 @@ class Notes_Widget_Recientes extends Com_Object {
         <?php foreach ($list as $new): ?>
 
                     <div class="owl-item">
-                        <div class="post-news height-480"
+                        <div class="post-news height-390"
                              style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size: cover; ">
                             <div class="post-header"><a
                                     href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>"
-                                    class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
+                                    class="tag <?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
                             </div>
                             <div class="post-body">
                                 <h4>
@@ -83,7 +83,7 @@ class Notes_Widget_Recientes extends Com_Object {
                              style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size: cover; ">
                             <div class="post-header"><a
                                     href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->NotCatId); ?>"
-                                    class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
+                                    class="tag <?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
                             </div>
                             <div class="post-body">
                                 <h5>
@@ -128,6 +128,7 @@ class Notes_Widget_Recientes extends Com_Object {
 
         <?php } ?>
             </ul>
+
         </div>
 
 

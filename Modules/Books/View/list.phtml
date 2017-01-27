@@ -3,7 +3,7 @@
     <div class="container-fluid content-header-1 full-width">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
-            <div class="col-sm-12 content-header-1-title bg-bookmall">
+            <div class="col-sm-12 content-header-1-title m_amarillo">
                 <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtBookMall")->TxtDescription ?></h3>
             </div>
         </div>
@@ -42,7 +42,7 @@
                     </div>
                     <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "books/" . $new->BooId); ?>">
                         <h3><?PHP echo $new->BooTitle; ?>
-                            <small class="tag bg-tag-bookmall pull-right"> comprar</small>
+                            <small class="tag m_amarillo pull-right"> comprar</small>
                         </h3>
                     </a>
                 </div>

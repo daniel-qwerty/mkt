@@ -1,8 +1,10 @@
 <?php
 
-class Notes_Controller_Index extends Public_Controller_Index {
+class Notes_Controller_Index extends Public_Controller_Index
+{
 
-    public function Index() {
+    public function Index()
+    {
         $this->setLayout("template1");
         $this->setView("list");
         $url = get('REQUEST_URI');
@@ -11,6 +13,8 @@ class Notes_Controller_Index extends Public_Controller_Index {
 
         $this->assign("categoryId", $url);
 
+
+        $model = Categories_Model_Category::getInstance()->get($url, $this->lan->LanId);
         $category = Categories_Model_Category::getInstance()->getMenuList($this->lan->LanId, $url);
         $this->assign("category", $category);
 
@@ -18,12 +22,15 @@ class Notes_Controller_Index extends Public_Controller_Index {
         if ($notes == NULL) {
             $notes = Notes_Model_Note::getInstance()->getList($this->lan->LanId, $url, 20);
             $this->assign("notes", $notes);
+            $this->assign("color", $model->CatClass);
         } else {
             $this->assign("notes", $notes);
+            $this->assign("color", $model->CatClass);
         }
     }
 
-    public function Article() {
+    public function Article()
+    {
         $this->setLayout("template2");
         $this->setView("note");
         $url = get('REQUEST_URI');
@@ -34,11 +41,16 @@ class Notes_Controller_Index extends Public_Controller_Index {
         $this->assign("category", $category);
 
         $note = Notes_Model_Note::getInstance()->get($url, $this->lan->LanId);
+
+        $model = Categories_Model_Category::getInstance()->get($note->NotCatId, $this->lan->LanId);
+
         $this->assign("note", $note);
         $this->assign("categoryId", $note->NotCatId);
+        $this->assign("color", $model->CatClass);
     }
 
-    public function Post() {
+    public function Post()
+    {
         $this->setLayout("template2");
         $this->setView("note");
         $url = get('REQUEST_URI');
@@ -58,7 +70,8 @@ class Notes_Controller_Index extends Public_Controller_Index {
         }
     }
 
-    public function Search() {
+    public function Search()
+    {
         $this->setLayout("template1");
         $this->setView("search");
         $url = get('REQUEST_URI');
@@ -78,8 +91,8 @@ class Notes_Controller_Index extends Public_Controller_Index {
                 $this->assign("notes", $notes);
             }
         }
-        
-       
+
+
     }
 
 }

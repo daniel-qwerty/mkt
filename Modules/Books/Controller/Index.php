@@ -14,6 +14,7 @@ class Books_Controller_Index extends Public_Controller_Index {
         $url = $url[count($url) - 1];
 
         $list = Books_Model_BookMall::getInstance()->getList2($this->lan->LanId, 5);
+        $this->assign("color", 'm_amarillo');
         $this->assign("list", $list);
     }
 
@@ -31,6 +32,7 @@ class Books_Controller_Index extends Public_Controller_Index {
         $this->assign("images", $images);
         $client = get('sessionCliente');
         //echo 'xxxxx-> '.$client;
+        $this->assign("color", 'm_amarillo');
         if (!empty($client)) {
 
             $this->assign("client", $client);

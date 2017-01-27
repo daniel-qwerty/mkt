@@ -20,17 +20,16 @@
     font-size: 0;
     line-height: 0;
     position: absolute;
-    top: 50%;
+    top: calc(100% - 25px);
     display: block;
     width: 20px;
     height: 20px;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    /*-webkit-transform: translate(0, -50%);*/
+    /*-ms-transform: translate(0, -50%);*/
+    /*transform: translate(0, -50%);*/
 
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
@@ -70,7 +69,8 @@
 }
 
 .slick-prev {
-    left: -25px;
+    left: 5px;
+    z-index: 10;
 }
 
 [dir='rtl'] .slick-prev {
@@ -87,7 +87,8 @@
 }
 
 .slick-next {
-    right: -25px;
+    right: 5px;
+    z-index: 10;
 }
 
 [dir='rtl'] .slick-next {

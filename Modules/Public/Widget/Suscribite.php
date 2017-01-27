@@ -1,6 +1,7 @@
 <?php
 
-class Public_Widget_Suscribite extends Com_Object {
+class Public_Widget_Suscribite extends Com_Object
+{
 
     public $lan;
 
@@ -10,24 +11,29 @@ class Public_Widget_Suscribite extends Com_Object {
      * @access public
      * @return Public_Widget_Suscribite
      */
-    public static function getInstance() {
+    public static function getInstance()
+    {
         return self::_getInstance(__CLASS__);
     }
 
-    public function setLan($lan) {
+    public function setLan($lan)
+    {
         $this->lan = $lan;
         return $this;
     }
 
-    public function render() {
+    public function render()
+    {
         ?>
-        <div class="sidebar-module  bg-gray module-suscribe-magazine text-left">
+        <div class="sidebar-module bg-gray module-suscribe-magazine text-left">
             <h5>Suscribete</h5>
 
-            <div class="magazine-container">
+            <div class="magazine-container m_purpura">
                 <img src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/magazine01.jpg"
                      alt=""/>
             </div>
+            <img style="width: 60px; margin-top: -8px;"
+                 src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/suscribe-decor.png" alt="">
             <div class="magazine-container-decoration"></div>
 
             <form class="form-inline-flex-xs">
@@ -41,7 +47,7 @@ class Public_Widget_Suscribite extends Com_Object {
                     <input type="text" class="form-control" id="email" placeholder="email">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-block">Suscribete!</button>
+                    <button type="submit" class="btn btn-block m_purpura">Suscribete!</button>
                 </div>
             </form>
         </div>

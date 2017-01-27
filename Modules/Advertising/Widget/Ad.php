@@ -70,7 +70,7 @@ class Advertising_Widget_Ad extends Com_Object {
             <script>
                updatePrintsAd(<?= $new->AdId; ?>); 
             </script>
-            <div class="banner-block">
+            <div class="sidebar-module sidebar-pub">
                 <a onclick="updateViewsAd(<?= $new->AdId; ?>);" href="<?= $new->AdLink; ?>" target="_blanck">
                     <img src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->AdImage; ?>"
                          style="width: 100%">

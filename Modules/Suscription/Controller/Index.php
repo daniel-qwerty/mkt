@@ -13,6 +13,7 @@ class Suscription_Controller_Index extends Public_Controller_Index {
         $this->assign("list", $list);
 
         $client = get('sessionCliente');
+        $this->assign("color", 'm_purpura');
         if (!empty($client)) {
             $this->assign("client", $client);
 
