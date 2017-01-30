@@ -10,5 +10,7 @@ class Entities_VentaDetalle extends Com_Database_Entity{
     public $DetItem;
     public $DetPrecio;
     public $DetCant;
+    public $DetImagen;
+    public $DetIdProd;
    
 }

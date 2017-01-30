@@ -1,4 +1,4 @@
-var urlBase = "http://localhost/mkt/mkt";
+var urlBase = "http://digitalmindsbolivia.com/mkt";
 
 $(document).ready(function () {
 
@@ -86,14 +86,14 @@ function loginEmail() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/Login",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Clients/Login",
             data: {Email: email, Password: password}
         }).done(function (data) {
             loadingModal.close();
             if (data !== false) {
                 client = data;
                 if (client.CliStatus === "1") {
-                    location.href = "http://localhost/mkt/mkt/es/page/home.html";
+                    location.href = "http://digitalmindsbolivia.com/mkt/es/page/home.html";
                 } else {
                     swal("Info", "Su cuenta aún no ha sido activada<br/>Por favor revise el correo de activación enviado a su correo electrónico para poder activarla!!!", "warning");
                 }
@@ -118,7 +118,7 @@ function forgotEmailSend() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/FogotPassword",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Clients/FogotPassword",
             data: {Email: email}
         }).done(function (data) {
             loadingModal.close();
@@ -161,7 +161,7 @@ function registry() {
         loadingModal.open();
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/Exist",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Clients/Exist",
             data: {Email: email}
         }).done(function (data) {
             loadingModal.close();
@@ -174,7 +174,7 @@ function registry() {
                 var fecha = parseDate(birthday);
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/mkt/mkt/Service/Clients/CreateAccount",
+                    url: "http://digitalmindsbolivia.com/mkt/Service/Clients/CreateAccount",
                     data: {Type: "Email", Name: name, Email: email, Password: password, Phone: "", Gender: gender, Country: country, City: city, Status: "0", Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
                 }).done(function (data) {
                     loadingModal.close();
@@ -194,11 +194,11 @@ function closeSession() {
     //loadingModal.open();
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/Logout"
+        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/Logout"
     }).done(function (data) {
         // loadingModal.close();
         if (data) {
-            location.href = "http://localhost/mkt/mkt/es/page/index.html";
+            location.href = "http://digitalmindsbolivia.com/mkt/es/page/index.html";
             ;
         }
     }).error(function () {
@@ -230,7 +230,7 @@ function saveClient() {
         var fecha = parseDate(birthday);
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Clients/SaveAccount",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Clients/SaveAccount",
             data: {Id: id, Name: name, Email: email, Password: password, Phone: phone, Gender: gender, Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
         }).done(function (data) {
             loadingModal.close();
@@ -259,6 +259,8 @@ function SaveVenta() {
         var item = $('#CarritoForm #item').val();
         var cant = $('#CarritoForm #cant').val();
         var precio = $('#CarritoForm #precio').val();
+        var imagen = $('#CarritoForm #imagen').val();
+        var idProd = $('#CarritoForm #idProd').val();
         var fecha = $('#CarritoForm #fecha').val();
         if (item === "" || cant === "" || precio === "") {
             swal("Error", "No selecciono ningun item", "error");
@@ -267,7 +269,7 @@ function SaveVenta() {
             //loadingModal.open();
             $.ajax({
                 type: "POST",
-                url: "http://localhost/mkt/mkt/Service/Clients/ExistVenta",
+                url: "http://digitalmindsbolivia.com/mkt/Service/Clients/ExistVenta",
                 data: {VenCliId: cliId, VenDate: fecha}
             }).done(function (data) {
                 //loadingModal.close();
@@ -276,8 +278,8 @@ function SaveVenta() {
                     console.log("venta exitente1");
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/mkt/mkt/Service/Clients/SaveVentaDetalle",
-                        data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant}
+                        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/SaveVentaDetalle",
+                        data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant, DetImagen: imagen, DetIdProd: idProd}
                     }).done(function (data) {
                         //loadingModal.close();
                         //registrationModal.close();                    
@@ -309,7 +311,7 @@ function SaveVenta() {
 
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/mkt/mkt/Service/Clients/SaveVenta",
+                        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/SaveVenta",
                         data: {VenCliId: cliId, VenStatus: "1"}
                     }).done(function (data) {
                         //loadingModal.close();
@@ -319,8 +321,8 @@ function SaveVenta() {
                         //DETALLE VENTA
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/mkt/mkt/Service/Clients/SaveVentaDetalle",
-                            data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant}
+                            url: "http://digitalmindsbolivia.com/mkt/Service/Clients/SaveVentaDetalle",
+                            data: {DetVenId: data, DetItem: item, DetPrecio: precio, DetCant: cant, DetImagen: imagen, DetIdProd: idProd}
                         }).done(function (data) {
                             //loadingModal.close();
                             //registrationModal.close();
@@ -380,7 +382,7 @@ function DeleteDetalle(ide) {
                 if (isConfirm) {
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost/mkt/mkt/Service/Clients/DeteleVentaDetalle",
+                        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/DeteleVentaDetalle",
                         data: {DetId: ide}
                     }).done(function (data) {
                         if (data) {                            

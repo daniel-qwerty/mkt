@@ -17,6 +17,8 @@ class Clients_Model_DetVenta extends Com_Module_Model {
         $db->DetItem = $obj->DetItem;
         $db->DetCant = $obj->DetCant;
         $db->DetPrecio = $obj->DetPrecio;
+        $db->DetImagen = $obj->DetImagen;
+        $db->DetIdProd = $obj->DetIdProd;
         $db->action = ACTION_INSERT;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Insertado");
@@ -42,6 +44,8 @@ class Clients_Model_DetVenta extends Com_Module_Model {
         $db->DetItem = $obj->Item;
         $db->DetCant = $obj->Cant;
         $db->DetPrecio = $obj->Precio;
+        $db->DetImagen = $obj->DetImagen;
+        $db->DetIdProd = $obj->DetIdProd;
         $db->action = ACTION_UPDATE;
         $db->save();
         Com_Wizard_Messages::getInstance()->addMessage(MESSAGE_INFORMATION, "Registro Actualizado");

@@ -95,7 +95,7 @@
                                 <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i
                                             class="delete-item fa fa-close"></i></a></td>
                                 <td><img
-                                        src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                        src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $car->DetImagen; ?>"
                                         alt=""></td>
                                 <td><?= $car->DetItem; ?></td>
                                 <td>Bs. <?= $car->DetPrecio; ?></td>
@@ -278,12 +278,12 @@
         </section>
         <section class="col-sm-4 pauta-widget">
             <div class="container-fluid content-header-1">
-                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->renderVerde(); ?>
 
         </section>
         <section class="col-sm-4 pauta-widget">
             <div class="container-fluid content-header-1">
-                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->renderAzul(); ?>
         </section>
     </div>
 </div>
@@ -295,6 +295,8 @@
            value="<?= $this->list->BooTitle . ' - ' . $this->list->BooAuthor; ?>"/>
     <input id="cant" name="cant" type="text" autocomplete="off" value="1"/>
     <input id="precio" name="precio" type="text" autocomplete="off" value="<?= $this->list->BooPrice; ?>"/>
+    <input id="imagen" name="imagen" type="text" autocomplete="off" value="<?= $this->list->BooImage; ?>"/>
+    <input id="idProd" name="idProd" type="text" autocomplete="off" value="<?= $this->list->BooId; ?>"/>
     <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>
     <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/>
     <a onclick="SaveVenta();" type="button">Registrar</a>
