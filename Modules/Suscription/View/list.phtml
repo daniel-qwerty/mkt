@@ -70,7 +70,7 @@
                     <form id="detalleForm">                                  
                         <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i class="delete-item fa fa-close"></i></a></td>
                         <td><img
-                                src="http://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/50944_big.jpg"
+                                 src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Suscription_Model_Suscription::getInstance()->get($this->list->BooId, $this->lan->LanId)->BooImage; ?>"
                                 alt=""></td>
                         <td><?= $car->DetItem; ?></td>
                         <td>Bs. <?= $car->DetPrecio; ?></td>

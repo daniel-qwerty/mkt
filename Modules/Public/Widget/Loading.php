@@ -100,16 +100,16 @@ class Public_Widget_Loading extends Com_Object
 
             @keyframes pulse {
                 0% {
-                    background-color: #941b80;
+                    background-color: #0a2a91;
                 }
                 33% {
-                    background-color: #e5007e;
+                    background-color: #0091c4;
                 }
                 66% {
-                    background-color: #e20613;
+                    background-color: #00d002;
                 }
                 100% {
-                    background-color: #941b80;
+                    background-color: #ffb700;
                 }
             }
         </style>
