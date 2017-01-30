@@ -9,7 +9,7 @@
                 <?php foreach ($this->category as $new) { ?>
                     <a class="header-link"
                        href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>
-                <?php } ?>
+                   <?php } ?>
             </div>
         </div>
     </div>
@@ -64,21 +64,12 @@
                     <i class="fa fa-arrow-right"></i></a>
             </div>
             <div class="col-sm-6">
-                <div class="social-container">
+                <div class="social-container" style="margin:0;">
                     <div class="addthis_inline_share_toolbox hidden"
                          data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/article/" . $this->note->NotId); ?>"
                          data-title="<?= $this->note->NotTitle; ?>"
                          data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>"></div>
-                    <a href="#" onclick="toogleMenu();" class="ic-facebook"><i class="fa fa-facebook"
-                                                                               aria-hidden="true"></i></a>
-                    <a href="#" onclick="toogleMenu();" class="ic-twitter"><i class="fa fa-twitter"
-                                                                              aria-hidden="true"></i></a>
-                    <a href="#" onclick="toogleMenu();" class="ic-google"><i class="fa fa-google-plus"
-                                                                             aria-hidden="true"></i></a>
-                    <a href="#" onclick="toogleMenu();" class="ic-linkedin"><i class="fa fa-linkedin"
-                                                                               aria-hidden="true"></i></a>
-                    <a href="#" onclick="toogleMenu();" class="ic-pinterest"><i class="fa fa-pinterest"
-                                                                                aria-hidden="true"></i></a>
+                    <div class="addthis_inline_share_toolbox"></div>
                 </div>
             </div>
         </div>

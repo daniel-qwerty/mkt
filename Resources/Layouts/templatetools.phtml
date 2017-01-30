@@ -159,12 +159,11 @@
                      src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/marketing-logo-small.png">
             </a>
             <div class="item">
-                <a href="#" class="hidden-xs ic-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#" class="hidden-xs ic-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#" class="hidden-xs ic-google"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                <a href="#" class="hidden-xs ic-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="#" class="hidden-xs ic-pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                <a href="#" class="hidden-xs ic-pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkFacebook')->LinUrl; ?>" class="hidden-xs ic-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkTwitter')->LinUrl; ?>" class="hidden-xs ic-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkGoogle')->LinUrl; ?>" class="hidden-xs ic-google"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkLinkedin')->LinUrl; ?>" class="hidden-xs ic-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="<?PHP echo Links_Helper_Link::getInstance()->get('LinkPinterest')->LinUrl; ?>" class="hidden-xs ic-pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                 <?php if (!empty($client)): ?>
                     <a href="<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>/es/profile" title="Editar Perfil"
                        alt="Editar Perfil <?= $client->CliName; ?>"> <i class="fa fa-user"></i> <?= $client->CliName; ?>

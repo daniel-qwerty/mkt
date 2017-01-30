@@ -38,6 +38,19 @@ class Public_Widget_Pauta extends Com_Object
                         elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
                     </p>
                 </div>
+                
+            </div>
+        </div>
+        <?PHP
+    }
+    
+    public function renderVerde()
+    {
+        ?>
+        <div class="sidebar-module module-pauta text-left">
+
+            <div class="pauta-container">
+                
                 <div class="pauta-item m_verde">
                     <h3>Pauta</h3>
                     <a href="#" class="tag m_naranja">Revista</a>
@@ -48,6 +61,19 @@ class Public_Widget_Pauta extends Com_Object
                         elit. Sed blandit din dignissim. Pellee habitant morbi trisque...
                     </p>
                 </div>
+                
+            </div>
+        </div>
+        <?PHP
+    }
+    
+    public function renderAzul()
+    {
+        ?>
+        <div class="sidebar-module module-pauta text-left">
+
+            <div class="pauta-container">
+                
                 <div class="pauta-item m_azul">
                     <h3>Evento</h3>
                     <a href="#" class="tag m_naranja">Revista</a>
