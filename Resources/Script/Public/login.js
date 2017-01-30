@@ -175,7 +175,7 @@ function registry() {
                 $.ajax({
                     type: "POST",
                     url: "http://digitalmindsbolivia.com/mkt/Service/Clients/CreateAccount",
-                    data: {Type: "Email", Name: name, Email: email, Password: password, Phone: "", Gender: gender, Country: country, City: city, Status: "0", Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
+                    data: {Type: "Email", Name: name, Email: email, Password: password, Phone: "", Gender: gender, Country: country, City: city, Status: "1", Date: getCurrentDateWs(new Date()), Nacimiento: getCurrentDateWs(fecha)}
                 }).done(function (data) {
                     loadingModal.close();
                     registrationModal.close();

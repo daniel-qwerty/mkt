@@ -105,7 +105,7 @@ class Public_Widget_Loading extends Com_Object
                 33% {
                     background-color: #0091c4;
                 }
-                66% {
+                66%{
                     background-color: #00d002;
                 }
                 100% {
