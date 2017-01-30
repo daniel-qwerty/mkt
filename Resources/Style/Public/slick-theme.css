@@ -392,7 +392,8 @@
     content: none;
 }
 
-.tarifario-web-items.slick-slide {
+.tarifario-web-item.slick-slide {
+    padding-right: 250px;
 }
 
 .tarifario-web-items .slick-dots {
@@ -442,9 +443,34 @@
 }
 
 @media (max-width: 480px) {
+
+    .tarifario-web-items {
+        height: calc(1081px + 51px * 5);
+    }
+
+    .tarifario-web-item.slick-slide {
+        padding:15px;
+    }
+
     .tarifario-web-items .slick-dots {
         position: absolute;
-        top: 29%;
+        width: 100%;
+        top: 75%;
+        right: 0;
+        display: block;
+        list-style: none;
+    }
+
+    .tarifario-web-items .slick-dots li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: initial;
+        margin: 0px;
+        padding: 15px;
+        text-align: left;
+        cursor: pointer;
+        background: dimgray;
     }
 
     .tarifario-web-items .slick-dots li button {
@@ -487,15 +513,15 @@
 }
 
 .tarifario-web-items .slick-dots li:nth-child(2) {
-    border-right: 6px solid #8cc63f;
+    border-right: 6px solid #f11b6b;
 }
 
 .tarifario-web-items .slick-dots li:nth-child(2):hover {
-    background: #8cc63f;
+    background: #f11b6b;
 }
 
 .tarifario-web-items .slick-dots li:nth-child(2).slick-active {
-    background: #8cc63f;
+    background: #f11b6b;
 }
 
 .tarifario-web-items .slick-dots li:nth-child(3) {
@@ -511,39 +537,27 @@
 }
 
 .tarifario-web-items .slick-dots li:nth-child(4) {
-    border-right: 6px solid #999999;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(4):hover {
-    background: #999999;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(4).slick-active {
-    background: #999999;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(5) {
     border-right: 6px solid #7b20e5;
 }
 
-.tarifario-web-items .slick-dots li:nth-child(5):hover {
+.tarifario-web-items .slick-dots li:nth-child(4):hover {
     background: #7b20e5;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(4).slick-active {
+    background: #7b20e5;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(5) {
+    border-right: 6px solid #8cc63f;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(5):hover {
+    background: #8cc63f;
 }
 
 .tarifario-web-items .slick-dots li:nth-child(5).slick-active {
-    background: #7b20e5;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(6) {
-    border-right: 6px solid #e94650;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(6):hover {
-    background: #e94650;
-}
-
-.tarifario-web-items .slick-dots li:nth-child(6).slick-active {
-    background: #e94650;
+    background: #8cc63f;
 }
 
 .tarifario-web-items .slick-dots li button:before {
