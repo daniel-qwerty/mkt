@@ -6,7 +6,8 @@
                 <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitlePauta')->TxtDescription; ?></h3>
             </div>
             <div class="col-sm-9 content-header-1-options bg-blue-dark-tool pauta-desc">
-                <span class="text-gray"><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtSubTitlePauta')->TxtDescription; ?></span>
+                <span
+                    class="text-gray"><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtSubTitlePauta')->TxtDescription; ?></span>
             </div>
         </div>
     </div>
@@ -36,103 +37,88 @@
         <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitlePautaNosotros')->TxtDescription; ?></h3>
 
 
-
         <div class="row descarga-items">
             <div class="col-xs-12 descarga-item text-center">
                 <p>
                     <?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtContentPauta')->TxtDescription; ?>
-                    
+
                 </p>
             </div>
         </div>
 
-        <div class="row"><h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioImpresa')->TxtDescription; ?></h3></div>
+        <div class="row">
+            <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioImpresa')->TxtDescription; ?></h3>
+        </div>
 
-        <?php foreach ([1, 2, 3] as $var) : ?>
-            <div class="row descarga-items">
-                <div class="col-xs-12 descarga-item">
+        <div class="row tarifario-items">
+            <?php foreach ([1, 2, 3, 4, 5, 6, 7, 8] as $var) : ?>
+
+                <div class="col-xs-12 tarifario-item">
                     <img class="img-responsive"
-                         src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg" alt="">
-                    <div class="row descarga-item-detail">
-                        <div class="col-lg-3 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">Visibilidad</label>
-                                <input type="text" class="form-control" id="visibilidad"
-                                       aria-describedby="helpBlock2">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion"
-                                       aria-describedby="helpBlock2">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">&nbsp</label>
-                                <a href="#" class="form-control btn btn-block tag bg-note-purple  btn-pauta">Generar
-                                    orden de
-                                    compra</a>
-                            </div>
-                        </div>
-                    </div>
+                         src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarifario_00<?= $var ?>.jpg"
+                         alt="">
                 </div>
-            </div>
-        <?php endforeach; ?>
 
-        <div class="row"><h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioDigital')->TxtDescription; ?></h3></div>
+            <?php endforeach; ?>
+        </div>
 
-        <?php foreach ([1, 2, 3] as $var) : ?>
-            <div class="row descarga-items">
-                <div class="col-xs-12 descarga-item">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <img class="img-responsive"
-                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg"
-                                 alt="">
-                        </div>
-                        <div class="col-md-3">
-                            <img class="img-responsive"
-                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/pauta-<?= $var ?>.jpg"
-                                 alt="">
-                        </div>
-                    </div>
-                    <div class="row descarga-item-detail">
-                        <div class="col-lg-3 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">Visibilidad</label>
-                                <input type="text" class="form-control" id="visibilidad"
-                                       aria-describedby="helpBlock2">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion"
-                                       aria-describedby="helpBlock2">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-xs-12">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess1">&nbsp</label>
-                                <a href="#" class="form-control btn btn-block tag bg-note-purple  btn-pauta">Generar
-                                    orden de
-                                    compra</a>
-                            </div>
-                        </div>
-                    </div>
+
+        <div class="row">
+            <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioDigital')->TxtDescription; ?></h3>
+        </div>
+
+        <div class="row tarifario-web-items">
+            <?php foreach ([1, 2, 3, 4, 5, 6] as $var) : ?>
+                <div class="col-xs-12 tarifario-web-item">
+                    <img class="img-responsive"
+                         src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarifario-web_00<?= $var ?>.jpg"
+                         alt="">
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 
 <script>
+    $('.tarifario-items').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false
+    });
+    $(".tarifario-items .slick-dots li#slick-slide00").html("Portada interior o retira de tapa");
+    $(".tarifario-items .slick-dots li#slick-slide01").html("Doble pagina");
+    $(".tarifario-items .slick-dots li#slick-slide02").html("Pagina interior");
+    $(".tarifario-items .slick-dots li#slick-slide03").html("Tercer pagina completa");
+    $(".tarifario-items .slick-dots li#slick-slide04").html("Pagina reportaje");
+    $(".tarifario-items .slick-dots li#slick-slide05").html("Media pagina vertical");
+    $(".tarifario-items .slick-dots li#slick-slide06").html("interior contratapa");
+    $(".tarifario-items .slick-dots li#slick-slide07").html("Contratapa");
 
+
+    $('.tarifario-web-items').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false
+    });
+
+
+    $(".tarifario-web-items .slick-dots li#slick-slide10").html("Baners disponibles en el home");
+    $(".tarifario-web-items .slick-dots li#slick-slide11").html("Baners en marketing");
+    $(".tarifario-web-items .slick-dots li#slick-slide12").html("Baners en evento");
+    $(".tarifario-web-items .slick-dots li#slick-slide13").html("Baners en el home");
+    $(".tarifario-web-items .slick-dots li#slick-slide14").html("Baners en el home");
+    $(".tarifario-web-items .slick-dots li#slick-slide15").html("Baners en el home");
+
+</script>
+<script>
     function changeTool(page) {
         $('#page').val(page);
         $('#searchForm').submit();
     }
-
 </script>

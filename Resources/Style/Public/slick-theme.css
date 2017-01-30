@@ -182,3 +182,370 @@
 .slick-dots li.slick-active button:before {
     background-color: #FFFFFF;
 }
+
+.tarifario-item.slick-slide {
+    padding-right: 180px;
+}
+
+.tarifario-items .slick-dots {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    /* transform: translate(0, -50%); */
+    display: block;
+    /* padding: 0; */
+    /* margin: 0; */
+    list-style: none;
+    /* text-align: center; */
+
+}
+
+.tarifario-items .slick-dots li {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: initial;
+    margin: 0px;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    background: dimgray;
+}
+
+.tarifario-items .slick-dots li button {
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    width: 100%;
+    height: initial;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    margin: 1px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.tarifario-items .slick-dots li {
+    background: white;
+    color: #999999;
+    border-right: 3px solid slategray;
+    transition: 0.3s;
+}
+
+@media (max-width: 480px) {
+
+    .tarifario-items {
+        height: calc(330px + 51px * 8);
+    }
+
+    .tarifario-item.slick-slide {
+        padding: 0;
+    }
+
+    .tarifario-items .slick-dots {
+        position: absolute;
+        width: 100%;
+        top: 75%;
+        right: 0;
+        display: block;
+        list-style: none;
+    }
+
+    .tarifario-items .slick-dots li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: initial;
+        margin: 0px;
+        padding: 15px;
+        text-align: left;
+        cursor: pointer;
+        background: dimgray;
+    }
+
+    .tarifario-items .slick-dots li button {
+        font-size: 20px;
+        line-height: 20px;
+        display: block;
+        width: 100%;
+        height: initial;
+        padding: 15px;
+        cursor: pointer;
+        color: white;
+        margin: 1px 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+
+    .tarifario-items .slick-dots li {
+        background: white;
+        color: #999999;
+        border-right: 3px solid slategray;
+        transition: 0.3s;
+    }
+}
+
+.tarifario-items .slick-dots li:hover, .tarifario-items .slick-dots li.slick-active {
+    color: #FFFFFF;
+}
+
+.tarifario-items .slick-dots li:nth-child(1) {
+    border-right: 6px solid #fbd33b;
+}
+
+.tarifario-items .slick-dots li:nth-child(1):hover {
+    background: #fbd33b;
+}
+
+.tarifario-items .slick-dots li:nth-child(1).slick-active {
+    background: #fbd33b;
+}
+
+.tarifario-items .slick-dots li:nth-child(2) {
+    border-right: 6px solid #8cc63f;
+}
+
+.tarifario-items .slick-dots li:nth-child(2):hover {
+    background: #8cc63f;
+}
+
+.tarifario-items .slick-dots li:nth-child(2).slick-active {
+    background: #8cc63f;
+}
+
+.tarifario-items .slick-dots li:nth-child(3) {
+    border-right: 6px solid #29abe2;
+}
+
+.tarifario-items .slick-dots li:nth-child(3):hover {
+    background: #29abe2;
+}
+
+.tarifario-items .slick-dots li:nth-child(3).slick-active {
+    background: #29abe2;
+}
+
+.tarifario-items .slick-dots li:nth-child(4) {
+    border-right: 6px solid #999999;
+}
+
+.tarifario-items .slick-dots li:nth-child(4):hover {
+    background: #999999;
+}
+
+.tarifario-items .slick-dots li:nth-child(4).slick-active {
+    background: #999999;
+}
+
+.tarifario-items .slick-dots li:nth-child(5) {
+    border-right: 6px solid #7b20e5;
+}
+
+.tarifario-items .slick-dots li:nth-child(5):hover {
+    background: #7b20e5;
+}
+
+.tarifario-items .slick-dots li:nth-child(5).slick-active {
+    background: #7b20e5;
+}
+
+.tarifario-items .slick-dots li:nth-child(6) {
+    border-right: 6px solid #e94650;
+}
+
+.tarifario-items .slick-dots li:nth-child(6):hover {
+    background: #e94650;
+}
+
+.tarifario-items .slick-dots li:nth-child(6).slick-active {
+    background: #e94650;
+}
+
+.tarifario-items .slick-dots li:nth-child(7) {
+    border-right: 6px solid #ff8d00;
+}
+
+.tarifario-items .slick-dots li:nth-child(7):hover {
+    background: #ff8d00;
+}
+
+.tarifario-items .slick-dots li:nth-child(7).slick-active {
+    background: #ff8d00;
+}
+
+.tarifario-items .slick-dots li:nth-child(8) {
+    border-right: 6px solid #0cb4bd;
+}
+
+.tarifario-items .slick-dots li:nth-child(8):hover {
+    background: #0cb4bd;
+}
+
+.tarifario-items .slick-dots li:nth-child(8).slick-active {
+    background: #0cb4bd;
+}
+
+.tarifario-items .slick-dots li button:before {
+    content: none;
+}
+
+.tarifario-web-items.slick-slide {
+}
+
+.tarifario-web-items .slick-dots {
+    position: absolute;
+    top: 11%;
+    right: 0px;
+    /* transform: translate(0, -50%); */
+    display: block;
+    /* padding: 0; */
+    /* margin: 0; */
+    list-style: none;
+    /* text-align: center; */
+
+}
+
+.tarifario-web-items .slick-dots li {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: initial;
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tarifario-web-items .slick-dots li button {
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    width: 100%;
+    height: initial;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    margin: 1px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.tarifario-web-items .slick-dots li {
+    background: white;
+    color: #999999;
+    border-right: 3px solid slategray;
+    transition: 0.3s;
+}
+
+@media (max-width: 480px) {
+    .tarifario-web-items .slick-dots {
+        position: absolute;
+        top: 29%;
+    }
+
+    .tarifario-web-items .slick-dots li button {
+        font-size: 20px;
+        line-height: 20px;
+        display: block;
+        width: 100%;
+        height: initial;
+        padding: 15px;
+        cursor: pointer;
+        color: white;
+        margin: 1px 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+
+    .tarifario-web-items .slick-dots li {
+        background: white;
+        color: #999999;
+        border-right: 3px solid slategray;
+        transition: 0.3s;
+    }
+}
+
+.tarifario-web-items .slick-dots li:hover, .tarifario-web-items .slick-dots li.slick-active {
+    color: #FFFFFF;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(1) {
+    border-right: 6px solid #fbd33b;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(1):hover {
+    background: #fbd33b;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(1).slick-active {
+    background: #fbd33b;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(2) {
+    border-right: 6px solid #8cc63f;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(2):hover {
+    background: #8cc63f;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(2).slick-active {
+    background: #8cc63f;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(3) {
+    border-right: 6px solid #29abe2;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(3):hover {
+    background: #29abe2;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(3).slick-active {
+    background: #29abe2;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(4) {
+    border-right: 6px solid #999999;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(4):hover {
+    background: #999999;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(4).slick-active {
+    background: #999999;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(5) {
+    border-right: 6px solid #7b20e5;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(5):hover {
+    background: #7b20e5;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(5).slick-active {
+    background: #7b20e5;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(6) {
+    border-right: 6px solid #e94650;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(6):hover {
+    background: #e94650;
+}
+
+.tarifario-web-items .slick-dots li:nth-child(6).slick-active {
+    background: #e94650;
+}
+
+.tarifario-web-items .slick-dots li button:before {
+    content: none;
+}

@@ -31,6 +31,12 @@ body {
     padding-top: 52px;
 }
 
+@media (max-width: 480px) {
+    body {
+        padding-top: 95px;
+    }
+}
+
 body {
     margin: 0;
 
@@ -1543,11 +1549,17 @@ fieldset[disabled] .btn-link:focus {
 }
 
 @media (max-width: 600px) {
-    #bienvenido {
+    #bienvenido-container {
         padding: 70px 20px;
     }
-}
 
+    .logo {
+        width: 180px
+    }
+}
+@media (max-width: 480px) {
+
+}
 #bienvenido h2 {
     font-family: Gilroy, sans-serif;
 
@@ -1562,7 +1574,7 @@ fieldset[disabled] .btn-link:focus {
  * @licesne      MIT License
  */
 .swiper-container {
-    height: 250px;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -1572,7 +1584,7 @@ fieldset[disabled] .btn-link:focus {
 
 @media (min-width: 768px) {
     .swiper-container {
-        height: 400px;
+
     }
 }
 
@@ -2158,6 +2170,11 @@ html:not(.lt-ie10) .not-animated {
     padding-left: 15px !important;
 }
 
+@media (max-width: 990px) {
+    .side-right {
+        padding-left: 0px !important;
+    }
+}
 /*
 * modules styles
 */
@@ -4573,6 +4590,15 @@ td.rdc-table_has-events ul.rdc-table_events a {
     margin: 20px 0;
 }
 
+@media (max-width: 480px) {
+    .content-tool .descarga-item {
+        border-right: solid 1px;
+        padding: 0px 10px;
+        margin: 15px 0;
+        text-align: justify;
+    }
+}
+
 .content-tool > .row > .descarga-item:last-child {
     border: none;
 }
@@ -5015,6 +5041,12 @@ td.rdc-table_has-events ul.rdc-table_events a {
 
 .content-tool .content-note {
     margin: 30px;
+}
+@media (max-width: 480px) {
+    .content-tool .content-note {
+        margin: 0px;
+        text-align: justify;
+    }
 }
 
 .sidebar-module.module-social {
