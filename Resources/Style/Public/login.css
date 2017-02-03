@@ -1,13 +1,37 @@
+form.forms .gender{
+    position:relative;
+    display:block;
+    float:left;
+    width:100%;
+}
 
+form.forms .gender div{
+    position:relative;
+    display:block;
+    float:left;
+    width:40%;
+    margin:1% 2%;
+    text-align: center;
+    cursor:pointer;
+    background-color: #FFF;
+    border: 1px solid #80c8f7;
+    color:#868686;
+    padding:1%;
+    font-size: 1.2em;
+}
+
+form.forms .gender div.selected{
+    background-color: #80c8f7;
+    color:#FFF;
+}
 
 #loginForm{
-    padding:15px;
-    background-image: url(../../Image/Public/back_articulo.png);
-    background-color: transparent;
+    padding:15px;    
+    background-color: white;
     margin:0% auto !important;
     margin-top:100px !important;
     width:290px;
-
+    border-radius: 10px;
 }
 
 #loginForm .title{
@@ -31,7 +55,7 @@
 #loginForm input, 
 #loginForm textarea {
     background-color: #FFF;
-    border: 1px solid #80c8f7;
+    border: 1px solid #00a5a7;
     clear: both;
     color: #424242;
     display: block;
@@ -44,7 +68,7 @@
 }
 
 #loginForm .link{
-    color:#979797;
+    color:#00a5a7;
     position:relative;
     display:block;
     text-decoration: none;
@@ -63,7 +87,7 @@
 }
 
 #loginForm .linkBold{
-    color:#2371B8;
+    color:#00a5a7;
     font-size: 1.1em;
     text-decoration: underline;
 }
@@ -74,7 +98,7 @@
 }
 
 #loginForm .button{
-    background-color: #2371B8;
+    background-color: #e33251;
     color:#FFF;
     position:relative;
     display:block;
@@ -177,7 +201,7 @@
 
 #sup, #inf{
     position: absolute;
-    
+
 }
 #sup{
     top: 0;
@@ -192,7 +216,7 @@
 }
 
 #log{
-   
-   width: 200px;
+
+    width: 200px;
 }
 

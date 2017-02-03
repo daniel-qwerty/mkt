@@ -1,0 +1,89 @@
+<?PHP
+
+$form = new Com_Wizard_Form();
+$form->title = "Formulario Links";
+
+$form->addAction("floppy-disk", "Guardar", null, "document.getElementById('saveForm').click();");
+$form->addAction("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . "/Admin/Links");
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Nombre";
+$control->label = "Nombre";
+$control->default = $this->Nombre;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Perfil";
+$control->label = "Perfil";
+$control->default = $this->Perfil;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Ocupacion";
+$control->label = "Ocupacion";
+$control->default = $this->Ocupacion;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Rubro";
+$control->label = "Rubro";
+$control->default = $this->Rubro;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Pais";
+$control->label = "Pais";
+$control->default = $this->Pais;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Web";
+$control->label = "Web";
+$control->default = $this->Web;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Tema";
+$control->label = "Tema";
+$control->default = $this->Tema;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Articulo";
+$control->label = "Articulo";
+$control->default = $this->Articulo;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Email";
+$control->label = "Email";
+$control->default = $this->Email;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$control = new Com_Wizard_Form_Control();
+$control->name = "Telefono";
+$control->label = "Telefono";
+$control->default = $this->Telefono;
+$control->required = true;
+$control->length = 50;
+$form->add($control);
+
+$form->render();

@@ -218,6 +218,7 @@ class Com_Database_Entity extends Com_Object {
         $keyField = $this->keyField;
         $sqlQuery = "UPDATE {$this->tableName} SET {$lstFields} WHERE {$keyField}='{$this->$keyField}'";
         
+        
         //print_r($sqlQuery);
         //exit();
 

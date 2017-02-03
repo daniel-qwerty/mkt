@@ -60,9 +60,10 @@ body{
 }
 
 body{
-    background-image: url(../../Image/Public/slide_lightblue.jpg);
+    
     background-attachment: fixed;
     background-size: cover;
+    background: #FDD100
 }
 
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}

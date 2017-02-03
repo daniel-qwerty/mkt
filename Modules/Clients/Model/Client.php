@@ -113,7 +113,7 @@ class Clients_Model_Client extends Com_Module_Model {
     public function doUpdateFromPage(Com_Object $obj) {
         $db = new Entities_Client();
         $db->CliId = $obj->Id;
-        $db->get();
+        //$db->get();
         $db->CliName = $obj->Name;
         $db->CliEmail = $obj->Email;
         $db->CliPhone = $obj->Phone;

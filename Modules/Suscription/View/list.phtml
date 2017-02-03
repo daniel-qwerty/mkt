@@ -36,6 +36,8 @@
                              function copy<?=$sw;?>(){
                                  $('#item').val('<?php echo $slide->SusTitle; ?>');
                                  $('#precio').val('<?php echo $slide->SusPrice; ?>');
+                                 $('#imagen').val('<?php echo $slide->SusImage; ?>');
+                                 $('#idProd').val('<?php echo $slide->SusId; ?>');
                                  $('#save').click();
                                  save();
                              }
@@ -59,8 +61,7 @@
                         <th></th>
                         <th></th>
                         <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
+                        <th>Precio</th>                        
                         <th>TOTAL</th>
                     </tr>
                 </thead>
@@ -70,14 +71,10 @@
                     <form id="detalleForm">                                  
                         <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i class="delete-item fa fa-close"></i></a></td>
                         <td><img
-                                 src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= Suscription_Model_Suscription::getInstance()->get($this->list->BooId, $this->lan->LanId)->BooImage; ?>"
-                                alt=""></td>
+                                        src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $car->DetImagen; ?>"
+                                        alt=""></td>
                         <td><?= $car->DetItem; ?></td>
-                        <td>Bs. <?= $car->DetPrecio; ?></td>
-                        <td>
-                            <input type="hidden" name="id" value="<?= $car->DetCant; ?>">
-                            <input type="number" name="value" value="1">
-                        </td>
+                        <td>Bs. <?= $car->DetPrecio; ?></td>                        
                         <td>Bs. <?= $car->DetPrecio; ?></td>
                     </form>
                     </tr>
@@ -88,8 +85,7 @@
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td></td>                        
                         <td>Total</td>
                         <td>Bs. <?= $this->Sumcarrito; ?></td>
                     </tr>
@@ -103,7 +99,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
+                            <label for="nombre">Nombre completo*</label>
                             <input type="text" class="form-control" id="nombre" placeholder="nombre">
                         </div>
                     </div>                        
@@ -116,25 +112,25 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Correo Electronico</label>
+                            <label for="email">Correo Electronico*</label>
                             <input type="text" class="form-control" id="email" placeholder="email">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="celular">Telefono</label>
+                            <label for="celular">Telefono*</label>
                             <input type="text" class="form-control" id="celular" placeholder="celular">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="pais">Pais</label>
+                    <label for="pais">Pais*</label>
                     <input type="text" class="form-control" id="pais" placeholder="pais">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="localidad">Localidad/Ciudad</label>
+                            <label for="localidad">Localidad/Ciudad*</label>
                             <input type="text" class="form-control" id="ciudad" placeholder="localidad">
                         </div>
                     </div>
@@ -146,7 +142,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Direccion</label>
+                    <label for="direccion">Direccion*</label>
                     <input type="text" class="form-control" id="direccion" placeholder="direccion 1">                        
                 </div>
 
@@ -155,17 +151,17 @@
             <div class="col-md-5">
                 <h3>Datos de envio</h3>
                 <div class="form-group">
-                    <label for="direccion">Direccion</label>
+                    <label for="direccion">Direccion*</label>
                     <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">                        
                 </div>
                 <div class="form-group">
-                    <label for="pais">Pais</label>
+                    <label for="pais">Pais*</label>
                     <input type="text" class="form-control" id="pais2" placeholder="pais">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="localidad">Localidad/Ciudad</label>
+                            <label for="localidad">Localidad/Ciudad*</label>
                             <input type="text" class="form-control" id="ciudad2" placeholder="localidad">
                         </div>
                     </div>
@@ -264,6 +260,8 @@
     <input id="item" name="item" type="text" autocomplete="off" value=""/> 
     <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
     <input id="precio" name="precio" type="text" autocomplete="off" value=""/> 
+    <input id="imagen" name="imagen" type="text" autocomplete="off" value=""/>
+    <input id="idProd" name="idProd" type="text" autocomplete="off" value=""/>
     <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>
     <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
     <a onclick="SaveVenta();" id="save"  type="button" >Registrar</a>

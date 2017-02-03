@@ -1,0 +1,22 @@
+<?PHP
+
+$db = new Entities_Colaboradores();
+$grid = new Com_Wizard_Grid();
+$grid->title = "Listado de Colaboradores";
+$grid->setIdField("ColId");
+$grid->setQuery($db->getList());
+$grid->setAlias(array("ColNombre" => "Nombre", "ColEmail" => "Email", "ColTelefono" => "Telefono"));
+$grid->setFilters(array("ColNombre" => get('ColNombre')));
+
+$toolBar = new Com_Wizard_ToolBar();
+$toolBar->add("plus", "Nuevo", Com_Helper_Url::getInstance()->urlBase . '/Admin/Colaboradores/Add');
+$toolBar->add("search", "Filtrar", null, "showHide('.filters')");
+$toolBar->add("log-out", "Volver", Com_Helper_Url::getInstance()->urlBase . '/Admin');
+$grid->setToolBar($toolBar);
+
+$grid->addAction("pencil", "Editar", Com_Helper_Url::getInstance()->urlBase . '/Admin/Colaboradores/Edit/id/_ID_');
+$grid->addAction("trash", "Eliminar", null, "confirm('Esta seguro de eliminar el registro?')?location.href='" . Com_Helper_Url::getInstance()->urlBase . '/Admin/Colaboradores/Delete/id/_ID_' . "':'';");
+
+//$grid->customField("LinStatus", array("value" => array('1' => 'Leido', '0' => 'No Leido')));
+
+$grid->render();

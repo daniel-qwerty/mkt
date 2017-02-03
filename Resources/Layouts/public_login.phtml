@@ -22,12 +22,30 @@
 
         echo Com_Helper_Style::getInstance();
         ?>
-    </head>
-    <body class="login">
-        <img id="sup" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/sup.png">
-        <img id="inf" src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/inferior.png">
-        
 
+    </head>
+    <body class="login">    
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '586359001574512',
+                    xfbml: true,
+                    version: 'v2.8'
+                });
+                FB.AppEvents.logPageView();
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
         <div id="loginForm">
             <div class="title">
@@ -116,9 +134,9 @@
 
         echo Com_Helper_Script::getInstance();
         ?>
-        <script type="text/javascript">
-            setUrlBase('<?PHP echo Com_Helper_Url::getInstance()->urlBase; ?>');
-        </script>
+
+
+
 
     </body>
 </html>

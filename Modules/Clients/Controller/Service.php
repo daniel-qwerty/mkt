@@ -31,6 +31,7 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
 
     public function SaveAccount() {
         if ($this->isPost()) {
+            //print_r($this->getPostObject());
             Clients_Model_Client::getInstance()->doUpdateFromPage($this->getPostObject());
             echo json_encode(true);
             return;
@@ -153,13 +154,34 @@ class Clients_Controller_Service extends Com_Module_Controller_Json {
     }
     
     public function SaveCompra() {
-        if ($this->isPost()) {           
+        if ($this->isPost()) { 
+            $this->sendPedido($this->getPostObject());
             Clients_Model_Compra::getInstance()->doInsert($this->getPostObject());
             Clients_Model_Venta::getInstance()->doUpdateVenta($this->getPostObject()->VenId,$this->getPostObject()->Total);
             echo json_encode(true);
             return;
         }
         echo json_encode(false);
+    }
+    
+    public function sendPedido(Com_Object$obj) {
+        $email = new Com_Wizard_Mail();
+        $strTitle = strtoupper("TU PEDIDO | MARKETING NEWS");
+        $strLogo = Com_Helper_Url::getInstance()->getImage() . "/Public/logo.png";
+        $email->setSubject($strTitle);
+        $email->setFrom("info@marketingnews.com.bo", "MARKETING NEWS BOLIVIA");
+        $strMessage = file_get_contents(Com_Helper_Url::getInstance()->physicalDirectory . "/Resources/Layouts/Email/pedido.phtml");
+        $strMessage = str_replace("{Title}", "pedidos", $strMessage);
+       // $strMessage = str_replace("{Footer}", Configurations_Helper_Configuration::getInstance()->getKey("FORGOT_FOOTER"), $strMessage);
+        $strMessage = str_replace("{Logo}", $strLogo, $strMessage);
+        $strMessage = str_replace("{NumPedido}",$obj->VenId, $strMessage);
+        $strMessage = str_replace("{Fecha}", date("d/m/Y H:i:s"), $strMessage);
+        $strMessage = str_replace("{Metodo}", $obj->Metodo, $strMessage);
+        $strMessage = str_replace("{Total}", $obj->Total, $strMessage);
+       // $strMessage = str_replace("{Register.Content}", "Su nueva contrase&ntilde;a es: " . $obj->CliPassword, $strMessage);
+        $email->addAddress($obj->Email, $obj->Nombre);
+        $email->setMessage($strMessage);
+        $email->send();
     }
 
 }

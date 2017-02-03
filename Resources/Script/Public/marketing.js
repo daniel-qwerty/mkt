@@ -279,7 +279,7 @@ function sendContact() {
     var email = $('#formContact #email').val();
     var phone = $('#formContact #phone').val();
 
-    if (name === "" || email === "" || message === "" || phone === "") {
+    if (name === "" || email === "" || message === "" ) {
         swal("", "Por favor revise los datos del formulario !!!", "warning");
         console.log("Por favor revise los datos del formulario !!!");
     } else {
@@ -308,8 +308,62 @@ function sendContact() {
     }
 }
 
+function sendColaborar() {
+    var nombre = $('#formColaborar #nombre').val();
+    var perfil = $('#formColaborar #perfil').val();
+    var ocupacion = $('#formColaborar #ocupacion').val();
+    var rubro = $('#formColaborar #rubro').val();
+    var pais = $('#formColaborar #pais').val();
+    var web = $('#formColaborar #web').val();
+    var tema = $('#formColaborar #tema').val();
+    var articulo = $('#formColaborar #articulo').val();
+    var email = $('#formColaborar #email').val();
+    var telefono = $('#formColaborar #telefono').val();
 
-      
+    if (nombre === "" || email === "" || tema === "" || perfil === "") {
+        swal("", "Por favor revise los datos del formulario !!!", "warning");
+        console.log("Por favor revise los datos del formulario !!!");
+    } else {
+
+        $.ajax({
+            type: "POST",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Colaboradores/Save",
+            data: {
+                Nombre: nombre,
+                Perfil: perfil,
+                Ocupacion: ocupacion,
+                Rubro: rubro,
+                Pais: pais,
+                Web: web,
+                Tema: tema,
+                Articulo: articulo,
+                Email: email,
+                Telefono: telefono
+            }
+        }).done(function (data) {
+            console.log("Exito");
+            swal("", "Su mensaje fue enviado con exito", "success");            
+
+            $('#formColaborar #nombre').val("");
+            $('#formColaborar #perfil').val("");
+            $('#formColaborar #ocupacion').val("");
+            $('#formColaborar #rubro').val("");
+            $('#formColaborar #pais').val("");
+            $('#formColaborar #web').val("");
+            $('#formColaborar #tema').val("");
+            $('#formColaborar #articulo').val("");
+            $('#formColaborar #email').val("");
+            $('#formColaborar #telefono').val("");
+        }).error(function () {
+
+        });
+
+
+    }
+}
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-var urlBase = "http://digitalmindsbolivia.com/mkt";
+var urlBase = "digitalmindsbolivia.com/mkt/";
 
 $(document).ready(function () {
 
@@ -216,13 +216,13 @@ function setGender(gender) {
 
 
 function saveClient() {
-    var id = $('#registryForm #id').val();
-    var name = $('#registryForm #name').val();
-    var email = $('#registryForm #email').val();
-    var password = $('#registryForm #password').val();
-    var gender = $('#registryForm #gender').val();
-    var phone = $('#registryForm #phone').val();
-    var birthday = $('#registryForm #birthday').val();
+    var id = $('#form #id').val();
+    var name = $('#form #name').val();
+    var email = $('#form #email').val();
+    var password = $('#form #password').val();
+    var gender = $('#form #gender').val();
+    var phone = $('#form #phone').val();
+    var birthday = $('#form #birthday').val();
     if (name === "" || email === "" || gender === "" || birthday === "") {
         swal("Info", "Por favor revise los datos del formulario !!!", "warning");
     } else {
@@ -235,7 +235,7 @@ function saveClient() {
         }).done(function (data) {
             loadingModal.close();
             registrationModal.close();
-            swal("Exito", "Su perfil ha sido actualizado!!!", "success");
+            swal("Gracias", "Tu pedido ha sido recibido.", "success");
         }).error(function () {
             loadingModal.close();
         });
@@ -243,6 +243,7 @@ function saveClient() {
 }
 
 function parseDate(input) {
+   
     var parts = input.split('/');
     // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
     return new Date(parts[2], parts[1] - 1, parts[0]); // Note: months are 0-based
@@ -252,8 +253,20 @@ function parseDate(input) {
 function SaveVenta() {
 
     if ($('#CarritoForm #sesion').val() === '0') {
-        swal("Info", "Ingresa con tu cuenta, para poder realizar compras",
-                "warning");
+        // swal("Info", "Ingresa con tu cuenta, para poder realizar compras","warning");
+        swal({title: "Info",
+            text: "Ingresa con tu cuenta, para poder realizar compras",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Ingresar",
+            closeOnConfirm: false},
+                function (isConfirm) {
+                    if (isConfirm) {
+                        window.open('http://digitalmindsbolivia.com/mkt/es/login', '_self', false);
+                    }
+                });
+
     } else {
         var cliId = $('#CarritoForm #cliId').val();
         var item = $('#CarritoForm #item').val();
@@ -385,7 +398,7 @@ function DeleteDetalle(ide) {
                         url: "http://digitalmindsbolivia.com/mkt/Service/Clients/DeteleVentaDetalle",
                         data: {DetId: ide}
                     }).done(function (data) {
-                        if (data) {                            
+                        if (data) {
                             console.log("eliminado");
                             location.reload();
 
@@ -401,7 +414,7 @@ function DeleteDetalle(ide) {
                         console.log("error venta detalle");
                     }
                     );
-                    
+
                 } else {
                     swal("Cancelado", "", "error");
                 }

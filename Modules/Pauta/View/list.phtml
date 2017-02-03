@@ -169,4 +169,39 @@
         $('#page').val(page);
         $('#searchForm').submit();
     }
+
+
+
+
+    var timer = $.timer(function () {
+        timer.stop(); 
+        swal({
+            title: "Dejanos tu correo electronico",
+            text: "Te enviaremos mas información",
+            type: "input",
+            confirmButtonColor: "#80B519",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Correo electronico"
+        },
+                function (inputValue) {
+                    if (inputValue === false){
+                        return false;
+                        timer.stop(); 
+                    }
+                        
+
+                    if (inputValue === "") {
+                        swal.showInputError("Ingresa tu correo electronico.");
+                        timer.stop(); 
+                        return false
+                    }
+
+                    swal("Excelente!", "You wrote: " + inputValue, "success");
+                    timer.stop(); 
+                });
+    });
+    timer.set({time: 10000, autostart: true});
+
 </script>

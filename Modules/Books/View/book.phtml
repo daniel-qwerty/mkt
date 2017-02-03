@@ -83,8 +83,7 @@
                         <th></th>
                         <th></th>
                         <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
+                        <th>Precio</th>                        
                         <th>TOTAL</th>
                     </tr>
                     </thead>
@@ -98,11 +97,7 @@
                                         src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $car->DetImagen; ?>"
                                         alt=""></td>
                                 <td><?= $car->DetItem; ?></td>
-                                <td>Bs. <?= $car->DetPrecio; ?></td>
-                                <td>
-                                    <input type="hidden" name="id" value="<?= $car->DetCant; ?>">
-                                    <input type="number" name="value" value="1">
-                                </td>
+                                <td>Bs. <?= $car->DetPrecio; ?></td>                               
                                 <td>Bs. <?= $car->DetPrecio; ?></td>
                             </form>
                         </tr>
@@ -113,8 +108,7 @@
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td></td>                        
                         <td>Total</td>
                         <td>Bs. <?= $this->Sumcarrito; ?></td>
                     </tr>
