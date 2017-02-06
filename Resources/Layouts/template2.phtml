@@ -248,8 +248,8 @@
         </div>
     </div>
 </section>
-<section class="insta-wrap">
-    <?php Public_Widget_FollowInstagram::getInstance()->setLan($this->lan)->render(); ?>
+<section class="insta-wrap insta-<?= $this->color; ?>">
+    <?php Public_Widget_FollowInstagram::getInstance()->setLan($this->lan)->render($this->color); ?>
 </section>
 <?php Public_Widget_Footer::getInstance()->setLan($this->lan)->render(); ?>
 <script>

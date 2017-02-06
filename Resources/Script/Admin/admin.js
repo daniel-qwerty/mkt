@@ -26,10 +26,15 @@ $(document).ready(function () {
 
     //Editor
     $('.htmlEditor').each(function () {
+        var quote = $('<blockquote class="quote">hello<footer>world</footer></blockquote>')[0];
         $(this).summernote({
             height: 250
         });
+        $(this).summernote('insertNode', quote);
     });
+
+
+
 
     //fileUpload
     $(".fileUploader input.file").hide();
@@ -118,31 +123,32 @@ $(document).ready(function () {
         toastr.success('Checkout settings menu on left!', 'Welcome to Modern!');
     }, 1800);*/
 
-    //CKEDITOR.disableAutoInline = true;
-    //
-    //CKEDITOR.replaceClass = 'ckeditor';
-    //
-    //$('.ckeditor').each(function () {
-    //
-    //    var roxyFileman = "http://heifer-bolivia.org/cms/Resources/Script/Admin/ckeditor/fileman/index.html";
-    //
-    //    CKEDITOR.replace($(this).attr('id'), {
-    //        "language": "es",
-    //        "resize_enabled": false,
-    //        "toolbarCanCollapse": false,
-    //        "height": "450px",
-    //        "width": "100%",
-    //        "toolbar": [["Source", "Maximize"],
-    //            ["Cut", "Copy", "Paste", "PasteText", "PasteAsPlainText", "PasteFromWord", "-", "Undo", "Redo", "RemoveFormat"],
-    //            ["Bold", "Italic", "Underline", "Strike", "NumberedList", "BulletedList", "TextColor", "BGColor"],
-    //            ["Font", "FontSize", "Format"],
-    //            ["JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock", "Outdent", "Indent"],
-    //            ["Link", "Unlink", "-", "Image", "Code", "Table"]],
-    //        "filebrowserBrowseUrl": roxyFileman,
-    //        "filebrowserImageBrowseUrl": roxyFileman + "?type=image",
-    //        "removeDialogTabs": 'link:upload;image:upload'
-    //    });
-    //});
+    CKEDITOR.disableAutoInline = true;
+
+    CKEDITOR.replaceClass = 'ckeditor';
+
+    $('.ckeditor').each(function () {
+
+        var roxyFileman = "http://heifer-bolivia.org/cms/Resources/Script/Admin/ckeditor/fileman/index.html";
+        CKEDITOR.ExtraPlugins = 'blockquote'
+        CKEDITOR.replace($(this).attr('id'), {
+            "language": "es",
+            "resize_enabled": false,
+            "toolbarCanCollapse": false,
+            "height": "450px",
+            "width": "100%",
+            "toolbar": [["Source", "Maximize"],
+                ["Cut", "Copy", "Paste", "PasteText", "PasteAsPlainText", "PasteFromWord", "-", "Undo", "Redo", "RemoveFormat"],
+                ["Bold", "Italic", "Underline", "Strike", "NumberedList", "BulletedList", "TextColor", "BGColor"],
+                ["Font", "FontSize", "Format"],
+                ["JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock", "Outdent", "Indent"],
+                ["Link", "Unlink", "-", "Image", "Code", "Table","blockquote"]],
+            "filebrowserBrowseUrl": roxyFileman,
+            "filebrowserImageBrowseUrl": roxyFileman + "?type=image",
+            "removeDialogTabs": 'link:upload;image:upload'
+        });
+
+    });
     $(".live-tile").liveTile();
 });
 
