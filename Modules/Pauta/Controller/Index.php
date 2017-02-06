@@ -12,7 +12,7 @@ class Pauta_Controller_Index extends Public_Controller_Index {
     }
     
     public function Revista() {
-        $this->setLayout("templatePauta");
+        $this->setLayout("template4_nosidebar");
         $this->setView("list");
         $url = get('REQUEST_URI');
         $url = explode("/", $url);
@@ -21,7 +21,7 @@ class Pauta_Controller_Index extends Public_Controller_Index {
     }
     
     public function Digital() {
-        $this->setLayout("templatePauta2");
+        $this->setLayout("template4_nosidebar");
         $this->setView("list2");
         $url = get('REQUEST_URI');
         $url = explode("/", $url);
