@@ -24,7 +24,7 @@ class Public_Widget_Footer extends Com_Object {
         <section>
             <div class="container-fluid">
                 <div class="row text-center">
-                    <div class="go-up">
+                    <div class="go-up tag m_amarillo">
                         <i class="fa fa-angle-up icon-white"></i>
                     </div>
                 </div>

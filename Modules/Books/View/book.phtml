@@ -1,5 +1,5 @@
 <section class="col-xs-12">
-    <div class="container-fluid content-header-1">
+    <div class="container-fluid content-header-1 full-width">
         <div class="row">
             <!--    poner clase bg-note-$color        -->
             <div class="col-sm-12 content-header-1-title m_amarillo">
@@ -22,7 +22,7 @@
                 <p><?= $this->list->BooContent; ?></p>
 
                 <div class="pull-right" style="clear: both;margin: 10px 0;font-size: 24px">PRECIO: <strong
-                        class="color-purple">Bs. <?= $this->list->BooPrice; ?></strong></div>
+                        class="c_amarillo">Bs. <?= $this->list->BooPrice; ?></strong></div>
 
 
             </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-12" style="height: 2px; background: #999999"></div>
             <div class="col-md-12">
-                <a onclick="SaveVenta();" class="btn btn-flat pull-right btn-primary"
+                <a onclick="SaveVenta();" class="tag m_amarillo pull-right btn-primary"
                    style="margin-right: 10px"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
             </div>
         </div>

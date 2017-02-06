@@ -44,14 +44,14 @@ class Public_Widget_Loading extends Com_Object
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                width: 300px;
+                width: 180px;
                 transform: translate(-50%, -50%);
             }
 
             .preloader-item {
-                width: 80px;
-                height: 80px;
-                margin: 10px;
+                width: 50px;
+                height: 50px;
+                margin: 5px;
                 background: #CCCCCC;
                 border-radius: 10px;
                 float: left;
@@ -100,16 +100,16 @@ class Public_Widget_Loading extends Com_Object
 
             @keyframes pulse {
                 0% {
-                    background-color: #0a2a91;
-                }
-                33% {
                     background-color: #0091c4;
                 }
-                66%{
+                33% {
                     background-color: #00d002;
                 }
-                100% {
+                66%{
                     background-color: #ffb700;
+                }
+                100% {
+                    background-color: #0091c4;
                 }
             }
         </style>
