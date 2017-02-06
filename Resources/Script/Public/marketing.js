@@ -185,7 +185,6 @@ function updateViewsAd(ide) {
         } else {
             console.log("view error");
         }
-
         //modal.open();
     }).error(function () {
         //loadingModal.close();

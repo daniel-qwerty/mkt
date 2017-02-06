@@ -1,0 +1,271 @@
+<section class="col-xs-12">
+
+    <div class="container-fluid content-header-1 full-width">
+        <div class="row">
+            <div class="col-sm-12 content-header-1-title  <?= $this->color; ?>">
+                <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSuscripcion")->TxtDescription ?></h3>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <?php SlideShowsSuscription_Widget_Slideshow::getInstance()->setLan($this->lan)->render(); ?>           
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+    </div>
+
+</section>
+<div class="container-fluid content-tool bg-white">
+    <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtSuscribete")->TxtDescription ?></h3>
+    <div class="row items-suscription">
+        <div data-items="2" data-sm-items="2" data-lg-items="3"
+             data-loop="true"
+             data-nav="true" class="owl-carousel element-groups-xs-custom">
+
+            <?php $sw =0; foreach ($this->list as $slide) { $sw++;?>
+                
+                <div data-instafeed-item="" class="owl-item item-suscription">
+                    <div class="square"
+                         style="background: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SusImage; ?>); background-size: cover ">
+                    </div>
+                    <div class="item-suscription-title" style="background: <?php echo $slide->SusColor; ?>" >
+                        <a href="#"><?php echo $slide->SusTitle; ?></a>
+                    </div>
+                    <div class="item-suscription-comprar">
+                         <script>
+                             function copy<?=$sw;?>(){
+                                 $('#item').val('<?php echo $slide->SusTitle; ?>');
+                                 $('#precio').val('<?php echo $slide->SusPrice; ?>');
+                                 $('#imagen').val('<?php echo $slide->SusImage; ?>');
+                                 $('#idProd').val('<?php echo $slide->SusId; ?>');
+                                 $('#save').click();
+                                 save();
+                             }
+                             </script>
+                        <a onclick="copy<?=$sw;?>();" class="btn btn-default btn-sm pull-right "><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtAddCarrito")->TxtDescription ?></a>
+                    </div>
+                   
+                </div>
+
+            <?PHP } ?>
+        </div>
+    </div>
+</div>
+<div class="container-fluid carrito bg-white">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <h3 style="margin-bottom: 0px">Tu pedido</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Producto</th>
+                        <th>Precio</th>                        
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->carrito as $car) { ?>
+                        <tr>
+                    <form id="detalleForm">                                  
+                        <td><a onclick="DeleteDetalle(<?= $car->DetId; ?>);" type="button"><i class="delete-item fa fa-close"></i></a></td>
+                        <td><img
+                                        src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?= $car->DetImagen; ?>"
+                                        alt=""></td>
+                        <td><?= $car->DetItem; ?></td>
+                        <td>Bs. <?= $car->DetPrecio; ?></td>                        
+                        <td>Bs. <?= $car->DetPrecio; ?></td>
+                    </form>
+                    </tr>
+                <?php } ?>                     
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        
+                        <td>Total</td>
+                        <td>Bs. <?= $this->Sumcarrito; ?></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <form id="formCompra" id="formcompra" action="#" method="post">
+            <div class="col-md-offset-1 col-md-5">
+                <h3>Detalle de compra</h3>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo*</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="nombre">
+                        </div>
+                    </div>                        
+                </div>
+
+                <div class="form-group">
+                    <label for="cedula">Cedula</label>
+                    <input type="text" class="form-control" id="cedula" placeholder="cedula">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Correo Electronico*</label>
+                            <input type="text" class="form-control" id="email" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="celular">Telefono*</label>
+                            <input type="text" class="form-control" id="celular" placeholder="celular">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pais">Pais*</label>
+                    <input type="text" class="form-control" id="pais" placeholder="pais">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="localidad">Localidad/Ciudad*</label>
+                            <input type="text" class="form-control" id="ciudad" placeholder="localidad">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="celular">Codigo postal / Zip</label>
+                            <input type="text" class="form-control" id="codpostal"  placeholder="celular">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion*</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="direccion 1">                        
+                </div>
+
+
+            </div>
+            <div class="col-md-5">
+                <h3>Datos de envio</h3>
+                <div class="form-group">
+                    <label for="direccion">Direccion*</label>
+                    <input type="text" class="form-control" id="direccion2" placeholder="direccion 1">                        
+                </div>
+                <div class="form-group">
+                    <label for="pais">Pais*</label>
+                    <input type="text" class="form-control" id="pais2" placeholder="pais">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="localidad">Localidad/Ciudad*</label>
+                            <input type="text" class="form-control" id="ciudad2" placeholder="localidad">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="celular">Codigo postal / Zip</label>
+                            <input type="text" class="form-control" id="codpostal2" placeholder="celular">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" placeholder="descripcion">
+
+                    <input type="text" class="form-control hidden" id="idVenta" value="<?= $this->VentId; ?>" placeholder="idventa">
+                    <input type="text" class="form-control hidden" id="total" value="<?= $this->Sumcarrito; ?>" placeholder="total">
+
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row bg-gray-ligth" style="padding: 15px;">
+                    <div class="col-md-4">
+                        Seleccione el metodo de pago
+                    </div>
+                    <div class="col-md-8">
+                        <input
+                            type="radio" name="metodo"
+                            id="tarjeta" value="tarjeta" class="input-hidden"/>
+                        <label for="tarjeta">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarjeta.png"
+                                 alt="tarjeta"/>
+                        </label>
+
+                        <input
+                            type="radio" name="metodo"
+                            id="cheque" value="cheque" class="input-hidden"/>
+                        <label for="cheque">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/cheque.png"
+                                 alt="cheque"/>
+                        </label>
+
+                        <input
+                            type="radio" name="metodo"
+                            id="deposito" value="deposito" class="input-hidden"/>
+                        <label for="deposito">
+                            <img class="pay-method"
+                                 src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/banco.png"
+                                 alt="deposito"/>
+                        </label>
+                    </div>
+                    <div class="col-md-12 bg-gray-dark">
+                        <p>Politicas de privacidad de pago</p>
+
+                    </div>
+                    <div class="col-md-12 text-right" style="padding: 0px; margin: 15px 0">
+                        <a onclick="saveCompra();" class="btn btn-warning"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtComprar")->TxtDescription ?></a>
+                    </div>
+
+                </div>
+                <br>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+    <div class="col-xs-12">
+        <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+    </div>
+</div>
+
+<div class="col-sm-12" style="padding: 0 15px">
+    <div class="row">
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->renderVerde(); ?>
+
+        </section>
+        <section class="col-sm-4 pauta-widget">
+            <div class="container-fluid content-header-1">
+                <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->renderAzul(); ?>
+        </section>
+    </div>
+</div>
+
+<form id="CarritoForm" class="hidden">
+    <input id="cliId" name="cliId" type="text" autocomplete="off" value="<?= $this->client->CliId; ?>"/>    
+    <input id="item" name="item" type="text" autocomplete="off" value=""/> 
+    <input id="cant" name="cant" type="text" autocomplete="off" value="1"/> 
+    <input id="precio" name="precio" type="text" autocomplete="off" value=""/> 
+    <input id="imagen" name="imagen" type="text" autocomplete="off" value=""/>
+    <input id="idProd" name="idProd" type="text" autocomplete="off" value=""/>
+    <input id="fecha" name="fecha" type="text" autocomplete="off" value="<?= date('Y-m-d'); ?>"/>
+    <input id="sesion" name="sesion" type="text" autocomplete="off" value="<?= get('cliente'); ?>"/> 
+    <a onclick="SaveVenta();" id="save"  type="button" >Registrar</a>
+</form>
+
+
+

@@ -1,0 +1,81 @@
+<div class="col-xs-12 col-md-8">
+    hola mundo
+</div>
+
+<script>
+    $('.tarifario-items').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false
+    });
+    $(".tarifario-items .slick-dots li#slick-slide00").html("Portada interior o retira de tapa");
+    $(".tarifario-items .slick-dots li#slick-slide01").html("Doble pagina");
+    $(".tarifario-items .slick-dots li#slick-slide02").html("Pagina interior");
+    $(".tarifario-items .slick-dots li#slick-slide03").html("Tercer pagina completa");
+    $(".tarifario-items .slick-dots li#slick-slide04").html("Pagina reportaje");
+    $(".tarifario-items .slick-dots li#slick-slide05").html("Media pagina vertical");
+    $(".tarifario-items .slick-dots li#slick-slide06").html("interior contratapa");
+    $(".tarifario-items .slick-dots li#slick-slide07").html("Contratapa");
+
+
+    $('.tarifario-web-items').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false
+    });
+
+
+    $(".tarifario-web-items .slick-dots li#slick-slide10").html("290px X 600px");
+    $(".tarifario-web-items .slick-dots li#slick-slide11").html("290px X 300px");
+    $(".tarifario-web-items .slick-dots li#slick-slide12").html("570px X 200px");
+    $(".tarifario-web-items .slick-dots li#slick-slide13").html("1000px X 220px");
+    $(".tarifario-web-items .slick-dots li#slick-slide14").html("760px X 530px");
+
+</script>
+<script>
+    function changeTool(page) {
+        $('#page').val(page);
+        $('#searchForm').submit();
+    }
+
+
+
+
+    var timer = $.timer(function () {
+        timer.stop(); 
+        swal({
+            title: "Dejanos tu correo electronico",
+            text: "Te enviaremos mas información",
+            type: "input",
+            confirmButtonColor: "#80B519",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "Correo electronico"
+        },
+                function (inputValue) {
+                    if (inputValue === false){
+                        return false;
+                        timer.stop(); 
+                    }
+                        
+
+                    if (inputValue === "") {
+                        swal.showInputError("Ingresa tu correo electronico.");
+                        timer.stop(); 
+                        return false
+                    }
+
+                    swal("Excelente!", "You wrote: " + inputValue, "success");
+                    timer.stop(); 
+                });
+    });
+    timer.set({time: 10000, autostart: true});
+
+</script>
