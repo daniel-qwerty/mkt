@@ -18,8 +18,8 @@
             <div id="calendar_bar" class="col-sm-12 content-header-1-options"
                  style="background: #27272C;text-align: center;">
                 <div class="col-sm-8 content-header-1-options" style="width:100%;">
-                    <a class="header-link" href="http://digitalmindsbolivia.com/mkt/es/events/1">hoy</a>
-                    <a class="header-link" href="http://digitalmindsbolivia.com/mkt/es/events/2">mañana</a>
+                    <a class="header-link" href="http://localhost/mkt/mkt//es/events/1">hoy</a>
+                    <a class="header-link" href="http://localhost/mkt/mkt//es/events/2">mañana</a>
                     <a id="datetimepicker" class="header-link" >fecha</a>
                 </div>
 
@@ -39,7 +39,7 @@
 //                            aqui hacer algo para cambiar contenido deacuerdo a la fecha
                             $.ajax({
                                 type: "POST",
-                                url: "http://digitalmindsbolivia.com/mkt/es/events/",
+                                url: "http://localhost/mkt/mkt//es/events/",
                                 data: {Date: $input.val()}
 
                             }).success(function (data) {
