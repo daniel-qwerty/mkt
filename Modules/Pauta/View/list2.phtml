@@ -54,7 +54,7 @@
             <?php foreach ([1, 2, 3, 4, 5] as $var) : ?>
                 <div class="col-xs-12 tarifario-web-item">
                     <a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-                        <img class="img-responsive"
+                        <img class="img-responsive" style="max-height: 540px"
                              src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/tarifario-web_00<?= $var ?>.jpg"
                              alt="">
                     </a>
@@ -110,23 +110,6 @@
 </div>
 
 <script>
-    $('.tarifario-items').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        arrows: false
-    });
-    $(".tarifario-items .slick-dots li#slick-slide00").html("Portada interior o retira de tapa");
-    $(".tarifario-items .slick-dots li#slick-slide01").html("Doble pagina");
-    $(".tarifario-items .slick-dots li#slick-slide02").html("Pagina interior");
-    $(".tarifario-items .slick-dots li#slick-slide03").html("Tercer pagina completa");
-    $(".tarifario-items .slick-dots li#slick-slide04").html("Pagina reportaje");
-    $(".tarifario-items .slick-dots li#slick-slide05").html("Media pagina vertical");
-    $(".tarifario-items .slick-dots li#slick-slide06").html("interior contratapa");
-    $(".tarifario-items .slick-dots li#slick-slide07").html("Contratapa");
-
 
     $('.tarifario-web-items').slick({
         dots: true,
@@ -138,11 +121,11 @@
     });
 
 
-    $(".tarifario-web-items .slick-dots li#slick-slide10").html("290px X 600px");
-    $(".tarifario-web-items .slick-dots li#slick-slide11").html("290px X 300px");
-    $(".tarifario-web-items .slick-dots li#slick-slide12").html("570px X 200px");
-    $(".tarifario-web-items .slick-dots li#slick-slide13").html("1000px X 220px");
-    $(".tarifario-web-items .slick-dots li#slick-slide14").html("760px X 530px");
+    $(".tarifario-web-items .slick-dots li#slick-slide00").html("290px X 600px");
+    $(".tarifario-web-items .slick-dots li#slick-slide01").html("290px X 300px");
+    $(".tarifario-web-items .slick-dots li#slick-slide02").html("570px X 200px");
+    $(".tarifario-web-items .slick-dots li#slick-slide03").html("1000px X 220px");
+    $(".tarifario-web-items .slick-dots li#slick-slide04").html("760px X 530px");
 
 </script>
 <script>

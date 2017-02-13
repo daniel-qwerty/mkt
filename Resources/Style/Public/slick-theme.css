@@ -184,7 +184,7 @@
 }
 
 .tarifario-item.slick-slide {
-    padding-right: 300px;
+    padding-right: 450px;
 }
 
 .tarifario-items .slick-dots {
@@ -203,7 +203,7 @@
 .tarifario-items .slick-dots li {
     position: relative;
     display: block;
-    width: 160px;
+    width: 280px;
     height: initial;
     margin: 0px;
     padding: 15px;
@@ -398,7 +398,7 @@
 
 .tarifario-web-items .slick-dots {
     position: absolute;
-    top: 11%;
+    /*top: 5%;*/
     right: 0px;
     /* transform: translate(0, -50%); */
     display: block;
@@ -445,7 +445,7 @@
 @media (max-width: 480px) {
 
     .tarifario-web-items {
-        height: calc(1081px + 51px * 5);
+        height: calc(525px + 51px * 5);
     }
 
     .tarifario-web-item.slick-slide {
