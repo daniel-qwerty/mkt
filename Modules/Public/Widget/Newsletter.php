@@ -21,7 +21,7 @@ class Public_Widget_Newsletter extends Com_Object {
 
     public function render() {
         ?>
-        <div class="sidebar-module module-newsletter bg-darker text-left text-white">
+        <div class="sidebar-module module-newsletter bg-darker text-left text-white hidden-xs hidden-sm">
             <h5><?= Texts_Helper_Text::getInstance()->get($this->lan, "titleNewsletter")->TxtDescription ?></h5>
 
             <p><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtNewsletter")->TxtDescription ?></p>

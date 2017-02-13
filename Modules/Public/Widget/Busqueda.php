@@ -27,11 +27,11 @@ class Public_Widget_Busqueda extends Com_Object {
 
     public function render() {       
         ?>
-        <div class="sidebar-module  module-search bg-darker text-left">
+        <div class="sidebar-module  module-search bg-darker text-left hidden-sm hidden-xs">
             <h5><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtBusqueda")->TxtDescription ?></h5>
             <!-- RD Navbar Search-->
             <div class="rd-navbar-search-mod-1">
-                <form class="form-inline-flex-xs" method="POST" action="http://localhost/mkt/mkt//es/search/<?php echo $this->type;?>">
+                <form class="form-inline-flex-xs" method="POST" action="http://digitalmindsbolivia.com/mkt//es/search/<?php echo $this->type;?>">
                     <div class="form-group">
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" id="search"

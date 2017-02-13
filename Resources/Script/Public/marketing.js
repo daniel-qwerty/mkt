@@ -177,7 +177,7 @@ function updateViewsAd(ide) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/AdViews",
+        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/AdViews",
         data: {AdId: ide}
     }).done(function (data) {
         if (data) {
@@ -197,7 +197,7 @@ function updatePrintsAd(ide) {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/mkt/mkt/Service/Clients/AdPrints",
+        url: "http://digitalmindsbolivia.com/mkt/Service/Clients/AdPrints",
         data: {AdId: ide}
     }).done(function (data) {
         if (data) {
@@ -241,7 +241,7 @@ function saveCompra() {
         if (metodo) {
             $.ajax({
                 type: "POST",
-                url: "http://localhost/mkt/mkt/Service/Clients/SaveCompra",
+                url: "http://digitalmindsbolivia.com/mkt/Service/Clients/SaveCompra",
                 data: {
                     VenId: venId,
                     Nombre: nombre,
@@ -261,7 +261,7 @@ function saveCompra() {
                     Metodo: 'cheque'}
             }).done(function (data) {
 
-                swal("Exito", "Su perfil ha sido actualizado!!!", "success");
+                swal("Exito", "Resivimos su pedido!!!", "success");
             }).error(function () {
 
             });
@@ -285,7 +285,7 @@ function sendContact() {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Contact/Save",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Contact/Save",
             data: {
                 Name: name,
                 Email: email,
@@ -323,10 +323,9 @@ function sendColaborar() {
         swal("", "Por favor revise los datos del formulario !!!", "warning");
         console.log("Por favor revise los datos del formulario !!!");
     } else {
-
         $.ajax({
             type: "POST",
-            url: "http://localhost/mkt/mkt/Service/Colaboradores/Save",
+            url: "http://digitalmindsbolivia.com/mkt/Service/Colaboradores/Save",
             data: {
                 Nombre: nombre,
                 Perfil: perfil,
@@ -353,6 +352,7 @@ function sendColaborar() {
             $('#formColaborar #articulo').val("");
             $('#formColaborar #email').val("");
             $('#formColaborar #telefono').val("");
+            
         }).error(function () {
 
         });

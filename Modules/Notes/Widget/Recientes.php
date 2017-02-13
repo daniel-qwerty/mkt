@@ -111,7 +111,7 @@ class Notes_Widget_Recientes extends Com_Object {
         $list = Notes_Model_Note::getInstance()->getListRecientesByCategory($this->lan->LanId, 5, $url);        
         
         ?>
-        <div class="sidebar-module module-post text-left">
+        <div class="sidebar-module module-post text-left hidden-sm hidden-xs">
             <h5>Post recientes</h5>
             <ul>
         <?php

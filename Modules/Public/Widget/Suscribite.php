@@ -36,20 +36,8 @@ class Public_Widget_Suscribite extends Com_Object
                  src="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/suscribe-decor.png" alt="">
             <div class="magazine-container-decoration"></div>
 
-            <form class="form-inline-flex-xs">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="nombre" placeholder="nombre">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="apellido" placeholder="epallido">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="email" placeholder="email">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-block m_purpura">Suscribete!</button>
-                </div>
-            </form>
+            <p>Suspendisse vel aliquam est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
+                diam vel nunc sagittis blandit. Donec aliquam aliquam orci et bibendum. In eu lacinia felis. Morbi in elit aliquet</p>
         </div>
         <?PHP
     }

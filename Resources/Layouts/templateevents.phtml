@@ -212,23 +212,24 @@
 
                 <div class="sidebar offset-top-40 offset-md-top-0">
                     <!--SECCION BUSQUEDA -->
-                    <?php Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
+                    <?php //Public_Widget_Busqueda::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION POST RECIENTES -->
-                    <?php Public_Widget_PostRecientes::getInstance()->setLan($this->lan)->render(); ?>
+                    <?php //Public_Widget_PostRecientes::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION PUBLICIDAD -->
-                    <?php //Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
+                    <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
                     <!--SECCION SOCIAL MEDIA -->
                     <?php Public_Widget_SocialMedia::getInstance()->setLan($this->lan)->render(); ?>
+                    <!--SECCION CALENDARIO -->
+                    <?php Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION NEWSLETTER -->
                     <?php //Public_Widget_Newsletter::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION PUBLICIDAD -->
                     <?php Advertising_Widget_Ad::getInstance()->setType('C')->setLimit(1)->renderC(); ?>
-                    <!--SECCION CALENDARIO -->
-                    <?php Public_Widget_Calendario::getInstance()->setLan($this->lan)->render(); ?>
+
                     <!--SECCION SUSCRIBITE -->
                     <?php //Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION PAUTA -->
-                    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                    <?php //Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
                 </div>
             </div>
         </div>
@@ -241,7 +242,7 @@
 <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
-        direction: 'vertical',
+        //direction: 'vertical',
         slidesPerView: 1,
         paginationClickable: true,
         spaceBetween: 30,

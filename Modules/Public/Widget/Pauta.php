@@ -25,7 +25,7 @@ class Public_Widget_Pauta extends Com_Object
     public function render()
     {
         ?>
-        <div class="sidebar-module module-pauta text-left">
+        <div class="sidebar-module module-pauta text-left hidden-xs hidden-sm">
 
             <div class="pauta-container">
                 <div class="pauta-item m_amarillo">

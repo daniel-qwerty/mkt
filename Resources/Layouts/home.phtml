@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="Es">
 
 <head>
     <meta charset="utf-8">
@@ -383,7 +383,7 @@
                     <!--SECCION SUSCRIBITE -->
                     <?php Public_Widget_Suscribite::getInstance()->setLan($this->lan)->render(); ?>
                     <!--SECCION PAUTA -->
-                    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan)->render(); ?>
+                    <?php Public_Widget_Pauta::getInstance()->setLan($this->lan); ?>
                 </div>
             </div>
         </div>
@@ -396,7 +396,7 @@
 <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
-        direction: 'vertical',
+        //direction: 'vertical',
         slidesPerView: 1,
         paginationClickable: true,
         spaceBetween: 30,
