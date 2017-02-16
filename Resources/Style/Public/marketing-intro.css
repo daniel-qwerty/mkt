@@ -1584,30 +1584,17 @@ fieldset[disabled] .btn-link:focus {
     z-index: 1;
 }
 
-/*@media (min-width: 768px) {*/
-/*.swiper-container {*/
-
-/*}*/
-/*}*/
-
-/*@media (min-width: 1200px) {*/
-/*.swiper-container {*/
-/*height: calc(100vh - 52px);*/
-/*!*height: calc(100vh - 93px);*!*/
-/*min-height: 550px;*/
-/*}*/
-/*}*/
 
 .swiper-container-no-flexbox .swiper-slide {
     float: left;
 }
 
-.swiper-container-vertical > .swiper-wrapper {
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
+.swiper-container-horizontal > .swiper-wrapper {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
 }
 
 .swiper-wrapper {
@@ -1858,7 +1845,7 @@ a.btn.btn-transparent.btn-lg:hover {
     background: #000;
 }
 
-.swiper-container-vertical > .swiper-pagination {
+.swiper-container-horizontal > .swiper-pagination {
     right: 30px;
     top: 50%;
     -webkit-transform: translate3d(0px, -50%, 0);
@@ -1869,15 +1856,16 @@ a.btn.btn-transparent.btn-lg:hover {
 }
 
 @media (min-width: 1600px) {
-    .swiper-container-vertical > .swiper-pagination {
+    .swiper-container-horizontal > .swiper-pagination {
         right: 122px;
     }
 }
 
 .swiper-container-horizontal > .swiper-pagination {
-    bottom: 20px;
-    left: 0;
-    width: 100%;
+    bottom: initial;
+    right: 0;
+    width: 26px;
+    left: initial;
 }
 
 /* 3D Container */
@@ -2025,7 +2013,7 @@ a.btn.btn-transparent.btn-lg:hover {
     width: 100%;
 }
 
-.swiper-container-vertical > .swiper-scrollbar {
+.swiper-container-horizontal > .swiper-scrollbar {
     position: absolute;
     right: 3px;
     top: 1%;
@@ -2397,9 +2385,9 @@ fieldset[disabled] .sidebar-module .btn-transparent {
 /* Stuff after this is only to make things more pretty */
 .carrito input[type=radio] + label > img {
     border-radius: 10px;
-    width: 80px;
-    height: 80px;
-    margin: 0 15px;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
     transition: 500ms all;
 }
 

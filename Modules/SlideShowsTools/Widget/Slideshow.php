@@ -31,7 +31,7 @@ class SlideShowsTools_Widget_Slideshow extends Com_Object {
             ?>
 
             <div data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>" class="swiper-slide" data-swiper-slide-index="2"
-                 style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>); background-size: cover;">
+                 style="background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $slide->SliImage; ?>); background-size: cover;">
                 <div class="swiper-slide-caption">
                     <div class="jubotron-variant-1">
                         <div data-caption-animate="fadeInUp" class="post-meta not-animated">

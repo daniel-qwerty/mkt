@@ -50,7 +50,7 @@
             <h3><?php echo Texts_Helper_Text::getInstance()->get($this->lan, 'txtTitleTarifarioImpresa')->TxtDescription; ?></h3>
         </div>
 
-        <div class="row tarifario-items">
+        <div id="tarifario" class="row tarifario-items">
             <?php foreach ([1, 2, 3, 4, 5, 6, 7, 8] as $var) : ?>
 
                 <div class="col-xs-12 tarifario-item">
@@ -131,21 +131,47 @@
     $(".tarifario-items .slick-dots li#slick-slide07").html("Contratapa");
 
 
-    $('.tarifario-web-items').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        arrows: false
+    $(".tarifario-items .slick-dots li#slick-slide00").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide01").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide02").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide03").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide04").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide05").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
+    $(".tarifario-items .slick-dots li#slick-slide06").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
     });
 
-
-    $(".tarifario-web-items .slick-dots li#slick-slide10").html("290px X 600px");
-    $(".tarifario-web-items .slick-dots li#slick-slide11").html("290px X 300px");
-    $(".tarifario-web-items .slick-dots li#slick-slide12").html("570px X 200px");
-    $(".tarifario-web-items .slick-dots li#slick-slide13").html("1000px X 220px");
-    $(".tarifario-web-items .slick-dots li#slick-slide14").html("760px X 530px");
+    $(".tarifario-items .slick-dots li#slick-slide07").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#tarifario").offset().top - 82-15
+        }, 300);
+    });
 
 </script>
 <script>
